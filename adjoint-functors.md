@@ -5,42 +5,61 @@ From highest level to lowest level of abstraction
 
 ## [Definition via counit–unit adjunction](https://en.wikipedia.org/wiki/Adjoint_functors#Definition_via_counit%E2%80%93unit_adjunction)
 
+Functor level
+
 ```graphviz
 digraph G {
-  "FG" -> "1_C" [label="counit"]
-  "1_D" -> "GF" [label="unit"]
+  node [shape="square", peripheries=2]
 
-  "F" -> "FGF" [label="F(counit)"]
-  "FGF" -> "F" [label="(unit)F"]
+  "F ∘ G" -> "1C" [label="counit"]
+  "1D" -> "G ∘ F" [label="unit"]
+}
+```
 
-  "G" -> "GFG" [label="(counit)G"]
-  "GFG" -> "G" [label="G(unit)"]
+
+```graphviz
+digraph G {
+  node [shape="square", peripheries=2]
+
+  "F" -> "F ∘ G ∘ F" [label="F ∘ counit"]
+  "F ∘ G ∘ F" -> "F" [label="unit ∘ F"]
+
+  "G" -> "G ∘ F ∘ G" [label="counit ∘ G"]
+  "G ∘ F ∘ G" -> "G" [label="G ∘ unit"]
 }
 ```
 
 
 ## [Definition via Hom-set adjunction](https://en.wikipedia.org/wiki/Adjoint_functors#Definition_via_Hom-set_adjunction)
 
+Hom-set level
+
 ```graphviz
 digraph G {
   subgraph clusterD {
     label="D"
-    "hom_D(Y, GX)"
+    node [peripheries=2]
+
+    "hom(Y, G(X))"
   }
 
   subgraph clusterC {
     label="C"
-    "hom_C(FY, X)"
+    node [peripheries=2]
+
+    "hom(F(Y), X)"
   }
 
-  "hom_D(Y, GX)" -> "hom_C(FY, X)" [label="phi_X,Y"]
-  "hom_C(FY, X)" -> "hom_D(Y, GX)" [label="phi_Y,X"]
+  "hom(Y, G(X))" -> "hom(F(Y), X)" [label="phiXY"]
+  "hom(F(Y), X)" -> "hom(Y, G(X))" [label="phiYX"]
 }
 ```
 
 ## [Definition via universal morphisms](https://en.wikipedia.org/wiki/Adjoint_functors#Definition_via_universal_morphisms)
 
 ### [Left adjoint](https://en.wikipedia.org/wiki/Adjoint_functors#Definition_via_universal_morphisms)
+
+Object level
 
 ```
 for each object X in C
