@@ -10,10 +10,10 @@ Let F : J → C be a diagram in C.
 
 ```graphviz
 digraph G {
-  "J" [shape="square"]
+  "Index" [shape="square"]
   "C" [shape="square"]
 
-  "J" -> "C" [label="F"]
+  "Index" -> "C" [label="F"]
 }
 ```
 
@@ -22,7 +22,7 @@ digraph G {
 ```graphviz
 digraph G {
   subgraph clusterJ {
-    label="J"
+    label="Index"
 
     "X"
     "Y"
@@ -31,7 +31,7 @@ digraph G {
   subgraph clusterC {
     label="C"
 
-    "N"
+    "ConeApex"
     "F(X)"
     "F(Y)"
   }
@@ -42,8 +42,8 @@ digraph G {
   "Y" -> "F(Y)" [label="F"]
   "F(X)" -> "F(Y)" [label="F(f)"]
 
-  "N" -> "F(X)" [label="coneX"]
-  "N" -> "F(Y)" [label="coneY"]
+  "ConeApex" -> "F(X)" [label="coneX"]
+  "ConeApex" -> "F(Y)" [label="coneY"]
 }
 ```
 
@@ -54,10 +54,10 @@ digraph G {
 
 ```graphviz
 digraph G {
-  "J" [shape="square"]
+  "Index" [shape="square"]
   "C" [shape="square"]
 
-  "J" -> "C" [label="F"]
+  "Index" -> "C" [label="F"]
 }
 ```
 
@@ -66,7 +66,7 @@ digraph G {
 ```graphviz
 digraph G {
   subgraph clusterJ {
-    label="J"
+    label="Index"
 
     "X"
     "Y"
@@ -75,7 +75,7 @@ digraph G {
   subgraph clusterC {
     label="C"
 
-    "N"
+    "CoconeApex"
     "F(X)"
     "F(Y)"
   }
@@ -86,8 +86,8 @@ digraph G {
   "Y" -> "F(Y)" [label="F"]
   "F(X)" -> "F(Y)" [label="F(f)"]
 
-  "F(X)" -> "N" [label="coneX"]
-  "F(Y)" -> "N" [label="coneY"]
+  "F(X)" -> "CoconeApex" [label="coconeX"]
+  "F(Y)" -> "CoconeApex" [label="coconeY"]
 }
 ```
 
