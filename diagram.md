@@ -19,9 +19,9 @@ the functor
 
 ```graphviz
 digraph G {
-  "J" [shape="square"]
+  "Index" [shape="square"]
   "C" [shape="square"]
 
-  "J" -> "C" [label="D"]
+  "Index" -> "C" [label="Diagram"]
 }
 ```
