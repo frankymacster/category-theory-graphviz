@@ -32,48 +32,69 @@ digraph G {
     "Kleisli(C)(M ∘ M)(Z)" [label="(M ∘ M)(Z)"]
   }
 
+  "CX" -> "CX" [label="1"]
+  "CY" -> "CY" [label="1"]
+  "CZ" -> "CZ" [label="1"]
 
-  <!-- "Kleisli(C)X" -> "Kleisli(C)X" [label="1Kleisli(C)"]
-  "Kleisli(C)Y" -> "Kleisli(C)Y" [label="1Kleisli(C)"]
-  "Kleisli(C)Z" -> "Kleisli(C)Z" [label="1Kleisli(C)"] -->
+  "CM(X)" -> "CM(X)" [label="1"]
+  "CM(Y)" -> "CM(Y)" [label="1"]
+  "CM(Z)" -> "CM(Z)" [label="1"]
 
-  "Kleisli(C)X" -> "Kleisli(C)Y" [label="f"]
-  "Kleisli(C)Y" -> "Kleisli(C)Z" [label="g"]
-  <!-- "Kleisli(C)Z" -> "Kleisli(C)X" [label="1C"] -->
+  "C(M ∘ M)(X)" -> "C(M ∘ M)(X)" [label="1"]
+  "C(M ∘ M)(Y)" -> "C(M ∘ M)(Y)" [label="1"]
+  "C(M ∘ M)(Z)" -> "C(M ∘ M)(Z)" [label="1"]
 
-  <!-- "Kleisli(C)X" -> "Kleisli(C)M(X)" [label="return"]
-  "Kleisli(C)Y" -> "Kleisli(C)M(Y)" [label="return"]
-  "Kleisli(C)Z" -> "Kleisli(C)M(Z)" [label="return"] -->
+  "Kleisli(C)X" -> "Kleisli(C)X" [label="1"]
+  "Kleisli(C)Y" -> "Kleisli(C)Y" [label="1"]
+  "Kleisli(C)Z" -> "Kleisli(C)Z" [label="1"]
 
-  <!-- "Kleisli(C)M(X)" -> "Kleisli(C)(M ∘ M)(X)" [label="M ∘ return"]
-  "Kleisli(C)M(Y)" -> "Kleisli(C)(M ∘ M)(Y)" [label="M ∘ return"]
-  "Kleisli(C)M(Z)" -> "Kleisli(C)(M ∘ M)(Z)" [label="M ∘ return"]
-  "Kleisli(C)M(X)" -> "Kleisli(C)(M ∘ M)(X)" [label="return ∘ M"]
-  "Kleisli(C)M(Y)" -> "Kleisli(C)(M ∘ M)(Y)" [label="return ∘ M"]
-  "Kleisli(C)M(Z)" -> "Kleisli(C)(M ∘ M)(Z)" [label="return ∘ M"]
+  "Kleisli(C)M(X)" -> "Kleisli(C)M(X)" [label="1"]
+  "Kleisli(C)M(Y)" -> "Kleisli(C)M(Y)" [label="1"]
+  "Kleisli(C)M(Z)" -> "Kleisli(C)M(Z)" [label="1"]
 
-  "Kleisli(C)M(X)" -> "Kleisli(C)X" [label="joinX"]
-  "Kleisli(C)M(Y)" -> "Kleisli(C)Y" [label="joinY"]
-  "Kleisli(C)M(Z)" -> "Kleisli(C)Z" [label="joinZ"]
+  "Kleisli(C)(M ∘ M)(X)" -> "Kleisli(C)(M ∘ M)(X)" [label="1"]
+  "Kleisli(C)(M ∘ M)(Y)" -> "Kleisli(C)(M ∘ M)(Y)" [label="1"]
+  "Kleisli(C)(M ∘ M)(Z)" -> "Kleisli(C)(M ∘ M)(Z)" [label="1"]
+
+  "Kleisli(C)X" -> "Kleisli(C)M(X)" [label="returnX"]
+  "Kleisli(C)M(X)" -> "Kleisli(C)(M ∘ M)(X)" [label="M ∘ returnX"]
+  "Kleisli(C)M(X)" -> "Kleisli(C)(M ∘ M)(X)" [label="returnX ∘ M"]
   "Kleisli(C)(M ∘ M)(X)" -> "Kleisli(C)M(X)" [label="joinX"]
+
+  "Kleisli(C)Y" -> "Kleisli(C)M(Y)" [label="returnY"]
+  "Kleisli(C)M(Y)" -> "Kleisli(C)(M ∘ M)(Y)" [label="M ∘ returnY"]
+  "Kleisli(C)M(Y)" -> "Kleisli(C)(M ∘ M)(Y)" [label="returnY ∘ M"]
   "Kleisli(C)(M ∘ M)(Y)" -> "Kleisli(C)M(Y)" [label="joinY"]
-  "Kleisli(C)(M ∘ M)(Z)" -> "Kleisli(C)M(Z)" [label="joinZ"] -->
+
+  "Kleisli(C)Z" -> "Kleisli(C)M(Z)" [label="returnZ"]
+  "Kleisli(C)M(Z)" -> "Kleisli(C)(M ∘ M)(Z)" [label="M ∘ returnZ"]
+  "Kleisli(C)M(Z)" -> "Kleisli(C)(M ∘ M)(Z)" [label="returnZ ∘ M"]
+  "Kleisli(C)(M ∘ M)(Z)" -> "Kleisli(C)M(Z)" [label="joinZ"]
 
 
-  "CX" -> "CM(Y)" [label="f"]
-  "CY" -> "CM(Z)" [label="g"]
-  "CM(Y)" -> "C(M ∘ M)(Z)" [label="M(g)"]
-  "C(M ∘ M)(Z)" -> "CM(Z)" [label="joinZ"]
+  "Kleisli(C)X" -> "Kleisli(C)Y" [label="f", color="blue"]
+  "Kleisli(C)Y" -> "Kleisli(C)Z" [label="g", color="blue"]
 
-  <!-- "CY" -> "CM(Z)" [label="f2"]
-  "CZ" -> "CM(X)" [label="g2"]
-  "CM(Z)" -> "C(M ∘ M)(X)" [label="M(g2)"]
+  "CX" -> "CM(X)" [label="returnX"]
+  "CM(X)" -> "C(M ∘ M)(X)" [label="M ∘ returnX"]
+  "CM(X)" -> "C(M ∘ M)(X)" [label="returnX ∘ M"]
   "C(M ∘ M)(X)" -> "CM(X)" [label="joinX"]
 
-  "CZ" -> "CM(X)" [label="f3"]
-  "CX" -> "CM(Y)" [label="g3"]
-  "CM(X)" -> "C(M ∘ M)(Y)" [label="M(g3)"]
-  "C(M ∘ M)(Y)" -> "CM(Y)" [label="joinY"] -->
+  "CY" -> "CM(Y)" [label="returnY"]
+  "CM(Y)" -> "C(M ∘ M)(Y)" [label="M ∘ returnY"]
+  "CM(Y)" -> "C(M ∘ M)(Y)" [label="returnY ∘ M"]
+  "C(M ∘ M)(Y)" -> "CM(Y)" [label="joinY"]
+
+  "CZ" -> "CM(Z)" [label="returnZ"]
+  "CM(Z)" -> "C(M ∘ M)(Z)" [label="M ∘ returnZ"]
+  "CM(Z)" -> "C(M ∘ M)(Z)" [label="returnZ ∘ M"]
+
+
+  "CX" -> "CM(Y)" [label="f", color="blue"]
+  "CY" -> "CM(Z)" [label="g", color="blue"]
+  "CM(Y)" -> "C(M ∘ M)(Z)" [label="M(g)", color="blue"]
+  "C(M ∘ M)(Z)" -> "CM(Z)" [label="joinZ", color="blue"]
+
 }
 ```
 
