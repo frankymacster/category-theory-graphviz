@@ -1,6 +1,8 @@
 # [Definitions](https://en.m.wikipedia.org/wiki/Category_(mathematics))
 
 
+## Object level
+
 ```graphviz
 digraph G {
   subgraph clusterC {
@@ -11,6 +13,57 @@ digraph G {
     "A" -> "B" [label="f"]
     "B" -> "C" [label="g"]
     "A" -> "C" [label="g ∘ f"]
+  }
+}
+```
+
+## Element level
+
+https://en.wikipedia.org/wiki/Category_of_sets
+
+In the mathematical field of category theory, the category of sets, denoted as Set, is the category whose objects are sets. The arrows or morphisms between sets A and B are the total functions from A to B, and the composition of morphisms is the composition of functions.
+
+```graphviz
+digraph G {
+  subgraph clusterC {
+    label="Category"
+
+    subgraph clusterCInitial {
+      label="Initial"
+      style="rounded"
+
+      "" [shape="plaintext"]
+    }
+
+    subgraph clusterCX {
+      label="X"
+      style="rounded"
+
+      "x1" [shape="point"]
+      "x2" [shape="point"]
+
+      "x1" -> "x1" [label="1X"]
+      "x2" -> "x2" [label="1X"]
+      "x1" -> "x2" [label="1X"]
+      "x2" -> "x1" [label="1X"]
+    }
+
+    subgraph clusterCTerminal {
+      label="Terminal"
+      style="rounded"
+
+      "t" [shape="point"]
+
+      "t" -> "t" [label="1Terminal"]
+    }
+
+    "" -> "x1" [label="initial"]
+    "" -> "x2" [label="initial"]
+    "" -> "t" [label="initial / terminal"]
+    "" -> "" [label="1Initial"]
+
+    "x1" -> "t" [label="terminal"]
+    "x2" -> "t" [label="terminal"]
   }
 }
 ```
