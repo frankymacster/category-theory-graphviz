@@ -32,20 +32,20 @@ digraph G {
     "S(a1)"
     "S(a2)"
     "S(a1)" -> "S(a2)" [label="S(f)"]
-    "e"
+    "end(S)"
     "x"
   }
 
   "a1" -> "S(a1)" [label="S"]
   "a2" -> "S(a2)" [label="S"]
 
-  "e" -> "S(a1)" [label="ExtraNat(e, S)"]
-  "e" -> "S(a2)" [label="ExtraNat(e, S)"]
+  "end(S)" -> "S(a1)" [label="ExtraNat(end(S), S)"]
+  "end(S)" -> "S(a2)" [label="ExtraNat(end(S), S)"]
 
-  "x" -> "S(a1)" [label="ExtraNat(x, S) = ExtraNat(e, S) ∘ unique"]
-  "x" -> "S(a2)" [label="ExtraNat(x, S) = ExtraNat(e, S) ∘ unique"]
+  "x" -> "S(a1)" [label="ExtraNat(x, S) = ExtraNat(end(S), S) ∘ unique"]
+  "x" -> "S(a2)" [label="ExtraNat(x, S) = ExtraNat(end(S), S) ∘ unique"]
 
-  "x" -> "e" [label="unique", style="dashed"]
+  "x" -> "end(S)" [label="unique", style="dashed"]
 }
 ```
 
