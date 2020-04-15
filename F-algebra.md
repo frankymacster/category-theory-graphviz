@@ -42,6 +42,27 @@ F-algebra is (A, a)
 
 <!-- TODO add https://en.wikipedia.org/wiki/F-algebra#Algebraic_structures -->
 
+### Object level
+
+```graphviz
+digraph G {
+  subgraph clusterC {
+    label="C"
+    "M" 
+
+    "1 + M×M"
+
+    "M" -> "M" [label="idM"]
+
+    "1 + M×M" -> "M" [label="F"]
+
+    "1 + M×M" -> "1 + M×M" [label="id(1 + M×M)"]
+  }
+}
+```
+
+<!-- F(M) = 1 + M×M -->
+
 ### [Initial Algebra](https://en.wikipedia.org/wiki/Initial_algebra) & [Catamorphism](https://en.wikipedia.org/wiki/Catamorphism)
 
 #### FAlgebraCategory Object level
@@ -101,6 +122,14 @@ cata :: Functor f => Algebra f a -> (Fix f -> a) -- catamorphism from Fix f to a
 cata alg = alg . fmap (cata alg) . invIso -- note that invIso and alg map in opposite directions
 ```
 
+```haskell
+type Nat = Fix Maybe
+zero :: Nat
+zero = Iso Nothing -- every 'Maybe a' has a term Nothing, and Iso maps it into a
+successor :: Nat -> Nat
+successor = Iso . Just -- Just maps a to 'Maybe a' and Iso maps back to a new term
+```
+
 ## F-coalgebra
 
 ```graphviz
@@ -112,6 +141,12 @@ digraph G {
 
     "F(A)"
     "F(B)"
+
+    "A" -> "A" [label="idA"]
+    "B" -> "B" [label="idB"]
+
+    "F(A)" -> "F(A)" [label="idF(A)"]
+    "F(B)" -> "F(B)" [label="idF(B)"]
 
     "A" -> "B" [label="f"]
 
