@@ -6,10 +6,10 @@
 
 ```graphviz
 digraph G {
-  "J" [shape="square"]
+  "Index" [shape="square"]
   "C" [shape="square"]
 
-  "J" -> "C" [label="F"]
+  "Index" -> "C" [label="Diagram"]
 }
 ```
 
@@ -18,7 +18,7 @@ digraph G {
 ```graphviz
 digraph G {
   subgraph clusterJ {
-    label="J"
+    label="Index"
 
     "X"
     "Y"
@@ -27,25 +27,25 @@ digraph G {
   subgraph clusterC {
     label="C"
 
-    "N"
-    "L"
-    "F(X)"
-    "F(Y)"
+    "Limit'"
+    "Limit"
+    "Diagram(X)"
+    "Diagram(Y)"
   }
 
   "X" -> "Y" [label="f"]
 
-  "X" -> "F(X)" [label="F"]
-  "Y" -> "F(Y)" [label="F"]
-  "F(X)" -> "F(Y)" [label="F(f)"]
+  "X" -> "Diagram(X)" [label="Diagram"]
+  "Y" -> "Diagram(Y)" [label="Diagram"]
+  "Diagram(X)" -> "Diagram(Y)" [label="Diagram(f)"]
 
-  "N" -> "F(X)" [label="coneX"]
-  "N" -> "F(Y)" [label="coneY"]
+  "Limit'" -> "Diagram(X)" [label="limit'coneX"]
+  "Limit'" -> "Diagram(Y)" [label="limit'coneY"]
 
-  "L" -> "F(X)" [label="limitConeX"]
-  "L" -> "F(Y)" [label="limitConeY"]
+  "Limit" -> "Diagram(X)" [label="limitConeX"]
+  "Limit" -> "Diagram(Y)" [label="limitConeY"]
 
-  "N" -> "L" [label="unique", style="dashed"]
+  "Limit'" -> "Limit" [label="unique", style="dashed"]
 }
 ```
 
@@ -57,10 +57,10 @@ digraph G {
 
 ```graphviz
 digraph G {
-  "J" [shape="square"]
+  "Index" [shape="square"]
   "C" [shape="square"]
 
-  "J" -> "C" [label="F"]
+  "Index" -> "C" [label="Diagram"]
 }
 ```
 
@@ -69,7 +69,7 @@ digraph G {
 ```graphviz
 digraph G {
   subgraph clusterJ {
-    label="J"
+    label="Index"
 
     "X"
     "Y"
@@ -78,24 +78,24 @@ digraph G {
   subgraph clusterC {
     label="C"
 
-    "N"
-    "L"
-    "F(X)"
-    "F(Y)"
+    "Colimit'"
+    "Colimit"
+    "Diagram(X)"
+    "Diagram(Y)"
   }
 
   "X" -> "Y" [label="f"]
 
-  "X" -> "F(X)" [label="F"]
-  "Y" -> "F(Y)" [label="F"]
-  "F(X)" -> "F(Y)" [label="F(f)"]
+  "X" -> "Diagram(X)" [label="Diagram"]
+  "Y" -> "Diagram(Y)" [label="Diagram"]
+  "Diagram(X)" -> "Diagram(Y)" [label="Diagram(f)"]
 
-  "F(X)" -> "N" [label="coneX"]
-  "F(Y)" -> "N" [label="coneY"]
+  "Diagram(X)" -> "Colimit'" [label="colimit'coconeX"]
+  "Diagram(Y)" -> "Colimit'" [label="colimit'coconeY"]
 
-  "F(X)" -> "L" [label="limitConeX"]
-  "F(Y)" -> "L" [label="limitConeY"]
+  "Diagram(X)" -> "Colimit" [label="colimitCoconeX"]
+  "Diagram(Y)" -> "Colimit" [label="colimitCoconeY"]
 
-  "L" -> "N" [label="unique", style="dashed"]
+  "Colimit" -> "Colimit'" [label="unique", style="dashed"]
 }
 ```
