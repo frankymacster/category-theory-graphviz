@@ -13,7 +13,7 @@ digraph G {
   "Index" [shape="square"]
   "C" [shape="square"]
 
-  "Index" -> "C" [label="F"]
+  "Index" -> "C" [label="Diagram"]
 }
 ```
 
@@ -32,18 +32,18 @@ digraph G {
     label="C"
 
     "ConeApex"
-    "F(X)"
-    "F(Y)"
+    "Diagram(X)"
+    "Diagram(Y)"
   }
 
   "X" -> "Y" [label="f"]
 
-  "X" -> "F(X)" [label="F"]
-  "Y" -> "F(Y)" [label="F"]
-  "F(X)" -> "F(Y)" [label="F(f)"]
+  "X" -> "Diagram(X)" [label="Diagram"]
+  "Y" -> "Diagram(Y)" [label="Diagram"]
+  "Diagram(X)" -> "Diagram(Y)" [label="Diagram(f)"]
 
-  "ConeApex" -> "F(X)" [label="coneX"]
-  "ConeApex" -> "F(Y)" [label="coneY"]
+  "ConeApex" -> "Diagram(X)" [label="coneX"]
+  "ConeApex" -> "Diagram(Y)" [label="coneY"]
 }
 ```
 
@@ -57,7 +57,7 @@ digraph G {
   "Index" [shape="square"]
   "C" [shape="square"]
 
-  "Index" -> "C" [label="F"]
+  "Index" -> "C" [label="Diagram"]
 }
 ```
 
@@ -76,18 +76,18 @@ digraph G {
     label="C"
 
     "CoconeApex"
-    "F(X)"
-    "F(Y)"
+    "Diagram(X)"
+    "Diagram(Y)"
   }
 
   "X" -> "Y" [label="f"]
 
-  "X" -> "F(X)" [label="F"]
-  "Y" -> "F(Y)" [label="F"]
-  "F(X)" -> "F(Y)" [label="F(f)"]
+  "X" -> "Diagram(X)" [label="Diagram"]
+  "Y" -> "Diagram(Y)" [label="Diagram"]
+  "Diagram(X)" -> "Diagram(Y)" [label="Diagram(f)"]
 
-  "F(X)" -> "CoconeApex" [label="coconeX"]
-  "F(Y)" -> "CoconeApex" [label="coconeY"]
+  "Diagram(X)" -> "CoconeApex" [label="coconeX"]
+  "Diagram(Y)" -> "CoconeApex" [label="coconeY"]
 }
 ```
 
