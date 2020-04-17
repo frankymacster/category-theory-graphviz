@@ -1,0 +1,55 @@
+<!-- https://bl.ocks.org/magjac/28a70231e2c9dddb84b3b20f450a215f -->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://unpkg.com/@hpcc-js/wasm@0.3.6/dist/index.min.js"></script>
+  <script src="https://unpkg.com/d3-graphviz@3.0.0/build/d3-graphviz.js"></script>
+  <script src="./category.js"></script>
+  <script src="./cone.js"></script>
+  <script src="./F-algebra.js"></script>
+  <script src="./functor.js"></script>
+  <script src="./limit.js"></script>
+  <script src="./product.js"></script>
+  <script src="./rewriting-system.js"></script>
+  <script src="./transition-system.js"></script>
+  <script src="./transition-system--rewriting-system.js"></script>
+
+  <div id="graph" style="text-align: center;"></div>
+  <div id="app"></div>
+<script>
+
+const graphs = {
+  category: getCategory(),
+  cone: getCone(),
+  "F-algebra": getFAlgebra(),
+  functor: getFunctor(),
+  limit: getLimit(),
+  product: getProduct(),
+  "rewriting-system": getRewritingSystem(),
+  "transition-system": getTransitionSystem(),
+  "transition-system--rewriting-system": getTransitionSystemRewritingSystem(),
+}
+
+const appEl = document.getElementById("app")
+
+const graphviz =
+  d3
+    .select("#graph")
+    .graphviz({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
+
+for (let [key, value] of Object.entries(graphs)) {
+  const buttonEl = document.createElement("button")
+  buttonEl.textContent = key
+  buttonEl.addEventListener("click", e => {
+    graphviz
+      .renderDot(value)
+  })
+  appEl.appendChild(buttonEl)
+}
+
+</script>
