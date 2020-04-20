@@ -159,8 +159,7 @@ digraph G {
   subgraph cluster0 {
     label="n (λg.λh.h (g f)) (λu.x) (λu.u)"
 
-    "λu.u"
-    "(λu.x)(λu.u)"
+    "(λu.u, λu.x)"
     "(λg.λh.h (g f))((λu.x)(λu.u))"
     "n((λg.λh.h (g f))((λu.x)(λu.u)))"
 
@@ -213,12 +212,11 @@ digraph G {
     }
   }
 
-  "n" -> "λu.u" [lhead="cluster0"]
-  "f" -> "λu.u" [lhead="cluster0"]
-  "x0" -> "λu.u" [lhead="cluster0"]
+  "n" -> "(λu.u, λu.x)" [lhead="cluster0"]
+  "f" -> "(λu.u, λu.x)" [lhead="cluster0"]
+  "x0" -> "(λu.u, λu.x)" [lhead="cluster0"]
 
-  "λu.u" -> "(λu.x)(λu.u)" [label="λu.x"]
-  "(λu.x)(λu.u)" -> "(λg.λh.h (g f))((λu.x)(λu.u))" [label="λg.λh.h (g f)"]
+  "(λu.u, λu.x)" -> "(λg.λh.h (g f))((λu.x)(λu.u))" [label="λg.λh.h (g f)"]
   "(λg.λh.h (g f))((λu.x)(λu.u))" -> "n((λg.λh.h (g f))((λu.x)(λu.u)))" [label="n"]
 }
 ```
@@ -242,5 +240,63 @@ digraph G {
 
   "n" -> "m1" [lhead="cluster0"]
   "m0" -> "m1" [lhead="cluster0"]
+}
+```
+
+TRUE := λx.λy.x
+FALSE := λx.λy.y
+(Note that FALSE is equivalent to the Church numeral zero defined above)
+Then, with these two lambda terms, we can define some logic operators (these are just possible formulations; other expressions are equally correct):
+
+AND := λp.λq.p q p
+OR := λp.λq.p p q
+NOT := λp.p FALSE TRUE
+IFTHENELSE := λp.λa.λb.p a b
+
+
+## Factorial
+
+F(n) = 1, if n = 0; else n × F(n − 1).
+
+G := λr. λn.(1, if n = 0; else n × (r r (n−1)))
+with  r r x = F x = G r x  to hold, so  r = G  and
+F := G G = (λx.x x) G
+
+The self-application achieves replication here, passing the function's lambda expression on to the next invocation as an argument value, making it available to be referenced and called there.
+
+This solves it but requires re-writing each recursive call as self-application. We would like to have a generic solution, without a need for any re-writes:
+
+G := λr. λn.(1, if n = 0; else n × (r (n−1)))
+with  r x = F x = G r x  to hold, so  r = G r =: FIX G  and
+F := FIX G  where  FIX g := (r where r = g r) = g (FIX g)
+so that  FIX G = G (FIX G) = (λn.(1, if n = 0; else n × ((FIX G) (n−1))))
+
+
+## Y combinator
+
+```graphviz
+digraph G {
+  compound="true"
+
+  "f"
+
+  subgraph cluster0 {
+    "0x" [label="x"]
+
+    subgraph cluster00 {
+      "00x" [label="x"]
+      "00x(x)" [label="x(x)"]
+      "00f(x(x))" [label="f(x(x))"]
+
+      "00x" -> "00x(x)" [label="x"]
+      "00x(x)" -> "00f(x(x))" [label="f"]
+    }
+
+    "0x" -> "00x" [lhead="cluster00"]
+  }
+
+  "f" -> "0x" [lhead="cluster0"]
+
+  "00f(x(x))" -> "0x" [lhead="cluster0"]
 }
 ```
