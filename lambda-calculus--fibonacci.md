@@ -21,15 +21,18 @@ digraph G {
       "(SUB n 2)" -> "f(SUB n 2)" [label="f"]
 
       "f(SUB n 1)" -> "ADD f(SUB n 1)" [label="ADD"]
-      "f(SUB n 2)" -> "ADD f(SUB n 1) f(SUB n 2)" [label="ADD f(SUB n 1)"]
+      "ADD f(SUB n 1)" -> "f(SUB n 2)" [dir=none]
+      "f(SUB n 2)" -> "ADD f(SUB n 1) f(SUB n 2)"
 
       "1"
       "n <= 2"
       "ADD f(SUB n 1) f(SUB n 2)"
 
       "n <= 2" -> "IFTHENELSE (n <= 2)" [label="IFTHENELSE"]
-      "1" -> "IFTHENELSE (n <= 2) 1" [label="IFTHENELSE (n <= 2)"]
-      "ADD f(SUB n 1) f(SUB n 2)" -> "IFTHENELSE (n <= 2) 1 (ADD f(SUB n 1) f(SUB n 2))" [label="IFTHENELSE (n <= 2) 1"]
+      "1" -> "IFTHENELSE (n <= 2)" [dir=none]
+      "IFTHENELSE (n <= 2)" -> "IFTHENELSE (n <= 2) 1"
+      "IFTHENELSE (n <= 2) 1" -> "ADD f(SUB n 1) f(SUB n 2)" [dir=none]
+      "ADD f(SUB n 1) f(SUB n 2)" -> "IFTHENELSE (n <= 2) 1 (ADD f(SUB n 1) f(SUB n 2))"
     }
 
     "IFTHENELSE (n <= 2) 1 (ADD f(SUB n 1) f(SUB n 2))" -> "y (λf. λn. IFTHENELSE (n <= 2) 1 (ADD f(SUB n 1) f(SUB n 2)))" [label="y", ltail="cluster00"]
@@ -39,3 +42,10 @@ digraph G {
   "0n" -> "(n, 1)" [lhead="cluster00"]
 }
 ```
+
+<!-- digraph g{
+  n1 -> p1 [dir=none];
+  p1 -> p2
+  p1 [shape=none, width=0, height=0, label=""]
+  {rank=same; n2 -> p1}
+} -->
