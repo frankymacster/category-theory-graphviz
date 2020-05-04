@@ -40,18 +40,18 @@ digraph G {
     label="Righthand"
     node [peripheries=2]
 
-    "hom(r, Right(l))"
+    "{r <- | -> Right(l)}"
   }
 
   subgraph clusterC {
     label="Lefthand"
     node [peripheries=2]
 
-    "hom(Left(r), l)"
+    "{Left(r) <- | -> l}"
   }
 
-  "hom(r, Right(l))" -> "hom(Left(r), l)" [label="philr"]
-  "hom(Left(r), l)" -> "hom(r, Right(l))" [label="phirl"]
+  "{r <- | -> Right(l)}" -> "{Left(r) <- | -> l}" [label="philr"]
+  "{Left(r) <- | -> l}" -> "{r <- | -> Right(l)}" [label="phirl"]
 }
 ```
 
