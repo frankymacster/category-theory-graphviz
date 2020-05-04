@@ -11,8 +11,8 @@ Functor level
 digraph G {
   node [shape="square", peripheries=2]
 
-  "F ∘ G" -> "1C" [label="counit"]
-  "1D" -> "G ∘ F" [label="unit"]
+  "Left ∘ Right" -> "1Lefthand" [label="counit"]
+  "1Righthand" -> "Right ∘ Left" [label="unit"]
 }
 ```
 
@@ -21,11 +21,11 @@ digraph G {
 digraph G {
   node [shape="square", peripheries=2]
 
-  "F" -> "F ∘ G ∘ F" [label="F ∘ counit"]
-  "F ∘ G ∘ F" -> "F" [label="unit ∘ F"]
+  "Left" -> "Left ∘ Right ∘ Left" [label="Left ∘ counit"]
+  "Left ∘ Right ∘ Left" -> "Left" [label="unit ∘ Left"]
 
-  "G" -> "G ∘ F ∘ G" [label="counit ∘ G"]
-  "G ∘ F ∘ G" -> "G" [label="G ∘ unit"]
+  "Right" -> "Right ∘ Left ∘ Right" [label="counit ∘ Right"]
+  "Right ∘ Left ∘ Right" -> "Right" [label="Right ∘ unit"]
 }
 ```
 
@@ -37,21 +37,21 @@ Hom-set level
 ```graphviz
 digraph G {
   subgraph clusterD {
-    label="D"
+    label="Righthand"
     node [peripheries=2]
 
-    "hom(Y, G(X))"
+    "hom(r, Right(l))"
   }
 
   subgraph clusterC {
-    label="C"
+    label="Lefthand"
     node [peripheries=2]
 
-    "hom(F(Y), X)"
+    "hom(Left(r), l)"
   }
 
-  "hom(Y, G(X))" -> "hom(F(Y), X)" [label="phiXY"]
-  "hom(F(Y), X)" -> "hom(Y, G(X))" [label="phiYX"]
+  "hom(r, Right(l))" -> "hom(Left(r), l)" [label="philr"]
+  "hom(Left(r), l)" -> "hom(r, Right(l))" [label="phirl"]
 }
 ```
 
@@ -81,28 +81,28 @@ for each object X in C
 ```graphviz
 digraph G {
   subgraph clusterD {
-    label="D"
-    "G(X)"
-    "Y"
+    label="Righthand"
+    "Right(l)"
+    "r"
   }
 
   subgraph clusterC {
-    label="C"
-    "X"
-    "F(G(X))"
-    "F(Y)"
+    label="Lefthand"
+    "l"
+    "Left(Right(l))"
+    "Left(r)"
   }
 
-  "X" -> "G(X)" [label="G"]
-  "Y" -> "F(Y)" [label="F"]
+  "l" -> "Right(l)" [label="Right"]
+  "r" -> "Left(r)" [label="Left"]
 
-  "G(X)" -> "F(G(X))" [label="F"]
-  "F(G(X))" -> "X" [label="counitX"]
+  "Right(l)" -> "Left(Right(l))" [label="Left"]
+  "Left(Right(l))" -> "l" [label="counitl"]
 
-  "F(Y)" -> "X" [label="f"]
-  "Y" -> "G(X)" [label="g"]
+  "Left(r)" -> "l" [label="forallLeft"]
+  "r" -> "Right(l)" [label="uniqueRight"]
 
-  "F(Y)" -> "F(G(X))" [label="F(g)", style="dashed"]
+  "Left(r)" -> "Left(Right(l))" [label="Left(uniqueRight)", style="dashed"]
 }
 ```
 
@@ -129,31 +129,35 @@ for each object Y in D,
 ```graphviz
 digraph G {
   subgraph clusterD {
-    label="D"
-    "Y"
-    "G(X)"
-    "G(F(Y))"
+    label="Righthand"
+    "r"
+    "Right(l)"
+    "Right(Left(r))"
   }
 
   subgraph clusterC {
-    label="C"
-    "X"
-    "F(Y)"
+    label="Lefthand"
+    "l"
+    "Left(r)"
   }
 
-  "Y" -> "F(Y)" [label="F"]
-  "X" -> "G(X)" [label="G"]
+  "r" -> "Left(r)" [label="Left"]
+  "l" -> "Right(l)" [label="Right"]
 
   <!-- for each -->
-  "Y" -> "G(X)" [label="g"]
+  "r" -> "Right(l)" [label="forallRight"]
   <!-- there exists -->
-  "F(Y)" -> "X" [label="f"]
+  "Left(r)" -> "l" [label="uniqueLeft"]
 
-  "F(Y)" -> "G(F(Y))" [label="G"]
-  "Y" -> "G(F(Y))" [label="unitY"]
-  "G(F(Y))" -> "G(X)" [label="G(f)", style="dashed"]
+  "Left(r)" -> "Right(Left(r))" [label="Right"]
+  "r" -> "Right(Left(r))" [label="unitr"]
+  "Right(Left(r))" -> "Right(l)" [label="Right(uniqueLeft)", style="dashed"]
 }
 ```
+
+https://en.wikipedia.org/wiki/Adjoint_functors#Symmetry_of_optimization_problems
+
+The notion that F is the most efficient solution to the problem posed by G is, in a certain rigorous sense, equivalent to the notion that G poses the most difficult problem that F solves.
 
 # Code
 
