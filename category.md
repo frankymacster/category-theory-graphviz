@@ -89,3 +89,68 @@ class Category cat where
                 (p . q) . r = p . (q . r)
  #-}
 ```
+
+https://docs.google.com/spreadsheets/d/1bc5qauMqHykdv5Vl0F7ZNTETrZ0GZIL-CuXbQYkYtSY/edit#gid=1457368323
+
+# Instances
+
+```graphviz
+digraph G {
+  "category" -> "monoidal category"
+
+
+  "monoidal category" -> "braided monoidal category"
+  "monoidal category" -> "closed monoidal category"
+
+
+  "braided monoidal category" -> "symmetric monoidal category"
+  "braided monoidal category" -> "closed braided monoidal category"
+
+  "closed monoidal category" -> "closed braided monoidal category"
+  "closed monoidal category" -> "compact monoidal category"
+
+  "compact monoidal category" -> "compact braided monoidal category"
+  "closed braided monoidal category" -> "compact braided monoidal category"
+
+
+  "symmetric monoidal category" -> "cartesian category"
+  "symmetric monoidal category" -> "closed symmetric monoidal category"
+
+  "closed braided monoidal category" -> "closed symmetric monoidal category"
+
+
+  "compact braided monoidal category" -> "compact symmetric monoidal category"
+
+  "closed symmetric monoidal category" -> "cartesian closed category"
+  "closed symmetric monoidal category" -> "compact symmetric monoidal category"
+
+  "cartesian category" -> "cartesian closed category"
+
+  "cartesian closed category" -> "topos"
+
+  "cartesian closed category" -> "poset"
+
+  "cartesian closed category" -> "bicartesian closed category"
+  "cocartesian closed category" -> "bicartesian closed category"
+
+  "bicartesian category" -> "bicartesian closed category"
+
+  "cartesian category" -> "bicartesian category"
+  "cocartesian category" -> "bicartesian category"
+  "cocartesian category" -> "cocartesian closed category"
+
+  "poset" -> "Heyting algebra"
+  "bicartesian closed category" -> "Heyting algebra"
+
+  "Heyting algebra" -> "Boolean Algebra"
+
+  "topos" -> "category of Sets"
+  "topos" -> "elementary topos"
+  "topos" -> "Grothendieck topos"
+
+  "monoidal category" -> "cocartesian category"
+}
+```
+
+<!-- TODO https://en.wikipedia.org/wiki/Cartesian_closed_category -->
+   <!-- These categories are particularly important in mathematical logic and the theory of programming, in that their internal language is the simply typed lambda calculus -->
