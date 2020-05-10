@@ -159,6 +159,9 @@ digraph G {
 
   "category" -> "Lawvere theory"
 
+  "Lawvere theory" -> "theory of sets" [href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
+  "Lawvere theory" -> "theory of groups" [href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
+
   "category" -> "discrete category" [label="only morphisms are the identity morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
 
   "category" -> "category of adjunctions"
@@ -206,6 +209,9 @@ digraph G {
   "concrete category" -> "Grp" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "Grp" -> "Ab" [label="subcategory", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "category" -> "Cat" [label="all small categories, with functors between them as morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "Ab" -> "preadditive category" [label="a category that is enriched over the\ncategory of abelian groups, Ab", href="https://en.wikipedia.org/wiki/Preadditive_category"]
+  "preadditive category" -> "ring" [label="can be viewed as\na preadditive category\nwith a single object", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Generalizations"]
 }
 ```
 
