@@ -144,13 +144,72 @@ digraph G {
 
   "Heyting algebra" -> "Boolean Algebra"
 
-  "topos" -> "category of Sets"
+  "topos" [href="https://en.wikipedia.org/wiki/Topos"] 
+
+  "Set" [href="https://en.wikipedia.org/wiki/Category_of_sets"]
+
+  "topos" -> "Set" [label="product in this category is given by the cartesian product of sets. coproduct is given by the disjoint union"]
+  "Set" -> "concrete category" [label="prototype of a concrete category", href="https://en.wikipedia.org/wiki/Category_of_sets"]
   "topos" -> "elementary topos"
-  "topos" -> "Grothendieck topos"
+  "elementary topos" -> "Grothendieck topos"
 
   "monoidal category" -> "cocartesian category"
+
+  "category" [href="https://en.wikipedia.org/wiki/Category_(mathematics)"]
+
+  "category" -> "Lawvere theory"
+
+  "category" -> "discrete category" [label="only morphisms are the identity morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "category" -> "category of adjunctions"
+  "category" -> "category of monad algebras\n(Eilenberg-Moore)"
+  "category" -> "category of free monad algebras\n(Kleisli category)"
+
+  "category" -> "allegory" [label="Abstracting from relations instead of functions", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "category" -> "small category" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "small category" -> "monoid" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "small category" -> "preordered set" [label="morphisms are arrows pointing from x to y when x ≤ y", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "category" -> "groupoid" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "groupoid" -> "group" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "groupoid" -> "group action" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "groupoid" -> "equivalence relation" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "category" -> "large category"
+  "large category" -> "Set" [label="class of all sets (as objects)\ntogether with all functions between them (as morphisms)", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "Set" -> "Rel" [label="all sets (as objects)\nwith binary relations between them (as morphisms)", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "category" -> "co-complete category"
+  "category" -> "complete category" [label="all small limits exist in it", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+
+  "complete category" -> "bicomplete category" [href="https://en.wikipedia.org/wiki/Complete_category"]
+  "co-complete category" -> "bicomplete category" [href="https://en.wikipedia.org/wiki/Complete_category"]
+  "bicomplete category" -> "Set" [href="https://en.wikipedia.org/wiki/Category_of_sets"]
+  "bicomplete category" -> "Top" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "Grp" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "Ab" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "Ring" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "K-Vect" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "R-Mod" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "CmptH" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "Cat" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "Whl" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "sSet" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+
+  "small category" -> "partially ordered set" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "small category" -> "equivalence relation" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "category" -> "concrete category"
+  "concrete category" -> "Ord" [label="class of all preordered sets\nwith monotonic functions as morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "concrete category" -> "Grp" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "Grp" -> "Ab" [label="subcategory", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "category" -> "Cat" [label="all small categories, with functors between them as morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
 }
 ```
+
+https://en.wikipedia.org/wiki/Category_(mathematics)#Examples
 
 <!-- TODO https://en.wikipedia.org/wiki/Cartesian_closed_category -->
    <!-- These categories are particularly important in mathematical logic and the theory of programming, in that their internal language is the simply typed lambda calculus -->
