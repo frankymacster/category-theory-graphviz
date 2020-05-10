@@ -30,10 +30,27 @@ digraph G {
   "semirng" -> "semiring" [label="* monoid", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "semiring" -> "ring" [label="+ commutative group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
-  "commutative group" -> "module" [label=""]
+  "commutative group" -> "module" [label="(M, +)", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "module" -> "vector space" [label=""]
 
-  "ring" -> "module"
+  "module" -> "finitely generated module"
+  "module" -> "cyclic module"
+  "module" -> "free module"
+  "module" -> "projective module"
+  "module" -> "injective module"
+  "module" -> "flat module"
+  "module" -> "torsionless module"
+  "module" -> "torsion-free module"
+  "module" -> "simple module"
+  "module" -> "semisimple module"
+  "module" -> "indecomposable module"
+  "module" -> "faithful module"
+  "module" -> "noetherian module"
+  "module" -> "artinian module"
+  "module" -> "graded module"
+  "module" -> "uniform module"
+
+  "ring" -> "module" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "field" -> "vector space"
 
   <!-- https://rip94550.wordpress.com/2012/07/02/introduction-to-rings/ -->
