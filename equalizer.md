@@ -1,10 +1,10 @@
 https://en.wikipedia.org/wiki/Equaliser_(mathematics)
 ```graphviz
 digraph G {
-  "E" -> "X" [label="eq"]
+  "Equalizer" -> "X" [label="eq"]
 
-  "O" -> "X" [label="m"]
-  "O" -> "E" [label="unique"]
+  "Equalizer'" -> "X" [label="eq`"]
+  "Equalizer'" -> "Equalizer" [label="unique"]
 
   "X" -> "Y" [label="f"]
   "X" -> "Y" [label="g"]
@@ -17,9 +17,9 @@ digraph G {
   "X" -> "Y" [label="f"]
   "X" -> "Y" [label="g"]
 
-  "Y" -> "Q" [label="q"]
-  "Y" -> "Q'" [label="q'"]
+  "Y" -> "Coequalizer" [label="coeq"]
+  "Y" -> "Coequalizer'" [label="coeq'"]
 
-  "Q" -> "Q'" [label="unique"]
+  "Coequalizer" -> "Coequalizer'" [label="unique"]
 }
 ```
