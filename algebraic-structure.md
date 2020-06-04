@@ -62,6 +62,82 @@ digraph G {
   "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime ideals are maximal in a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "ideal" -> "Jacobson radical" [label="consisting of those elements in R that annihilate all simple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
 
+  "scheme" -> "variety"
+  "variety" -> "abelian variety" [label="complete group variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "abelian variety" -> "C^n/Z^2n" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "abelian variety" -> "elliptic curve E over a finite field Fq [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "abelian scheme" -> "abelian variety" [label="(flat) family of abelian varieties", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "affine variety" [label="in affine space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "commutative ring" -> "affine scheme" [label="is the prime spectrum of some commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "scheme" -> "affine scheme" [label="is the prime spectrum of some commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "algebraic variety"
+  "algebraic variety" -> "variety" [label="synonym with \"algebraic variety\"", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic group" [href="https://en.wikipedia.org/wiki/Algebraic_group"]
+  "algebraic variety" -> "algebraic group" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "separated scheme" [href="https://planetmath.org/SeparatedScheme"]
+  "scheme" -> "separated scheme"
+  "separated scheme" -> "separated scheme of finite type"
+  "separated scheme of finite type" -> "algebraic scheme" [label="over a field", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic scheme" -> "reduced irreducible algebraic scheme"
+  "reduced irreducible algebraic scheme" -> "algebraic variety" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "separated scheme of finite type" -> "reduced separated scheme of finite type"
+  "reduced separated scheme of finite type" -> "algebraic set" [label="over Spec(k)", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "irreducible algebraic set" -> "algebraic variety" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "scheme" -> "scheme / étale equivalence relation"
+  "étale equivalence relation" -> "scheme / étale equivalence relation"
+  "quotient scheme" -> "scheme / étale equivalence relation"
+  "étale equivalence relation" [href="https://en.wikipedia.org/wiki/%C3%89tale_equivalence_relation"]
+  "scheme / étale equivalence relation" -> "algebraic space"
+  "separated scheme of finite type" -> "integral separated scheme of finite type"
+  "integral separated scheme of finite type" -> "algebraic variety" [label="over Spec(k)", href="https://en.wikipedia.org/wiki/%C3%89tale_equivalence_relation"]
+  "algebraic variety" -> "algebraic curve" [label="dimension one", href="https://en.wikipedia.org/wiki/Algebraic_curve"]
+  "algebraic curve" -> "projective curve"
+  "projective curve" -> "smooth projective curve"
+  "smooth projective curve" -> "elliptic curve" [label="genus one", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "smooth projective variety" -> "Fano variety" [label="X whose anticanonical sheaf omega _{X}^{-1} is ample", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "flag variety" [label="parametrizes a flag of vector spaces", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]  
+  "variety" -> "normal variety"
+  "toric variety" [href="https://en.wikipedia.org/wiki/Toric_variety"]
+  "normal variety" -> "toric variety" [label="with the action of a torus such that the torus has an open dense orbit", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "symmetric variety" [href="https://en.wikipedia.org/wiki/Symmetric_space"]
+  "variety" -> "symmetric variety" [label="analog of a symmetric space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "surface" [label="algebraic variety of dimension two", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "normal G-variety" -> "normal variety"
+  "normal variety" -> "spherical variety" [label="(G connected reductive) with an open dense orbit by a Borel subgroup of G", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "smooth scheme" [href="https://en.wikipedia.org/wiki/Smooth_scheme"]
+  "smooth scheme" -> "smooth scheme over a field k" [label="X that is geometrically smooth: X xk k^overline is smooth"]
+  "smooth scheme" -> "smooth scheme over a perfect field k" [label="X that is of locally of finite type and regular over k", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "secant variety" [href="https://en.wikipedia.org/wiki/Secant_variety"]
+  "variety" -> "secant variety" [label="to a projective variety V subvariety of P^r is the closure of the union of all secant lines to V in P^r", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Schubert variety" [href="https://en.wikipedia.org/wiki/Schubert_variety"]
+  "variety" -> "Schubert variety" [label="closure of a Schubert cell", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "locally ringed space" -> "scheme" [label="locally a prime spectrum of a commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "regular scheme" [href="https://en.wikipedia.org/wiki/Regular_scheme"]
+  "reduced ring" [href="https://en.wikipedia.org/wiki/Reduced_ring"]
+  "reduced ring" -> "local ring" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "regular local ring" [href="https://en.wikipedia.org/wiki/Regular_local_ring"]
+  "local ring" -> "regular local ring"
+  "scheme" -> "regular scheme" [label="scheme where the local rings are regular local rings", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
+  "rational curve" [href="https://en.wikipedia.org/wiki/Algebraic_curve#Rational_curves"]
+  "projective variety" -> "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
+  "normal scheme" [href="https://en.wikipedia.org/wiki/Normal_scheme"]
+  "group scheme" [href="https://en.wikipedia.org/wiki/Group_scheme"]
+  "scheme" -> "group scheme" [label="whose sets of points have the structures of a group", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  algebraic group -> "group variety" [label="smooth", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic curve" -> "hyperelliptic curve" [label="there is a linear system of dimension 1 and degree 2", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "Jacobian variety" [label="of a projective curve X is the degree zero part of the Picard variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "scheme" -> "integral scheme" -> "normal scheme" [label="local rings are integrally closed domains", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "projective variety" [href="https://en.wikipedia.org/wiki/Projective_variety"]
+  "variety" -> "projective variety" [label="closed subvariety of a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "projective scheme" [href="https://en.wikipedia.org/wiki/Projective_scheme"]
+  "scheme" -> "projective scheme" [label="over a scheme S is an S-scheme that factors through some projective space P^N_S -> S as a closed subscheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "quasi-projective variety" [href="https://en.wikipedia.org/wiki/Quasi-projective_variety"]
+  "variety" -> "quasi-projective variety" [label="locally closed subvariety of a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "quot scheme" [href="https://en.wikipedia.org/wiki/Quot_scheme"]
+  "scheme" -> "quot scheme" [label="parametrizes quotients of locally free sheaves on a projective scheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "rational variety" [label="birational to a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
   "ring" -> "module" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "field" -> "vector space"
 
