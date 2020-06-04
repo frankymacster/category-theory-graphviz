@@ -49,6 +49,18 @@ digraph G {
   "module" -> "artinian module"
   "module" -> "graded module"
   "module" -> "uniform module"
+  "module" -> "ideal"
+  "ideal" -> "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
+  "ideal" -> "maximal ideal" [label="I is a maximal ideal of a ring R if there are no other ideals contained between I and R", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "ideal" -> "principal ideal" [href="https://en.wikipedia.org/wiki/Principal_ideal"]
+  "ideal" -> "minimal ideal" [href="https://en.wikipedia.org/wiki/Minimal_ideal"]
+  "quotient ring" -> "ring / maximal ideal"
+  "maximal ideal" -> "ring / maximal ideal"
+  "ring / maximal ideal" -> "simple ring" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "principal ideal domain" -> "prime ideal x principal ideal domain"
+  "prime ideal" -> "prime ideal x principal ideal domain"
+  "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime ideals are maximal in a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "ideal" -> "Jacobson radical" [label="consisting of those elements in R that annihilate all simple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
 
   "ring" -> "module" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "field" -> "vector space"
