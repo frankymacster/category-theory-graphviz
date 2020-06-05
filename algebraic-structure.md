@@ -2,17 +2,33 @@ https://en.wikipedia.org/wiki/Magma_(algebra)
 
 ```graphviz
 digraph G {
+  "magma" [href="https://en.wikipedia.org/wiki/Magma_(algebra)"]
+  "free magma" [href="https://en.wikipedia.org/wiki/Magma_(algebra)#Free_magma"]
+  "magma" -> "free magma"
+  "semigroup" [href="https://en.wikipedia.org/wiki/Semigroup"]
   "magma" -> "semigroup" [label="associativity"]
+  "quasigroup" [href="https://en.wikipedia.org/wiki/Quasigroup"]
   "magma" -> "quasigroup" [label="divisibility"]
+  "loop" [href="https://en.wikipedia.org/wiki/Quasigroup#Loops"]
   "quasigroup" -> "loop" [label="identity"]
+  "monoid" [href="https://en.wikipedia.org/wiki/Monoid"]
   "semigroup" -> "monoid" [label="identity"]
+  "semilattice" [href="https://en.wikipedia.org/wiki/Semilattice"]
+  "set" [href="https://en.wikipedia.org/wiki/Set_(mathematics)"]
+  "set" -> "partially ordered set" [label="set together with a binary relation indicating that, for certain pairs of elements in the set, one of the elements precedes the other in the ordering", href="https://en.wikipedia.org/wiki/Partially_ordered_set"]
+  "partially ordered set" [href="https://en.wikipedia.org/wiki/Partially_ordered_set"]
+  "partially ordered set" -> "semilattice" [label="has a join (a least upper bound) for any nonempty finite subset", href="https://en.wikipedia.org/wiki/Semilattice"]
+  "partially ordered set" -> "totally ordered set" [href="https://en.wikipedia.org/wiki/Partially_ordered_set"]
   "semigroup" -> "semilattice" [label="commutativity, idempotence"]
   "semigroup" -> "inverse semigroup" [label="invertibility"]
+  "group" [href="https://en.wikipedia.org/wiki/Group_(mathematics)"]
   "loop" -> "group" [label="associativity"]
   "monoid" -> "group" [label="invertibility"]
   "monoid" -> "(N0,+)" [href="https://en.wikipedia.org/wiki/Free_monoid#Examples"]
   "monoid" -> "Kleene star" [href="https://en.wikipedia.org/wiki/Free_monoid#Examples"]
   "monoid" -> "commutative monoid" [label="commutativity"]
+  "free monoid" [href="https://en.wikipedia.org/wiki/Free_monoid"]
+  "monoid" -> "free monoid"
 
   "group" -> "commutative group" [label="commutativity"]
   "group" -> "free group" [label="free"]
@@ -31,26 +47,46 @@ digraph G {
   "semiring" -> "ring" [label="+ commutative group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
   "commutative group" -> "module" [label="(M, +)", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
+  "module" [href="https://en.wikipedia.org/wiki/Module_(mathematics)"]
   "module" -> "vector space" [label=""]
 
-  "module" -> "finitely generated module"
-  "module" -> "cyclic module"
-  "module" -> "free module"
-  "module" -> "projective module"
-  "module" -> "injective module"
-  "module" -> "flat module"
-  "module" -> "torsionless module"
-  "module" -> "torsion-free module"
-  "module" -> "simple module"
-  "module" -> "semisimple module"
-  "module" -> "indecomposable module"
-  "module" -> "faithful module"
-  "module" -> "noetherian module"
-  "module" -> "artinian module"
-  "module" -> "graded module"
-  "module" -> "uniform module"
+  "finitely generated module" [href="https://en.wikipedia.org/wiki/Finitely_generated_module"]
+  "module" -> "finitely generated module" [href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "cyclic module" [href="https://en.wikipedia.org/wiki/Cyclic_module"]
+  "module" -> "cyclic module" [href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "free module" [href="https://en.wikipedia.org/wiki/Free_module"]
+  "projective module" -> "free module" [href="https://en.wikipedia.org/wiki/Projective_module"]
+  "projective module" [href="https://en.wikipedia.org/wiki/Projective_module"]
+  "module" -> "projective module" [label="edirect summands of free modules and share many of their desirable properties", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "injective module" [href="https://en.wikipedia.org/wiki/Injective_module"]
+  "module" -> "injective module" [label="defined dually to projective modules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "flat module" [href="https://en.wikipedia.org/wiki/Flat_module"]
+  "module" -> "flat module" [label="if taking the tensor product of it with any exact sequence of R-modules preserves exactness", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "torsionless module" [href="https://en.wikipedia.org/wiki/Torsionless_module"]
+  "module" -> "torsionless module" [label="it embeds into its algebraic dual", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "torsion-free module" [href="https://en.wikipedia.org/wiki/Torsion-free_module"]
+  "module" -> "torsion-free module" [label="rm = 0 implies r = 0 or m = 0", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "simple module" [href="https://en.wikipedia.org/wiki/Simple_module"]
+  "module" -> "simple module" [label="is not {0} and whose only submodules are {0} and S", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "semisimple module" [href="https://en.wikipedia.org/wiki/Semisimple_module"]
+  "module" -> "semisimple module" [label="direct sum (finite or not) of simple modules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "indecomposable module" [href="https://en.wikipedia.org/wiki/Indecomposable_module"]
+  "module" -> "indecomposable module" [label="non-zero module that cannot be written as a direct sum of two non-zero submodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "faithful module" [href="https://en.wikipedia.org/wiki/Faithful_module"]
+  "module" -> "faithful module" [label="action of each r ≠ 0 in R on M is nontrivial\n<-> annihilator of M is the zero ideal", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "noetherian module" [href="https://en.wikipedia.org/wiki/Noetherian_module"]
+  "module" -> "noetherian module" [label="satisfies the ascending chain condition on submodules\n<-> every submodule is finitely generated", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "artinian module" [href="https://en.wikipedia.org/wiki/Artinian_module"]
+  "module" -> "artinian module" [label="satisfies the descending chain condition on submodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "graded module" [href="https://en.wikipedia.org/wiki/Graded_module"]
+  "module" -> "graded module" [label="with a decomposition as a direct sum M = ⨁x Mx over a graded ring R = ⨁x Rx\nsuch that RxMy ⊂ Mx+y for all x and y", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "uniform module" [href="https://en.wikipedia.org/wiki/Uniform_module"]
+  "module" -> "uniform module" [label="all pairs of nonzero submodules have nonzero intersection", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "module" -> "ideal"
+  "ideal" [href="https://en.wikipedia.org/wiki/Ideal_(ring_theory)"]
+  "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
   "ideal" -> "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
+  "maximal ideal" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "ideal" -> "maximal ideal" [label="I is a maximal ideal of a ring R if there are no other ideals contained between I and R", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "ideal" -> "principal ideal" [href="https://en.wikipedia.org/wiki/Principal_ideal"]
   "ideal" -> "minimal ideal" [href="https://en.wikipedia.org/wiki/Minimal_ideal"]
@@ -62,7 +98,9 @@ digraph G {
   "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime ideals are maximal in a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "ideal" -> "Jacobson radical" [label="consisting of those elements in R that annihilate all simple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
 
+  "scheme" [href="https://en.wikipedia.org/wiki/Scheme"]
   "scheme" -> "variety"
+  "variety" [href="https://en.wikipedia.org/wiki/Algebraic_variety"]
   "variety" -> "abelian variety" [label="complete group variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "abelian variety" -> "C^n/Z^2n" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "abelian variety" -> "elliptic curve E over a finite field Fq [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
