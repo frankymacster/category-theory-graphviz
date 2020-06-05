@@ -2,6 +2,8 @@ https://en.wikipedia.org/wiki/Magma_(algebra)
 
 ```graphviz
 digraph G {
+  "set" -> "magma"
+
   "magma" [href="https://en.wikipedia.org/wiki/Magma_(algebra)"]
   "free magma" [href="https://en.wikipedia.org/wiki/Magma_(algebra)#Free_magma"]
   "magma" -> "free magma"
@@ -50,6 +52,51 @@ digraph G {
   "module" [href="https://en.wikipedia.org/wiki/Module_(mathematics)"]
   "module" -> "vector space" [label=""]
 
+  "topological space" [href="https://en.wikipedia.org/wiki/Topological_space"]
+  "Kolmogorov space" [href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
+  "T1 space" [href="https://en.wikipedia.org/wiki/T1_space"]
+  "Hausdorff space" [href="https://en.wikipedia.org/wiki/Hausdorff_space"]
+  "Urysohn space" [href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
+  "completely Hausdorff space" [href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
+  "regular space" [href="https://en.wikipedia.org/wiki/Regular_space"]
+  "Tychonoff space" [href="https://en.wikipedia.org/wiki/Tychonoff_space"]
+  "normal space" [href="https://en.wikipedia.org/wiki/Normal_space"]
+  "completely normal Hausdorff space" [href="https://en.wikipedia.org/wiki/Normal_space"]
+  "perfectly normal Hausdorff space" [href="https://en.wikipedia.org/wiki/Normal_space"]
+  "metric space" [href="https://en.wikipedia.org/wiki/Metric_space"]
+  "normed vector space" [href="https://en.wikipedia.org/wiki/Normed_vector_space"]
+  "vector space" [href="https://en.wikipedia.org/wiki/Vector_space"]
+  "Euclidean space" [href="https://en.wikipedia.org/wiki/Euclidean_space"]
+  "affine space" [href="https://en.wikipedia.org/wiki/Affine_space"]
+  "inner product space" [href="https://en.wikipedia.org/wiki/Inner_product_space"]
+  "Banach space" [href="https://en.wikipedia.org/wiki/Banach_space"]
+  "complete metric space" [href="https://en.wikipedia.org/wiki/Complete_metric_space"]
+  "Sobolev space" [href="https://en.wikipedia.org/wiki/Sobolev_space"]
+
+  "topological space" -> "Kolmogorov space" [label="for every pair of distinct points of X,\nat least one of them has a neighborhood not containing the other", href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
+  "Kolmogorov space" -> "T1 space" [label="for every pair of distinct points,\neach has a neighborhood not containing the other point", href="https://en.wikipedia.org/wiki/T1_space"]
+  "Kolmogorov space" -> "Hausdorff space" [label="for any two distinct points\nthere exist neighbourhoods of each\nwhich are disjoint from each other", href="https://en.wikipedia.org/wiki/Hausdorff_space"]
+  "Hausdorff space" -> "Urysohn space" [label="any two distinct points can be separated by closed neighborhoods", href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
+  "Urysohn space" -> "completely Hausdorff space" [label="any two distinct points can be separated by a continuous function", href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
+  "completely Hausdorff space" -> "regular space" [label="every closed subset C of X\nand a point p not contained in C\nadmit non-overlapping open neighborhoods", href="https://en.wikipedia.org/wiki/Regular_space"]
+  "regular space" -> "Tychonoff space" [label="can be separated from closed sets\nvia (bounded) continuous real-valued functions", href="https://en.wikipedia.org/wiki/Tychonoff_space#Definitions"]
+  "Tychonoff space" -> "normal space" [label="every two disjoint closed sets of X\nhave disjoint open neighborhoods", href="https://en.wikipedia.org/wiki/Normal_space"]
+  "normal space" -> "completely normal Hausdorff space" [label="completely normal T1 space", href="https://en.wikipedia.org/wiki/Normal_space"]
+  "completely normal Hausdorff space" -> "perfectly normal Hausdorff space" [label="every two disjoint closed sets E and F\ncan be precisely separated by a continuous function f from X to the real line R", href="https://en.wikipedia.org/wiki/Normal_space"]
+
+  "topological space" -> "metric space"
+  "metric space" -> "complete metric space" [label="every Cauchy sequence in M converges in M", href="https://en.wikipedia.org/wiki/Complete_metric_space"]
+  "complete metric space" -> "Hilbert space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
+  "metric space" -> "normed vector space"
+  "vector space" -> "normed vector space"
+  "normed vector space" -> "inner product space"
+  "complete metric space" -> "Banach space" [label="complete in the metric induced by the norm", href="https://en.wikipedia.org/wiki/Banach_algebra"]
+  "normed vector space" -> "Banach space" [label="complete in the metric induced by the norm", href="https://en.wikipedia.org/wiki/Banach_algebra"]
+  "Banach space" -> "Sobolev space" [href="https://en.wikipedia.org/wiki/Sobolev_space"]
+  "vector space" -> "affine space"
+  "affine space" -> "Euclidean space"
+  "inner product space" -> "Euclidean space"
+
   "finitely generated module" [href="https://en.wikipedia.org/wiki/Finitely_generated_module"]
   "module" -> "finitely generated module" [href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "cyclic module" [href="https://en.wikipedia.org/wiki/Cyclic_module"]
@@ -88,8 +135,10 @@ digraph G {
   "ideal" -> "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
   "maximal ideal" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "ideal" -> "maximal ideal" [label="I is a maximal ideal of a ring R if there are no other ideals contained between I and R", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
-  "ideal" -> "principal ideal" [href="https://en.wikipedia.org/wiki/Principal_ideal"]
-  "ideal" -> "minimal ideal" [href="https://en.wikipedia.org/wiki/Minimal_ideal"]
+  "principal ideal" [href="https://en.wikipedia.org/wiki/Principal_ideal"]
+  "ideal" -> "principal ideal"
+  "minimal ideal" [href="https://en.wikipedia.org/wiki/Minimal_ideal"]
+  "ideal" -> "minimal ideal"
   "quotient ring" -> "ring / maximal ideal"
   "maximal ideal" -> "ring / maximal ideal"
   "ring / maximal ideal" -> "simple ring" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
@@ -149,6 +198,12 @@ digraph G {
   "variety" -> "secant variety" [label="to a projective variety V subvariety of P^r is the closure of the union of all secant lines to V in P^r", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "Schubert variety" [href="https://en.wikipedia.org/wiki/Schubert_variety"]
   "variety" -> "Schubert variety" [label="closure of a Schubert cell", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
+  "locally ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
+  "commutative ring" -> "sheaf of rings"
+  "sheaf of rings" -> "ringed space" [label="topological space X together with a sheaf of rings OX on X", href="https://en.wikipedia.org/wiki/Ringed_space"]
+  "topological space" -> "ringed space"
+  "ringed space" -> "locally ringed space" [label="analogy of a germ of a function is valid", href="https://en.wikipedia.org/wiki/Ringed_space"]
   "locally ringed space" -> "scheme" [label="locally a prime spectrum of a commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "regular scheme" [href="https://en.wikipedia.org/wiki/Regular_scheme"]
   "reduced ring" [href="https://en.wikipedia.org/wiki/Reduced_ring"]
@@ -306,6 +361,7 @@ digraph G {
   "integral domain" -> "field" [label="* commutative group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "domain" -> "finite field" [label="finite"]
   "field" -> "finite field" [label="finite", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+
   "algebra over a ring" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
   "algebra over a field" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field"]
   "algebra over a field" -> "associative algebra"
@@ -321,6 +377,35 @@ digraph G {
   "(Z/nZ)-algebra" -> "ring of characteristic n" [href="https://en.wikipedia.org/wiki/Associative_algebra#Algebra"]
   "associative algebra" -> "commutative R-algebra"
   "commutative R-algebra" -> "polynomial ring" [href="https://en.wikipedia.org/wiki/Associative_algebra#Algebra"]
+  "Banach algebra" [href="https://en.wikipedia.org/wiki/Banach_algebra"]
+  "associative algebra" -> "Banach algebra" [label="over the real or complex numbers (or over a non-Archimedean complete normed field) that at the same time is also a Banach space", href="https://en.wikipedia.org/wiki/Banach_algebra"]
+  "C*-algebra" [href="https://en.wikipedia.org/wiki/C*-algebra"]
+  "Banach algebra" -> "C*-algebra" [label="with an involution satisfying the properties of the adjoint", href="https://en.wikipedia.org/wiki/C*-algebra"]
+  "Banach algebra" -> "real numbers" [label="norm given by the absolute value", href="https://en.wikipedia.org/wiki/Banach_algebra#Examples"]
+  "Banach algebra" -> "complex numbers" [label="norm given by the absolute value", href="https://en.wikipedia.org/wiki/Banach_algebra#Examples"]
+
+  "octonion" [href="https://en.wikipedia.org/wiki/Octonion"]
+  "quaternion" [href="https://en.wikipedia.org/wiki/Quaternion"]
+  "complex numbers" [href="https://en.wikipedia.org/wiki/Complex_number"]
+  "real numbers" [href="https://en.wikipedia.org/wiki/Real_number"]
+  "rational numbers" [href="https://en.wikipedia.org/wiki/Rational_number"]
+  "integers" [href="https://en.wikipedia.org/wiki/Integer"]
+  "prime numbers" [href="https://en.wikipedia.org/wiki/Prime_number"]
+  "natural numbers" [href="https://en.wikipedia.org/wiki/Natural_number"]
+  "octonion" -> "quaternion"
+  "quaternion" -> "complex numbers"
+  "complex numbers" -> "real numbers"
+  "real numbers" -> "rational numbers"
+  "rational numbers" -> "integers"
+  "integers" -> "natural numbers"
+  "natural numbers" -> "prime numbers"
+
+  "topological space" [href="https://en.wikipedia.org/wiki/Topological_space"]
+  "set" -> "topological space" [label="of points,\nalong with a set of neighbourhoods for each point,\nsatisfying a set of axioms relating points and neighbourhoods", href="https://en.wikipedia.org/wiki/Topological_space"]
+
+  <!-- tool for systematically tracking locally defined data attached to the open sets of a topological space -->
+  "sheaf" [href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)"]
+  "sheaf" -> "sheaf of rings"
 }
 ```
 
