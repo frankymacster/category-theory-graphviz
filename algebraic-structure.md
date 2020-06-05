@@ -34,6 +34,36 @@ digraph G {
 
   "group" -> "commutative group" [label="commutativity"]
   "group" -> "free group" [label="free"]
+  "finite group" [href="https://en.wikipedia.org/wiki/Finite_group"]
+  "group" -> "finite group"
+  "dihedral group" [href="https://en.wikipedia.org/wiki/Dihedral_group"]
+  "finite group" -> "dihedral group"
+  "symmetry group" -> "dihedral group"
+  "symmetry group" [href="https://en.wikipedia.org/wiki/Symmetry_group"]
+  "group" -> "symmetry group"
+  "Galois group" [href="https://en.wikipedia.org/wiki/Galois_group"]
+  "group" -> "Galois group"
+  "topological group" [href="https://en.wikipedia.org/wiki/Topological_group"]
+  "Lie group" [href="https://en.wikipedia.org/wiki/Lie_group"]
+  "group" -> "topological group" [label="with a topology on G such that\nboth the group's binary operation\nand the function mapping group elements to their respective inverses\nare continuous functions with respect to the topology", href="https://en.wikipedia.org/wiki/Topological_group"]
+  "topological group" -> "Lie group" [label="elements are organized continuously and smoothly", href="https://en.wikipedia.org/wiki/Lie_group"]
+  "matrix group" [href="https://en.wikipedia.org/wiki/Matrix_group"]
+  "group" -> "matrix group"
+  "matrix group" -> "general linear group" [label="all invertible n-by-n matrices with real entries", href="https://en.wikipedia.org/wiki/Group_(mathematics)#Examples_and_applications"]
+  "orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+  "general linear group" [href="https://en.wikipedia.org/wiki/General_linear_group"]
+  "general linear group" -> "orthogonal group" [label="endomorphisms that preserve the Euclidean norm", href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+  "special orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+  "orthogonal group" -> "special orthogonal group"
+  "special linear group" [href="https://en.wikipedia.org/wiki/Special_linear_group"]
+  "general linear group" -> "special linear group"
+  "unitary group" [href="https://en.wikipedia.org/wiki/Unitary_group"]
+  "general linear group" -> "unitary group" [label="n × n unitary matrices", href="https://en.wikipedia.org/wiki/Unitary_group"]
+  "special unitary group" [href="https://en.wikipedia.org/wiki/Special_unitary_group"]
+  "unitary group" -> "special unitary group" [label="Lie group of n × n unitary matrices with determinant 1", href="https://en.wikipedia.org/wiki/Special_unitary_group"]
+  "Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
+  "Euclidean group" -> "translational group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
+  "Euclidean group" -> "orthogonal group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
 
   "ringoid" [href="https://mathworld.wolfram.com/Ringoid.html"]
   "ringoid" -> "crooked semirng" [label="+ monoid\n* semigroup\n0*x = x*0 = 0", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
@@ -72,6 +102,7 @@ digraph G {
   "Banach space" [href="https://en.wikipedia.org/wiki/Banach_space"]
   "complete metric space" [href="https://en.wikipedia.org/wiki/Complete_metric_space"]
   "Sobolev space" [href="https://en.wikipedia.org/wiki/Sobolev_space"]
+  "Hardy space" [href="https://en.wikipedia.org/wiki/Hardy_space"]
 
   "topological space" -> "Kolmogorov space" [label="for every pair of distinct points of X,\nat least one of them has a neighborhood not containing the other", href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
   "Kolmogorov space" -> "T1 space" [label="for every pair of distinct points,\neach has a neighborhood not containing the other point", href="https://en.wikipedia.org/wiki/T1_space"]
@@ -86,13 +117,14 @@ digraph G {
 
   "topological space" -> "metric space"
   "metric space" -> "complete metric space" [label="every Cauchy sequence in M converges in M", href="https://en.wikipedia.org/wiki/Complete_metric_space"]
-  "complete metric space" -> "Hilbert space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
+  "Banach space" -> "Hilbert space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
   "metric space" -> "normed vector space"
   "vector space" -> "normed vector space"
   "normed vector space" -> "inner product space"
   "complete metric space" -> "Banach space" [label="complete in the metric induced by the norm", href="https://en.wikipedia.org/wiki/Banach_algebra"]
   "normed vector space" -> "Banach space" [label="complete in the metric induced by the norm", href="https://en.wikipedia.org/wiki/Banach_algebra"]
-  "Banach space" -> "Sobolev space" [href="https://en.wikipedia.org/wiki/Sobolev_space"]
+  "Hilbert space" -> "Sobolev space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
+  "Hilbert space" -> "Hardy space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
   "vector space" -> "affine space"
   "affine space" -> "Euclidean space"
   "inner product space" -> "Euclidean space"
@@ -158,6 +190,8 @@ digraph G {
   "commutative ring" -> "affine scheme" [label="is the prime spectrum of some commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "scheme" -> "affine scheme" [label="is the prime spectrum of some commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "algebraic variety"
+  "affine variety" -> "coordinate ring"
+  "noetherian ring" -> "coordinate ring" [label="Hilbert basis theorem", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
   "algebraic variety" -> "variety" [label="synonym with \"algebraic variety\"", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "algebraic group" [href="https://en.wikipedia.org/wiki/Algebraic_group"]
   "algebraic variety" -> "algebraic group" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
@@ -231,6 +265,8 @@ digraph G {
   "scheme" -> "quot scheme" [label="parametrizes quotients of locally free sheaves on a projective scheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "rational variety" [label="birational to a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 
+  "differential ring" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
+  "ring" -> "differential ring"
   "ring" -> "module" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "field" -> "vector space"
 
@@ -240,10 +276,17 @@ digraph G {
   "ring with identity" -> "division ring" [label="* group", href="http://abstract.ups.edu/aata/section-rings-definitions.html"]
 
   "division ring" -> "field" [label="* commutative", href="http://abstract.ups.edu/aata/section-rings-definitions.html"]
+  "commutative ring" [href="https://en.wikipedia.org/wiki/Commutative_ring"]
+  "commutative ring" -> "integers" [href="https://en.wikipedia.org/wiki/Commutative_ring#First_examples"]
   "ring" -> "commutative ring" [label="* commutative"]
   "endomorphism ring" [href="https://en.wikipedia.org/wiki/Endomorphism_ring"]
   "ring" -> "endomorphism ring" [label="ring formed by the endomorphisms of an object with additive structure", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "field" [href="https://en.wikipedia.org/wiki/Field_(mathematics)"]
+  "differential field" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
+  "field" -> "differential field"
+  "field" -> "complex numbers"
+  "field" -> "real numbers"
+  "field" -> "rational numbers"
   "filtered ring" [href="https://en.wikipedia.org/wiki/Filtered_ring"]
   "ring" -> "filtered ring" [label="with a filtration", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "finitely generated ring" [href="https://en.wikipedia.org/wiki/Finitely_generated_ring"]
@@ -276,6 +319,7 @@ digraph G {
   "ring" -> "nonzero ring"
   "prime ring" [href="https://en.wikipedia.org/wiki/Prime_ring"]
   "nonzero ring" -> "prime ring" [label="any two elements a and b of R with aRb = 0, we have either a = 0 or b = 0", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "simple algebra" -> "simple ring" [label="simple algebra over its center", href="https://en.wikipedia.org/wiki/Simple_ring"]
   "prime ring" -> "simple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "prime ring" -> "domain" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "ring" -> "(left) primitive ring" [label="has a faithful simple left R-module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
@@ -327,7 +371,11 @@ digraph G {
   "domain" -> "integral domain" [label="* commutative", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "ring with identity" -> "integral domain"
   "commutative ring" -> "integral domain" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
-  
+  "Dedekind domain" [href="https://en.wikipedia.org/wiki/Dedekind_domain"]
+  "noetherian ring" -> "Dedekind domain" [label="every ideal is generated by at most two elements", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
+  "integral domain" -> "Dedekind domain" [label="every nonzero proper ideal\nfactors into a product of prime ideals", href="https://en.wikipedia.org/wiki/Dedekind_domain"]
+  "Dedekind domain" -> "integers" [href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
+
   "boolean ring" [href="https://en.wikipedia.org/wiki/Boolean_ring"]
   "commutative ring" -> "boolean ring" [label="* idempotent"]
   "commutative ring" -> "field" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
@@ -337,7 +385,7 @@ digraph G {
   <!-- https://rip94550.wordpress.com/2012/07/16/integral-domains-and-the-failure-of-unique-factorization/ -->
   "integral domain" -> "unique factorization domain" [label="every non-zero element x of R\ncan be written as a product (an empty product if x is a unit) of\nirreducible elements pi of R\nand a unit u", href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Definition"]
 
-  "integral domain" -> "principal ideal domain" [label="every ideal is principal,\ni.e., can be generated by a single element", href="https://en.wikipedia.org/wiki/Principal_ideal_domain"]
+  "Dedekind domain" -> "principal ideal domain" [label="every ideal is principal,\ni.e., can be generated by a single element", href="https://en.wikipedia.org/wiki/Dedekind_domain"]
   "integral domain" -> "integrally closed domain" [label="integral closure in its field of fractions\nis A itself", href="https://en.wikipedia.org/wiki/Integrally_closed_domain"]
 
   "integral domain" -> "GCD domain" [label="two elements have a greatest common divisor (GCD);\ni.e., there is a unique minimal principal ideal\ncontaining the ideal generated by two given elements", href="https://en.wikipedia.org/wiki/GCD_domain"]
@@ -347,7 +395,6 @@ digraph G {
   "unique factorization domain" -> "principal ideal domain"
   "ring" -> "noetherian ring" [label="satisfies the ascending chain condition\non left and right ideals", href="https://en.wikipedia.org/wiki/Noetherian_ring"]
   "noetherian ring" [href="https://en.wikipedia.org/wiki/Noetherian_ring"]
-  "noetherian ring" -> "principal ideal domain"
   "noetherian ring" -> "artinian ring" [label="ring satisfying the descending chain condition for left ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   <!-- "ring" -> "uniserial ring" [label="", href=""] -->
   "artinian ring" [href="https://en.wikipedia.org/wiki/Artinian_ring"]
@@ -383,6 +430,12 @@ digraph G {
   "Banach algebra" -> "C*-algebra" [label="with an involution satisfying the properties of the adjoint", href="https://en.wikipedia.org/wiki/C*-algebra"]
   "Banach algebra" -> "real numbers" [label="norm given by the absolute value", href="https://en.wikipedia.org/wiki/Banach_algebra#Examples"]
   "Banach algebra" -> "complex numbers" [label="norm given by the absolute value", href="https://en.wikipedia.org/wiki/Banach_algebra#Examples"]
+  "differential algebra" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
+  "associative algebra" -> "differential algebra"
+  "simple algebra" [href="https://en.wikipedia.org/wiki/Simple_ring#Simple_algebra"]
+  "associative algebra" -> "simple algebra" [label="contains no non-trivial two-sided ideals\nand the multiplication operation is not zero", href="https://en.wikipedia.org/wiki/Simple_ring#Simple_algebra"]
+  "division algebra" [href="https://en.wikipedia.org/wiki/Division_algebra"]
+  "simple algebra" -> "division algebra" [label="division, except by zero, is always possible", href="https://en.wikipedia.org/wiki/Division_algebra"]
 
   "octonion" [href="https://en.wikipedia.org/wiki/Octonion"]
   "quaternion" [href="https://en.wikipedia.org/wiki/Quaternion"]
@@ -406,6 +459,10 @@ digraph G {
   <!-- tool for systematically tracking locally defined data attached to the open sets of a topological space -->
   "sheaf" [href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)"]
   "sheaf" -> "sheaf of rings"
+  "sheaf" -> "quasi-coherent sheaf"
+  "reflexive sheaf" [href="https://en.wikipedia.org/wiki/Reflexive_sheaf"]
+  "quasi-coherent sheaf" -> "coherent sheaf" [label="finitely generated as OX-module", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "coherent sheaf" -> "reflexive sheaf" [label="canonical map to the second dual is an isomorphism", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 }
 ```
 
