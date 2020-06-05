@@ -306,6 +306,21 @@ digraph G {
   "integral domain" -> "field" [label="* commutative group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "domain" -> "finite field" [label="finite"]
   "field" -> "finite field" [label="finite", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "algebra over a ring" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
+  "algebra over a field" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field"]
+  "algebra over a field" -> "associative algebra"
+  "associative algebra" -> "algebra over a field"
+  "algebra over a ring" -> "algebra over a field" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
+  "associative algebra" [href="https://en.wikipedia.org/wiki/Associative_algebra"]
+  "associative algebra" -> "commutative algebra" [label="* commutative", href="https://en.wikipedia.org/wiki/Associative_algebra"]
+  "associative algebra" -> "unital associative algebras" [label="have a multiplicative identity", href="https://en.wikipedia.org/wiki/Associative_algebra"]
+  "associative algebra" -> "Z-algebra"
+  "Z-algebra" -> "ring" [href="https://en.wikipedia.org/wiki/Associative_algebra"]
+  "ring" -> "ring of characteristic n"
+  "associative algebra" -> "(Z/nZ)-algebra"
+  "(Z/nZ)-algebra" -> "ring of characteristic n" [href="https://en.wikipedia.org/wiki/Associative_algebra#Algebra"]
+  "associative algebra" -> "commutative R-algebra"
+  "commutative R-algebra" -> "polynomial ring" [href="https://en.wikipedia.org/wiki/Associative_algebra#Algebra"]
 }
 ```
 
