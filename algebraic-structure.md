@@ -1,5 +1,10 @@
 https://en.wikipedia.org/wiki/Magma_(algebra)
 
+// more general to more specific following the laws the categories abide
+// TODO
+  // how to describe a Category being composed of a category
+  // how to describe a Category being an instance of other categories
+
 ```graphviz
 digraph G {
   "set" -> "magma"
@@ -24,6 +29,12 @@ digraph G {
   "semigroup" -> "semilattice" [label="commutativity, idempotence"]
   "semigroup" -> "inverse semigroup" [label="invertibility"]
   "group" [href="https://en.wikipedia.org/wiki/Group_(mathematics)"]
+  "homotopy group" [href="https://en.wikipedia.org/wiki/Homotopy_group"]
+  "group" -> "homotopy group"
+  "fundamental group" [href="https://en.wikipedia.org/wiki/Fundamental_group"]
+  "homotopy group" -> "fundamental group"
+  "Étale fundamental group" [href="https://en.wikipedia.org/wiki/%C3%89tale_fundamental_group"]
+  "group" -> "Étale fundamental group"
   "loop" -> "group" [label="associativity"]
   "monoid" -> "group" [label="invertibility"]
   "monoid" -> "(N0,+)" [href="https://en.wikipedia.org/wiki/Free_monoid#Examples"]
@@ -35,7 +46,10 @@ digraph G {
   "group" -> "commutative group" [label="commutativity"]
   "group" -> "free group" [label="free"]
   "finite group" [href="https://en.wikipedia.org/wiki/Finite_group"]
-  "group" -> "finite group"
+  "group" -> "algebraic group"
+  "algebraic group" -> "finite group"
+  "algebraic group" -> "general linear group"
+  "Lie group" -> "general linear group"
   "dihedral group" [href="https://en.wikipedia.org/wiki/Dihedral_group"]
   "finite group" -> "dihedral group"
   "symmetry group" -> "dihedral group"
@@ -62,8 +76,12 @@ digraph G {
   "special unitary group" [href="https://en.wikipedia.org/wiki/Special_unitary_group"]
   "unitary group" -> "special unitary group" [label="Lie group of n × n unitary matrices with determinant 1", href="https://en.wikipedia.org/wiki/Special_unitary_group"]
   "Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
-  "Euclidean group" -> "translational group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
-  "Euclidean group" -> "orthogonal group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
+  
+  "translational group x orthogonal group" [shape="point"]
+  "group" -> "translational group"
+  "translational group" -> "translational group x orthogonal group"
+  "orthogonal group" -> "translational group x orthogonal group"
+  "translational group x orthogonal group" -> "Euclidean group"  [href="https://en.wikipedia.org/wiki/Euclidean_group"]
 
   "ringoid" [href="https://mathworld.wolfram.com/Ringoid.html"]
   "ringoid" -> "crooked semirng" [label="+ monoid\n* semigroup\n0*x = x*0 = 0", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
@@ -106,7 +124,7 @@ digraph G {
 
   "topological space" -> "Kolmogorov space" [label="for every pair of distinct points of X,\nat least one of them has a neighborhood not containing the other", href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
   "Kolmogorov space" -> "T1 space" [label="for every pair of distinct points,\neach has a neighborhood not containing the other point", href="https://en.wikipedia.org/wiki/T1_space"]
-  "Kolmogorov space" -> "Hausdorff space" [label="for any two distinct points\nthere exist neighbourhoods of each\nwhich are disjoint from each other", href="https://en.wikipedia.org/wiki/Hausdorff_space"]
+  "T1 space" -> "Hausdorff space" [label="for any two distinct points\nthere exist neighbourhoods of each\nwhich are disjoint from each other", href="https://en.wikipedia.org/wiki/Hausdorff_space"]
   "Hausdorff space" -> "Urysohn space" [label="any two distinct points can be separated by closed neighborhoods", href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
   "Urysohn space" -> "completely Hausdorff space" [label="any two distinct points can be separated by a continuous function", href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
   "completely Hausdorff space" -> "regular space" [label="every closed subset C of X\nand a point p not contained in C\nadmit non-overlapping open neighborhoods", href="https://en.wikipedia.org/wiki/Regular_space"]
@@ -114,10 +132,11 @@ digraph G {
   "Tychonoff space" -> "normal space" [label="every two disjoint closed sets of X\nhave disjoint open neighborhoods", href="https://en.wikipedia.org/wiki/Normal_space"]
   "normal space" -> "completely normal Hausdorff space" [label="completely normal T1 space", href="https://en.wikipedia.org/wiki/Normal_space"]
   "completely normal Hausdorff space" -> "perfectly normal Hausdorff space" [label="every two disjoint closed sets E and F\ncan be precisely separated by a continuous function f from X to the real line R", href="https://en.wikipedia.org/wiki/Normal_space"]
+  "Hilbert space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
 
-  "topological space" -> "metric space"
+  "Hausdorff space" -> "metric space" [href="https://proofwiki.org/wiki/Metric_Space_is_Hausdorff"]
   "metric space" -> "complete metric space" [label="every Cauchy sequence in M converges in M", href="https://en.wikipedia.org/wiki/Complete_metric_space"]
-  "Banach space" -> "Hilbert space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
+  "Banach space" -> "Euclidean space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
   "metric space" -> "normed vector space"
   "vector space" -> "normed vector space"
   "normed vector space" -> "inner product space"
@@ -125,9 +144,11 @@ digraph G {
   "normed vector space" -> "Banach space" [label="complete in the metric induced by the norm", href="https://en.wikipedia.org/wiki/Banach_algebra"]
   "Hilbert space" -> "Sobolev space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
   "Hilbert space" -> "Hardy space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
+  "Euclidean space" -> "Hilbert space" [href="https://en.wikipedia.org/wiki/Hilbert_space"]
   "vector space" -> "affine space"
   "affine space" -> "Euclidean space"
-  "inner product space" -> "Euclidean space"
+  "inner product space" -> "real numbers" [href="https://en.wikipedia.org/wiki/Inner_product_space#Some_examples"]
+  "inner product space" -> "Euclidean space" [href="https://en.wikipedia.org/wiki/Inner_product_space#Some_examples"]
 
   "finitely generated module" [href="https://en.wikipedia.org/wiki/Finitely_generated_module"]
   "module" -> "finitely generated module" [href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
@@ -184,7 +205,10 @@ digraph G {
   "variety" [href="https://en.wikipedia.org/wiki/Algebraic_variety"]
   "variety" -> "abelian variety" [label="complete group variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "abelian variety" -> "C^n/Z^2n" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "abelian variety" -> "elliptic curve E over a finite field Fq [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "elliptic curve"  [href="https://en.wikipedia.org/wiki/Elliptic_curve"]
+  "abelian variety" -> "elliptic curve"  [href="https://en.wikipedia.org/wiki/Elliptic_curve"]
+  "elliptic curve" -> "elliptic curve E over a finite field Fq"
+  "elliptic curve E over a finite field Fq" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "abelian scheme" -> "abelian variety" [label="(flat) family of abelian varieties", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "affine variety" [label="in affine space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "commutative ring" -> "affine scheme" [label="is the prime spectrum of some commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
@@ -203,6 +227,7 @@ digraph G {
   "reduced irreducible algebraic scheme" -> "algebraic variety" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "separated scheme of finite type" -> "reduced separated scheme of finite type"
   "reduced separated scheme of finite type" -> "algebraic set" [label="over Spec(k)", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic set" -> "irreducible algebraic set"
   "irreducible algebraic set" -> "algebraic variety" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "scheme" -> "scheme / étale equivalence relation"
   "étale equivalence relation" -> "scheme / étale equivalence relation"
@@ -235,11 +260,14 @@ digraph G {
   "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
   "locally ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
   "commutative ring" -> "sheaf of rings"
-  "sheaf of rings" -> "ringed space" [label="topological space X together with a sheaf of rings OX on X", href="https://en.wikipedia.org/wiki/Ringed_space"]
-  "topological space" -> "ringed space"
+  "topological space" -> "topological space x sheaf of rings"
+  "sheaf of rings" -> "topological space x sheaf of rings"
+  "topological space x sheaf of rings" [shape="point"]
+  "topological space x sheaf of rings" -> "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
   "ringed space" -> "locally ringed space" [label="analogy of a germ of a function is valid", href="https://en.wikipedia.org/wiki/Ringed_space"]
   "locally ringed space" -> "scheme" [label="locally a prime spectrum of a commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "regular scheme" [href="https://en.wikipedia.org/wiki/Regular_scheme"]
+  "ring" -> "reduced ring" [label="has no non-zero nilpotent elements", href="https://en.wikipedia.org/wiki/Reduced_ring"]
   "reduced ring" [href="https://en.wikipedia.org/wiki/Reduced_ring"]
   "reduced ring" -> "local ring" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "regular local ring" [href="https://en.wikipedia.org/wiki/Regular_local_ring"]
@@ -251,10 +279,11 @@ digraph G {
   "normal scheme" [href="https://en.wikipedia.org/wiki/Normal_scheme"]
   "group scheme" [href="https://en.wikipedia.org/wiki/Group_scheme"]
   "scheme" -> "group scheme" [label="whose sets of points have the structures of a group", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  algebraic group -> "group variety" [label="smooth", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "algebraic curve" -> "hyperelliptic curve" [label="there is a linear system of dimension 1 and degree 2", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic group" -> "group variety" [label="smooth", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "group variety" -> "algebraic group"
+  "elliptic curve" -> "hyperelliptic curve" [label="there is a linear system of dimension 1 and degree 2", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "Jacobian variety" [label="of a projective curve X is the degree zero part of the Picard variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "scheme" -> "integral scheme" -> "normal scheme" [label="local rings are integrally closed domains", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "scheme" -> "integral scheme" -> "normal scheme" [label="local rings are integrally closed domain", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "projective variety" [href="https://en.wikipedia.org/wiki/Projective_variety"]
   "variety" -> "projective variety" [label="closed subvariety of a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "projective scheme" [href="https://en.wikipedia.org/wiki/Projective_scheme"]
@@ -347,7 +376,6 @@ digraph G {
   "artinian ring" -> "semisimple ring" [label="finite product of simple Artinian rings", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "module" -> "semisimple left R-module"
   "semisimple ring" [href="semisimple ring"]
-  "artinian ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "semisimple left R-module" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "(right) serial ring" [href="https://en.wikipedia.org/wiki/Serial_ring"]
   "ring" -> "(right) serial ring" [label="right serial module over itself", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
@@ -364,10 +392,13 @@ digraph G {
   "ring" -> "von Neumann regular ring" [label="each element a can be expressed as a = axa for another element x in the ring", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "von Neumann regular ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
 
+  "rng" [href="https://en.wikipedia.org/wiki/Rng_(algebra)"]
   "rng of square zero" [href="https://en.wikipedia.org/wiki/Rng_(algebra)#Rng_of_square_zero"]
   "rng" -> "rng of square zero" [label="xy = 0 for all x and y", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
 
+  "ring" [href="https://en.wikipedia.org/wiki/Ring_(mathematics)"]
   "ring" -> "domain" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "integral domain" [href="https://en.wikipedia.org/wiki/Integral_domain"]
   "domain" -> "integral domain" [label="* commutative", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "ring with identity" -> "integral domain"
   "commutative ring" -> "integral domain" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
@@ -388,24 +419,38 @@ digraph G {
   "Dedekind domain" -> "principal ideal domain" [label="every ideal is principal,\ni.e., can be generated by a single element", href="https://en.wikipedia.org/wiki/Dedekind_domain"]
   "integral domain" -> "integrally closed domain" [label="integral closure in its field of fractions\nis A itself", href="https://en.wikipedia.org/wiki/Integrally_closed_domain"]
 
+  "GCD domain" [href="https://en.wikipedia.org/wiki/GCD_domain"]
   "integral domain" -> "GCD domain" [label="two elements have a greatest common divisor (GCD);\ni.e., there is a unique minimal principal ideal\ncontaining the ideal generated by two given elements", href="https://en.wikipedia.org/wiki/GCD_domain"]
   "integrally closed domain" -> "GCD domain" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain"]
   "GCD domain" -> "unique factorization domain" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain"]
+  "Bézout domain" [href="https://en.wikipedia.org/wiki/B%C3%A9zout_domain"]
+  "GCD domain" -> "Bézout domain" [label="", href="https://en.wikipedia.org/wiki/GCD_domain"]
 
-  "unique factorization domain" -> "principal ideal domain"
+  "unique factorization domain" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain"]
+  "unique factorization domain" -> "principal ideal domain" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "unique factorization domain" -> "regular local ring" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
   "ring" -> "noetherian ring" [label="satisfies the ascending chain condition\non left and right ideals", href="https://en.wikipedia.org/wiki/Noetherian_ring"]
   "noetherian ring" [href="https://en.wikipedia.org/wiki/Noetherian_ring"]
   "noetherian ring" -> "artinian ring" [label="ring satisfying the descending chain condition for left ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  <!-- "ring" -> "uniserial ring" [label="", href=""] -->
+  <!-- "ring" -> "uniserial ring" [label="integral domain where every finitely generated ideal is principal", href=""] -->
   "artinian ring" [href="https://en.wikipedia.org/wiki/Artinian_ring"]
 
-  "integral domain" -> "euclidean domain" [label="integral domain\nthat can be endowed with a Euclidean function\nwhich allows a suitable generalization of the Euclidean division of the integers", href="https://en.wikipedia.org/wiki/Euclidean_domain"]
-  "principal ideal domain" -> "euclidean domain"
-  "euclidean domain" -> "field"
-  "euclidean domain" -> "Z" [href="https://en.wikipedia.org/wiki/Polynomial_ring#Properties_of_K[X]"]
-  "euclidean domain" -> "K[X]" [href="https://en.wikipedia.org/wiki/Polynomial_ring#Properties_of_K[X]"]
+  "principal ideal domain" [href="https://en.wikipedia.org/wiki/Principal_ideal_domain"]
+  "principal ideal domain" -> "euclidean domain" [label="integral domain\nthat can be endowed with a Euclidean function\nwhich allows a suitable generalization of the Euclidean division of the integers", href="https://en.wikipedia.org/wiki/Euclidean_domain"]
 
-  "integral domain" -> "field" [label="* commutative group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  
+  "Gaussian integers" [href="https://en.wikipedia.org/wiki/Gaussian_integer"]
+  "Eisenstein integers" [href="https://en.wikipedia.org/wiki/Eisenstein_integer"]
+  "euclidean domain" [href="https://en.wikipedia.org/wiki/Euclidean_domain"]
+  "euclidean domain" -> "integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "euclidean domain" -> "Gaussian integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "euclidean domain" -> "Eisenstein integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "euclidean domain" -> "field"
+  "euclidean domain" -> "K[X]" [href="https://en.wikipedia.org/wiki/Polynomial_ring#Properties_of_K[X]"]
+  "euclidean domain" -> "formal power series ring K[[X1,...,Xn]] over a field K" [href="https://en.wikipedia.org/wiki/Euclidean_domain#Examples"]
+
+  "integrally closed domain" [href="https://en.wikipedia.org/wiki/Integrally_closed_domain"]
+  <!-- "integral domain" -> "field" [label="* commutative group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"] -->
   "domain" -> "finite field" [label="finite"]
   "field" -> "finite field" [label="finite", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
