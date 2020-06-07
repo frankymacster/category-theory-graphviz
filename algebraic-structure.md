@@ -7,7 +7,13 @@ https://en.wikipedia.org/wiki/Magma_(algebra)
 
 ```graphviz
 digraph G {
-  "set" -> "magma"
+  node [shape="box"]
+  compound="true"
+
+  "set x binary operation" [shape="point"]
+  "set" -> "set x binary operation"
+  "binary operation" -> "set x binary operation"
+  "set x binary operation" -> "magma"
 
   "magma" [href="https://en.wikipedia.org/wiki/Magma_(algebra)"]
   "free magma" [href="https://en.wikipedia.org/wiki/Magma_(algebra)#Free_magma"]
@@ -36,12 +42,27 @@ digraph G {
   "set x preorder" [shape="point"]
   "set" -> "set x preorder"
   "set x preorder" -> "preordered set"
+  "set" -> "graph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
 
   "partial order" -> "set x partial order"
   "set x partial order" [shape="point"]
   "set" -> "set x partial order"
   "set x partial order" -> "partially ordered set"
 
+  "binary operation" [href="https://en.wikipedia.org/wiki/Binary_operation"]
+  "binary operation" -> "+"
+  "binary operation" -> "*"
+  "+ x natural numbers x 0" [shape="point"]
+  "+" -> "+ x natural numbers x 0" 
+  "natural numbers" -> "+ x natural numbers x 0"
+  "+ x natural numbers x 0" -> "(N0,+)"
+
+  "cartesian product" [href="https://en.wikipedia.org/wiki/Cartesian_product"]
+  "function x cartesian product" [shape="point"]
+  "function" -> "function x cartesian product"
+  "cartesian product" -> "function x cartesian product"
+  "function x cartesian product" -> "binary operation" [href="https://en.wikipedia.org/wiki/Binary_operation#Terminology"]
+  "cartesian product" -> "binary relation" [label="subset of the\ncartesian product X × Y", href="https://en.wikipedia.org/wiki/Binary_relation"]
   "binary relation" -> "preorder" [label="reflexive\ntransitive", href="https://en.wikipedia.org/wiki/Preorder"]
   "equivalence relation" [href="https://en.wikipedia.org/wiki/Equivalence_relation"]
   "preorder" [href="https://en.wikipedia.org/wiki/Preorder"]
@@ -50,6 +71,8 @@ digraph G {
   "preorder" -> "partial order" [label="antisymmetric", href="https://en.wikipedia.org/wiki/Partially_ordered_set#Formal_definition"]
   "total order" [href="https://en.wikipedia.org/wiki/Total_order"]
   "partial order" -> "total order" [label="connexity", href="https://en.wikipedia.org/wiki/Total_order"]
+  "well-order" [href="https://en.wikipedia.org/wiki/Well-order"]
+  "total order" -> "well-order" [label="every non-empty subset of S\nhas a least element in this ordering", href="https://en.wikipedia.org/wiki/Well-order"]
   "binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation"]
   "preorder" -> "set x preorder"
   "preordered set" -> "partially ordered set"
@@ -57,7 +80,15 @@ digraph G {
   "partially ordered set" -> "join-semilattice" [label="has a join (a least upper bound)\nfor any nonempty finite subset", href="https://en.wikipedia.org/wiki/Semilattice"]
   "partially ordered set" -> "meet-semilattice" [label="has a meet (or greatest lower bound)\nfor any nonempty finite subset", href="https://en.wikipedia.org/wiki/Semilattice"]
   "totally ordered set" [href="https://en.wikipedia.org/wiki/Total_order"]
+  "set x well-order" [shape="point"]
+  "set" -> "set x well-order"
+  "well-order" -> "set x well-order"
+  "set x well-order" -> "well-ordered set"
   "well-ordered set" [href="https://en.wikipedia.org/wiki/Well-order"]
+  "set x total order" [shape="point"]
+  "set" -> "set x total order"
+  "total order" -> "set x total order"
+  "set x total order" -> "totally ordered set"
   "totally ordered set" -> "well-ordered set" [label="every non-empty subset of S has a least element in this ordering", href="https://en.wikipedia.org/wiki/Well-order"]
   "well-ordered set" -> "natural numbers"
   "well-ordered set" -> "integers"
@@ -65,11 +96,16 @@ digraph G {
   "semigroup" -> "semilattice" [label="commutativity\nidempotence"]
   "semigroup" -> "inverse semigroup" [label="invertibility"]
   "group" [href="https://en.wikipedia.org/wiki/Group_(mathematics)"]
+  "homology group" [href="https://en.wikipedia.org/wiki/Homology_(mathematics)"]
+  "abelian group" -> "homology group"
+  "cohomology group" [href="https://en.wikipedia.org/wiki/Cohomology"]
+  "abelian group" -> "cohomology group"
   "homotopy group" [href="https://en.wikipedia.org/wiki/Homotopy_group"]
   "group" -> "homotopy group"
   "fundamental group" [href="https://en.wikipedia.org/wiki/Fundamental_group"]
   "homotopy group" -> "fundamental group"
   "Étale fundamental group" [href="https://en.wikipedia.org/wiki/%C3%89tale_fundamental_group"]
+  "Étale fundamental group" -> "scheme" [dir="none"]
   "group" -> "Étale fundamental group"
   "loop" -> "group" [label="associativity"]
   "monoid" -> "group" [label="invertibility"]
@@ -86,6 +122,9 @@ digraph G {
   "algebraic group" -> "finite group"
   "algebraic group" -> "general linear group"
   "Lie group" -> "general linear group"
+  "metric space" -> "topological group"
+  "topological group" -> "disconnected topological group"
+  "disconnected topological group" -> "generalized dihedral group"
   "generalized dihedral group" [href="https://en.wikipedia.org/wiki/Generalized_dihedral_group"]
   "generalized dihedral group" -> "dihedral group"
   "generalized dihedral group" -> "orthogonal group"
@@ -96,6 +135,7 @@ digraph G {
   "group" -> "symmetry group"
   "Galois group" [href="https://en.wikipedia.org/wiki/Galois_group"]
   "group" -> "Galois group"
+  "Galois group" -> "field" [dir="none"]
   "topological group" [href="https://en.wikipedia.org/wiki/Topological_group"]
   "Lie group" [href="https://en.wikipedia.org/wiki/Lie_group"]
   "group" -> "topological group" [label="with a topology on G such that\nboth the group's binary operation\nand the function mapping group elements\nto their respective inverses\nare continuous functions with respect to the topology", href="https://en.wikipedia.org/wiki/Topological_group"]
@@ -103,17 +143,28 @@ digraph G {
   "matrix group" [href="https://en.wikipedia.org/wiki/Matrix_group"]
   "group" -> "matrix group"
   "matrix group" -> "general linear group" [label="all invertible\nn-by-n matrices\nwith real entries", href="https://en.wikipedia.org/wiki/Group_(mathematics)#Examples_and_applications"]
-  "orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
-  "general linear group" [href="https://en.wikipedia.org/wiki/General_linear_group"]
   "general linear group" -> "orthogonal group" [label="endomorphisms that\npreserve the Euclidean norm", href="https://en.wikipedia.org/wiki/Orthogonal_group"]
-  "special orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
-  "orthogonal group" -> "special orthogonal group"
-  "special linear group" [href="https://en.wikipedia.org/wiki/Special_linear_group"]
-  "general linear group" -> "special linear group"
-  "unitary group" [href="https://en.wikipedia.org/wiki/Unitary_group"]
+
+  subgraph cluster_orthogonalgroup {
+    label="orthogonal group"
+    "orthogonal group" [label="", shape="none", href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+    "special orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+  }
+
+  subgraph cluster_generallineargroup {
+    label="general linear group"
+    "general linear group" [label="", shape="none", href="https://en.wikipedia.org/wiki/General_linear_group"]
+    "special linear group" [href="https://en.wikipedia.org/wiki/Special_linear_group"]
+  }
+
+  subgraph cluster_unitarygroup {
+    label="unitary group"
+    "unitary group" [label="", shape="none", href="https://en.wikipedia.org/wiki/Unitary_group"]
+    <!-- "Lie group of\nn × n unitary matrices\nwith determinant 1" -->
+    "special unitary group" [href="https://en.wikipedia.org/wiki/Special_unitary_group"]
+  }
+
   "general linear group" -> "unitary group" [label="n × n unitary matrices", href="https://en.wikipedia.org/wiki/Unitary_group"]
-  "special unitary group" [href="https://en.wikipedia.org/wiki/Special_unitary_group"]
-  "unitary group" -> "special unitary group" [label="Lie group of\nn × n unitary matrices\nwith determinant 1", href="https://en.wikipedia.org/wiki/Special_unitary_group"]
   "Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
   
   "translational group x orthogonal group" [shape="point"]
@@ -144,6 +195,29 @@ digraph G {
   "module" -> "vector space" [label=""]
 
   "topological space" [href="https://en.wikipedia.org/wiki/Topological_space"]
+  "separable space" [href="https://en.wikipedia.org/wiki/Separable_space"]
+  "topological space" -> "separable space" [label="contains a countable,\ndense subset", href="https://en.wikipedia.org/wiki/Separable_space"]
+  "separable space" -> "finite topological space"
+  "separable space" -> "countably infinite topological space"
+  "metric space" -> "compact metric space"
+  "separable space" -> "compact metric space"
+  "homotopy group" -> "topological space" [dir="none"]
+  "topological manifold" [href="https://en.wikipedia.org/wiki/Topological_manifold"]
+  "topological manifold" -> "manifold"
+  "manifold" [href="https://en.wikipedia.org/wiki/Manifold"]
+  "topological space" -> "manifold" [label="locally resembles\nEuclidean space near each point", href="https://en.wikipedia.org/wiki/Manifold"]
+  "metric space" -> "topological manifold" [label="locally resembles\nreal n-dimensional space", href="https://en.wikipedia.org/wiki/Hausdorff_space#Examples_and_non-examples"]
+  "differentiable manifold" [href="https://en.wikipedia.org/wiki/Differentiable_manifold"]
+  "manifold" -> "differentiable manifold" [label="equipped with a differential structure", href="https://en.wikipedia.org/wiki/Topological_manifold"]
+  "manifold" -> "compact manifold"
+  "compact manifold" -> "compact 1-manifold"
+  "compact manifold" -> "compact 2-manifold"
+  "compact 2-manifold" -> "torus" [href="https://en.wikipedia.org/wiki/Topological_manifold#n-Manifolds"]
+  "compact 2-manifold" -> "Klein bottle" [href="https://en.wikipedia.org/wiki/Topological_manifold#n-Manifolds"]
+  "compact 1-manifold" -> "circle" [href="https://en.wikipedia.org/wiki/Topological_manifold#n-Manifolds"]
+  "discrete space" [href="https://en.wikipedia.org/wiki/Discrete_space"]
+  "manifold" -> "0-manifold"
+  "0-manifold" -> "discrete space"
   "Kolmogorov space" [href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
   "T1 space" [href="https://en.wikipedia.org/wiki/T1_space"]
   "Hausdorff space" [href="https://en.wikipedia.org/wiki/Hausdorff_space"]
@@ -163,6 +237,19 @@ digraph G {
   "topological vector space" [href="https://en.wikipedia.org/wiki/Topological_vector_space"]
   "topological vector space" -> "normed vector space" [href="https://en.wikipedia.org/wiki/Topological_vector_space"]
   "vector space" [href="https://en.wikipedia.org/wiki/Vector_space"]
+  "binary relation" -> "function" [label="over two sets\nthat associates to\nevery element of the first set exactly\none element of the second set", href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
+  "function" [href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
+  "function" -> "multilinear map" [label="of several variables\nthat is linear separately in each variable", href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
+  "multilinear map" [href="https://en.wikipedia.org/wiki/Multilinear_map"]
+  "alternating multilinear map" [href="https://en.wikipedia.org/wiki/Alternating_multilinear_map"]
+  "multilinear map" -> "alternating multilinear map" [label="all arguments\nbelonging to the same space", href="https://en.wikipedia.org/wiki/Alternating_multilinear_map"]
+  "alternating multilinear map" -> "Lie bracket"
+  "Lie bracket" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
+  "lie algebra" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
+  "vector space x Lie bracket" [shape="point"]
+  "vector space" -> "vector space x Lie bracket"
+  "Lie bracket" -> "vector space x Lie bracket"
+  "vector space x Lie bracket" -> "lie algebra" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
   "Euclidean space" [href="https://en.wikipedia.org/wiki/Euclidean_space"]
   "affine space" [href="https://en.wikipedia.org/wiki/Affine_space"]
   "inner product space" [href="https://en.wikipedia.org/wiki/Inner_product_space"]
@@ -243,6 +330,7 @@ digraph G {
   "quotient ring" -> "ring / maximal ideal"
   "maximal ideal" -> "ring / maximal ideal"
   "ring / maximal ideal" -> "simple ring" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "prime ideal x principal ideal domain" [shape="point"]
   "principal ideal domain" -> "prime ideal x principal ideal domain"
   "prime ideal" -> "prime ideal x principal ideal domain"
   "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime ideals are maximal in a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
@@ -280,7 +368,6 @@ digraph G {
   "reduced separated scheme of finite type" -> "algebraic set" [label="over Spec(k)", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "algebraic set" -> "irreducible algebraic set"
   "irreducible algebraic set" -> "algebraic variety" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "scheme" -> "scheme / étale equivalence relation"
   "equivalence relation" -> "étale equivalence relation"
   "étale equivalence relation" -> "scheme / étale equivalence relation"
   "scheme" -> "quotient scheme"
@@ -399,10 +486,10 @@ digraph G {
   "ring" -> "Jacobson ring" [label=" which each prime ideal is an intersection of primitive ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "local ring" [href="https://en.wikipedia.org/wiki/Local_ring"]
   "ring" -> "local ring" [label="with a unique maximal left ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "ring" -> "matrix ring" [label="elements are square matrices of fixed size with the entries in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "generic matrix ring" -> "matrix ring" [label="elements are square matrices of fixed size with the entries in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "matrix ring" [href="https://en.wikipedia.org/wiki/Matrix_ring"]
-  "ring" -> "ring of generic matrices" [label="consisting of square matrices with entries in formal variables", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "ring of generic matrices" [href="https://en.wikipedia.org/wiki/Ring_of_generic_matrices"]
+  "ring" -> "generic matrix ring" [label="consisting of square matrices with entries in formal variables", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "generic matrix ring" [href="https://en.wikipedia.org/wiki/Ring_of_generic_matrices"]
 
   "ring" -> "monoid ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "monoid ring" [href="https://en.wikipedia.org/wiki/Monoid_ring"]
@@ -463,7 +550,12 @@ digraph G {
   "rng of square zero" [href="https://en.wikipedia.org/wiki/Rng_(algebra)#Rng_of_square_zero"]
   "rng" -> "rng of square zero" [label="xy = 0 for all x and y", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
 
-  "ring" [href="https://en.wikipedia.org/wiki/Ring_(mathematics)"]
+  subgraph cluster_ring {
+    label="ring"
+    "ring" [label="", shape="none", href="https://en.wikipedia.org/wiki/Ring_(mathematics)"]
+    "ideal"
+  }
+
   "ring" -> "domain" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "integral domain" [href="https://en.wikipedia.org/wiki/Integral_domain"]
   "domain" -> "integral domain" [label="* commutative", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
