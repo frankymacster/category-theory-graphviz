@@ -105,6 +105,7 @@ digraph G {
   "fundamental group" [href="https://en.wikipedia.org/wiki/Fundamental_group"]
   "homotopy group" -> "fundamental group"
   "Étale fundamental group" [href="https://en.wikipedia.org/wiki/%C3%89tale_fundamental_group"]
+  "Étale fundamental group" -> "Galois group" [href="https://en.wikipedia.org/wiki/%C3%89tale_fundamental_group#Examples_and_theorems"]
   "Étale fundamental group" -> "scheme" [dir="none"]
   "group" -> "Étale fundamental group"
   "loop" -> "group" [label="associativity"]
@@ -117,6 +118,20 @@ digraph G {
 
   "group" -> "abelian group" [label="commutativity"]
   "group" -> "free group" [label="free"]
+  "group" -> "group x abelian variety x isogeny"
+  "abelian variety" -> "group x abelian variety x isogeny"
+  "function" -> "morphism"
+  "morphism x algebraic group" [shape="point"]
+  "morphism" -> "morphism x algebraic group"
+  "algebraic group" -> "morphism x algebraic group"
+  "morphism x algebraic group" -> "algebraic group morphism"
+  "algebraic group morphism" -> "isogeny" [label="surjective and\nhas a finite kernel", href="https://en.wikipedia.org/wiki/Isogeny"]
+  "isogeny" [href="https://en.wikipedia.org/wiki/Isogeny"]
+  "group x abelian variety x isogeny" [shape="point"]
+  "group" -> "group x abelian variety x isogeny"
+  "abelian variety" -> "group x abelian variety x isogeny"
+  "isogeny" -> "group x abelian variety x isogeny"
+  "group x abelian variety x isogeny" -> "Selmer group"
   "finite group" [href="https://en.wikipedia.org/wiki/Finite_group"]
   "group" -> "algebraic group"
   "algebraic group" -> "finite group"
@@ -165,13 +180,22 @@ digraph G {
   }
 
   "general linear group" -> "unitary group" [label="n × n unitary matrices", href="https://en.wikipedia.org/wiki/Unitary_group"]
-  "Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
   
   "translational group x orthogonal group" [shape="point"]
   "group" -> "translational group"
   "translational group" -> "translational group x orthogonal group"
   "orthogonal group" -> "translational group x orthogonal group"
   "translational group x orthogonal group" -> "Euclidean group"  [href="https://en.wikipedia.org/wiki/Euclidean_group"]
+  "symmetry group" -> "Euclidean group"
+  "Euclidean group" -> "Euclidean space" [dir="none", label="transformations of that space\nthat preserve the Euclidean distance\nbetween any two points", href="https://en.wikipedia.org/wiki/Euclidean_group"]
+
+  "manifold" -> "Euclidean space" [dir="none", label="", href="https://en.wikipedia.org/wiki/Manifold"]
+
+  subgraph cluster_euclideangroup {
+    label="Euclidean group"
+    "Euclidean group" [label="locally resembles\nEuclidean space\nnear each point", shape="none", href="https://en.wikipedia.org/wiki/Euclidean_group"]
+    "special Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
+  }
 
   "semigroup x monoid" [shape="point"]
   "semigroup" -> "semigroup x monoid" [label="+"]
@@ -210,6 +234,14 @@ digraph G {
   "differentiable manifold" [href="https://en.wikipedia.org/wiki/Differentiable_manifold"]
   "manifold" -> "differentiable manifold" [label="equipped with a differential structure", href="https://en.wikipedia.org/wiki/Topological_manifold"]
   "manifold" -> "compact manifold"
+  "differentiable manifold" -> "smooth manifold"
+  "smooth manifold" [href="https://en.wikipedia.org/wiki/Differentiable_manifold#Definition"]
+  "smooth manifold" -> "Lie group" [href="https://en.wikipedia.org/wiki/Representation_theory"]
+  "Riemann surface" [label="one-dimensional\ncomplex manifold", href="https://en.wikipedia.org/wiki/Riemann_surface"]
+  "modular curve" [href="https://en.wikipedia.org/wiki/Modular_curve"]
+  "manifold" -> "complex manifold"
+  "complex manifold" -> "Riemann surface" [href="https://en.wikipedia.org/wiki/Riemann_surface"]
+  "Riemann surface" -> "modular curve" [href="https://en.wikipedia.org/wiki/Modular_curve"]
   "compact manifold" -> "compact 1-manifold"
   "compact manifold" -> "compact 2-manifold"
   "compact 2-manifold" -> "torus" [href="https://en.wikipedia.org/wiki/Topological_manifold#n-Manifolds"]
@@ -239,6 +271,31 @@ digraph G {
   "vector space" [href="https://en.wikipedia.org/wiki/Vector_space"]
   "binary relation" -> "function" [label="over two sets\nthat associates to\nevery element of the first set exactly\none element of the second set", href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
   "function" [href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
+  "function" -> "injective function"
+  "function" -> "surjective function"
+  "j-invariant" [href="https://en.wikipedia.org/wiki/J-invariant"]
+  "modular function" [href="https://en.wikipedia.org/wiki/Modular_function"]
+  "function" -> "modular function"
+  "modular function" -> "j-invariant" [label="modular function of\nweight zero for SL(2, Z)\ndefined on the upper half-plane\nof complex numbers", href="https://en.wikipedia.org/wiki/J-invariant"]
+  "function" -> "L-function"
+  "L-function" [href="https://en.wikipedia.org/wiki/L-function"]
+  "Hasse–Weil zeta function" [href="https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function"]
+  "L-function" -> "Hasse–Weil zeta function" [href="https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function"]
+  "group representation" [href="https://en.wikipedia.org/wiki/Representation_theory#Definition"]
+  "function x general linear group" [shape="point"]
+  "function" -> "function x general linear group"
+  "general linear group" -> "function x general linear group"
+  "function x general linear group" -> "group representation" [label="G -> GL(V)", href="https://en.wikipedia.org/wiki/Representation_theory#Definition"]
+  "Galois representation" [href="https://www.ams.org/notices/200706/tx070600718p.pdf"]
+  "group representation" -> "Galois representation"
+  "analytic function" [href="https://en.wikipedia.org/wiki/Analytic_function"]
+  "function" -> "analytic function"
+  "analytic function" -> "complex analytic function"
+  "modular form" [href="https://en.wikipedia.org/wiki/Modular_form"]
+  "eigenform" [href="https://en.wikipedia.org/wiki/Eigenform"]
+  "modular form" -> "eigenform" [label="is an eigenvector for all Hecke operators Tm", href="https://en.wikipedia.org/wiki/Eigenform"]
+  "complex analytic function" -> "modular form" [label="on the upper half-plane\nsatisfying a certain kind of functional equation\nwith respect to the group action\nof the modular group,\nand also satisfying a growth condition", href="https://en.wikipedia.org/wiki/Modular_form"]
+
   "function" -> "multilinear map" [label="of several variables\nthat is linear separately in each variable", href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
   "multilinear map" [href="https://en.wikipedia.org/wiki/Multilinear_map"]
   "alternating multilinear map" [href="https://en.wikipedia.org/wiki/Alternating_multilinear_map"]
@@ -342,6 +399,7 @@ digraph G {
   "variety" -> "abelian variety" [label="complete group variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "abelian variety" -> "C^n/Z^2n" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "elliptic curve"  [href="https://en.wikipedia.org/wiki/Elliptic_curve"]
+  "elliptic curve" -> "semistable elliptic curve"
   "abelian variety" -> "elliptic curve"  [href="https://en.wikipedia.org/wiki/Elliptic_curve"]
   "elliptic curve" -> "elliptic curve E over a finite field Fq"
   "elliptic curve E over a finite field Fq" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
@@ -371,6 +429,7 @@ digraph G {
   "equivalence relation" -> "étale equivalence relation"
   "étale equivalence relation" -> "scheme / étale equivalence relation"
   "scheme" -> "quotient scheme"
+  "group scheme" -> " finite flat group scheme"
   "group scheme" -> "group variety"
   "quotient scheme" -> "scheme / étale equivalence relation"
   "étale equivalence relation" [href="https://en.wikipedia.org/wiki/%C3%89tale_equivalence_relation"]
@@ -424,6 +483,11 @@ digraph G {
   "reduced ring" -> "local ring" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "regular local ring" [href="https://en.wikipedia.org/wiki/Regular_local_ring"]
   "local ring" -> "regular local ring"
+  "local ring" -> "local ring / maximal ideal"
+  "maximal ideal" -> "local ring / maximal ideal"
+  "quotient ring" -> "local ring / maximal ideal"
+  "local ring / maximal ideal" -> "residue field" [dir="both", href="https://en.wikipedia.org/wiki/Residue_field#Definition"]
+  "field" -> "residue field"
   "scheme" -> "regular scheme" [label="scheme where the local rings are regular local rings", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
   "algebraic curve" -> "rational curve"
@@ -451,6 +515,16 @@ digraph G {
   "ring" -> "differential ring"
   "ring" -> "module" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "field" -> "vector space"
+  "Hecke ring" [href="https://en.wikipedia.org/wiki/Hecke_algebra"]
+  "ring" -> "Hecke ring"
+  "deformation ring" [href="https://en.wikipedia.org/wiki/Deformation_ring"]
+  
+  "ring x Galois group x finite field x local field" [shape="point"]
+  "ring" -> "ring x Galois group x finite field x local field"
+  "Galois group" -> "ring x Galois group x finite field x local field"
+  "finite field" -> "ring x Galois group x finite field x local field"
+  "local field" -> "ring x Galois group x finite field x local field"
+  "ring x Galois group x finite field x local field" -> "deformation ring" [label="controls liftings of a representation of a Galois group from a finite field to a local field", href="https://en.wikipedia.org/wiki/Deformation_ring"]
 
   <!-- https://rip94550.wordpress.com/2012/07/02/introduction-to-rings/ -->
   "ring" -> "ring with identity" [label="* identity"]
@@ -458,16 +532,45 @@ digraph G {
   "ring with identity" -> "division ring" [label="* group", href="http://abstract.ups.edu/aata/section-rings-definitions.html"]
 
   "division ring" -> "field" [label="* commutative", href="http://abstract.ups.edu/aata/section-rings-definitions.html"]
-  "commutative ring" [href="https://en.wikipedia.org/wiki/Commutative_ring"]
+  
   "commutative ring" -> "integers" [href="https://en.wikipedia.org/wiki/Commutative_ring#First_examples"]
+
+  subgraph cluster_commutativering {
+    label="commutative ring"
+    "commutative ring" [label="", shape="none", href="https://en.wikipedia.org/wiki/Commutative_ring"]
+    "integral element" [shape="oval", href="https://en.wikipedia.org/wiki/Integral_element"]
+  }
+
   "ring" -> "commutative ring" [label="* commutative"]
   "endomorphism ring" [href="https://en.wikipedia.org/wiki/Endomorphism_ring"]
   "ring" -> "endomorphism ring" [label="formed by the endomorphisms\nof an object with additive structure", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "field" [href="https://en.wikipedia.org/wiki/Field_(mathematics)"]
+  "field extension" [href="https://en.wikipedia.org/wiki/Field_extension"]
+  "field" -> "field extension"
+  "Galois extension" [href="https://en.wikipedia.org/wiki/Galois_extension"]
+  "normal extension" [href="https://en.wikipedia.org/wiki/Normal_extension"]
+  "separable extension" [href="https://en.wikipedia.org/wiki/Separable_extension"]
+  "field extension" -> "normal extension"
+  "field extension" -> "separable extension"
+  "separable extension" -> "Galois extension"
+  "normal extension" -> "Galois extension"
+  "algebraic number field" [href="https://en.wikipedia.org/wiki/Algebraic_number_field"]
+  "field" -> "algebraic number field"
+  "totally real number field" [href="https://en.wikipedia.org/wiki/Totally_real_number_field#:~:text=In%20number%20theory%2C%20a%20number,lies%20inside%20the%20real%20numbers.&text=An%20abelian%20extension%20of%20Q,which%20it%20has%20degree%20two."]
+  "algebraic number field" -> "totally real number field"
   "differential field" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
   "field" -> "differential field"
   "field" -> "complex numbers"
+  "complex numbers" -> "algebraic integer" [label=" root of some\nmonic polynomial\nwith coefficients in ℤ", href="https://en.wikipedia.org/wiki/Algebraic_integer"]
   "field" -> "real numbers"
+  "field" -> "topological field"
+  "topological field" [href="https://en.wikipedia.org/wiki/Topological_ring#Topological_fields"]
+  "locally compact space" -> "locally compact topological field"
+  "topological field" -> "locally compact topological field"
+  "locally compact topological field" -> "local field" [href="https://en.wikipedia.org/wiki/Local_field"]
+  "field" -> "local field"
+  "ring of integers" [href="https://en.wikipedia.org/wiki/Ring_of_integers"]
+  "algebraic number field" -> "ring of integers" [label="integral elements contained in K", href="https://en.wikipedia.org/wiki/Ring_of_integers"]
   "field" -> "rational numbers"
   "filtered ring" [href="https://en.wikipedia.org/wiki/Filtered_ring"]
   "ring" -> "filtered ring" [label="with a filtration", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
@@ -659,7 +762,11 @@ digraph G {
    "natural numbers" -> "integers"
    "prime numbers" -> "natural numbers"
 
+  "compact space" [href="https://en.wikipedia.org/wiki/Compact_space"]
+  "topological space" -> "compact space"
   "topological space" [href="https://en.wikipedia.org/wiki/Topological_space"]
+  "locally compact space" [href="https://en.wikipedia.org/wiki/Locally_compact_space"]
+  "topological space" -> "locally compact space"
   "set" -> "topological space" [label="of points,\nalong with a set of neighbourhoods for each point,\nsatisfying a set of axioms relating points and neighbourhoods", href="https://en.wikipedia.org/wiki/Topological_space"]
 
   <!-- tool for systematically tracking locally defined data attached to the open sets of a topological space -->
