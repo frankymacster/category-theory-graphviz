@@ -96,6 +96,10 @@ digraph G {
   "semigroup" -> "semilattice" [label="commutativity\nidempotence"]
   "semigroup" -> "inverse semigroup" [label="invertibility"]
   "group" [href="https://en.wikipedia.org/wiki/Group_(mathematics)"]
+  "group" -> "cyclic group"
+  "cyclic group" [href="https://en.wikipedia.org/wiki/Cyclic_group"]
+  "nth roots of unity" [href="https://en.wikipedia.org/wiki/Root_of_unity#Group_of_nth_roots_of_unity"]
+  "cyclic group" -> "nth roots of unity"
   "homology group" [href="https://en.wikipedia.org/wiki/Homology_(mathematics)"]
   "abelian group" -> "homology group"
   "cohomology group" [href="https://en.wikipedia.org/wiki/Cohomology"]
@@ -291,6 +295,11 @@ digraph G {
   "analytic function" [href="https://en.wikipedia.org/wiki/Analytic_function"]
   "function" -> "analytic function"
   "analytic function" -> "complex analytic function"
+  "function" -> "linear map"
+  "linear form" [href="https://en.wikipedia.org/wiki/Linear_form"]
+  "linear map" [href="https://en.wikipedia.org/wiki/Linear_map"]
+  "linear map" -> "linear form"
+  "complex analytic function" -> "modular form"
   "modular form" [href="https://en.wikipedia.org/wiki/Modular_form"]
   "eigenform" [href="https://en.wikipedia.org/wiki/Eigenform"]
   "modular form" -> "eigenform" [label="is an eigenvector for all Hecke operators Tm", href="https://en.wikipedia.org/wiki/Eigenform"]
@@ -349,37 +358,39 @@ digraph G {
   "free module" [href="https://en.wikipedia.org/wiki/Free_module"]
   "projective module" -> "free module" [href="https://en.wikipedia.org/wiki/Projective_module"]
   "projective module" [href="https://en.wikipedia.org/wiki/Projective_module"]
-  "module" -> "projective module" [label="edirect summands of free modules and share many of their desirable properties", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "module" -> "projective module" [label="direct summands\nof free modules\nand share many of\ntheir desirable properties", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "injective module" [href="https://en.wikipedia.org/wiki/Injective_module"]
   "module" -> "injective module" [label="defined dually to projective modules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "flat module" [href="https://en.wikipedia.org/wiki/Flat_module"]
   "module" -> "flat module" [label="if taking the tensor product of it\nwith any exact sequence of R-modules\npreserves exactness", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "torsionless module" [href="https://en.wikipedia.org/wiki/Torsionless_module"]
-  "module" -> "torsionless module" [label="it embeds into its algebraic dual", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "module" -> "torsionless module" [label="it embeds into\nits algebraic dual", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "torsion-free module" [href="https://en.wikipedia.org/wiki/Torsion-free_module"]
   "module" -> "torsion-free module" [label="rm = 0 implies r = 0 or m = 0", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "simple module" [href="https://en.wikipedia.org/wiki/Simple_module"]
-  "module" -> "simple module" [label="is not {0} and whose only submodules are {0} and S", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "module" -> "simple module" [label="is not {0} and\nwhose only submodules\nare {0} and S", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "semisimple module" [href="https://en.wikipedia.org/wiki/Semisimple_module"]
   "module" -> "semisimple module" [label="direct sum (finite or not) of simple modules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "indecomposable module" [href="https://en.wikipedia.org/wiki/Indecomposable_module"]
-  "module" -> "indecomposable module" [label="non-zero module that cannot be written as a direct sum of two non-zero submodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "module" -> "indecomposable module" [label="non-zero module that\ncannot be written as\na direct sum of\ntwo non-zero submodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "faithful module" [href="https://en.wikipedia.org/wiki/Faithful_module"]
   "module" -> "faithful module" [label="action of each r ≠ 0 in R on M is nontrivial\n<-> annihilator of M is the zero ideal", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
-  "noetherian module" [href="https://en.wikipedia.org/wiki/Noetherian_module"]
-  "module" -> "noetherian module" [label="satisfies the ascending chain condition on submodules\n<-> every submodule is finitely generated", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "Noetherian module" [href="https://en.wikipedia.org/wiki/Noetherian_module"]
+  "Noetherian module" -> "integers"
+  "module" -> "Noetherian module" [label="satisfies the ascending chain condition on submodules\n<-> every submodule is finitely generated", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "Noetherian module" -> "Noetherian ring"
   "artinian module" [href="https://en.wikipedia.org/wiki/Artinian_module"]
   "module" -> "artinian module" [label="satisfies the descending chain condition on submodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "graded module" [href="https://en.wikipedia.org/wiki/Graded_module"]
   "module" -> "graded module" [label="with a decomposition as a direct sum M = ⨁x Mx over a graded ring R = ⨁x Rx\nsuch that RxMy ⊂ Mx+y for all x and y", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "uniform module" [href="https://en.wikipedia.org/wiki/Uniform_module"]
-  "module" -> "uniform module" [label="all pairs of nonzero submodules have nonzero intersection", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "module" -> "uniform module" [label="all pairs of nonzero\nsubmodules have\nnonzero intersection", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "module" -> "ideal"
   "ideal" [href="https://en.wikipedia.org/wiki/Ideal_(ring_theory)"]
   "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
   "ideal" -> "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
   "maximal ideal" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
-  "ideal" -> "maximal ideal" [label="I is a maximal ideal of a ring R\nif there are no other ideals contained between I and R", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "ideal" -> "maximal ideal" [label="I is a maximal\nideal of a ring R\nif there are no other\nideals contained between I and R", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "principal ideal" [href="https://en.wikipedia.org/wiki/Principal_ideal"]
   "ideal" -> "principal ideal"
   "minimal ideal" [href="https://en.wikipedia.org/wiki/Minimal_ideal"]
@@ -390,8 +401,8 @@ digraph G {
   "prime ideal x principal ideal domain" [shape="point"]
   "principal ideal domain" -> "prime ideal x principal ideal domain"
   "prime ideal" -> "prime ideal x principal ideal domain"
-  "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime ideals are maximal in a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
-  "ideal" -> "Jacobson radical" [label="consisting of those elements in R that annihilate all simple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
+  "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime\nideals are maximal\nin a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "ideal" -> "Jacobson radical" [label="consisting of those\nelements in R\nthat annihilate all\nsimple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
 
   "scheme" [href="https://en.wikipedia.org/wiki/Scheme"]
   "scheme" -> "variety"
@@ -412,7 +423,7 @@ digraph G {
   "x affine scheme" -> "scheme"
   "variety" -> "algebraic variety"
   "affine variety" -> "coordinate ring"
-  "noetherian ring" -> "coordinate ring" [label="Hilbert basis theorem", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
+  "Noetherian ring" -> "coordinate ring" [label="Hilbert basis theorem", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
   "algebraic variety" -> "variety" [label="synonym with \"algebraic variety\"", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "algebraic group" [href="https://en.wikipedia.org/wiki/Algebraic_group"]
   "algebraic variety" -> "algebraic group" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
@@ -488,6 +499,10 @@ digraph G {
   "quotient ring" -> "local ring / maximal ideal"
   "local ring / maximal ideal" -> "residue field" [dir="both", href="https://en.wikipedia.org/wiki/Residue_field#Definition"]
   "field" -> "residue field"
+  "field of fractions" [href="https://en.wikipedia.org/wiki/Field_of_fractions"]
+  "field" -> "field of fractions"
+  "cyclotomic field" [href="https://en.wikipedia.org/wiki/Cyclotomic_field"]
+  "algebraic number field" -> "cyclotomic field"
   "scheme" -> "regular scheme" [label="scheme where the local rings are regular local rings", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
   "algebraic curve" -> "rational curve"
@@ -504,12 +519,12 @@ digraph G {
   "projective variety" [href="https://en.wikipedia.org/wiki/Projective_variety"]
   "variety" -> "projective variety" [label="closed subvariety of a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "projective scheme" [href="https://en.wikipedia.org/wiki/Projective_scheme"]
-  "scheme" -> "projective scheme" [label="over a scheme S is an S-scheme that factors through some projective space P^N_S -> S as a closed subscheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "scheme" -> "projective scheme" [label="over a scheme S\nis an S-scheme that factors\nthrough some projective space\nP^N_S -> S as a closed subscheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "quasi-projective variety" [href="https://en.wikipedia.org/wiki/Quasi-projective_variety"]
-  "variety" -> "quasi-projective variety" [label="locally closed subvariety of a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "quasi-projective variety" [label="locally closed subvariety\nof a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "quot scheme" [href="https://en.wikipedia.org/wiki/Quot_scheme"]
-  "scheme" -> "quot scheme" [label="parametrizes quotients of locally free sheaves on a projective scheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "variety" -> "rational variety" [label="birational to a projective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "scheme" -> "quot scheme" [label="parametrizes quotients\nof locally free sheaves\non a projective scheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "variety" -> "rational variety" [label="birational to a\nprojective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 
   "differential ring" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
   "ring" -> "differential ring"
@@ -524,7 +539,7 @@ digraph G {
   "Galois group" -> "ring x Galois group x finite field x local field"
   "finite field" -> "ring x Galois group x finite field x local field"
   "local field" -> "ring x Galois group x finite field x local field"
-  "ring x Galois group x finite field x local field" -> "deformation ring" [label="controls liftings of a representation of a Galois group from a finite field to a local field", href="https://en.wikipedia.org/wiki/Deformation_ring"]
+  "ring x Galois group x finite field x local field" -> "deformation ring" [label="controls liftings of a\nrepresentation of a Galois group\nfrom a finite field\nto a local field", href="https://en.wikipedia.org/wiki/Deformation_ring"]
 
   <!-- https://rip94550.wordpress.com/2012/07/02/introduction-to-rings/ -->
   "ring" -> "ring with identity" [label="* identity"]
@@ -584,24 +599,34 @@ digraph G {
   "graded ring" [href="https://en.wikipedia.org/wiki/Graded_ring"]
   "ring" -> "graded ring" [label="with a grading or a graduation", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "(left) hereditary" [href="https://en.wikipedia.org/wiki/Hereditary_ring"]
-  "ring" -> "(left) hereditary" [label="left ideals are all projective modules", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "(left) hereditary" [label="left ideals are\nall projective modules", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "Jacobson ring" [href="https://en.wikipedia.org/wiki/Jacobson_ring"]
-  "ring" -> "Jacobson ring" [label=" which each prime ideal is an intersection of primitive ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "Jacobson ring" [label=" each prime ideal\nis an intersection of\nprimitive ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "local ring" [href="https://en.wikipedia.org/wiki/Local_ring"]
+  "semi-local ring" -> "local ring"
+  "ring" -> "semiperfect ring"
+  "ring" -> "endomorphism ring"
+  "endomorphism ring" [href="https://en.wikipedia.org/wiki/Endomorphism_ring"]
+  "semiperfect ring" [href="https://en.wikipedia.org/wiki/Semiperfect_ring"]
+  "semi-local ring" [href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "semi-local ring" -> "Artinian ring" [href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "semi-local ring" -> "serial ring" [href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "semi-local ring" -> "semiperfect ring" [href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "ring" -> "semi-local ring" [label="R/J(R) is a semisimple ring,\nwhere J(R) is the\nJacobson radical of R", href="https://en.wikipedia.org/wiki/Semi-local_ring"]
   "ring" -> "local ring" [label="with a unique maximal left ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "generic matrix ring" -> "matrix ring" [label="elements are square matrices of fixed size with the entries in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "generic matrix ring" -> "matrix ring" [label="elements are square\nmatrices of fixed size\nwith the entries in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "matrix ring" [href="https://en.wikipedia.org/wiki/Matrix_ring"]
-  "ring" -> "generic matrix ring" [label="consisting of square matrices with entries in formal variables", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "generic matrix ring" [label="consisting of square\nmatrices with entries\nin formal variables", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "generic matrix ring" [href="https://en.wikipedia.org/wiki/Ring_of_generic_matrices"]
 
   "ring" -> "monoid ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "monoid ring" [href="https://en.wikipedia.org/wiki/Monoid_ring"]
-  "ring" -> "(left) perfect ring" [label="satisfying the descending chain condition on right principal ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "(left) perfect ring" [label="satisfying the descending\nchain condition on\nright principal ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "(left) perfect ring" [href="https://en.wikipedia.org/wiki/Perfect_ring"]
   "(left) perfect ring" -> "artinian ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "polynomial ring" [href="https://en.wikipedia.org/wiki/Polynomial_ring"]
   "polynomial ring" -> "K[X]"
-  "commutative ring" -> "polynomial ring" [label="consisting of all the polynomials in the specified variables with coefficients in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "commutative ring" -> "polynomial ring" [label="consisting of all\nthe polynomials in the\nspecified variables\nwith coefficients in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "ring" -> "nonzero ring"
   "prime ring" [href="https://en.wikipedia.org/wiki/Prime_ring"]
   "nonzero ring" -> "prime ring" [label="any two elements\na and b of R with aRb = 0,\nwe have either a = 0 or b = 0", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
@@ -622,7 +647,7 @@ digraph G {
   "ring" -> "quotient ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "ring" -> "if the module R is an injective module" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "semiprimary ring" [href="https://en.wikipedia.org/wiki/Semiprimary_ring"]
-  "ring" -> "semiprimary ring" [label="for the Jacobson radical J(R) of R, (1) R/J(R) is semisimple and (2) J(R) is a nilpotent ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "semiprimary ring" [label="for the\nJacobson radical J(R) of R,\n(1) R/J(R) is semisimple and\n(2) J(R) is a nilpotent ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "semiprime ring" [href="https://en.wikipedia.org/wiki/Semiprime_ring"]
   "ring" -> "semiprime ring" [label="the only nilpotent ideal is the trivial ideal {0}", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "semiprimitive ring" [href="https://en.wikipedia.org/wiki/Semiprimitive_ring"]
@@ -645,9 +670,9 @@ digraph G {
   "(right) uniserial ring" [href="https://en.wikipedia.org/wiki/Uniserial_ring"]
   "ring" -> "(right) uniserial ring" [label="right uniserial module over itself", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "(right) uniserial ring" -> "valuation ring" [label="* commutative", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "von Neumann regular ring" [href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring"]
-  "ring" -> "von Neumann regular ring" [label="each element a can be expressed as a = axa for another element x in the ring", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "von Neumann regular ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "Von Neumann regular ring" [href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring"]
+  "ring" -> "Von Neumann regular ring" [label="each element a\ncan be expressed\nas a = axa for another\nelement x in the ring", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "Von Neumann regular ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
 
   "rng" [href="https://en.wikipedia.org/wiki/Rng_(algebra)"]
   "rng of square zero" [href="https://en.wikipedia.org/wiki/Rng_(algebra)#Rng_of_square_zero"]
@@ -665,7 +690,7 @@ digraph G {
   "ring with identity" -> "integral domain"
   "commutative ring" -> "integral domain" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "Dedekind domain" [href="https://en.wikipedia.org/wiki/Dedekind_domain"]
-  "noetherian ring" -> "Dedekind domain" [label="every ideal is generated by at most two elements", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
+  "Noetherian ring" -> "Dedekind domain" [label="every ideal is generated by at most two elements", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
   "integral domain" -> "Dedekind domain" [label="every nonzero proper ideal\nfactors into a product of prime ideals", href="https://en.wikipedia.org/wiki/Dedekind_domain"]
   "Dedekind domain" -> "integers" [href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
 
@@ -674,7 +699,7 @@ digraph G {
   "commutative ring" -> "field" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
   "(left) coherent ring" [href="https://en.wikipedia.org/wiki/Coherent_ring"]
-  "ring" -> "(left) coherent ring" [label="ring such that every finitely generated left ideal of it is a finitely presented module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "(left) coherent ring" [label="every finitely generated\nleft ideal of it is\na finitely presented module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   <!-- https://rip94550.wordpress.com/2012/07/16/integral-domains-and-the-failure-of-unique-factorization/ -->
   "integral domain" -> "unique factorization domain" [label="every non-zero element x of R\ncan be written as a product (an empty product if x is a unit) of\nirreducible elements pi of R\nand a unit u", href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Definition"]
 
@@ -691,9 +716,14 @@ digraph G {
   "unique factorization domain" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain"]
   "unique factorization domain" -> "principal ideal domain" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
   "unique factorization domain" -> "regular local ring" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
-  "ring" -> "noetherian ring" [label="satisfies the ascending chain condition\non left and right ideals", href="https://en.wikipedia.org/wiki/Noetherian_ring"]
-  "noetherian ring" [href="https://en.wikipedia.org/wiki/Noetherian_ring"]
-  "noetherian ring" -> "artinian ring" [label="ring satisfying the descending chain condition for left ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "Noetherian ring" [label="satisfies the ascending chain condition\non left and right ideals", href="https://en.wikipedia.org/wiki/Noetherian_ring"]
+  "Noetherian ring" -> "Noetherian local ring"
+  "local ring" -> "Noetherian local ring"
+  "Noetherian local ring"
+  "Noetherian local ring" -> "Gorenstein local ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
+  "Gorenstein local ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
+  "Noetherian ring" [href="https://en.wikipedia.org/wiki/Noetherian_ring"]
+  "Noetherian ring" -> "artinian ring" [label="ring satisfying the\ndescending chain condition\nfor left ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   <!-- "ring" -> "uniserial ring" [label="integral domain where every finitely generated ideal is principal", href=""] -->
   "artinian ring" [href="https://en.wikipedia.org/wiki/Artinian_ring"]
 
@@ -774,7 +804,7 @@ digraph G {
   "sheaf" -> "quasi-coherent sheaf"
   "reflexive sheaf" [href="https://en.wikipedia.org/wiki/Reflexive_sheaf"]
   "quasi-coherent sheaf" -> "coherent sheaf" [label="finitely generated as OX-module", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "coherent sheaf" -> "reflexive sheaf" [label="canonical map to the second dual is an isomorphism", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "coherent sheaf" -> "reflexive sheaf" [label="canonical map to\nthe second dual\nis an isomorphism", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 }
 ```
 
