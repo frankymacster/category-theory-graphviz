@@ -160,9 +160,12 @@ digraph G {
   "group" -> "topological group" [label="with a topology on G such that\nboth the group's binary operation\nand the function mapping group elements\nto their respective inverses\nare continuous functions with respect to the topology", href="https://en.wikipedia.org/wiki/Topological_group"]
   "topological group" -> "Lie group" [label="elements are organized continuously and smoothly", href="https://en.wikipedia.org/wiki/Lie_group"]
   "matrix group" [href="https://en.wikipedia.org/wiki/Matrix_group"]
-  "group" -> "matrix group"
-  "matrix group" -> "general linear group" [label="all invertible\nn-by-n matrices\nwith real entries", href="https://en.wikipedia.org/wiki/Group_(mathematics)#Examples_and_applications"]
+  "automorphism group" [href="https://en.wikipedia.org/wiki/Automorphism_group"]
+  "group" -> "automorphism group"
+  "automorphism group" -> "general linear group" [label="all invertible\nn-by-n matrices\nwith real entries", href="https://en.wikipedia.org/wiki/Group_(mathematics)#Examples_and_applications"]
   "general linear group" -> "orthogonal group" [label="endomorphisms that\npreserve the Euclidean norm", href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+  "special linear group" -> "modular group" [label="quotient of the\n2-dimensional special\nlinear group SL(2, Z)\nover the integers\nby its center {I, −I}", href="https://en.wikipedia.org/wiki/Modular_group#Definition"]
+  "modular group" [href="https://en.wikipedia.org/wiki/Modular_group"]
 
   subgraph cluster_orthogonalgroup {
     label="orthogonal group"
@@ -173,6 +176,7 @@ digraph G {
   subgraph cluster_generallineargroup {
     label="general linear group"
     "general linear group" [label="", shape="none", href="https://en.wikipedia.org/wiki/General_linear_group"]
+    "matrix group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
     "special linear group" [href="https://en.wikipedia.org/wiki/Special_linear_group"]
   }
 
