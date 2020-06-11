@@ -141,6 +141,11 @@ digraph G {
   "algebraic group" -> "finite group"
   "algebraic group" -> "general linear group"
   "Lie group" -> "general linear group"
+  "Lie group" -> "Lie group with dimension 1"
+  "Lie group with dimension 1" -> "real numbers" [href="https://en.wikipedia.org/wiki/Lie_group#More_examples_of_Lie_groups"]
+  "Lie group with dimension 1" -> "circle group" [href="https://en.wikipedia.org/wiki/Lie_group#More_examples_of_Lie_groups"]
+  "circle group" [href="https://en.wikipedia.org/wiki/Circle_group"]
+  "Lie group with dimension 2" -> "special unitary group"
   "metric space" -> "topological group"
   "topological group" -> "disconnected topological group"
   "disconnected topological group" -> "generalized dihedral group"
@@ -542,6 +547,7 @@ digraph G {
   "ring" -> "ring x Galois group x finite field x local field"
   "Galois group" -> "ring x Galois group x finite field x local field"
   "finite field" -> "ring x Galois group x finite field x local field"
+  "finite field" -> "integers modulo prime" [href="https://en.wikipedia.org/wiki/Modular_arithmetic#Integers_modulo_n"]
   "local field" -> "ring x Galois group x finite field x local field"
   "ring x Galois group x finite field x local field" -> "deformation ring" [label="controls liftings of a\nrepresentation of a Galois group\nfrom a finite field\nto a local field", href="https://en.wikipedia.org/wiki/Deformation_ring"]
 
@@ -551,6 +557,11 @@ digraph G {
   "ring with identity" -> "division ring" [label="* group", href="http://abstract.ups.edu/aata/section-rings-definitions.html"]
 
   "division ring" -> "field" [label="* commutative", href="http://abstract.ups.edu/aata/section-rings-definitions.html"]
+  "division ring" -> "free algebra over division ring"
+  "division ring" -> "noncommutative division ring"
+  "noncommutative division ring" -> "quaternion"
+  "free algebra" -> "free algebra over division ring"
+  "free ideal ring" -> "free algebra over division ring" [href="https://en.wikipedia.org/wiki/Free_algebra"]
   
   "commutative ring" -> "integers" [href="https://en.wikipedia.org/wiki/Commutative_ring#First_examples"]
 
@@ -595,17 +606,25 @@ digraph G {
   "ring" -> "filtered ring" [label="with a filtration", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "finitely generated ring" [href="https://en.wikipedia.org/wiki/Finitely_generated_ring"]
   "ring" -> "finitely generated ring" [label="is finitely generated as Z-algebra", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "free ideal ring (fir)" [href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
-  "ring" -> "free ideal ring (fir)" [label="every right ideal is\na free module of fixed rank", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "free ideal ring" [href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
+  "ring" -> "free ideal ring" [label="every right ideal is\na free module of fixed rank", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "ring" -> "semifir" [label=" every finitely\ngenerated right ideal\nis a free module\nof fixed rank", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "free ring" [href="https://en.wikipedia.org/wiki/Free_ring"]
-  "ring" -> "free ring" [label="is a free algebra over the integers", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "free algebra" -> "free ring"
+  "ring" -> "free ring" [label="free algebra\nover the integers", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "graded ring" -> "graded integral domain" [href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
   "graded ring" [href="https://en.wikipedia.org/wiki/Graded_ring"]
   "ring" -> "graded ring" [label="with a grading or a graduation", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "graded module" -> "graded ring" [label="graded module\nover itself", href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
+  "graded module" -> "graded vector space" [href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
+  "graded ring" -> "polynomial ring" [label="graded by degree", href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
   "(left) hereditary" [href="https://en.wikipedia.org/wiki/Hereditary_ring"]
   "ring" -> "(left) hereditary" [label="left ideals are\nall projective modules", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "Jacobson ring" [href="https://en.wikipedia.org/wiki/Jacobson_ring"]
   "ring" -> "Jacobson ring" [label=" each prime ideal\nis an intersection of\nprimitive ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "Jacobson ring" -> "field" [href="https://en.wikipedia.org/wiki/Jacobson_ring#Examples"]
+  "principal ideal domain" -> "principal ideal domain\n with Jacobson radical zero"
+  "Jacobson ring" -> "principal ideal domain\n with Jacobson radical zero" [href="https://en.wikipedia.org/wiki/Jacobson_ring#Examples"]
   "local ring" [href="https://en.wikipedia.org/wiki/Local_ring"]
   "semi-local ring" -> "local ring"
   "ring" -> "semiperfect ring"
@@ -630,6 +649,8 @@ digraph G {
   "(left) perfect ring" -> "artinian ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "polynomial ring" [href="https://en.wikipedia.org/wiki/Polynomial_ring"]
   "polynomial ring" -> "K[X]"
+  "polynomial ring" -> "polynomial ring over commutative ring"
+  "free module" -> "polynomial ring over commutative ring" [href="https://en.wikipedia.org/wiki/Free_module#Examples"]
   "commutative ring" -> "polynomial ring" [label="consisting of all\nthe polynomials in the\nspecified variables\nwith coefficients in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "ring" -> "nonzero ring"
   "prime ring" [href="https://en.wikipedia.org/wiki/Prime_ring"]
@@ -649,31 +670,40 @@ digraph G {
   "quasi-Frobenius ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "quotient ring" [href="https://en.wikipedia.org/wiki/Quotient_ring"]
   "ring" -> "quotient ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "ring" -> "if the module R is an injective module" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "self-injective" [label="if the module R\nis an injective module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "semiprimary ring" [href="https://en.wikipedia.org/wiki/Semiprimary_ring"]
-  "ring" -> "semiprimary ring" [label="for the\nJacobson radical J(R) of R,\n(1) R/J(R) is semisimple and\n(2) J(R) is a nilpotent ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "semiprimary ring" [label="for the\nJacobson radical J(R) of R,\n(1) R/J(R) is semisimple and\n(2) J(R) is a nilpotent ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "semiprime ring" [href="https://en.wikipedia.org/wiki/Semiprime_ring"]
-  "ring" -> "semiprime ring" [label="the only nilpotent ideal is the trivial ideal {0}", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "ring" -> "semiprime ring" [label="the only nilpotent ideal\nis the trivial ideal {0}", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "semiprimitive ring" [href="https://en.wikipedia.org/wiki/Semiprimitive_ring"]
   "ring" -> "semiprimitive ring" [label="whose Jacobson radical is zero", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "semiprimitive ring" -> "Von Neumann regular ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "semiprimitive ring" -> "primitive ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   <!-- quasi-Frobenius rings and local rings are usually not semiprimitive -->
-  "artinian ring" -> "semisimple ring" [label="finite product of simple Artinian rings", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "artinian ring" -> "semisimple ring" [label="finite product of\nsimple Artinian rings", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "simple ring" -> "simple artinian ring"
+  "artinian ring" -> "simple artinian ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "module" -> "semisimple left R-module"
   "semisimple ring" [href="semisimple ring"]
   "semisimple left R-module" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "(right) serial ring" [href="https://en.wikipedia.org/wiki/Serial_ring"]
-  "ring" -> "(right) serial ring" [label="right serial module over itself", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "serial ring" [href="https://en.wikipedia.org/wiki/Serial_ring"]
+  "ring" -> "serial ring" [label="right serial module over itself", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "simple ring" [href="https://en.wikipedia.org/wiki/Simple_ring"]
   "nonzero ring" -> "simple ring" [label="only has trivial two-sided ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "Sylvester domain" [href="https://en.wikipedia.org/wiki/Sylvester_domain"]
   "ring" -> "Sylvester domain" [label="Sylvester's law of nullity holds", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "Sylvester domain" -> field" [href="https://en.wikipedia.org/wiki/Sylvester_domain"]
   "trivial ring" [href="https://en.wikipedia.org/wiki/Trivial_ring"]
   "ring" -> "trivial ring" [label="consisting of a single element 0 = 1", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "(right) uniserial ring" [href="https://en.wikipedia.org/wiki/Uniserial_ring"]
-  "ring" -> "(right) uniserial ring" [label="right uniserial module over itself", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
-  "(right) uniserial ring" -> "valuation ring" [label="* commutative", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "uniserial ring" [href="https://en.wikipedia.org/wiki/Uniserial_ring"]
+  "ring" -> "uniserial ring" [label="right uniserial module over itself", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "serial ring" -> "uniserial ring" [href="https://en.wikipedia.org/wiki/Serial_module#Examples"]
+  "uniserial ring" -> "valuation ring" [label="* commutative", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
+  "principal ideal ring" -> "commutative principal ideal ring"
+  "commutative principal ideal ring x integral domain" [shape="point"]
+  "commutative principal ideal ring" -> "commutative principal ideal ring x integral domain"
+  "integral domain" -> "commutative principal ideal ring x integral domain"
+  "commutative principal ideal ring x integral domain" -> "principal ideal domain" [dir="both", href="https://en.wikipedia.org/wiki/Principal_ideal_ring"]
   "Von Neumann regular ring" [href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring"]
   "ring" -> "Von Neumann regular ring" [label="each element a\ncan be expressed\nas a = axa for another\nelement x in the ring", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
   "Von Neumann regular ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory#:~:text=Ring%20theory%20is%20the%20branch,see%20glossary%20of%20commutative%20algebra."]
@@ -761,6 +791,8 @@ digraph G {
   "associative algebra" -> "commutative algebra" [label="* commutative", href="https://en.wikipedia.org/wiki/Associative_algebra"]
   "associative algebra" -> "unital associative algebras" [label="have a multiplicative identity", href="https://en.wikipedia.org/wiki/Associative_algebra"]
   "associative algebra" -> "Z-algebra"
+  "free algebra" [href="https://en.wikipedia.org/wiki/Free_algebra"]
+  "algebra over a field" -> "free algebra"
   "Z-algebra" -> "ring" [href="https://en.wikipedia.org/wiki/Associative_algebra"]
   "ring" -> "ring of characteristic n"
   "associative algebra" -> "(Z/nZ)-algebra"
@@ -786,6 +818,10 @@ digraph G {
   "real numbers" [href="https://en.wikipedia.org/wiki/Real_number"]
   "rational numbers" [href="https://en.wikipedia.org/wiki/Rational_number"]
   "integers" [href="https://en.wikipedia.org/wiki/Integer"]
+  "integers modulo n" [href="https://en.wikipedia.org/wiki/Modular_arithmetic#Integers_modulo_n"]
+  "integers modulo prime" [href="https://en.wikipedia.org/wiki/Modular_arithmetic#Integers_modulo_n"]
+  "integers modulo n" -> "integers modulo prime"
+  "integers" -> "integers modulo n"
   "prime numbers" [href="https://en.wikipedia.org/wiki/Prime_number"]
   "natural numbers" [href="https://en.wikipedia.org/wiki/Natural_number"]
    "quaternion" -> "octonion"
