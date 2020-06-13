@@ -16,6 +16,8 @@ digraph G {
     label="set"
     href="https://en.wikipedia.org/wiki/Set_(mathematics)"
     "set" [shape="none", label=""]
+    "cartesian product" [href="https://en.wikipedia.org/wiki/Cartesian_product"]
+    "binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation"]
     "function"
   }
 
@@ -65,7 +67,6 @@ digraph G {
   "natural numbers" -> "+ x natural numbers x 0"
   "+ x natural numbers x 0" -> "(N0,+)"
 
-  "cartesian product" [href="https://en.wikipedia.org/wiki/Cartesian_product"]
   "function x cartesian product" [shape="point"]
   "function" -> "function x cartesian product"
   "cartesian product" -> "function x cartesian product"
@@ -81,7 +82,6 @@ digraph G {
   "partial order" -> "total order" [label="connexity", href="https://en.wikipedia.org/wiki/Total_order"]
   "well-order" [href="https://en.wikipedia.org/wiki/Well-order"]
   "total order" -> "well-order" [label="every non-empty\nsubset of S\nhas a least element\nin this ordering", href="https://en.wikipedia.org/wiki/Well-order"]
-  "binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation"]
   "preorder" -> "set x preorder"
   "preordered set" -> "partially ordered set"
   "partially ordered set" [href="https://en.wikipedia.org/wiki/Partially_ordered_set"]
@@ -134,6 +134,7 @@ digraph G {
   "group representation" -> "Galois representation"
 
   "group" -> "cyclic group"
+  "group" -> "quotient group"
   "cyclic group" [href="https://en.wikipedia.org/wiki/Cyclic_group"]
   "nth roots of unity" [href="https://en.wikipedia.org/wiki/Root_of_unity#Group_of_nth_roots_of_unity"]
   "cyclic group" -> "nth roots of unity"
@@ -218,6 +219,14 @@ digraph G {
   "automorphism group" -> "general linear group" [label="all invertible\nn-by-n matrices\nwith real entries", href="https://en.wikipedia.org/wiki/Group_(mathematics)#Examples_and_applications"]
   "general linear group" -> "orthogonal group" [label="endomorphisms that\npreserve the Euclidean norm", href="https://en.wikipedia.org/wiki/Orthogonal_group"]
   "special linear group" -> "modular group" [label="quotient of the\n2-dimensional special\nlinear group SL(2, Z)\nover the integers\nby its center {I, −I}", href="https://en.wikipedia.org/wiki/Modular_group#Definition"]
+  "special linear group" -> "projective special linear group" [label="/ SZ(V)", dir="both" href="https://en.wikipedia.org/wiki/Projective_linear_group"]
+  "projective special linear group" [href="https://en.wikipedia.org/wiki/Projective_linear_group"]
+  "projective special linear group" -> "2-dimensional\nprojective special\nlinear group"
+  "2-dimensional\nprojective special\nlinear group" -> "2-dimensional\nprojective special\nlinear group\nwith integer coefficients"
+  "2-dimensional\nprojective special\nlinear group\nwith integer coefficients" -> "2-dimensional\nprojective special\nlinear group\nwith integer coefficients\nand unit determinant"
+  "2-dimensional\nprojective special\nlinear group\nwith integer coefficients\nand unit determinant" -> "modular group" [dir="both"]
+  
+  "modular group"
   "modular group" [href="https://en.wikipedia.org/wiki/Modular_group"]
 
   subgraph cluster_orthogonalgroup {
@@ -230,7 +239,16 @@ digraph G {
     label="general linear group"
     "general linear group" [label="", shape="none", href="https://en.wikipedia.org/wiki/General_linear_group"]
     "matrix group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
-    "special linear group" [href="https://en.wikipedia.org/wiki/Special_linear_group"]
+
+    subgraph cluster_specialLinearGroup {
+      label="special linear group"
+      href="https://en.wikipedia.org/wiki/Special_linear_group"
+      "special linear group" [label="", shape="none"]
+
+      "specialLinearGroup/subgroups" [label="subgroups"]
+      "specialLinearGroup/subgroups" -> "scalar transformations\nwith unit determinant"
+      "scalar transformations\nwith unit determinant" -> "SZ(V)" [dir="both"]
+    }
   }
 
   subgraph cluster_unitarygroup {
@@ -248,18 +266,10 @@ digraph G {
   "orthogonal group" -> "translational group x orthogonal group"
   "translational group x orthogonal group" -> "Euclidean group"  [href="https://en.wikipedia.org/wiki/Euclidean_group"]
   "symmetry group" -> "Euclidean group"
-  "Euclidean group" -> "Euclidean space" [dir="none", label="transformations of that space\nthat preserve the Euclidean distance\nbetween any two points", href="https://en.wikipedia.org/wiki/Euclidean_group"]
-
 
   "manifold" -> "Euclidean space" [dir="none", label="", href="https://en.wikipedia.org/wiki/Manifold"]
 
-  subgraph cluster_euclideangroup {
-    label="Euclidean group"
-    "Euclidean group" [label="locally resembles\nEuclidean space\nnear each point", shape="none", href="https://en.wikipedia.org/wiki/Euclidean_group"]
-    "normal subgroup" [shape="oval"]
-    "normal subgroup" -> "translational group"
-    "special Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
-  }
+  "Euclidean group" -> "orthogonal group" [label="/ translational group", href="https://en.wikipedia.org/wiki/Euclidean_group#Subgroup_structure,_matrix_and_vector_representation"]
 
   "semigroup x monoid" [shape="point"]
   "semigroup" -> "semigroup x monoid" [label="+"]
@@ -296,7 +306,13 @@ digraph G {
     "topological space" [shape="none", label=""]
     "[0, 1] → X" -> "loop" [label="f(0) = f(1)", href="https://en.wikipedia.org/wiki/Loop_(topology)"]
     "loop" [href="https://en.wikipedia.org/wiki/Loop_(topology)"]
+    "chain complex" [href="https://en.wikipedia.org/wiki/Chain_complex"]
+    "homotopy group"
   }
+
+  "abelian group" -> "chain complex" [label="sequence\nof abelian\ngroups\nconnected by\nhomomorphisms\ncalled boundary\noperators", href="https://en.wikipedia.org/wiki/Homology_(mathematics)#Construction_of_homology_groups"]
+  "chain complex" -> "homology group"
+  "quotient group" -> "homology group"
 
   "separable space" [href="https://en.wikipedia.org/wiki/Separable_space"]
 
@@ -313,12 +329,20 @@ digraph G {
   "separable space" -> "finite topological space"
   "separable space" -> "countably infinite topological space"
   "separable space" -> "compact metric space"
+
+  subgraph cluster_metricSpace {
+    label="metric space"
+    href="https://en.wikipedia.org/wiki/Metric_spaces"
+    "metric space" [label="", shape="none"]
+    "isometry" [href="https://en.wikipedia.org/wiki/Isometry"]
+  }
+
   "metric space" -> "compact metric space"
   "metric space" -> "topological manifold" [label="locally resembles\nreal n-dimensional space", href="https://en.wikipedia.org/wiki/Hausdorff_space#Examples_and_non-examples"]
-  "homotopy group" -> "topological space" [dir="none"]
   "topological manifold" [href="https://en.wikipedia.org/wiki/Topological_manifold"]
   "topological manifold" -> "manifold"
-  "manifold" -> "line" [href="https://en.wikipedia.org/wiki/Manifold#Motivating_examples"]
+  "1-manifold" -> "line" [href="https://en.wikipedia.org/wiki/Manifold#Motivating_examples"]
+  "manifold" -> "1-manifold"
   "manifold" -> "sphere" [href="https://en.wikipedia.org/wiki/Manifold#Motivating_examples"]
   "surface" -> "sphere" [href="https://en.wikipedia.org/wiki/Manifold#Motivating_examples"]
   "manifold" [href="https://en.wikipedia.org/wiki/Manifold"]
@@ -330,12 +354,16 @@ digraph G {
   "differentiable manifold" -> "smooth manifold"
   "smooth manifold" [href="https://en.wikipedia.org/wiki/Differentiable_manifold#Definition"]
   "smooth manifold" -> "Lie group" [href="https://en.wikipedia.org/wiki/Representation_theory"]
-  "Riemann surface" [label="one-dimensional\ncomplex manifold", href="https://en.wikipedia.org/wiki/Riemann_surface"]
   "Riemann surface" -> "modular curve" [href="https://en.wikipedia.org/wiki/Modular_curve"]
   "modular curve" [href="https://en.wikipedia.org/wiki/Modular_curve"]
-  "complex manifold" -> "Riemann surface" [href="https://en.wikipedia.org/wiki/Riemann_surface"]
+  "complex 1-manifold" -> "Riemann surface" [href="https://en.wikipedia.org/wiki/Riemann_surface"]
+  "1-manifold" -> "complex 1-manifold"
+  "complex manifold" -> "complex 1-manifold"
   "compact manifold" -> "compact 1-manifold"
   "compact manifold" -> "compact 2-manifold"
+  "1-manifold" -> "compact 1-manifold"
+  "manifold" -> "2-manifold"
+  "2-manifold" -> "compact 2-manifold"
   "compact 2-manifold" -> "torus" [href="https://en.wikipedia.org/wiki/Topological_manifold#n-Manifolds"]
   "compact 2-manifold" -> "Klein bottle" [href="https://en.wikipedia.org/wiki/Topological_manifold#n-Manifolds"]
   "compact 1-manifold" -> "circle" [href="https://en.wikipedia.org/wiki/Topological_manifold#n-Manifolds"]
@@ -355,7 +383,6 @@ digraph G {
   "normal space" [href="https://en.wikipedia.org/wiki/Normal_space"]
   "completely normal Hausdorff space" [href="https://en.wikipedia.org/wiki/Normal_space"]
   "perfectly normal Hausdorff space" [href="https://en.wikipedia.org/wiki/Normal_space"]
-  "metric space" [href="https://en.wikipedia.org/wiki/Metric_space"]
   "normed vector space" [href="https://en.wikipedia.org/wiki/Normed_vector_space"]
   "topological space x vector space" [shape="point"]
   "vector space" -> "topological space x vector space"
@@ -423,7 +450,26 @@ digraph G {
   "vector space x Lie bracket" [shape="point"]
   "vector space" -> "vector space x Lie bracket"
   "vector space x Lie bracket" -> "lie algebra" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
-  "Euclidean space" [href="https://en.wikipedia.org/wiki/Euclidean_space"]
+
+  subgraph cluster_EuclideanSpace {
+    label="Euclidean space"
+    href="https://en.wikipedia.org/wiki/Euclidean_space"
+    "Euclidean space" [label="", shape="none"]
+    "EuclideanSpace/isometry" [label="isometry"]
+
+    subgraph cluster_Euclideangroup {
+      label="Euclidean group"
+      href="https://en.wikipedia.org/wiki/Euclidean_group"
+      "Euclidean group" [label="", shape="none"]
+      "normal subgroup" [shape="oval"]
+      "subgroup" [shape="oval"]
+      "subgroup" -> "normal subgroup"
+      "subgroup" -> "special Euclidean group"
+      "normal subgroup" -> "translational group"
+      "special Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
+    }
+  }
+
   "affine space" [href="https://en.wikipedia.org/wiki/Affine_space"]
   "inner product space" [href="https://en.wikipedia.org/wiki/Inner_product_space"]
   "Banach space" [href="https://en.wikipedia.org/wiki/Banach_space"]
@@ -522,7 +568,25 @@ digraph G {
   "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime\nideals are maximal\nin a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "ideal" -> "Jacobson radical" [label="consisting of those\nelements in R\nthat annihilate all\nsimple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
 
-  "scheme" [href="https://en.wikipedia.org/wiki/Scheme"]
+  subgraph cluster_scheme {
+    label="scheme"
+    href="https://en.wikipedia.org/wiki/Scheme"
+    "scheme" [label="", shape="none"]
+    "scheme/morphism" [label="morphism"]
+  }
+
+  subgraph cluster_noetherianScheme {
+    label="locally Noetherian scheme"
+    href="https://en.wikipedia.org/wiki/Noetherian_scheme"
+    "locally Noetherian scheme" [label="", shape="none"]
+    "noetherianScheme/morphism" [label="morphism"]
+  }
+  "finite étale morphism" [href="https://en.wikipedia.org/wiki/%C3%89tale_morphism"]
+  "noetherianScheme/morphism" -> "finite étale morphism"
+
+  "Noetherian scheme" [href="https://en.wikipedia.org/wiki/Noetherian_scheme"]
+  "Noetherian scheme" -> "locally Noetherian scheme"
+  "scheme" -> "Noetherian scheme"
   "scheme" -> "abelian scheme"
   "scheme" -> "separated scheme"
   "scheme" -> "quotient scheme"
@@ -750,7 +814,6 @@ digraph G {
   "finitely generated algebra" -> "finite field extension" [label="E is a finitely\ngenerated algebra\nover F", href="https://en.wikipedia.org/wiki/Finitely_generated_algebra#Examples"]
   "separable extension" -> "Galois extension"
   "normal extension" -> "Galois extension"
-  "algebraic number field" [href="https://en.wikipedia.org/wiki/Algebraic_number_field"]
   "algebraic number field" -> "totally real number field"
   "totally real number field" [href="https://en.wikipedia.org/wiki/Totally_real_number_field#:~:text=In%20number%20theory%2C%20a%20number,lies%20inside%20the%20real%20numbers.&text=An%20abelian%20extension%20of%20Q,which%20it%20has%20degree%20two."]
   "differential field" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
@@ -759,8 +822,18 @@ digraph G {
   "locally compact space" -> "locally compact topological field"
   "topological field" -> "locally compact topological field"
   "locally compact topological field" -> "local field" [href="https://en.wikipedia.org/wiki/Local_field"]
-  "ring of integers" [href="https://en.wikipedia.org/wiki/Ring_of_integers"]
-  "algebraic number field" -> "ring of integers" [label="integral elements\ncontained in K", href="https://en.wikipedia.org/wiki/Ring_of_integers"]
+  "Z-module" -> "free Z-module"
+  "free Z-module" -> "ring of integers"
+
+  subgraph cluster_algebraicNumberField {
+    label="algebraic number field"
+    href="https://en.wikipedia.org/wiki/Algebraic_number_field"
+    "algebraic number field" [label="", shape="none"]
+    "algebraicNumberField/integral elements" [label="integral elements"]
+    "ring of integers" [href="https://en.wikipedia.org/wiki/Ring_of_integers"]
+    "algebraicNumberField/integral elements" -> "ring of integers" [dir="both"]
+  }
+
   "filtered ring" [href="https://en.wikipedia.org/wiki/Filtered_ring"]
   "finitely generated ring" [href="https://en.wikipedia.org/wiki/Finitely_generated_ring"]
   "free ideal ring" [href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
@@ -939,18 +1012,19 @@ digraph G {
   "Artinian ring" [href="https://en.wikipedia.org/wiki/Artinian_ring"]
 
   "principal ideal domain" [href="https://en.wikipedia.org/wiki/Principal_ideal_domain"]
-  "principal ideal domain" -> "euclidean domain" [label="integral domain\nthat can be endowed\nwith a Euclidean\nfunction which\nallows a suitable\ngeneralization of\nthe Euclidean division\nof the integers", href="https://en.wikipedia.org/wiki/Euclidean_domain"]
+  "principal ideal domain" -> "Euclidean domain" [label="integral domain\nthat can be endowed\nwith a Euclidean\nfunction which\nallows a suitable\ngeneralization of\nthe Euclidean division\nof the integers", href="https://en.wikipedia.org/wiki/Euclidean_domain"]
 
   
   "Gaussian integers" [href="https://en.wikipedia.org/wiki/Gaussian_integer"]
   "Eisenstein integers" [href="https://en.wikipedia.org/wiki/Eisenstein_integer"]
-  "euclidean domain" [href="https://en.wikipedia.org/wiki/Euclidean_domain"]
-  "euclidean domain" -> "integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
-  "euclidean domain" -> "Gaussian integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
-  "euclidean domain" -> "Eisenstein integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
-  "euclidean domain" -> "field"
-  "euclidean domain" -> "K[X]" [href="https://en.wikipedia.org/wiki/Polynomial_ring#Properties_of_K[X]"]
-  "euclidean domain" -> "formal power series ring over a field" [href="https://en.wikipedia.org/wiki/Euclidean_domain#Examples"]
+  "Euclidean domain" [href="https://en.wikipedia.org/wiki/Euclidean_domain"]
+  "Euclidean domain" -> "integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "Euclidean domain" -> "Gaussian integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "Euclidean domain" -> "Eisenstein integers" [href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "Euclidean domain" -> "field"
+  "Euclidean domain" -> "K[X]" [href="https://en.wikipedia.org/wiki/Polynomial_ring#Properties_of_K[X]"]
+  "Euclidean domain" -> "formal power series ring over a field" [href="https://en.wikipedia.org/wiki/Euclidean_domain#Examples"]
+  "formal power series ring over a field" [label="formal power\nseries ring\nover a field"]
   "formal power series ring over a field" -> "formal power series ring over a field in one variable"
 
   subgraph cluster_formalPowerSeriesRingOverAField {
