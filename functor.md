@@ -70,7 +70,18 @@ digraph G {
   "contravariant functor" -> "presheaf"
   "functor" -> "constant functor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "endofunctor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
+  "functor" -> "comonoidal functor"
+  "comonoidal functor" -> "monoidal functor" [dir="none", label="dual", href="https://en.wikipedia.org/wiki/Monoidal_functor"]
   "polynomial functor" [href="https://en.wikipedia.org/wiki/Polynomial_functor"]
+  "monoidal functor" [href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "functor" -> "monoidal functor" [label="between monoidal categories\nwhich preserve the monoidal structure", href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "monoidal functor" -> "lax monoidal functor" [href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "monoidal functor" -> "strong monoidal functor" [label="coherence maps\nare invertible", href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "monoidal functor" -> "strict monoidal functor" [label="coherence maps\nare identity maps", href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "braided monoidal functor" -> "symmetric monoidal functor"
+  "endofunctor" -> "lax monoidal functor"
+  "lax monoidal functor" -> "applicative" [dir="both"]
+  "lax monoidal functor" -> "monad"
   "endofunctor" -> "polynomial functor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "identity functor" [label="maps an object to itself\nand a morphism to itself", href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "diagonal functor" [href="https://en.wikipedia.org/wiki/Diagonal_functor"]
