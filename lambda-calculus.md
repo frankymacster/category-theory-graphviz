@@ -244,15 +244,135 @@ digraph G {
 ```
 
 TRUE := λx.λy.x
+
+```graphviz
+digraph G {
+  compound="true"
+
+  "x"
+
+  subgraph cluster0 {
+    "0y" [label="y"]
+
+    subgraph cluster00 {
+      "00x" [label="x"]
+    }
+
+    "0y" -> "00x" [lhead="cluster00"]
+  }
+
+  "x" -> "0y" [lhead="cluster0"]
+}
+```
+
 FALSE := λx.λy.y
+
+```graphviz
+digraph G {
+  compound="true"
+
+  "x"
+
+  subgraph cluster0 {
+    "0y" [label="y"]
+
+    subgraph cluster00 {
+      "00y" [label="y"]
+    }
+
+    "0y" -> "00y" [lhead="cluster00"]
+  }
+
+  "x" -> "0y" [lhead="cluster0"]
+}
+```
+
 (Note that FALSE is equivalent to the Church numeral zero defined above)
 Then, with these two lambda terms, we can define some logic operators (these are just possible formulations; other expressions are equally correct):
 
 AND := λp.λq.p q p
+
+```graphviz
+digraph G {
+  subgraph cluster0 {
+    label="p"
+
+    subgraph cluster00 {
+      label="q"
+
+      "00p" [label="p"]
+      "00q(p)" [label="q(p)"]
+      "00p(q(p))" [label="p(q(p))"]
+
+      "00p" -> "00q(p)" [label="q"]
+      "00q(p)" -> "00p(q(p))" [label="p"]
+    }
+  }
+}
+```
+
 OR := λp.λq.p p q
+
+```graphviz
+digraph G {
+  subgraph cluster0 {
+    label="p"
+
+    subgraph cluster00 {
+      label="q"
+
+      "00q" [label="q"]
+      "00p(q)" [label="p(q)"]
+      "00p(p(q))" [label="p(p(q))"]
+
+      "00q" -> "00p(q)" [label="p"]
+      "00p(q)" -> "00p(p(q))" [label="p"]
+    }
+  }
+}
+```
+
 NOT := λp.p FALSE TRUE
+
+```graphviz
+digraph G {
+  subgraph cluster0 {
+    label="p"
+
+    "0TRUE" [label="TRUE"]
+    "0FALSE(TRUE)" [label="FALSE(TRUE)"]
+    "0p(FALSE(TRUE))" [label="p(FALSE(TRUE))"]
+
+    "0TRUE" -> "0FALSE(TRUE)" [label="FALSE"]
+    "0FALSE(TRUE)" -> "0p(FALSE(TRUE))" [label="p"]
+  }
+}
+```
+
 IFTHENELSE := λp.λa.λb.p a b
 
+```graphviz
+digraph G {
+  subgraph cluster0 {
+    label="p"
+
+    subgraph cluster00 {
+      label="a"
+
+      subgraph cluster000 {
+        label="b"
+
+        "000b" [label="b"]
+        "000a(b)" [label="a(b)"]
+        "000p(a(b))" [label="p(a(b))"]
+
+        "000b" -> "000a(b)" [label="a"]
+        "000a(b)" -> "000p(a(b))" [label="p"]
+      }
+    }
+  }
+}
+```
 
 ## Factorial
 
