@@ -1,17 +1,16 @@
-https://en.wikipedia.org/wiki/Magma_(algebra)
+// https://en.wikipedia.org/wiki/Magma_(algebra)
 
 // more general to more specific following the laws the categories abide
 // TODO
   // how to describe a Category being composed of a category
   // how to describe a Category being an instance of other categories
 
-the arrows between "categories" here are inheritance arrows that can be seen as the free functor
-the arrows between objects in the categories are morphisms
-an object is an instance of a category
+// the arrows between "categories" here are inheritance arrows that can be seen as the free functor
+// the arrows between objects in the categories are morphisms
+// an object is an instance of a category
 
-```graphviz
 digraph G {
-  <!-- splines='line" -->
+  // splines="line"
   node [shape="box"]
   compound="true"
 
@@ -272,7 +271,7 @@ digraph G {
   subgraph cluster_unitarygroup {
     label="unitary group"
     "unitary group" [label="", shape="none", href="https://en.wikipedia.org/wiki/Unitary_group"]
-    <!-- "Lie group of\nn × n unitary matrices\nwith determinant 1" -->
+    "Lie group of\nn × n unitary matrices\nwith determinant 1" 
     "special unitary group" [href="https://en.wikipedia.org/wiki/Special_unitary_group"]
   }
 
@@ -424,7 +423,7 @@ digraph G {
 
     "determinant" [shape="none", href="https://en.wikipedia.org/wiki/Determinant"]
 
-    <!-- "determinant" -> "polynomial ring" -->
+    "determinant" -> "polynomial ring" 
 
     "bilinear map" [href="https://en.wikipedia.org/wiki/Bilinear_map"]
     "bilinear map" -> "inner product"
@@ -436,7 +435,7 @@ digraph G {
 
     "inner product" [href="https://en.wikipedia.org/wiki/Inner_product"]
     "cross product" [href="https://en.wikipedia.org/wiki/Cross_product"]
-    <!-- https://ds055uzetaobb.cloudfront.net/brioche/uploads/CE0QT5gM1l-fundamentalsubspaces.png?width=1200 -->
+    // https://ds055uzetaobb.cloudfront.net/brioche/uploads/CE0QT5gM1l-fundamentalsubspaces.png?width=1200 
 
     "linear form" [href="https://en.wikipedia.org/wiki/Linear_form"]
     "linear map" [href="https://en.wikipedia.org/wiki/Linear_map"]
@@ -528,7 +527,7 @@ digraph G {
   "set" -> "group x set"
   "group action" [shape="plain", href="https://en.wikipedia.org/wiki/Group_action"]
   "group x set" -> "group action" [arrowhead="none"]
-  <!-- "group action" -> "set" [arrowtail="none"] -->
+  "group action" -> "set" [arrowtail="none"] 
 
   "continuous function" [href="https://en.wikipedia.org/wiki/Continuous_function"]
   "continuous function" -> "[0, 1] → X"
@@ -820,7 +819,7 @@ digraph G {
   "ring" -> "module" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "ring" -> "ring x Galois group x finite field x local field"
   "ring" -> "Hecke ring"
-  <!-- https://rip94550.wordpress.com/2012/07/02/introduction-to-rings/ -->
+  // https://rip94550.wordpress.com/2012/07/02/introduction-to-rings/ 
   "ring" -> "ring with identity" [label="* identity"]
   "ring x Galois group x finite field x local field" [shape="point"]
   "reduced ring" [href="https://en.wikipedia.org/wiki/Reduced_ring"]
@@ -1017,8 +1016,8 @@ digraph G {
       "Mn(R)" [label="", shape="none"]
 
       subgraph cluster_generallineargroup {
-        <!-- href="https://en.wikipedia.org/wiki/General_linear_group"
-        open affine subvariety -->
+        href="https://en.wikipedia.org/wiki/General_linear_group"
+        open affine subvariety 
 
         label="general linear group"
         "general linear group" [label="", shape="none", href="https://en.wikipedia.org/wiki/General_linear_group"]
@@ -1092,7 +1091,7 @@ digraph G {
   "semiprimitive ring" [href="https://en.wikipedia.org/wiki/Semiprimitive_ring"]
   "semiprimitive ring" -> "Von Neumann regular ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "semiprimitive ring" -> "primitive ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  <!-- quasi-Frobenius rings and local rings are usually not semiprimitive -->
+  // quasi-Frobenius rings and local rings are usually not semiprimitive 
   "Artinian ring" -> "semisimple ring" [label="finite product of\nsimple Artinian rings", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "simple ring" -> "simple Artinian ring"
   "simple ring" -> "Weyl algebra" [label="differential operators\nwith polynomial\ncoefficients", href="https://en.wikipedia.org/wiki/Weyl_algebra"]
@@ -1160,7 +1159,7 @@ digraph G {
   "coherent ring" [href="https://en.wikipedia.org/wiki/Coherent_ring"]
   "coherent ring" -> "Noetherian ring" [href="https://en.wikipedia.org/wiki/Coherent_ring"]
   "ring" -> "coherent ring" [label="every finitely\ngenerated left\nideal of it is\na finitely\npresented module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  <!-- https://rip94550.wordpress.com/2012/07/16/integral-domains-and-the-failure-of-unique-factorization/ -->
+  // https://rip94550.wordpress.com/2012/07/16/integral-domains-and-the-failure-of-unique-factorization/ 
   "integral domain" -> "unique factorization domain" [label="every non-zero\nelement x of R\ncan be written as\na product (an empty product\nif x is a unit) of\nirreducible elements pi of R\nand a unit u", href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Definition"]
 
   "Bézout domain" -> "principal ideal domain" [href="https://en.wikipedia.org/wiki/B%C3%A9zout_domain#Examples"]
@@ -1194,7 +1193,7 @@ digraph G {
   "Gorenstein ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
   "Noetherian ring" [href="https://en.wikipedia.org/wiki/Noetherian_ring"]
   "Noetherian ring" -> "Artinian ring" [label="ring satisfying the\ndescending chain condition\nfor left ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  <!-- "ring" -> "uniserial ring" [label="integral domain where every finitely generated ideal is principal", href=""] -->
+  "ring" -> "uniserial ring" [label="integral domain where every finitely generated ideal is principal", href=""] 
   "Artinian ring" [href="https://en.wikipedia.org/wiki/Artinian_ring"]
 
   "principal ideal domain" [href="https://en.wikipedia.org/wiki/Principal_ideal_domain"]
@@ -1226,7 +1225,7 @@ digraph G {
   "discrete valuation ring" -> "formal power series ring over a field in one variable" [href="https://en.wikipedia.org/wiki/Discrete_valuation_ring#Examples"]
 
   "integrally closed domain" [href="https://en.wikipedia.org/wiki/Integrally_closed_domain"]
-  <!-- "integral domain" -> "field" [label="* abelian group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"] -->
+  "integral domain" -> "field" [label="* abelian group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"] 
   "domain" -> "finite field" [label="finite"]
   "field" -> "finite field" [label="finite", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
@@ -1291,22 +1290,22 @@ digraph G {
 
   "compact space" [href="https://en.wikipedia.org/wiki/Compact_space"]
   "compact space" -> "compact manifold"
-  <!-- "compact space" -> "finite space" [href="https://en.wikipedia.org/wiki/Compact_space#Basic_examples"] -->
-  <!-- "closed unit interval of real numbers" [label="closed unit\ninterval\nof real\nnumbers"] -->
-  <!-- "compact space" -> "closed unit interval of real numbers" [href="https://en.wikipedia.org/wiki/Compact_space#Basic_examples"] -->
+  "compact space" -> "finite space" [href="https://en.wikipedia.org/wiki/Compact_space#Basic_examples"] 
+  "closed unit interval of real numbers" [label="closed unit\ninterval\nof real\nnumbers"] 
+  "compact space" -> "closed unit interval of real numbers" [href="https://en.wikipedia.org/wiki/Compact_space#Basic_examples"] 
   "topological space" -> "compact space"
   "topological space" [href="https://en.wikipedia.org/wiki/Topological_space"]
   "locally compact space" [href="https://en.wikipedia.org/wiki/Locally_compact_space"]
   "topological space" -> "locally compact space"
   "set" -> "topological space" [label="of points,\nalong with a set of\nneighbourhoods for each point,\nsatisfying a set of axioms\nrelating points\nand neighbourhoods", href="https://en.wikipedia.org/wiki/Topological_space"]
 
-  <!-- tool for systematically tracking locally defined data attached to the open sets of a topological space -->
+  tool for systematically tracking locally defined data attached to the open sets of a topological space 
   "sheaf" [href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)"]
   "sheaf" -> "quasi-coherent sheaf"
   "reflexive sheaf" [href="https://en.wikipedia.org/wiki/Reflexive_sheaf"]
   "quasi-coherent sheaf" -> "coherent sheaf" [label="finitely generated as OX-module", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "coherent sheaf" -> "reflexive sheaf" [label="canonical map to\nthe second dual\nis an isomorphism", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 }
-```
 
-https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures
+
+// https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures
