@@ -7,9 +7,11 @@ https://en.wikipedia.org/wiki/Magma_(algebra)
 
 the arrows between "categories" here are inheritance arrows that can be seen as the free functor
 the arrows between objects in the categories are morphisms
+an object is an instance of a category
 
 ```graphviz
 digraph G {
+  <!-- splines='line" -->
   node [shape="box"]
   compound="true"
 
@@ -22,6 +24,33 @@ digraph G {
     "cartesian product" [href="https://en.wikipedia.org/wiki/Cartesian_product"]
     "binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation"]
     "function"
+
+    subgraph cluster_A {
+      label="A"
+      href=""
+      "A" [label="", shape="none"]
+      "ker(f)"
+      "coim(f)"
+      "A0" [label="0", shape="oval"]
+    }
+
+    subgraph cluster_B {
+      label="B"
+      href=""
+      "B" [label="", shape="none"]
+      "im(f)"
+      "coker(f)"
+      "B0" [label="0", shape="oval"]
+    }
+
+    "ker(f)" -> "B0"
+    "coker(f)" -> "A0"
+
+
+    "function" -> "f"
+    "f" [shape="none"]
+    "A" -> "f" [arrowhead="none"]
+    "f" -> "B" [arrowtail="none"]
   }
 
   "set" -> "set x binary operation"
@@ -239,21 +268,6 @@ digraph G {
     "special orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
   }
 
-  subgraph cluster_generallineargroup {
-    label="general linear group"
-    "general linear group" [label="", shape="none", href="https://en.wikipedia.org/wiki/General_linear_group"]
-    "matrix group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
-
-    subgraph cluster_specialLinearGroup {
-      label="special linear group"
-      href="https://en.wikipedia.org/wiki/Special_linear_group"
-      "special linear group" [label="", shape="none"]
-
-      "specialLinearGroup/subgroups" [label="subgroups"]
-      "specialLinearGroup/subgroups" -> "scalar transformations\nwith unit determinant"
-      "scalar transformations\nwith unit determinant" -> "SZ(V)" [dir="both"]
-    }
-  }
 
   subgraph cluster_unitarygroup {
     label="unitary group"
@@ -315,6 +329,7 @@ digraph G {
     "loop" [href="https://en.wikipedia.org/wiki/Loop_(topology)"]
     "chain complex" [href="https://en.wikipedia.org/wiki/Chain_complex"]
     "homotopy group"
+    "X"
   }
 
   "abelian group" -> "chain complex" [label="sequence\nof abelian\ngroups\nconnected by\nhomomorphisms\ncalled boundary\noperators", href="https://en.wikipedia.org/wiki/Homology_(mathematics)#Construction_of_homology_groups"]
@@ -399,6 +414,33 @@ digraph G {
     href="https://en.wikipedia.org/wiki/Vector_space"
     "vector space" [shape="none", label=""]
     "linear map"
+    "multilinear map" [href="https://en.wikipedia.org/wiki/Multilinear_map"]
+    "multilinear map" -> "bilinear map" [href="https://en.wikipedia.org/wiki/Multilinear_map"]
+    "multilinear map" -> "linear map" [href="https://en.wikipedia.org/wiki/Multilinear_map"]
+    "multilinear map" -> "alternating multilinear map" [label="all arguments\nbelonging to\nthe same space", href="https://en.wikipedia.org/wiki/Alternating_multilinear_map"]
+    "alternating multilinear map" [href="https://en.wikipedia.org/wiki/Alternating_multilinear_map"]
+    "alternating multilinear map" -> "Lie bracket"
+    "alternating multilinear map" -> "determinant"
+
+    "determinant" [shape="none", href="https://en.wikipedia.org/wiki/Determinant"]
+
+    <!-- "determinant" -> "polynomial ring" -->
+
+    "bilinear map" [href="https://en.wikipedia.org/wiki/Bilinear_map"]
+    "bilinear map" -> "inner product"
+    
+    "inner product x determinant" [shape="point"]
+    "inner product" -> "inner product x determinant"
+    "determinant" -> "inner product x determinant"
+    "inner product x determinant" -> "cross product"
+
+    "inner product" [href="https://en.wikipedia.org/wiki/Inner_product"]
+    "cross product" [href="https://en.wikipedia.org/wiki/Cross_product"]
+    <!-- https://ds055uzetaobb.cloudfront.net/brioche/uploads/CE0QT5gM1l-fundamentalsubspaces.png?width=1200 -->
+
+    "linear form" [href="https://en.wikipedia.org/wiki/Linear_form"]
+    "linear map" [href="https://en.wikipedia.org/wiki/Linear_map"]
+    "linear map" -> "linear form" [label="linear map\nfrom a vector\nspace to its\nfield of\nscalars", href="https://en.wikipedia.org/wiki/Linear_form"]
     
     subgraph cluster_V {
       label="V"
@@ -412,14 +454,14 @@ digraph G {
         "VkerT0" [label="0", shape="oval"]
       }
 
-      subgraph cluster_coimtransposeT {
-        label="coim(transpose(T))"
+      subgraph cluster_coimT {
+        label="coim(T)"
         href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Row_space"
-        "coim(transpose(T))" [label="", shape="none"]
+        "coim(T)" [label="", shape="none"]
         "VcoimT0" [label="0", shape="oval"]
       }
 
-      "coim(transpose(T))" -> "ker(T)" [label="perpendicular", href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Relation_to_the_null_space" dir="none"]
+      "coim(T)" -> "ker(T)" [label="perpendicular", href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Relation_to_the_null_space" dir="none"]
     }
 
     subgraph cluster_W {
@@ -434,14 +476,14 @@ digraph G {
         "im(T)" [label="", shape="none"]
       }
 
-      subgraph cluster_cokertransposeT {
-        label="coker(transpose(T))"
+      subgraph cluster_cokerT {
+        label="coker(T)"
         href="https://en.wikipedia.org/wiki/Cokernel"
-        "coker(transpose(T))" [label="", shape="none"]
+        "coker(T)" [label="", shape="none"]
         "WcokerT0" [label="0", shape="oval"]
       }
 
-      "im(T)" -> "coker(transpose(T))" [label="perpendicular", href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Relation_to_the_null_space" dir="none"]
+      "im(T)" -> "coker(T)" [label="perpendicular", href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Relation_to_the_null_space" dir="none"]
     }
 
     "linear map" -> "T"
@@ -455,10 +497,16 @@ digraph G {
     "transpose(T)" -> "V" [arrowtail="none"]
 
     "ker(T)" -> "WcokerT0"
-    "coker(transpose(T))" -> "VkerT0"
+    "coker(T)" -> "VkerT0"
   }
+  "matrix ring" -> "determinant" [arrowhead="none"]
 
   "vector space" -> "graded vector space"
+  "vector space" -> "real vector space"
+  "real vector space" -> "real vector space\nof dimension n^2"
+  "real vector space\nof dimension n^2" -> "Mn(R)"
+
+
   "topological space" -> "topological space x vector space"
   "topological space x vector space" -> "topological vector space"
   "topological vector space" [href="https://en.wikipedia.org/wiki/Topological_vector_space"]
@@ -497,26 +545,12 @@ digraph G {
   "operator" -> "linear map"
   "differential operator" [href="https://en.wikipedia.org/wiki/Differential_operator"]
   "operator" -> "differential operator"
-  "linear form" [href="https://en.wikipedia.org/wiki/Linear_form"]
-  "linear map" [href="https://en.wikipedia.org/wiki/Linear_map"]
-  "linear map" -> "linear form"
+
   "modular form" [href="https://en.wikipedia.org/wiki/Modular_form"]
   "eigenform" [href="https://en.wikipedia.org/wiki/Eigenform"]
   "modular form" -> "eigenform" [label="is an eigenvector\nfor all Hecke\noperators Tm", href="https://en.wikipedia.org/wiki/Eigenform"]
   "complex analytic function" -> "modular form" [label="on the upper half-plane\nsatisfying a certain kind of functional equation\nwith respect to the group action\nof the modular group,\nand also satisfying a growth condition", href="https://en.wikipedia.org/wiki/Modular_form"]
 
-  "multilinear map" [href="https://en.wikipedia.org/wiki/Multilinear_map"]
-  "multilinear map" -> "bilinear map"
-  "multilinear map" -> "alternating multilinear map" [label="all arguments\nbelonging to\nthe same space", href="https://en.wikipedia.org/wiki/Alternating_multilinear_map"]
-  "alternating multilinear map" [href="https://en.wikipedia.org/wiki/Alternating_multilinear_map"]
-  "alternating multilinear map" -> "Lie bracket"
-  "alternating multilinear map" -> "determinant"
-  "determinant" [href="https://en.wikipedia.org/wiki/Determinant"]
-  "bilinear map" [href="https://en.wikipedia.org/wiki/Bilinear_map"]
-  "bilinear map" -> "inner product"
-  "bilinear map" -> "cross product"
-  "inner product" [href="https://en.wikipedia.org/wiki/Inner_product"]
-  "cross product" [href="https://en.wikipedia.org/wiki/Cross_product"]
   "Lie bracket" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
   "Lie bracket" -> "vector space x Lie bracket"
   "lie algebra" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
@@ -641,12 +675,12 @@ digraph G {
   "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime\nideals are maximal\nin a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
   "ideal" -> "Jacobson radical" [label="consisting of those\nelements in R\nthat annihilate all\nsimple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
 
-  subgraph cluster_scheme {
-    label="scheme"
-    href="https://en.wikipedia.org/wiki/Scheme"
-    "scheme" [label="", shape="none"]
-    "scheme/morphism" [label="morphism"]
-  }
+  "algebraic space" -> "scheme"
+  "algebraic space" [href="https://en.wikipedia.org/wiki/Algebraic_space"]
+  "closed manifold" [href="https://en.wikipedia.org/wiki/Closed_manifold"]
+  "compact manifold" -> "compact manifold without boundary"
+  "compact manifold without boundary" [label="compact\nmanifold\nwithout\nboundary"]
+  "compact manifold without boundary" -> "closed manifold" [href="https://en.wikipedia.org/wiki/Closed_manifold"]
 
   subgraph cluster_noetherianScheme {
     label="locally Noetherian scheme"
@@ -685,10 +719,6 @@ digraph G {
   "elliptic curve" -> "elliptic curve E over a finite field Fq"
   "elliptic curve E over a finite field Fq" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "abelian scheme" -> "abelian variety" [label="(flat) family\nof abelian\nvarieties", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "commutative ring" -> "affine scheme" [label="prime spectrum\nof some\ncommutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "x affine scheme" [shape="point"]
-  "x affine scheme" -> "scheme"
-  "affine scheme" -> "x affine scheme"
   "affine variety" -> "coordinate ring"
   "Noetherian ring" -> "coordinate ring" [label="Hilbert basis theorem", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
   "variety" -> "algebraic group" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
@@ -739,19 +769,51 @@ digraph G {
   "Schubert variety" [href="https://en.wikipedia.org/wiki/Schubert_variety"]
   "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
   "locally ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
-  "sheaf x commutative ring" [shape="point"]
-  "commutative ring" -> "sheaf x commutative ring"
   "functor" -> "presheaf"
   "presheaf" [href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)#Presheaves"]
   "presheaf" -> "sheaf"
-  "sheaf" -> "sheaf x commutative ring"
-  "sheaf x commutative ring" -> "sheaf of rings"
-  "topological space" -> "topological space x sheaf of rings"
-  "sheaf of rings" -> "topological space x sheaf of rings"
-  "topological space x sheaf of rings" [shape="point"]
-  "topological space x sheaf of rings" -> "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
-  "ringed space" -> "locally ringed space" [label="analogy of\na germ of a function\nis valid", href="https://en.wikipedia.org/wiki/Ringed_space"]
-  "locally ringed space" -> "scheme" [label="locally\na prime spectrum\nof a commutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "sheaf" -> "sheaf of rings"
+
+  subgraph cluster_sheafOfRings {
+    label="sheaf of rings"
+    href=""
+    "sheaf of rings" [label="", shape="none"]
+    "OX" [shape="oval"]
+  }
+  "OX"
+  "X" -> "OX" [arrowhead="none"]
+  "OX" -> "commutativering/R" [arrowtail="none"]
+
+  "topological space" -> "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
+
+  subgraph cluster_ringedSpace {
+    label="ringed space"
+    href="https://en.wikipedia.org/wiki/Ringed_space#Definitions"
+    "ringed space" [label="", shape="none"]
+    "sheaf of rings"
+
+    subgraph cluster_locallyRingedSpace {
+      label="locally ringed space"
+      href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"
+      "locally ringed space" [label="", shape="none"]
+
+      "affine scheme"
+
+      subgraph cluster_scheme {
+        label="scheme"
+        href="https://en.wikipedia.org/wiki/Scheme_(mathematics)"
+        "scheme" [label="", shape="none"]
+        "scheme/morphism" [label="morphism"]
+      }
+
+      "x affine scheme" [shape="point"]
+      "affine scheme" -> "x affine scheme"
+      "x affine scheme" -> "scheme"
+    }
+  }
+
+  "prime spectrum" -> "affine scheme" [dir="both", label="prime spectrum\nof some\ncommutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
   "regular scheme" [href="https://en.wikipedia.org/wiki/Regular_scheme"]
   "ring" -> "reduced ring" [label="has no non-zero\nnilpotent elements", href="https://en.wikipedia.org/wiki/Reduced_ring"]
   "ring" -> "differential ring"
@@ -835,7 +897,9 @@ digraph G {
   subgraph cluster_commutativering {
     label="commutative ring"
     "commutative ring" [label="", shape="none", href="https://en.wikipedia.org/wiki/Commutative_ring"]
-    "integral element" [shape="oval", href="https://en.wikipedia.org/wiki/Integral_element"]
+    "integral element" [shape="oval", xlabel="root of a\nmonic\npolynomial\nover A", href="https://en.wikipedia.org/wiki/Integral_element"]
+    "prime spectrum"
+    "commutativering/R" [label="R"]
   }
 
   "field" [href="https://en.wikipedia.org/wiki/Field_(mathematics)"]
@@ -903,7 +967,14 @@ digraph G {
     href="https://en.wikipedia.org/wiki/Algebraic_number_field"
     "algebraic number field" [label="", shape="none"]
     "algebraicNumberField/integral elements" [label="integral elements"]
-    "ring of integers" [href="https://en.wikipedia.org/wiki/Ring_of_integers"]
+
+    subgraph cluster_ringOfIntegers {
+      label="ring of integers"
+      href="https://en.wikipedia.org/wiki/Ring_of_integers"
+      "ring of integers" [label="", shape="none"]
+      "algebraic integer"
+    }
+
     "algebraicNumberField/integral elements" -> "ring of integers" [dir="both"]
   }
 
@@ -933,13 +1004,55 @@ digraph G {
   "semi-local ring" -> "serial ring" [href="https://en.wikipedia.org/wiki/Semi-local_ring"]
   "semi-local ring" -> "semiperfect ring" [href="https://en.wikipedia.org/wiki/Semi-local_ring"]
   "generic matrix ring" -> "matrix ring" [label="elements are square\nmatrices of fixed size\nwith the entries in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  "matrix ring" [href="https://en.wikipedia.org/wiki/Matrix_ring"]
+
+  subgraph cluster_matrixRing {
+    label="matrix ring"
+    href="https://en.wikipedia.org/wiki/Matrix_ring"
+    "matrix ring" [label="", shape="none"]
+    "matrix"
+    
+    subgraph cluster_MnR {
+      label="Mn(R)"
+      href=""
+      "Mn(R)" [label="", shape="none"]
+
+      subgraph cluster_generallineargroup {
+        <!-- href="https://en.wikipedia.org/wiki/General_linear_group"
+        open affine subvariety -->
+
+        label="general linear group"
+        "general linear group" [label="", shape="none", href="https://en.wikipedia.org/wiki/General_linear_group"]
+        "matrix group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+
+        subgraph cluster_specialLinearGroup {
+          label="special linear group"
+          href="https://en.wikipedia.org/wiki/Special_linear_group"
+          "special linear group" [label="", shape="none"]
+
+          "specialLinearGroup/subgroups" [label="subgroups"]
+          "specialLinearGroup/subgroups" -> "scalar transformations\nwith unit determinant"
+          "scalar transformations\nwith unit determinant" -> "SZ(V)" [dir="both"]
+        }
+      }
+    }
+  }
+
+  "linear map" -> "matrix" [dir="both", href="https://en.wikipedia.org/wiki/Linear_map#Matrices"]
+
   "generic matrix ring" [href="https://en.wikipedia.org/wiki/Ring_of_generic_matrices"]
 
   "monoid ring" [href="https://en.wikipedia.org/wiki/Monoid_ring"]
   "perfect ring" [href="https://en.wikipedia.org/wiki/Perfect_ring"]
   "perfect ring" -> "Artinian ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  "polynomial ring" [href="https://en.wikipedia.org/wiki/Polynomial_ring"]
+
+  subgraph cluster_polynomialRing {
+    label="polynomial ring"
+    href="https://en.wikipedia.org/wiki/Polynomial_ring"
+    "polynomial ring" [label="", shape="none"]
+
+    "monic polynomial" [href="https://en.wikipedia.org/wiki/Monic_polynomial"]
+  }
+
   "polynomial ring" -> "K[x1,...,xn]"
   "K[x1,...,xn]" -> "K[X]"
   "finitely generated algebra" -> "K[x1,...,xn]"
@@ -1177,6 +1290,10 @@ digraph G {
    "prime numbers" -> "natural numbers"
 
   "compact space" [href="https://en.wikipedia.org/wiki/Compact_space"]
+  "compact space" -> "compact manifold"
+  <!-- "compact space" -> "finite space" [href="https://en.wikipedia.org/wiki/Compact_space#Basic_examples"] -->
+  <!-- "closed unit interval of real numbers" [label="closed unit\ninterval\nof real\nnumbers"] -->
+  <!-- "compact space" -> "closed unit interval of real numbers" [href="https://en.wikipedia.org/wiki/Compact_space#Basic_examples"] -->
   "topological space" -> "compact space"
   "topological space" [href="https://en.wikipedia.org/wiki/Topological_space"]
   "locally compact space" [href="https://en.wikipedia.org/wiki/Locally_compact_space"]
