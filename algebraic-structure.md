@@ -5,6 +5,9 @@ https://en.wikipedia.org/wiki/Magma_(algebra)
   // how to describe a Category being composed of a category
   // how to describe a Category being an instance of other categories
 
+the arrows between "categories" here are inheritance arrows that can be seen as the free functor
+the arrows between objects in the categories are morphisms
+
 ```graphviz
 digraph G {
   node [shape="box"]
@@ -192,7 +195,8 @@ digraph G {
   "algebraic group" -> "finite group"
   "algebraic group" -> "general linear group"
   "Lie group" [href="https://en.wikipedia.org/wiki/Lie_group"]
-  "Lie group" -> "general linear group"
+  "Lie group" -> "general linear group" [href="https://en.wikipedia.org/wiki/General_linear_group"]
+  "manifold" -> "general linear group" [href="https://en.wikipedia.org/wiki/General_linear_group"]
   "Lie group" -> "Lie group with dimension 1"
   "Lie group with dimension 1" -> "real numbers" [href="https://en.wikipedia.org/wiki/Lie_group#More_examples_of_Lie_groups"]
   "Lie group with dimension 1" -> "circle group" [href="https://en.wikipedia.org/wiki/Lie_group#More_examples_of_Lie_groups"]
@@ -209,7 +213,7 @@ digraph G {
   "symmetry group" -> "dihedral group"
   "symmetry group" [href="https://en.wikipedia.org/wiki/Symmetry_group"]
   "Galois group" [href="https://en.wikipedia.org/wiki/Galois_group"]
-  "Galois group" -> "field" [dir="none"]
+  "Galois group" -> "Galois extension" [dir="none", label="Galois connection"]
   "topological group" [href="https://en.wikipedia.org/wiki/Topological_group"]
   "group" -> "topological group" [label="with a topology on G such that\nboth the group's binary operation\nand the function mapping group elements\nto their respective inverses\nare continuous\nfunctions with\nrespect to\nthe topology", href="https://en.wikipedia.org/wiki/Topological_group"]
   "topological group" -> "Lie group" [label="elements are\norganized continuously\nand smoothly", href="https://en.wikipedia.org/wiki/Lie_group"]
@@ -269,6 +273,9 @@ digraph G {
 
   "manifold" -> "Euclidean space" [dir="none", label="", href="https://en.wikipedia.org/wiki/Manifold"]
 
+  "algebraic manifold" [href="https://en.wikipedia.org/wiki/Algebraic_manifold"]
+  "manifold" -> "algebraic manifold"
+  "variety" -> "algebraic manifold"
   "Euclidean group" -> "orthogonal group" [label="/ translational group", href="https://en.wikipedia.org/wiki/Euclidean_group#Subgroup_structure,_matrix_and_vector_representation"]
 
   "semigroup x monoid" [shape="point"]
@@ -392,6 +399,63 @@ digraph G {
     href="https://en.wikipedia.org/wiki/Vector_space"
     "vector space" [shape="none", label=""]
     "linear map"
+    
+    subgraph cluster_V {
+      label="V"
+      href=""
+      "V" [label="", shape="none"]
+
+      subgraph cluster_kerT {
+        label="ker(T)"
+        href="https://en.wikipedia.org/wiki/Kernel_(linear_algebra)"
+        "ker(T)" [label="", shape="none"]
+        "VkerT0" [label="0", shape="oval"]
+      }
+
+      subgraph cluster_coimtransposeT {
+        label="coim(transpose(T))"
+        href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Row_space"
+        "coim(transpose(T))" [label="", shape="none"]
+        "VcoimT0" [label="0", shape="oval"]
+      }
+
+      "coim(transpose(T))" -> "ker(T)" [label="perpendicular", href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Relation_to_the_null_space" dir="none"]
+    }
+
+    subgraph cluster_W {
+      label="W"
+      href=""
+      "W" [label="", shape="none"]
+
+      subgraph cluster_imT {
+        label="im(T)"
+        href="https://en.wikipedia.org/wiki/Row_and_column_spaces"
+        "WimT0" [label="0", shape="oval"]
+        "im(T)" [label="", shape="none"]
+      }
+
+      subgraph cluster_cokertransposeT {
+        label="coker(transpose(T))"
+        href="https://en.wikipedia.org/wiki/Cokernel"
+        "coker(transpose(T))" [label="", shape="none"]
+        "WcokerT0" [label="0", shape="oval"]
+      }
+
+      "im(T)" -> "coker(transpose(T))" [label="perpendicular", href="https://en.wikipedia.org/wiki/Row_and_column_spaces#Relation_to_the_null_space" dir="none"]
+    }
+
+    "linear map" -> "T"
+    "T" [shape="none"]
+    "V" -> "T" [arrowhead="none"]
+    "T" -> "im(T)" [arrowtail="none"]
+
+    "linear map" -> "transpose(T)"
+    "transpose(T)" [shape="none", href="https://en.wikipedia.org/wiki/Transpose_of_a_linear_map"]
+    "W" -> "transpose(T)" [arrowhead="none"]
+    "transpose(T)" -> "V" [arrowtail="none"]
+
+    "ker(T)" -> "WcokerT0"
+    "coker(transpose(T))" -> "VkerT0"
   }
 
   "vector space" -> "graded vector space"
@@ -409,6 +473,15 @@ digraph G {
   "function" -> "surjective function"
   "function" -> "operator" [label="acts on elements\nof a space to\nproduce elements of\nanother space", href="https://en.wikipedia.org/wiki/Operator_(mathematics)"]
   "function" -> "multilinear map" [label="of several variables\nthat is linear\nseparately in\neach variable", href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
+
+  "function" -> "group action"
+  "group x set" [shape="point"]
+  "group" -> "group x set"
+  "set" -> "group x set"
+  "group action" [shape="plain", href="https://en.wikipedia.org/wiki/Group_action"]
+  "group x set" -> "group action" [arrowhead="none"]
+  <!-- "group action" -> "set" [arrowtail="none"] -->
+
   "continuous function" [href="https://en.wikipedia.org/wiki/Continuous_function"]
   "continuous function" -> "[0, 1] → X"
   "j-invariant" [href="https://en.wikipedia.org/wiki/J-invariant"]
@@ -913,7 +986,7 @@ digraph G {
   "simple ring" [href="https://en.wikipedia.org/wiki/Simple_ring"]
   "Weyl algebra" [href="https://en.wikipedia.org/wiki/Weyl_algebra"]
   "Artinian ring" -> "simple Artinian ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  "module" -> "semisimple R-module"
+  "semisimple module" -> "semisimple R-module"
   "semisimple R-module" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "serial ring" [href="https://en.wikipedia.org/wiki/Serial_ring"]
   "ring" -> "serial ring" [label="right serial\nmodule over itself", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
