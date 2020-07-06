@@ -20,6 +20,8 @@
 
 // https://www.graphviz.org/doc/info/attrs.html
 
+// module > ring > abelian group >
+
 digraph G {
   // splines="line"
   // graph [splines="ortho"]
@@ -62,6 +64,48 @@ digraph G {
   "symmetric monoidal category" -> "cartesian category"
   "symmetric monoidal category" -> "closed symmetric monoidal category"
 
+  "set/R" -> "ring/R" [label="1 + 1 + R + R×R + R×R", href="https://en.wikipedia.org/wiki/F-algebra#Algebraic_structures"]
+  "abeliangroup/R" -> "ring/R" [label="1 + R×R", href="https://en.wikipedia.org/wiki/F-algebra#Algebraic_structures"]
+  "abeliangroup/M" -> "module/object"
+  "ring/R" -> "module/object"
+
+  subgraph cluster_symmetricmonoidalcategory {
+    label="symmetric monoidal category"
+    href=""
+    "symmetric monoidal category" [label="", shape="point", width="0"]
+
+    subgraph cluster_ring {
+      label="ring"
+      href="https://en.m.wikipedia.org/wiki/Category_of_rings"
+      "ring" [label="", shape="point", width="0", href="https://en.wikipedia.org/wiki/Ring_(mathematics)"]
+
+      subgraph cluster_ringR {
+        label="R"
+        href=""
+        "ring/R" [label="R", shape="point", width="0"]
+
+        "ideal"
+        "maximal ideal" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+        "ideal" [href="https://en.wikipedia.org/wiki/Ideal_(ring_theory)"]
+        "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
+        "ideal" -> "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
+        "ideal" -> "maximal ideal" [label="I is a maximal\nideal of a ring R\nif there are no other\nideals contained between I and R", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+        "principal ideal" [href="https://en.wikipedia.org/wiki/Principal_ideal"]
+        "ideal" -> "principal ideal"
+        "minimal ideal" [href="https://en.wikipedia.org/wiki/Minimal_ideal"]
+        "ideal" -> "minimal ideal"
+      }
+      
+      subgraph cluster_quotientring {
+        label="quotient ring"
+        href="https://en.wikipedia.org/wiki/Quotient_ring"
+        "quotient ring" [label="", shape="point", width="0"]
+      }
+
+      "trivial ring" [href="https://en.wikipedia.org/wiki/Trivial_ring"]
+    }
+  }
+
   "closed braided monoidal category" -> "closed symmetric monoidal category"
 
 
@@ -73,6 +117,95 @@ digraph G {
   "cartesian category" -> "cartesian closed category"
 
   "cartesian closed category" -> "topos"
+
+  "category" -> "abelian category"
+  subgraph cluster_abeliancategory {
+    label="abelian category"
+    href=""
+    "abelian category" [label="", shape="point", width="0"]
+
+    subgraph cluster_module {
+      label="module"
+      xlabel="1 + E + R x E" //https://en.wikipedia.org/wiki/F-algebra#Algebraic_structures
+      href="https://en.m.wikipedia.org/wiki/Category_of_modules"
+      "module" [shape="point", width="0", label=""]
+
+      "module/object" [label="(M, +)", href="https://en.wikipedia.org/wiki/Module_(mathematics)"]
+      "module homomorphism"
+    }
+    
+  }
+
+
+  subgraph cluster_topos {
+    label="topos"
+    href="https://en.wikipedia.org/wiki/Topos"
+    "topos" [label="", shape="point", width="0"]
+
+    subgraph cluster_set {
+      label="set"
+      xlabel="product in this category is given by the cartesian product of sets. coproduct is given by the disjoint union"
+      href="https://en.wikipedia.org/wiki/set_(mathematics)"
+      "set" [shape="point", width="0", label=""]
+      "cartesian product" [href="https://en.wikipedia.org/wiki/Cartesian_product"]
+      "partial function" [href="https://en.wikipedia.org/wiki/Partial_function"]
+      "partial function" -> "function"
+
+      "function" [href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
+      "function" -> "injective function" [label="ker(f) = 0"]
+      "function" -> "surjective function" [label="coker(f) = 0"]
+
+      "injective function" [href="https://en.wikipedia.org/wiki/Injective_function"]
+      "surjective function" [href="https://en.wikipedia.org/wiki/Surjective_function"]
+
+      "injective function x surjective function" [shape="point"]
+      "injective function"  -> "injective function x surjective function"
+      "surjective function" -> "injective function x surjective function"
+      "injective function x surjective function" -> "bijective function" [dir="both"]
+
+      "A" -> "A x A"
+      "cartesian product" -> "A x A" [lhead="cluster_AxB"]
+      "A x A" [shape="point"]
+      { rank="same"; "binary operation" [href="https://en.wikipedia.org/wiki/Binary_operation"]; "dummybinaryoperation" }
+      "dummybinaryoperation" [shape="point", width="0"]
+      "A x A" -> "dummybinaryoperation" [arrowhead="none"]
+      "dummybinaryoperation" -> "binary operation" [dir="back"]
+      "dummybinaryoperation" -> "A"
+
+      subgraph cluster_A {
+        label="A"
+        shape="rounded"
+        href=""
+        "A" [label="", shape="point", width="0"]
+        "ker(f)" [shape="oval"]
+        "coim(f)" [shape="oval"]
+        "A0" [label="0", shape="oval"]
+      }
+
+      subgraph cluster_B {
+        label="B"
+        shape="rounded"
+        href=""
+        "B" [label="", shape="point", width="0"]
+        "im(f)" [shape="oval"]
+        "coker(f)" [shape="oval"]
+        "B0" [label="0", shape="oval"]
+      }
+      
+      "ker(f)" -> "B0"
+      "coker(f)" -> "A0"
+
+
+      "function" -> "f"
+      "f" [shape="none"]
+      "A" -> "f" [arrowhead="none"]
+      "f" -> "B" [arrowtail="none"]
+
+      "set/R" [label="R"]
+    }
+  }
+
+  "set" -> "finite set"
 
   "cartesian closed category" -> "partially ordered set" [lhead="cluster_partiallyorderedset"]
 
@@ -98,16 +231,21 @@ digraph G {
   "Lindenbaum Algebra" [href="https://en.wikipedia.org/wiki/Lindenbaum_algebra"]
   "Heyting algebra" -> "Lindenbaum Algebra" [href="https://en.wikipedia.org/wiki/Heyting_algebra#Examples"]
 
-  "topos" [href="https://en.wikipedia.org/wiki/Topos"] 
-
   "set" [href="https://en.wikipedia.org/wiki/Category_of_sets"]
 
-  "topos" -> "set" [label="product in this category is given by the cartesian product of sets. coproduct is given by the disjoint union"]
   "set" -> "concrete category" [label="prototype of a concrete category", href="https://en.wikipedia.org/wiki/Category_of_sets"]
   "topos" -> "elementary topos"
   "elementary topos" -> "Grothendieck topos"
 
   "monoidal category" -> "cocartesian category"
+
+  subgraph cluster_Grothendiecktopos {
+    label="Grothendieck topos"
+    href=""
+    "Grothendieck topos" [label="", shape="point", width="0"]
+
+    "sheaf" [href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)"]
+  }
 
   subgraph cluster_category {
     label="category"
@@ -115,6 +253,11 @@ digraph G {
     "category" [label="", shape="point", width="0"]
 
     "(-1 ← 0 → +1)"
+    "diagram" [href="https://en.wikipedia.org/wiki/Diagram_(category_theory)"]
+    "span" [href="https://en.wikipedia.org/wiki/Span_(category_theory)#Formal_definition"]
+    "cospan" [href="https://en.wikipedia.org/wiki/Span_(category_theory)#Cospans"]
+    "diagram" -> "span"
+    "diagram" -> "cospan"
 
     "subobject" [href="https://en.wikipedia.org/wiki/Subobject"]
     "quotient object" [href="https://en.wikipedia.org/wiki/Subobject#quotient_object"]
@@ -182,19 +325,38 @@ digraph G {
       "C/N" [label="N"]
       "C/F(X)" [label="F(X)"]
 
+      "C/L" [label="L"]
+
       "x morphism" [shape="point"]
       "morphism" -> "x morphism"
       "x morphism" -> "family of morphisms"
       "family of morphisms" -> "cone"
       "cone" [href="https://en.wikipedia.org/wiki/Cone_(category_theory)#Definition"]
-      "cone" -> "phiX" [href="https://en.wikipedia.org/wiki/Cone_(category_theory)#Definition"]
+      "cone" -> "(L, φ)" [href="https://en.wikipedia.org/wiki/Cone_(category_theory)#Definition"]
+      "cone" -> "(N, psiX)" [href="https://en.wikipedia.org/wiki/Cone_(category_theory)#Definition"]
 
-      { rank="same"; "phiX"; "dummyphiX" }
-      "dummyphiX" [shape="point", width="0"]
-      "C/N" -> "dummyphiX" [arrowhead="none"]
-      "dummyphiX" -> "phiX" [dir="back"]
-      "dummyphiX" -> "C/F(X)"
+      "C/L" -> "(L, φ)"
+      "φ" -> "(L, φ)"
+      "(L, φ)" -> "φX"
 
+      "limit" [href="https://en.wikipedia.org/wiki/Limit_(category_theory)#Limits"]
+      "limit" -> "(L, φ)"
+
+      "C/N" -> "(N, psi)"
+      "psi" -> "(N, psi)"
+      "(N, psi)" -> "psiX"
+
+      { rank="same"; "φX"; "dummyφX" }
+      "dummyφX" [shape="point", width="0"]
+      "C/N" -> "dummyφX" [arrowhead="none"]
+      "dummyφX" -> "φX" [dir="back"]
+      "dummyφX" -> "C/F(X)"
+
+      { rank="same"; "psiX"; "dummypsiX" }
+      "dummypsiX" [shape="point", width="0"]
+      "C/L" -> "dummypsiX" [arrowhead="none"]
+      "dummypsiX" -> "psiX" [dir="back"]
+      "dummypsiX" -> "C/F(X)"
     }
 
     subgraph cluster_categoryJ {
@@ -244,6 +406,11 @@ digraph G {
   "functor" -> "(-1 ← 0 → +1) -> C" [ltail="cluster_functor"]
   "(-1 ← 0 → +1)" -> "C" [lhead="cluster_C"]
   "(-1 ← 0 → +1) -> C" -> "span" [dir="both"]
+  { rank="same"; "(-1 ← 0 → +1) -> C"; "dummy(-1 ← 0 → +1) -> C" }
+  "dummy(-1 ← 0 → +1) -> C" [shape="point", width="0"]
+  "(-1 ← 0 → +1)" -> "dummy(-1 ← 0 → +1) -> C" [arrowhead="none"]
+  "dummy(-1 ← 0 → +1) -> C" -> "(-1 ← 0 → +1) -> C" [dir="back"]
+  "dummy(-1 ← 0 → +1) -> C" -> "C"
 
   "diagonal functor" [href="https://en.wikipedia.org/wiki/Diagonal_functor"]
   "functor" -> "diagonal functor" [ltail="cluster_functor"]
@@ -285,7 +452,7 @@ digraph G {
   "T" -> "C" [lhead="cluster_C", arrowtail="none"]
 
   "category" -> "category with finite products"
-  "category with finite products" -> "Lawvere theory" [label="every object\nis isomorphic\nto a finite\ncartesian\npower xn=x×x×⋯×x\nof a distinguished\nobject x"]
+  "category with finite products" -> "Lawvere theory" [lhead="Lawvere theory", label="every object\nis isomorphic\nto a finite\ncartesian\npower xn=x×x×⋯×x\nof a distinguished\nobject x"]
 
 
   "category" -> "category of Lawvere theories"
@@ -315,8 +482,8 @@ digraph G {
   "theory of groups" -> "model/group" [arrowhead="none"]
   "model/group" -> "set" [arrowtail="none"]
 
-  "Lawvere theory" -> "theory of sets" [href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
-  "Lawvere theory" -> "theory of groups" [href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
+  "Lawvere theory" -> "theory of sets" [ltail="Lawvere theory", href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
+  "Lawvere theory" -> "theory of groups" [ltail="Lawvere theory", href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
 
   subgraph cluster_modelsoftheoryofgroups {
     label="models of theory of groups"
@@ -324,7 +491,7 @@ digraph G {
     "models of theory of groups" [label="", shape="point", width="0"]
     node [shape="oval"]
 
-    "model/group"
+    "model/group" [label="group"]
   }
   "models of theory of groups" -> "group" [dir="both", href="https://ncatlab.org/nlab/show/Lawvere+theory#the_theory_of_groups"]
 
@@ -337,10 +504,12 @@ digraph G {
 
   "category" -> "allegory" [ltail="cluster_category", label="Abstracting from relations instead of functions", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
 
+  "allegory" [href="https://en.wikipedia.org/wiki/Allegory_(mathematics)"]
+
   "category" -> "small category" [ltail="cluster_category", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "small category" -> "monoid" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "small category" -> "preordered set" [label="morphisms are arrows pointing from x to y when x ≤ y", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
-  "category" -> "groupoid" [ltail="cluster_category", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "category" -> "groupoid" [ltail="cluster_category", label="category in\nwhich every\nmorphism is\nan isomorphism", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Small_and_large_categories"]
 
   "groupoid" -> "group" [lhead="cluster_group", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "groupoid" -> "group action" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
@@ -356,6 +525,13 @@ digraph G {
 
   "complete category" -> "bicomplete category" [href="https://en.wikipedia.org/wiki/Complete_category"]
   "co-complete category" -> "bicomplete category" [href="https://en.wikipedia.org/wiki/Complete_category"]
+  
+  subgraph cluster_bicompletecategory {
+    label="bicomplete category"
+    href="https://en.wikipedia.org/wiki/Complete_category"
+    "bicomplete category" [label="", shape="point", width="0"]
+  }
+  
   "bicomplete category" -> "set" [href="https://en.wikipedia.org/wiki/Category_of_sets"]
   "bicomplete category" -> "topological space" [lhead="cluster_topologicalSpace", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
   "bicomplete category" -> "group" [lhead="cluster_group", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
@@ -372,7 +548,7 @@ digraph G {
   "small category" -> "equivalence relation" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
 
   "category" -> "concrete category" [ltail="cluster_category"]
-  "concrete category" -> "Ord" [label="class of all preordered sets\nwith monotonic functions as morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "concrete category" -> "preordered set" [label="class of all preordered sets\nwith monotonic functions as morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "concrete category" -> "group" [lhead="cluster_group", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "group" -> "abelian group" [ltail="cluster_group", label="subcategory", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "category" -> "Cat" [ltail="cluster_category", label="all small categories, with functors between them as morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
@@ -380,12 +556,6 @@ digraph G {
   "abelian group" -> "preadditive category" [label="a category that is enriched over the\ncategory of abelian groups, abelian group", href="https://en.wikipedia.org/wiki/Preadditive_category"]
   "preadditive category" -> "ring" [lhead="cluster_ring", label="can be viewed as\na preadditive category\nwith a single object", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Generalizations"]
 
-
-  "diagram" [href="https://en.wikipedia.org/wiki/Diagram_(category_theory)"]
-  "span" [href="https://en.wikipedia.org/wiki/Span_(category_theory)#Formal_definition"]
-  "cospan" [href="https://en.wikipedia.org/wiki/Span_(category_theory)#Cospans"]
-  "diagram" -> "span"
-  "diagram" -> "cospan"
   "functor" -> "covariant functor" [ltail="cluster_functor"]
   "functor" -> "contravariant functor" [ltail="cluster_functor"]
   "covariant functor" -> "diagram" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
@@ -420,66 +590,6 @@ digraph G {
   "functor" -> "representable functor" [ltail="cluster_functor", href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "adjoint functor" [ltail="cluster_functor"]
 
-  subgraph cluster_set {
-    label="set"
-    href="https://en.wikipedia.org/wiki/set_(mathematics)"
-    "set" [shape="point", width="0", label=""]
-    "cartesian product" [href="https://en.wikipedia.org/wiki/Cartesian_product"]
-    "partial function" [href="https://en.wikipedia.org/wiki/Partial_function"]
-    "partial function" -> "function"
-
-    "function" [href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
-    "function" -> "injective function" [label="ker(f) = 0"]
-    "function" -> "surjective function" [label="coker(f) = 0"]
-
-    "injective function" [href="https://en.wikipedia.org/wiki/Injective_function"]
-    "surjective function" [href="https://en.wikipedia.org/wiki/Surjective_function"]
-
-    "injective function x surjective function" [shape="point"]
-    "injective function"  -> "injective function x surjective function"
-    "surjective function" -> "injective function x surjective function"
-    "injective function x surjective function" -> "bijective function" [dir="both"]
-
-    "binary operation" [href="https://en.wikipedia.org/wiki/Binary_operation"]
-    "A" -> "A x A"
-    "cartesian product" -> "A x A" [lhead="cluster_AxB"]
-    "A x A" [shape="point"]
-    { rank="same"; "binaryoperation"; "dummybinaryoperation" }
-    "dummybinaryoperation" [shape="point", width="0"]
-    "A x A" -> "dummybinaryoperation" [arrowhead="none"]
-    "dummybinaryoperation" -> "binary operation" [dir="back"]
-    "dummybinaryoperation" -> "A"
-
-    subgraph cluster_A {
-      label="A"
-      shape="rounded"
-      href=""
-      "A" [label="", shape="point", width="0"]
-      "ker(f)" [shape="oval"]
-      "coim(f)" [shape="oval"]
-      "A0" [label="0", shape="oval"]
-    }
-
-    subgraph cluster_B {
-      label="B"
-      shape="rounded"
-      href=""
-      "B" [label="", shape="point", width="0"]
-      "im(f)" [shape="oval"]
-      "coker(f)" [shape="oval"]
-      "B0" [label="0", shape="oval"]
-    }
-    
-    "ker(f)" -> "B0"
-    "coker(f)" -> "A0"
-
-
-    "function" -> "f"
-    "f" [shape="none"]
-    "A" -> "f" [arrowhead="none"]
-    "f" -> "B" [arrowtail="none"]
-  }
-
   "set" -> "set x binary operation"
   "binary operation" -> "set x binary operation"
   "set x binary operation" -> "magma"
@@ -495,7 +605,9 @@ digraph G {
     href="https://en.wikipedia.org/wiki/Category_of_relations"
     "relation" [label="", shape="point", width="0"]
 
-        "A" -> "A x B" [lhead="cluster_AxB"]
+    "product" -> "disjoint union" [href="https://en.wikipedia.org/wiki/Category_of_relations"]
+    "coproduct" -> "disjoint union" [href="https://en.wikipedia.org/wiki/Category_of_relations"]
+    "A" -> "A x B" [lhead="cluster_AxB"]
     "B" -> "A x B" [lhead="cluster_AxB"]
     "cartesian product" -> "A x B" [lhead="cluster_AxB"]
 
@@ -520,6 +632,7 @@ digraph G {
       "functional binary relation" -> "functional binary relation x serial binary relation"
       "serial binary relation" -> "functional binary relation x serial binary relation"
       "functional binary relation x serial binary relation" -> "function"
+      "binary relation" -> "equivalence relation" [label="reflexive\nsymmetric\ntransitive", href="https://en.wikipedia.org/wiki/Equivalence_relation"]
       "binary relation" -> "serial binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
       "binary relation" -> "many-to-many binary relation" [label="not injective\nnor functional", href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
       "injective binary relation" -> "one-to-many binary relation" [label="functional and\nnot injective", href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
@@ -566,15 +679,15 @@ digraph G {
       "monoidM1/identity" [label="identity"]
     }
 
-    dummy [shape=point, width=0]
-    "M1" -> dummy [arrowhead=none]
-    dummy -> "F" [dir=back]
-    dummy -> "M1"
+    "dummyF" [shape=point, width=0]
+    "M1" -> "dummyF" [arrowhead=none]
+    "dummyF" -> "F" [dir=back]
+    "dummyF" -> "M1"
 
-    dummy [shape=point, width=0]
-    "M1" -> dummy [arrowhead=none]
-    dummy -> "F ∘ F" [dir=back]
-    dummy -> "M1"
+    "dummyF ∘ F" [shape=point, width=0]
+    "M1" -> "dummyF ∘ F" [arrowhead=none]
+    "dummyF ∘ F" -> "F ∘ F" [dir=back]
+    "dummyF ∘ F" -> "M1"
   }
 
   "F-algebra" -> "M -> 1 + M x M"
@@ -599,10 +712,29 @@ digraph G {
   "preordered set" [href="https://en.wikipedia.org/wiki/Preorder"]
   "set x preorder" [shape="point"]
   "set" -> "set x preorder"
+  "set" -> "set x preorder"
   "set x preorder" -> "preordered set"
+
+  "set x equivalence relation" [shape="point"]
+  "set" -> "set x equivalence relation"
+  "equivalence relation" -> "set x equivalence relation"
+  "set x equivalence relation" -> "setoid" [href="https://en.wikipedia.org/wiki/Setoid"]
+  "setoid" [href="https://en.wikipedia.org/wiki/Setoid"]
   "set" -> "graph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
+
+  subgraph cluster_graph {
+    label="graph"
+    href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"
+    "graph" [label="", shape="point", width="0"]
+
+    "Petersen graph"
+  }
+
   "graph" -> "digraph"
   "graph" -> "bipartite graph"
+
+  "digraph" -> "quiver" [href="https://en.wikipedia.org/wiki/Quiver_(mathematics)"]
+  "quiver" [href="https://en.wikipedia.org/wiki/Quiver_(mathematics)"]
 
   "partial order" -> "set x partial order"
   "set x partial order" [shape="point"]
@@ -623,6 +755,23 @@ digraph G {
   "binary relation" -> "preorder" [label="reflexive\ntransitive", href="https://en.wikipedia.org/wiki/Preorder"]
   "equivalence relation" [href="https://en.wikipedia.org/wiki/Equivalence_relation"]
   "preorder" [href="https://en.wikipedia.org/wiki/Preorder"]
+  "equivalence relation x partial order" [shape="point"]
+  "dependency relation" [href="https://en.wikipedia.org/wiki/Dependency_relation"]
+  "tolerance relation" [href="https://en.wikipedia.org/wiki/Tolerance_relation"]
+  "binary relation" -> "dependency relation" [label="reflexive\nsymmetric\nfinite", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "binary relation" -> "tolerance relation" [label="reflexive\nsymmetric\ninfinite", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "tolerance relation" -> "equivalence relation" [label="transitive", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "dependency relation" -> "equivalence relation" [label="transitive", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "equivalence relation" -> "equivalence relation x partial order"
+  "equivalence relation" -> "congruence relation" [label="domain X is\nalso the\nunderlying set\nfor an algebraic\nstructure, and\nwhich respects\nthe additional\nstructure", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "partial order" -> "equivalence relation x partial order"
+  "apartness relation" [href="https://en.wikipedia.org/wiki/Apartness_relation"]
+  "binary relation" -> "apartness relation" [label="symmetric\nirreflexive\nco-transitivity", href="https://en.wikipedia.org/wiki/Apartness_relation"]
+  "strict partial order" [href="https://en.wikipedia.org/wiki/Partially_ordered_set#Strict_and_non-strict_partial_orders"]
+  "partial order" -> "strict partial order" [label="irreflexive\ntransitive\nasymmetric", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "relation" -> "partial equivalence relation" [href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "partial equivalence relation" -> "equivalence relation" [xlabel="reflexive", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+  "equivalence relation x partial order" -> "equality" [href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
   "partial order" [href="https://en.wikipedia.org/wiki/Partial_order"]
   "preorder" -> "equivalence relation" [label="symmetric", href="https://en.wikipedia.org/wiki/Equivalence_relation"]
   "preorder" -> "partial order" [label="antisymmetric", href="https://en.wikipedia.org/wiki/Partially_ordered_set#Formal_definition"]
@@ -691,13 +840,21 @@ digraph G {
   "semigroup" -> "inverse semigroup" [label="invertibility"]
 
   subgraph cluster_group {
-    label="group"
+    label="Grp"
     href="https://en.wikipedia.org/wiki/Group_(mathematics)"
     "group" [shape="point", width="0", label="", href="https://en.wikipedia.org/wiki/Group_(mathematics)"]
     "center" [shape="oval", href="https://en.wikipedia.org/wiki/Center_(group_theory)"]
 
+    "quotient group"
+
+    "generalized dihedral group" [href="https://en.wikipedia.org/wiki/Generalized_dihedral_group"]
+    "generalized dihedral group" -> "dihedral group"
+    "generalized dihedral group" -> "orthogonal group" [lhead="cluster_orthogonalgroup"]
+    "dihedral group" [href="https://en.wikipedia.org/wiki/Dihedral_group"]
+    "Selmer group" [href="https://en.wikipedia.org/wiki/Selmer_group"]
+
     subgraph cluster_object {
-      label="object"
+      label="group"
       shape="oval"
       href=""
       "object" [label="", shape="point", width="0"]
@@ -707,21 +864,10 @@ digraph G {
       "group/normal-subgroup" -> "center"
       "group/normal-subgroup" -> "commutator subgroup"
       "commutator subgroup" [shape="oval", href="https://en.wikipedia.org/wiki/Commutator_subgroup"]
-      "group/subgroup" [label="subgroup"]
+      "group/subgroup" [label="subgroup", href="https://en.wikipedia.org/wiki/Subgroup"]
       "group/subgroup" -> "group/normal-subgroup"
       "group/subgroup" [shape="oval"]
-      "coset" [shape="oval"]
-    }
-
-    "generalized dihedral group" [href="https://en.wikipedia.org/wiki/Generalized_dihedral_group"]
-    "generalized dihedral group" -> "dihedral group"
-    "generalized dihedral group" -> "orthogonal group" [lhead="cluster_orthogonalgroup"]
-    "dihedral group" [href="https://en.wikipedia.org/wiki/Dihedral_group"]
-
-    subgraph cluster_orthogonalgroup {
-      label="orthogonal group"
-      "orthogonal group" [label="", shape="point", width="0", href="https://en.wikipedia.org/wiki/Orthogonal_group"]
-      "special orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+      "coset" [shape="oval", href="https://en.wikipedia.org/wiki/Coset"]
     }
   }
 
@@ -731,6 +877,14 @@ digraph G {
   "group representation" [shape="none"]
   "group" -> "group representation" [ltail="cluster_group", arrowhead="none"]
   "group representation" -> "general linear group" [lhead="cluster_generallineargroup", arrowtail="none"]
+  "group representation" -> "regular representation"
+  subgraph cluster_regularrepresentation {
+    label="regular representation"
+    href=""
+    "regular representation" [label="https://en.wikipedia.org/wiki/Regular_representation", shape="point", width="0"]
+    // "regular representation" [href="https://en.wikipedia.org/wiki/Algebraic_number_field#Regular_representation,_trace_and_determinant"]
+    "regularrepresentation/A"
+  }
 
   "Galois representation" [shape="none"]
   "Galois group" -> "Galois representation" [arrowhead="none"]
@@ -738,11 +892,24 @@ digraph G {
 
   "group representation" -> "Galois representation"
 
-  "group" -> "cyclic group" [ltail="cluster_group"]
-  "group" -> "quotient group" [ltail="cluster_group"]
-  "cyclic group" [href="https://en.wikipedia.org/wiki/Cyclic_group"]
-  "nth roots of unity" [href="https://en.wikipedia.org/wiki/Root_of_unity#Group_of_nth_roots_of_unity"]
-  "cyclic group" -> "nth roots of unity"
+  subgraph cluster_cyclicgroup {
+    label="cyclic group"
+    href="https://en.wikipedia.org/wiki/Cyclic_group"
+    node [shape="oval"]
+    "cyclic group" [label="", shape="point", width="0"]
+
+    "nth roots of unity" [href="https://en.wikipedia.org/wiki/Root_of_unity#Group_of_nth_roots_of_unity"]
+  }
+
+  subgraph cluster_abeliangroup {
+    label="abelian group"
+    href=""
+    "abelian group" [label="", shape="point", width="0"]
+
+    "abeliangroup/M" [label="(M, +)"]
+    "abeliangroup/R" [label="R"]
+  }
+
   "homology group" [href="https://en.wikipedia.org/wiki/Homology_(mathematics)"]
   "abelian group" -> "homology group"
   "finitely generated abelian group" [href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group"]
@@ -751,8 +918,10 @@ digraph G {
   "free group" -> "free abelian group"
   "free abelian group" -> "finitely generated free abelian group"
   "finitely generated free abelian group" -> "lattice" [href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Examples"]
-  "finitely generated free abelian group" -> "integers" [href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Examples"]
-  "finitely generated free abelian group" -> "integers modulo n" [href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Examples"]
+  "(Z, +)" -> "integers"
+  "(Z/nZ, +)" -> "integers modulo n"
+  "finitely generated free abelian group" -> "(Z, +)" [href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Examples"]
+  "finitely generated free abelian group" -> "(Z/nZ, +)" [href="https://en.wikipedia.org/wiki/Finitely_generated_abelian_group#Examples"]
   "finitely generated abelian group" -> "finitely generated free abelian group"
   "cohomology group" [href="https://en.wikipedia.org/wiki/Cohomology"]
   "abelian group" -> "cohomology group"
@@ -778,6 +947,8 @@ digraph G {
   "group" -> "algebraic group" [ltail="cluster_group", lhead="cluster_algebraicGroup"]
   "group" -> "symmetry group" [ltail="cluster_group"]
   "automorphism group" -> "Galois group"
+  // https://en.wikipedia.org/wiki/Galois_connection#Examples
+  // Then the maps E ↦ Gal(L/E) and G ↦ Fix(G) form an antitone Galois connection
   "Galois extension" -> "Galois group" [dir="none"]
   "group" -> "permutation group" [ltail="cluster_group"]
   "permutation group" [href="https://en.wikipedia.org/wiki/Permutation_group"]
@@ -792,9 +963,23 @@ digraph G {
   "isogeny" [href="https://en.wikipedia.org/wiki/Isogeny"]
   "isogeny" -> "group x abelian variety x isogeny"
   "group x abelian variety x isogeny" [shape="point"]
-  "group x abelian variety x isogeny" -> "Selmer group"
+  "group x abelian variety x isogeny" -> "Selmer group" [href="https://en.wikipedia.org/wiki/Selmer_group"]
   "finite group" [href="https://en.wikipedia.org/wiki/Finite_group"]
   "algebraic group" -> "finite group" [ltail="cluster_algebraicGroup"]
+  "algebraic group" -> "linear algebraic group"
+
+  subgraph cluster_linearalgebraicgroup {
+    label="linear algebraic group"
+    href="https://en.wikipedia.org/wiki/Linear_algebraic_group"
+    "linear algebraic group" [label="", shape="point", width="0"]
+
+    subgraph cluster_orthogonalgroup {
+      label="orthogonal group"
+      "orthogonal group" [label="", shape="point", width="0", href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+      "special orthogonal group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
+    }
+  }
+
   "algebraic group" -> "general linear group" [ltail="cluster_algebraicGroup", lhead="cluster_generallineargroup"]
   "Lie group" [href="https://en.wikipedia.org/wiki/Lie_group"]
   "Lie group" -> "general linear group" [lhead="cluster_generallineargroup", href="https://en.wikipedia.org/wiki/General_linear_group"]
@@ -873,15 +1058,10 @@ digraph G {
   "semirng" -> "semiring" [label="* monoid", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "semiring" -> "ring" [lhead="cluster_ring", label="+ abelian group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
-  "abelian group" -> "module" [lhead="cluster_module", label="(M, +)", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
-
-  subgraph cluster_module {
-    label="module"
-    href="https://en.wikipedia.org/wiki/Module_(mathematics)"
-
-    "module" [shape="point", width="0", label=""]
-    "module homomorphism"
-  }
+  "abelian group x ring" [shape="point"]
+  "abelian group" -> "abelian group x ring"
+  "ring" -> "abelian group x ring" [ltail="cluster_ring"]
+  "abelian group x ring" -> "module" [lhead="cluster_module", label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   
   "module" -> "vector space" [ltail="cluster_module", lhead="cluster_vectorspace"]
 
@@ -1087,10 +1267,17 @@ digraph G {
 
   "function" -> "continuous function"
   "function" -> "analytic function"
-  "function" -> "modular function"
+  "function" -> "modular form"
   "function" -> "L-function"
   "function" -> "operator" [label="acts on elements\nof a space to\nproduce elements of\nanother space", href="https://en.wikipedia.org/wiki/Operator_(mathematics)"]
   "function" -> "multilinear map" [label="of several variables\nthat is linear\nseparately in\neach variable", href="https://en.wikipedia.org/wiki/Function_(mathematics)"]
+  "L-function" -> "Riemann Zeta function" [href="https://en.wikipedia.org/wiki/Riemann_zeta_function"]
+  "Dedekind zeta function" -> "Riemann Zeta function" [href="https://en.wikipedia.org/wiki/Dedekind_zeta_function"]
+  "Dirichlet series" -> "Dedekind zeta function" [href="https://en.wikipedia.org/wiki/Dedekind_zeta_function"]
+  "L-function" -> "Dirichlet L-function"
+  "Dirichlet series" -> "Dirichlet L-function"
+  "generalized Dirichlet series" -> "Dirichlet series" [href="https://en.wikipedia.org/wiki/Dirichlet_series"]
+  "L-function" -> "Artin L-function" [href="https://en.wikipedia.org/wiki/Artin_L-function"]
 
   "function" -> "group action"
   "group x set" [shape="point"]
@@ -1103,14 +1290,14 @@ digraph G {
   "continuous function" [href="https://en.wikipedia.org/wiki/Continuous_function"]
   "continuous function" -> "[0, 1] → X"
   "j-invariant" [href="https://en.wikipedia.org/wiki/J-invariant"]
-  "modular function" [href="https://en.wikipedia.org/wiki/Modular_function"]
-  "modular function" -> "j-invariant" [label="modular function of\nweight zero for SL(2, Z)\ndefined on the upper half-plane\nof complex numbers", href="https://en.wikipedia.org/wiki/J-invariant"]
+  "modular form" [href="https://en.wikipedia.org/wiki/Modular_function"]
+  "modular form" -> "j-invariant" [label="modular function of\nweight zero for SL(2, Z)\ndefined on the upper half-plane\nof complex numbers", href="https://en.wikipedia.org/wiki/J-invariant"]
   "L-function" [href="https://en.wikipedia.org/wiki/L-function"]
   "L-function" -> "Hasse–Weil zeta function" [href="https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function"]
   "Hasse–Weil zeta function" [href="https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function"]
-  "analytic function" [href="https://en.wikipedia.org/wiki/Analytic_function"]
-  "analytic function" -> "convergent power series" [label="locally given by", href="https://en.wikipedia.org/wiki/Analytic_function"]
+
   "analytic function" -> "complex analytic function"
+  "complex analytic function" -> "modular form" [label="on the upper half-plane\nsatisfying a certain kind of functional equation\nwith respect to the group action\nof the modular group,\nand also satisfying a growth condition", href="https://en.wikipedia.org/wiki/Modular_form"]
   "operator" [href="https://en.wikipedia.org/wiki/Operator_(mathematics)"]
   "operator" -> "linear map"
   "differential operator" [href="https://en.wikipedia.org/wiki/Differential_operator"]
@@ -1119,7 +1306,6 @@ digraph G {
   "modular form" [href="https://en.wikipedia.org/wiki/Modular_form"]
   "eigenform" [href="https://en.wikipedia.org/wiki/Eigenform"]
   "modular form" -> "eigenform" [label="is an eigenvector\nfor all Hecke\noperators Tm", href="https://en.wikipedia.org/wiki/Eigenform"]
-  "complex analytic function" -> "modular form" [label="on the upper half-plane\nsatisfying a certain kind of functional equation\nwith respect to the group action\nof the modular group,\nand also satisfying a growth condition", href="https://en.wikipedia.org/wiki/Modular_form"]
 
   "Lie bracket" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
   "Lie bracket" -> "vector space x Lie bracket"
@@ -1133,11 +1319,41 @@ digraph G {
     href="https://en.wikipedia.org/wiki/Euclidean_space"
     node [shape="oval"]
     "Euclidean space" [label="", shape="point", width="0"]
-    "EuclideanSpace/isometry" [label="isometry"]
+
+    { rank="same"; "Euclideanspace/isometry" [label="isometry"]; "dummyEuclideanspace/isometry" }
+    "dummyEuclideanspace/isometry" [shape="point", width="0"]
+    "𝔼n" -> "dummyEuclideanspace/isometry" [arrowhead="none"]
+    "dummyEuclideanspace/isometry" -> "Euclideanspace/isometry" [dir="back"]
+    "dummyEuclideanspace/isometry" -> "𝔼n"
+
+    "knot" [href="https://en.wikipedia.org/wiki/Knot_(mathematics)"]
+  }
+
+  "circle" -> "knot" [href="https://en.wikipedia.org/wiki/Knot_(mathematics)"]
+
+  "Euclidean space" -> "Euclidean space of dimension 1"
+  "Euclidean space of dimension 1" -> "real line" [dir="both", href="https://en.wikipedia.org/wiki/Real_line"]
+
+  subgraph cluster_realline {
+    label="real line"
+    href="https://en.wikipedia.org/wiki/Real_line"
+    node [shape="oval"]
+    "real line" [label="", shape="point", width="0"]
+
+    "realline/D" [label="D"]
+    "open set" -> "realline/D"
+
+    "analytic function" [href="https://en.wikipedia.org/wiki/Analytic_function"]
+    "analytic function" -> "convergent power series" [label="locally given by", href="https://en.wikipedia.org/wiki/Analytic_function"]
+
+    { rank="same"; "dummyanalyticfunction" }
+    "dummyanalyticfunction" [shape="point", width="0"]
+    "realline/D" -> "dummyanalyticfunction" [arrowhead="none"]
+    "dummyanalyticfunction" -> "analytic function" [dir="back"]
+    "dummyanalyticfunction" -> "real line" [lhead="cluster_realline"]
   }
 
   "affine space" -> "Euclidean space" [lhead="cluster_Euclideanspace", href="https://en.wikipedia.org/wiki/Euclidean_space#Technical_definition"]
-  "inner product space" -> "Euclidean vector space" [href="https://en.wikipedia.org/wiki/Euclidean_space#Technical_definition"]
 
   subgraph cluster_Euclideangroup {
     label="Euclidean group"
@@ -1150,14 +1366,46 @@ digraph G {
     "normal subgroup" -> "translational group"
     "special Euclidean group" [href="https://en.wikipedia.org/wiki/Euclidean_group"]
   
-    "Euclideangroup/object" [label="object"]
+    subgraph cluster_EuclideangroupEn {
+      label="E(n)"
+      href=""
+      "Euclideangroup/E(n)" [label="", shape="point", width="0"]
+
+      "Euclideangroup/E(n)element" [label="", shape="point"]
+    }
   }
 
-  "Euclideangroup/object" -> "EuclideanSpace/isometry" [dir="both"]
+  "EuclideanSpace/isometry" [label="isometry"]
+  "EuclideanSpace/isometry" -> "Euclideangroup/E(n)element"
 
+  "topological space" -> "Grassmannian"
+
+  subgraph cluster_Grassmannian {
+    label="Grassmannian"
+    href="https://en.wikipedia.org/wiki/Grassmannian"
+    "Grassmannian" [label="", shape="point", width="0"]
+
+    subgraph cluster_Grassmanniansubvarieties {
+      label="subvarieties"
+      href=""
+      "Grassmannian/subvarieties" [label="", shape="point", width="0"]
+
+      "Schubert variety"
+    }
+  }
 
   "affine space" [href="https://en.wikipedia.org/wiki/Affine_space"]
-  "inner product space" [href="https://en.wikipedia.org/wiki/Inner_product_space"]
+
+  subgraph cluster_innerproductspace {
+    label="inner product space"
+    href="https://en.wikipedia.org/wiki/Inner_product_space"
+    "inner product space" [label="", shape="point", width="0"]
+
+    "Euclidean vector space" [href="https://en.wikipedia.org/wiki/Euclidean_space#Technical_definition"]
+  }
+
+  "inner product space" -> "real numbers" [href="https://en.wikipedia.org/wiki/Inner_product_space#Some_examples"]
+
   "Banach space" [href="https://en.wikipedia.org/wiki/Banach_space"]
   "complete metric space" [href="https://en.wikipedia.org/wiki/Complete_metric_space"]
   "Sobolev space" [href="https://en.wikipedia.org/wiki/Sobolev_space"]
@@ -1188,8 +1436,6 @@ digraph G {
   "vector space" -> "affine space" [ltail="cluster_vectorspace"]
   "vector space" -> "finite dimensional vector space" [ltail="cluster_vectorspace"]
   "affine space" -> "Euclidean space" [lhead="cluster_Euclideanspace"]
-  "inner product space" -> "real numbers" [href="https://en.wikipedia.org/wiki/Inner_product_space#Some_examples"]
-  "inner product space" -> "Euclidean space" [lhead="cluster_Euclideanspace", href="https://en.wikipedia.org/wiki/Inner_product_space#Some_examples"]
   "affine variety" -> "affine space" [href="https://en.m.wikipedia.org/wiki/Affine_space%23Affine_subspaces_and_parallelism"]
 
   "module" -> "finitely generated module" [ltail="cluster_module", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
@@ -1223,7 +1469,7 @@ digraph G {
   "faithful module" [href="https://en.wikipedia.org/wiki/Faithful_module"]
   "module" -> "faithful module" [ltail="cluster_module", label="action of each\nr ≠ 0 in R on M\nis nontrivial\n<-> annihilator of M\nis the zero ideal", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "Noetherian module" [href="https://en.wikipedia.org/wiki/Noetherian_module"]
-  "Noetherian module" -> "integers"
+  "Noetherian module" -> "integers" [href="https://en.wikipedia.org/wiki/Noetherian_module#Examples"]
   "module" -> "Noetherian module" [ltail="cluster_module", label="satisfies the ascending\nchain condition on submodules\n<-> every submodule is\nfinitely generated", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
   "Noetherian module" -> "Noetherian ring"
   "Artinian module" [href="https://en.wikipedia.org/wiki/Artinian_module"]
@@ -1288,6 +1534,9 @@ digraph G {
       "variety/A" [label="", shape="point", width="0"]
       "rational point" [href="https://en.wikipedia.org/wiki/Rational_point"]
     }
+
+    //  [ltail="cluster_variety", label="closure of a\nSchubert cell", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+    "Schubert variety" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   }
   "variety" -> "abelian variety" [ltail="cluster_variety", label="complete group variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "affine variety" [ltail="cluster_variety", label="in affine space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
@@ -1296,7 +1545,6 @@ digraph G {
   "variety" -> "surface" [ltail="cluster_variety", label="variety\nof dimension two", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "normal G-variety" [ltail="cluster_variety"]
   "variety" -> "secant variety" [ltail="cluster_variety", label="to a projective variety V\nsubvariety of P^r is\nthe closure of the union of\nall secant lines to V in P^r", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
-  "variety" -> "Schubert variety" [ltail="cluster_variety", label="closure of a\nSchubert cell", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "algebraic group" [ltail="cluster_variety", lhead="cluster_algebraicGroup", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "algebraic curve" [ltail="cluster_variety", label="dimension one", href="https://en.wikipedia.org/wiki/Algebraic_curve"]
 
@@ -1391,6 +1639,9 @@ digraph G {
         href="https://en.wikipedia.org/wiki/Scheme_(mathematics)"
         "scheme" [label="", shape="point", width="0"]
         "scheme/morphism" [label="morphism"]
+        "scheme/morphism" -> "flat morphism"
+        "flat morphism" [href="https://en.wikipedia.org/wiki/Flat_morphism"]
+        "flat morphism" -> "faithfully flat morphism" [label="surjective", href="https://en.wikipedia.org/wiki/Flat_morphism"]
       }
 
       "x affine scheme" [shape="point"]
@@ -1404,7 +1655,6 @@ digraph G {
   "regular scheme" [href="https://en.wikipedia.org/wiki/Regular_scheme"]
   "ring" -> "reduced ring" [ltail="cluster_ring", label="has no non-zero\nnilpotent elements", href="https://en.wikipedia.org/wiki/Reduced_ring"]
   "ring" -> "differential ring" [ltail="cluster_ring"]
-  "ring" -> "module" [ltail="cluster_ring", lhead="cluster_module", label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
   "ring" -> "ring x Galois group x finite field x local field" [ltail="cluster_ring"]
   "ring" -> "Hecke ring" [ltail="cluster_ring"]
   // https://rip94550.wordpress.com/2012/07/02/introduction-to-rings/ 
@@ -1424,9 +1674,10 @@ digraph G {
   "field" -> "residue field"
   "field" -> "field of fractions"
   "cyclotomic field" [href="https://en.wikipedia.org/wiki/Cyclotomic_field"]
-  "algebraic number field" -> "cyclotomic field" [ltail="cluster_algebraicNumberField"]
-  "Hilbert class field" [href="https://en.wikipedia.org/wiki/Hilbert_class_field"]
   "algebraic number field" -> "Hilbert class field" [ltail="cluster_algebraicNumberField", dir="none"]
+  "algebraic number field" -> "cyclotomic field" [ltail="cluster_algebraicNumberField"]
+  "algebraic number field" -> "gaussian rationals" [ltail="cluster_algebraicNumberField", href="https://en.wikipedia.org/wiki/Algebraic_number_field#Examples"]
+  "Hilbert class field" [href="https://en.wikipedia.org/wiki/Hilbert_class_field"]
   "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
   "rational curve" -> "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
   "algebraic curve" -> "plane curve"
@@ -1443,6 +1694,7 @@ digraph G {
   "normal scheme" [href="https://en.wikipedia.org/wiki/Normal_scheme"]
   "group scheme" [href="https://en.wikipedia.org/wiki/Group_scheme"]
   "algebraic group" -> "group variety" [ltail="cluster_algebraicGroup", label="smooth", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic group" -> "abelian algebraic group"
   "group variety" -> "algebraic group" [lhead="cluster_algebraicGroup"]
   "elliptic curve" -> "hyperelliptic curve" [label="there is a\nlinear system of\ndimension 1\nand degree 2", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
   "variety" -> "Jacobian variety" [ltail="cluster_variety", label="of a projective curve X\nis the degree zero part\nof the Picard variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
@@ -1495,8 +1747,54 @@ digraph G {
     "commutativeringwithunity/prime ideal" -> "commutativeringwithunity/maximal ideal" [href="https://en.wikipedia.org/wiki/Maximal_ideal#Properties"]
   }
 
-  "field" [href="https://en.wikipedia.org/wiki/Field_(mathematics)"]
-  "field" -> "field extension"
+  subgraph cluster_field {
+    label="field"
+    href="https://en.wikipedia.org/wiki/Field_(mathematics)"
+    node [shape="oval"]
+    "field" [label="", shape="point", width="0"]
+
+    subgraph cluster_subfield {
+      label="subfield"
+      href="https://en.wikipedia.org/wiki/Field_extension#Subfield"
+      node [shape="point"]
+      "subfield" [label="", shape="point", width="0"]
+
+      "subfield/K" [label="K"]
+    }
+
+    "field/L" [label="L"]
+
+    "field/L x subfield/K" [shape="point"]
+    "field/L" -> "field/L x subfield/K"
+    "subfield/K" -> "field/L x subfield/K"
+    "field/L x subfield/K" -> "L/K"
+
+    subgraph cluster_fieldextension {
+      label="field extension"
+      href="https://en.wikipedia.org/wiki/Field_extension"
+      "field extension" [label="", shape="point", width="0"]
+
+      "L/K"
+    }
+
+    "Galois extension" [href="https://en.wikipedia.org/wiki/Galois_extension"]
+    "normal extension" [href="https://en.wikipedia.org/wiki/Normal_extension"]
+    "separable extension" [href="https://en.wikipedia.org/wiki/Separable_extension"]
+    "field extension" -> "abelian extension"
+    "field extension" -> "normal extension"
+    "field extension" -> "separable extension"
+    "field extension" -> "finite field extension"
+    "field extension" -> "local field extension"
+  }
+
+  "Galois group" -> "local field extension Galois group" [href="https://en.wikipedia.org/wiki/Ramification_group"]
+  "local field extension" -> "local field extension Galois group"
+  "local field extension Galois group" -> "ramification group"
+  
+  "ramification group" [href="https://en.wikipedia.org/wiki/Ramification_group"]
+  "filtration" [href="https://en.wikipedia.org/wiki/Filtration_(mathematics)"]
+  "filtration" -> "ramification group"
+
   "field" -> "algebraic number field" [lhead="cluster_algebraicNumberField"]
   "field" -> "differential field"
   "field" -> "complex numbers"
@@ -1525,20 +1823,13 @@ digraph G {
   "ring" -> "perfect ring" [ltail="cluster_ring", label="satisfying the descending\nchain condition on\nright principal ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "ring" -> "nonzero ring" [ltail="cluster_ring"]
   "ring" -> "primitive ring" [ltail="cluster_ring", label="has a faithful\nsimple left\nR-module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  "ring" -> "principal ideal ring" [ltail="cluster_ring", label="every ideal\nis principal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "ring" -> "principal ideal ring" [ltail="cluster_ring", lhead="principal ideal ring" label="every ideal\nis principal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "ring" -> "self-injective ring" [ltail="cluster_ring", label="if the module R\nis an injective module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "ring" -> "quotient ring" [ltail="cluster_ring", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "ring" -> "semiprimary ring" [ltail="cluster_ring", label="for the\nJacobson radical J(R) of R,\n(1) R/J(R) is semisimple and\n(2) J(R) is a nilpotent ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "ring" -> "semiprime ring" [ltail="cluster_ring", lhead="cluster_semiprimeRing", label="the only\nnilpotent ideal\nis the trivial\nideal {0}", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "ring" -> "semiprimitive ring" [ltail="cluster_ring", label="whose Jacobson\nradical\nis zero", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "endomorphism ring" [href="https://en.wikipedia.org/wiki/Endomorphism_ring"]
-  "field extension" [href="https://en.wikipedia.org/wiki/Field_extension"]
-  "Galois extension" [href="https://en.wikipedia.org/wiki/Galois_extension"]
-  "normal extension" [href="https://en.wikipedia.org/wiki/Normal_extension"]
-  "separable extension" [href="https://en.wikipedia.org/wiki/Separable_extension"]
-  "field extension" -> "normal extension"
-  "field extension" -> "separable extension"
-  "field extension" -> "finite field extension"
   "finite field extension" [href="https://en.wikipedia.org/wiki/Finite_field_extension"]
   "finitely generated algebra" -> "finite field extension" [label="E is a finitely\ngenerated algebra\nover F", href="https://en.wikipedia.org/wiki/Finitely_generated_algebra#Examples"]
   "separable extension" -> "Galois extension"
@@ -1552,14 +1843,41 @@ digraph G {
   "topological field" -> "locally compact topological field"
   "locally compact topological field" -> "local field" [href="https://en.wikipedia.org/wiki/Local_field"]
   "Z-module" -> "free Z-module"
-  "free Z-module" -> "ring of integers" [lhead="cluster_ringOfIntegers"]
+  "free Z-module" -> "ring of integers" [lhead="cluster_ringOfIntegers", href="https://en.wikipedia.org/wiki/Commutative_ring#First_examples"]
+  "commutative ring" -> "ring of integers" [lhead="cluster_ringOfIntegers"]
+  "integral domain" -> "ring of integers" [lhead="cluster_ringOfIntegers", href="https://en.wikipedia.org/wiki/Algebraic_number_field#Algebraicity_and_ring_of_integers"]
 
+  "equivalence class" -> "algebraicNumberField/place"
+
+  "algebraicNumberField/K" -> "Dedekind zeta function" [lhead="cluster_algebraicNumberField", dir="none", href="https://en.wikipedia.org/wiki/Dedekind_zeta_function"]
   subgraph cluster_algebraicNumberField {
     label="algebraic number field"
     href="https://en.wikipedia.org/wiki/Algebraic_number_field"
     node [shape="oval"]
     "algebraic number field" [label="", shape="point", width="0"]
     "algebraicNumberField/integral elements" [label="integral elements"]
+
+    subgraph cluster_adelering {
+      label="adele ring"
+      href="https://en.wikipedia.org/wiki/Adele_ring"
+      "adele ring" [label="", shape="point", width="0"]
+
+      "algebraicNumberField/place" -> "algebraicNumberField/finite place"
+      "algebraicNumberField/place" -> "algebraicNumberField/infinite place"
+      "algebraicNumberField/place" [label="place", href="https://en.wikipedia.org/wiki/Algebraic_number_theory#Places"]
+      "algebraicNumberField/finite place" [label="finite place", href="https://en.wikipedia.org/wiki/Algebraic_number_theory#Places"]
+      "algebraicNumberField/infinite place" [label="infinite place", href="https://en.wikipedia.org/wiki/Algebraic_number_theory#Places"]
+    }
+
+    "absolute value function"
+
+    subgraph cluster_algebraicNumberFieldK {
+      label="K"
+      href=""
+      "algebraicNumberField/K" [label="", shape="point", width="0"]
+
+      "algebraicNumberField/x" [label="x"]
+    }
 
     subgraph cluster_ringOfIntegers {
       label="ring of integers"
@@ -1568,8 +1886,40 @@ digraph G {
       "algebraic integer"
     }
 
+    subgraph cluster_JK {
+      label="group of fractional ideals of the ring of integers of K"
+      href="https://en.wikipedia.org/wiki/Ideal_class_group"
+      "JK" [label="", shape="point", width="0"]
+    }
+
+    subgraph cluster_PK {
+      label="subgroup of principal ideals of group of fractional ideals of the ring of integers of K"
+      href=""
+      "PK" [label="", shape="point", width="0"]
+    }
+
+    "JK x PK" [shape="point"]
+    "JK" -> "JK x PK"
+    "PK" -> "JK x PK"
+    "JK x PK" -> "JK / PK"
+    "quotient group" -> "JK / PK"
+
+    "JK / PK" -> "class number of K" [label="order"]
+    "class number of K" -> "ring of integers\nOF possesses\nunique\nfactorization" [label="= 1", dir="both", href="https://en.wikipedia.org/wiki/Algebraic_number_field#Algebraicity_and_ring_of_integers"]
+
+    subgraph cluster_idealclassgroup {
+      label="ideal class group"
+      href="https://en.wikipedia.org/wiki/Ideal_class_group"
+      "ideal class group" [label="", shape="point", width="0"]
+    }
+
     "algebraicNumberField/integral elements" -> "ring of integers" [lhead="cluster_ringOfIntegers", dir="both"]
   }
+
+  "global field" [href="https://en.wikipedia.org/wiki/Global_field"]
+  "algebraic number field" -> "global field"
+
+  "finite group" -> "ideal class group" [href="https://en.wikipedia.org/wiki/Algebraic_number_field#Algebraicity_and_ring_of_integers"]
 
   "filtered ring" [href="https://en.wikipedia.org/wiki/Filtered_ring"]
   "finitely generated ring" [href="https://en.wikipedia.org/wiki/Finitely_generated_ring"]
@@ -1583,7 +1933,7 @@ digraph G {
   "graded module" -> "graded vector space" [href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
   "graded ring" -> "polynomial ring" [lhead="cluster_polynomialring", label="graded by degree", href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
   "hereditary ring" [href="https://en.wikipedia.org/wiki/Hereditary_ring"]
-  "Bézout ring" -> "principal ideal ring" [href="https://en.wikipedia.org/wiki/Principal_ideal_ring#General_properties"]
+  "Bézout ring" -> "principal ideal ring" [lhead="principal ideal ring", href="https://en.wikipedia.org/wiki/Principal_ideal_ring#General_properties"]
   "Jacobson ring" [href="https://en.wikipedia.org/wiki/Jacobson_ring"]
   "Jacobson ring" -> "field" [href="https://en.wikipedia.org/wiki/Jacobson_ring#Examples"]
   "principal ideal domain" -> "principal ideal domain\n with Jacobson radical zero"
@@ -1617,6 +1967,12 @@ digraph G {
         "general linear group" [label="", shape="point", width="0", href="https://en.wikipedia.org/wiki/General_linear_group"]
         "matrix group" [href="https://en.wikipedia.org/wiki/Orthogonal_group"]
 
+        { rank="same"; "regularrepresentation/A"; "dummyregularrepresentation/A" }
+        "dummyregularrepresentation/A" [shape="point", width="0"]
+        "algebraicNumberField/x" -> "dummyregularrepresentation/A" [arrowhead="none"]
+        "dummyregularrepresentation/A" -> "regularrepresentation/A" [dir="back"]
+        "dummyregularrepresentation/A" -> "A(x)"
+
         subgraph cluster_specialLinearGroup {
           label="special linear group"
           href="https://en.wikipedia.org/wiki/Special_linear_group"
@@ -1637,16 +1993,6 @@ digraph G {
   "monoid ring" [href="https://en.wikipedia.org/wiki/Monoid_ring"]
   "perfect ring" [href="https://en.wikipedia.org/wiki/Perfect_ring"]
   "perfect ring" -> "Artinian ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-
-  subgraph cluster_polynomialring {
-    label="polynomial ring"
-    href="https://en.wikipedia.org/wiki/Polynomial_ring"
-    "polynomial ring" [label="", shape="point", width="0"]
-    node [shape="oval"]
-
-    "monic polynomial" [href="https://en.wikipedia.org/wiki/Monic_polynomial"]
-    "polynomialRing/ideal" [label="ideal"]
-  }
 
   "polynomialRing/ideal" -> "variety" [lhead="cluster_variety", dir="both"]
 
@@ -1711,7 +2057,7 @@ digraph G {
   "discrete valuation ring" [href="https://en.wikipedia.org/wiki/Discrete_valuation_ring"]
   "valuation ring" [href="https://en.wikipedia.org/wiki/Valuation_ring"]
   "valuation ring" -> "discrete valuation ring"
-  "principal ideal ring" -> "commutative principal ideal ring"
+  "principal ideal ring" -> "commutative principal ideal ring" [ltail="principal ideal ring"]
   "commutative principal ideal ring x integral domain" [shape="point"]
   "commutative principal ideal ring" -> "commutative principal ideal ring x integral domain"
   "integral domain" -> "commutative principal ideal ring x integral domain" [ltail="cluster_integralDomain"]
@@ -1724,55 +2070,51 @@ digraph G {
   "rng of square zero" [href="https://en.wikipedia.org/wiki/Rng_(algebra)#Rng_of_square_zero"]
   "rng" -> "rng of square zero" [label="xy = 0 for all x and y", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
 
-  subgraph cluster_ring {
-    label="ring"
-    "ring" [label="", shape="point", width="0", href="https://en.wikipedia.org/wiki/Ring_(mathematics)"]
-
-    subgraph cluster_ringobject {
-      label="object"
-      href=""
-      "ringobject/object" [label="", shape="point", width="0"]
-
-      "ideal"
-      "maximal ideal" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
-      "ideal" [href="https://en.wikipedia.org/wiki/Ideal_(ring_theory)"]
-      "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
-      "ideal" -> "prime ideal" [href="https://en.wikipedia.org/wiki/Prime_ideal"]
-      "ideal" -> "maximal ideal" [label="I is a maximal\nideal of a ring R\nif there are no other\nideals contained between I and R", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
-      "principal ideal" [href="https://en.wikipedia.org/wiki/Principal_ideal"]
-      "ideal" -> "principal ideal"
-      "minimal ideal" [href="https://en.wikipedia.org/wiki/Minimal_ideal"]
-      "ideal" -> "minimal ideal"
-    }
-    
-    subgraph cluster_quotientring {
-      label="quotient ring"
-      href="https://en.wikipedia.org/wiki/Quotient_ring"
-      "quotient ring" [label="", shape="point", width="0"]
-    }
-
-    "trivial ring" [href="https://en.wikipedia.org/wiki/Trivial_ring"]
-
-    subgraph cluster_commutativering {
-      label="commutative ring"
-      xlabel="full subcategory of the category of rings"
-      href="https://en.wikipedia.org/wiki/Pushout_(category_theory)#Examples_of_pushouts"
-      "commutative ring" [label="", shape="point", width="0", href="https://en.wikipedia.org/wiki/Commutative_ring"]
-      "integral element" [shape="oval", xlabel="root of a\nmonic\npolynomial\nover A", href="https://en.wikipedia.org/wiki/Integral_element"]
-      "prime spectrum"
-      "commutativering/R" [label="R", shape="oval"]
-      "commutativering/pushout" [label="pushout"]
-      "commutativering/pushout" -> "tensor product" [href="https://en.wikipedia.org/wiki/Pushout_(category_theory)#Examples_of_pushouts"]
-    }
+  subgraph cluster_commutativering {
+    label="commutative ring"
+    xlabel="full subcategory of the category of rings"
+    href="https://en.wikipedia.org/wiki/Pushout_(category_theory)#Examples_of_pushouts"
+    "commutative ring" [label="", shape="point", width="0", href="https://en.wikipedia.org/wiki/Commutative_ring"]
+    "integral element" [shape="oval", xlabel="root of a\nmonic\npolynomial\nover A", href="https://en.wikipedia.org/wiki/Integral_element"]
+    "prime spectrum"
+    "commutativering/R" [label="R", shape="oval"]
+    "commutativering/pushout" [label="pushout"]
+    "commutativering/pushout" -> "tensor product" [href="https://en.wikipedia.org/wiki/Pushout_(category_theory)#Examples_of_pushouts"]
   }
 
   "ring" -> "domain" [label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
-  subgraph cluster_integralDomain {
-    label="integral domain"
-    href="https://en.wikipedia.org/wiki/Integral_domain"
-    "integral domain" [shape="point", width="0", label=""]
-    "field of fractions" [href="https://en.wikipedia.org/wiki/Field_of_fractions"]
+  subgraph cluster_fieldoffractions {
+    label="field of fractions"
+    href="https://en.wikipedia.org/wiki/Field_of_fractions"
+    "field of fractions" [label="", shape="point", width="0"]
+
+    "set of meromorphic functions" [xlabel="if the function's\ndomain is connected", href="https://en.wikipedia.org/wiki/Meromorphic_function#Heuristic_description"]
+
+    subgraph cluster_integralDomain {
+      label="integral domain"
+      href="https://en.wikipedia.org/wiki/Integral_domain"
+      "integral domain" [shape="point", width="0", label=""]
+
+      "set of holomorphic functions" [xlabel="if the function's\ndomain is connected", href="https://en.wikipedia.org/wiki/Meromorphic_function#Heuristic_description"]
+    }
+  }
+
+  subgraph cluster_polynomialringfieldoffractions {
+    label="field of fractions"
+    href=""
+    "polynomialringfieldoffractions" [label="", shape="point", width="0"]
+    "set of rational functions over a field K" [href="https://en.wikipedia.org/wiki/Rational_function"]
+
+    subgraph cluster_polynomialring {
+      label="polynomial ring"
+      href="https://en.wikipedia.org/wiki/Polynomial_ring"
+      "polynomial ring" [label="", shape="point", width="0"]
+      node [shape="oval"]
+
+      "monic polynomial" [href="https://en.wikipedia.org/wiki/Monic_polynomial"]
+      "polynomialRing/ideal" [label="ideal"]
+    }
   }
 
   "domain" -> "integral domain" [lhead="cluster_integralDomain", label="* commutative", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
@@ -1780,7 +2122,7 @@ digraph G {
   "commutative ring" -> "integral domain" [lhead="cluster_integralDomain", label="0 ≠ 1", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "Dedekind domain" [href="https://en.wikipedia.org/wiki/Dedekind_domain"]
   "Noetherian ring" -> "Dedekind domain" [label="every ideal\nis generated by\nat most two\nelements", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
-  "Noetherian ring" -> "principal ideal ring" [href="https://en.wikipedia.org/wiki/Principal_ideal_ring#General_properties"]
+  "Noetherian ring" -> "principal ideal ring" [lhead="principal ideal ring", href="https://en.wikipedia.org/wiki/Principal_ideal_ring#General_properties"]
   "integral domain" -> "Dedekind domain" [ltail="cluster_integralDomain", label="every nonzero proper ideal\nfactors into a product of\nprime ideals", href="https://en.wikipedia.org/wiki/Dedekind_domain"]
   "Dedekind domain" -> "integers" [href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
 
@@ -1866,7 +2208,6 @@ digraph G {
   "algebra over a field" -> "associative algebra"
   "associative algebra" -> "ring" [lhead="cluster_ring", label="over the integers", href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
   "abelian group" -> "associative algebra" [label="+", href="https://en.wikipedia.org/wiki/Associative_algebra"]
-  "abelian group" -> "cyclic group" [href="https://en.wikipedia.org/wiki/Abelian_group#Examples"]
   "abelian group" -> "ring" [lhead="cluster_ring", href="https://en.wikipedia.org/wiki/Abelian_group#Examples"]
   "abelian group" -> "Z-module" [href="https://en.wikipedia.org/wiki/Abelian_group#Examples"]
   "abelian group" -> "integers"
@@ -1900,6 +2241,34 @@ digraph G {
   "division algebra" [href="https://en.wikipedia.org/wiki/Division_algebra"]
   "simple algebra" -> "division algebra" [label="division,\nexcept by zero,\nis always possible", href="https://en.wikipedia.org/wiki/Division_algebra"]
 
+  subgraph cluster_complexplane {
+    label="complex plane"
+    href="https://en.wikipedia.org/wiki/Complex_plane"
+    "complex plane" [label="", shape="point", width="0"]
+
+    "complexplane/D" [label="D"]
+    "open subset" -> "complexplane/D"
+    "complex analytic function"
+  }
+
+  { rank="same"; "holomorphic function"; "dummyholomorphicfunction" }
+  "dummyholomorphicfunction" [shape="point", width="0"]
+  "complexplane/D" -> "dummyholomorphicfunction" [arrowhead="none"]
+  "dummyholomorphicfunction" -> "holomorphic function" [dir="back"]
+  "dummyholomorphicfunction" -> "complex plane"
+
+  { rank="same"; "meromorphic function"; "dummymeromorphicfunction" }
+  "dummymeromorphicfunction" [shape="point", width="0"]
+  "complexplane/D" -> "dummymeromorphicfunction" [arrowhead="none"]
+  "dummymeromorphicfunction" -> "meromorphic function" [dir="back", label="except for a set\nof isolated\npoints (poles)", href="https://en.wikipedia.org/wiki/Meromorphic_function#Heuristic_description"]
+  "dummymeromorphicfunction" -> "complex plane"
+
+  "function" -> "holomorphic function"
+  "function" -> "meromorphic function"
+
+  "meromorphic function" -> "rational function" [href="https://en.wikipedia.org/wiki/Rational_function"]
+  "rational function" [href="https://en.wikipedia.org/wiki/Rational_function"]
+
   "octonion" [href="https://en.wikipedia.org/wiki/Octonion"]
   "quaternion" [href="https://en.wikipedia.org/wiki/Quaternion"]
   "complex numbers" [href="https://en.wikipedia.org/wiki/Complex_number"]
@@ -1912,13 +2281,15 @@ digraph G {
   "integers" -> "integers modulo n"
   "prime numbers" [href="https://en.wikipedia.org/wiki/Prime_number"]
   "natural numbers" [href="https://en.wikipedia.org/wiki/Natural_number"]
-   "quaternion" -> "octonion"
-   "complex numbers" -> "quaternion"
-   "real numbers" -> "complex numbers"
-   "rational numbers" -> "real numbers"
-   "integers" -> "rational numbers"
-   "natural numbers" -> "integers"
-   "prime numbers" -> "natural numbers"
+  "p-adic numbers" [href="https://en.wikipedia.org/wiki/P-adic_number"]
+  "quaternion" -> "octonion"
+  "complex numbers" -> "quaternion"
+  "real numbers" -> "complex numbers"
+  "rational numbers" -> "real numbers"
+  "integers" -> "rational numbers"
+  "natural numbers" -> "integers"
+  "prime numbers" -> "natural numbers"
+  "rational numbers" -> "p-adic numbers"
 
   "compact space" [href="https://en.wikipedia.org/wiki/Compact_space"]
   "compact space" -> "compact manifold"
@@ -1929,10 +2300,17 @@ digraph G {
   "topological space" [href="https://en.wikipedia.org/wiki/Topological_space"]
   "locally compact space" [href="https://en.wikipedia.org/wiki/Locally_compact_space"]
   "topological space" -> "locally compact space" [ltail="cluster_topologicalSpace"]
-  "set" -> "topological space" [lhead="cluster_topologicalSpace", label="of points,\nalong with a set of\nneighbourhoods for each point,\nsatisfying a set of axioms\nrelating points\nand neighbourhoods", href="https://en.wikipedia.org/wiki/Topological_space"]
+
+  "set" -> "collection of subsets"
+  "collection of subsets" -> "topology"
+  "Zariski topology" [href="https://en.wikipedia.org/wiki/Zariski_topology"]
+  "topology" -> "Zariski topology"
+  "set x topology" [shape="point"]
+  "set" -> "set x topology"
+  "topology" -> "set x topology"
+  "set x topology" -> "topological space" [lhead="cluster_topologicalSpace", label="of points,\nalong with a set of\nneighbourhoods for each point,\nsatisfying a set of axioms\nrelating points\nand neighbourhoods", href="https://en.wikipedia.org/wiki/Topological_space"]
 
   // tool for systematically tracking locally defined data attached to the open sets of a topological space 
-  "sheaf" [href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)"]
   "sheaf" -> "quasi-coherent sheaf"
   "reflexive sheaf" [href="https://en.wikipedia.org/wiki/Reflexive_sheaf"]
   "quasi-coherent sheaf" -> "coherent sheaf" [label="finitely generated as OX-module", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
