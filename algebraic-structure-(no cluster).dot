@@ -1,0 +1,550 @@
+digraph G {
+  // categories
+
+  "category" [shape="rect"]
+  "category" -> "category1" [style="invis"]
+  "category1" [label="" style="invis" width="0"]
+  "category2" [label="" style="invis" width="0"]
+  "category3" [label="" style="invis" width="0"]
+  "category1" -> "category2" [style="invis"]
+  "category2" -> "category3" [style="invis"]
+  { rank="same" "category3" "monoidal category" }
+  "category" -> "monoidal category" [color="black:white:black" label="full subcategory"]
+  "category/object1" [label="object1"]
+  "category/object2" [label="object2"]
+  "category/arrow" [label="arrow" shape="none"]
+  "category" -> "category/object1" [dir="back"]
+  "category" -> "category/object2" [dir="back"]
+  "category/object1" -> "category/arrow" [arrowhead="none"]
+  "category/arrow" -> "category/object2"
+  { rank="same" "category/object1" "category/arrow" "category/object2" }
+
+  "Cat" [shape="rect"]
+  "Cat/category1" [label="category1"]
+  "Cat/category2" [label="category2"]
+  "Cat/monoidal category" [label="monoidal category"]
+  "Cat" -> "Cat/category1" [dir="back"]
+  "Cat" -> "Cat/category2" [dir="back"]
+  "Cat" -> "Cat/monoidal category" [dir="back"]
+  "Cat/monoidal category" -> "Cat/monoidal category x monoidal category" [label="tensor product"]
+  "Cat/monoidal category x monoidal category" -> "Cat/monoidal category" [label="diagonal functor"]
+  "Cat/monoidal category x monoidal category"
+  "Cat/category1" -> "Cat/functor" [arrowhead="none"]
+  "Cat/functor" -> "Cat/category2"
+  { rank="same" "Cat/category1" "Cat/functor" "Cat/category2" }
+  { rank="same" "Cat" "category/object1" }
+  "Cat/category1" [label="category1"]
+  "Cat/category2" [label="category2"]
+  "Cat/functor" [label="functor" shape="none"]
+
+  "monoidal category" [shape="rect"]
+  "monoidal category" -> "monoidal category1" [style="invis"]
+  "monoidal category1" [label="" style="invis" width="0"]
+  "monoidal category2" [label="" style="invis" width="0"]
+  "monoidal category3" [label="" style="invis" width="0"]
+  "monoidal category1" -> "monoidal category2" [style="invis"]
+  "monoidal category2" -> "monoidal category3" [style="invis"]
+  { rank="same" "monoidal category3" "braided monoidal category" "closed monoidal category" }
+  "monoidal category" -> "braided monoidal category" [color="black:white:black", label="full subcategory"]
+  "monoidal category" -> "closed monoidal category" [color="black:white:black", label="full subcategory"]
+  "monoidal category/A" [label="A"]
+  "monoidal category/B" [label="B"]
+  "monoidal category/C" [label="C"]
+  "monoidal category/D" [label="D"]
+  // https://en.wikipedia.org/wiki/Monoidal_category
+  "monoidal category/A x (I x B)" [label="A x (I x B)"]
+  "monoidal category/(A x I) x B" [label="(A x I) x B"]
+  "monoidal category/A x B" [label="A x B"]
+  "monoidal category/A x (B x (C x D))" [label="A x (B x (C x D))"]
+  "monoidal category/(A x B) x (C x D)" [label="(A x B) x (C x D)"]
+  "monoidal category/((A x B) x C) x D" [label="((A x B) x C) x D"]
+  "monoidal category/A x ((B x C) x D)" [label="A x ((B x C) x D)"]
+  "monoidal category/(A x (B x C)) x D" [label="(A x (B x C)) x D"]
+  "monoidal category/A x (B x (C x D))" -> "monoidal category/(A x B) x (C x D)"
+  "monoidal category/A x (B x (C x D))" -> "monoidal category/A x ((B x C) x D)"
+  "monoidal category/A x ((B x C) x D)" -> "monoidal category/(A x (B x C)) x D"
+  "monoidal category/(A x (B x C)) x D" -> "monoidal category/((A x B) x C) x D"
+  "monoidal category/(A x B) x (C x D)" -> "monoidal category/((A x B) x C) x D"
+  "monoidal category/A x (I x B)" -> "monoidal category/A x B"
+  "monoidal category/(A x I) x B" -> "monoidal category/A x B"
+  "monoidal category/A x (I x B)" -> "monoidal category/(A x I) x B"
+  { rank="same" "monoidal category/A x (I x B)" "monoidal category/(A x I) x B" }
+  "monoidal category" -> "monoidal category/A" [dir="back"]
+  "monoidal category" -> "monoidal category/B" [dir="back"]
+  "monoidal category" -> "monoidal category/C" [dir="back"]
+  "monoidal category" -> "monoidal category/D" [dir="back"]
+  "monoidal category" -> "monoidal category/A x (I x B)" [dir="back"]
+  "monoidal category" -> "monoidal category/(A x I) x B" [dir="back"]
+  "monoidal category" -> "monoidal category/A x B" [dir="back"]
+  "monoidal category" -> "monoidal category/A x (B x (C x D))" [dir="back"]
+  "monoidal category" -> "monoidal category/(A x B) x (C x D)" [dir="back"]
+  "monoidal category" -> "monoidal category/((A x B) x C) x D" [dir="back"]
+  "monoidal category" -> "monoidal category/A x ((B x C) x D)" [dir="back"]
+  "monoidal category" -> "monoidal category/(A x (B x C)) x D" [dir="back"]
+  { rank="same" "monoidal category/A x (B x (C x D))" "monoidal category/(A x B) x (C x D)" "monoidal category/((A x B) x C) x D" }
+  { rank="same" "monoidal category/A x ((B x C) x D)" "monoidal category/(A x (B x C)) x D" }
+  "monoidal category" -> "I" [dir="back" label="unit object"]
+  "monoidal category" -> "Cat/monoidal category" [style="dotted"]
+
+  "braided monoidal category" [shape="rect"]
+  "braided monoidal category" -> "symmetric monoidal category" [color="black:white:black", label="full subcategory"]
+  "braided monoidal category" -> "closed braided monoidal category" [color="black:white:black", label="full subcategory"]
+
+  "closed monoidal category" [shape="rect"]
+  "closed monoidal category" -> "closed braided monoidal category" [color="black:white:black" label="full subcategory"]
+  "closed monoidal category" -> "compact monoidal category" [color="black:white:black" label="full subcategory"]
+  "closed monoidal category" -> "Rel" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Category_of_relations"]
+  { rank="same" "closed monoidal category" "linear type system" }
+  "linear type system" [label="internal language" href="https://en.wikipedia.org/wiki/Cartesian_closed_category"]
+
+  "Rel" [shape="rect"]
+
+  "compact monoidal category" [shape="rect"]
+  "compact monoidal category" -> "compact braided monoidal category" [color="black:white:black", label="full subcategory"]
+ 
+  "closed braided monoidal category" [shape="rect"]
+  "closed braided monoidal category" -> "compact braided monoidal category" [color="black:white:black", label="full subcategory"]
+
+  "symmetric monoidal category" [shape="rect"]
+  "symmetric monoidal category" -> "cartesian category" [color="black:white:black", label="full subcategory"]
+  "symmetric monoidal category" -> "closed symmetric monoidal category" [color="black:white:black", label="full subcategory"]
+  "symmetric monoidal category" -> "additive symmetric monoidal category" [color="black:white:black", label="full subcategory"]
+
+  "additive symmetric monoidal category" [shape="rect"]
+
+  "closed braided monoidal category" [shape="rect"]
+  "closed braided monoidal category" -> "closed symmetric monoidal category" [color="black:white:black", label="full subcategory"]
+
+  "compact braided monoidal category" [shape="rect"]
+  "compact braided monoidal category" -> "compact symmetric monoidal category" [color="black:white:black", label="full subcategory"]
+
+  "closed symmetric monoidal category" [shape="rect"]
+  "closed symmetric monoidal category" -> "cartesian closed category" [color="black:white:black", label="full subcategory"]
+  "closed symmetric monoidal category" -> "compact symmetric monoidal category" [color="black:white:black", label="full subcategory"]
+
+  "compact symmetric monoidal category" [shape="rect"]
+
+  "cartesian category" [shape="rect"]
+  "cartesian category" -> "cartesian closed category" [color="black:white:black", label="full subcategory"]
+
+  "cartesian closed category" [shape="rect"]
+  "cartesian closed category" -> "topos" [color="black:white:black", label="full subcategory"]
+
+  "topos" [shape="rect"]
+  "topos" -> "topos1" [style="invis"]
+  "topos1" [label="" style="invis" width="0"]
+  "topos2" [label="" style="invis" width="0"]
+  "topos1" -> "topos2" [style="invis"]
+  { rank="same" "Set" "topos2" }
+  "topos" -> "Set" [color="black:white:black", label="full subcategory"]
+  "topos" -> "topos/object"
+  "topos" -> "topos/arrow"
+  { rank="same" "topos/object" "topos/arrow" }
+
+  "Set" [shape="rect"]
+  "Set1" [label="" style="invis" width="0"]
+  "Set2" [label="" style="invis" width="0"]
+  "Set3" [label="" style="invis" width="0"]
+  "Set" -> "Set1" [style="invis"]
+  "Set1" -> "Set2" [style="invis"]
+  "Set2" -> "Set3" [style="invis"]
+  { rank="same" "Set3" "Magma" "Top" }
+  "Set" -> "Magma" [color="black:white:black", label="full subcategory"]
+  "Set" -> "Top" [color="black:white:black", label="full subcategory"]
+  "Set" -> "set1" [dir="back"]
+  "Set" -> "set2" [dir="back"]
+  "function" [shape="none"]
+  "set1" -> "function" [arrowhead="none"]
+  "function" -> "set2"
+  { rank="same" "set1" "function" "set2" }
+  "set1/element" [xlabel="element" shape="point"]
+  "set1" -> "subset" [dir="back"]
+  "set1" -> "set1/element" [dir="back"]
+
+  "Top" [shape="rect"]
+  "Top" -> "Compact space" [color="black:white:black", label="subcategory"]
+  "Top" -> "Discrete space" [color="black:white:black", label="subcategory"]
+
+  "Compact space" [shape="rect"]
+  "Discrete space" [shape="rect"]
+
+  "Magma" [shape="rect"]
+  "Magma" -> "Magma1" [style="invis"]
+  "Magma1" [label="" style="invis" width="0"]
+  "Magma2" [label="" style="invis" width="0"]
+  "Magma3" [label="" style="invis" width="0"]
+  "Magma4" [label="" style="invis" width="0"]
+  "Magma1" -> "Magma2" [style="invis"]
+  "Magma2" -> "Magma3" [style="invis"]
+  "Magma3" -> "Magma4" [style="invis"]
+  { rank="same" "Magma4" "Semigroup" "Quasigroup" }
+  "Magma" -> "Semigroup" [color="black:white:black", label="full subcategory"]
+  "Magma" -> "Quasigroup" [color="black:white:black", label="full subcategory"]
+  "Magma/A" [label="A"]
+  "Magma/B" [label="B"]
+  "Magma" -> "Magma/A" [dir="back"]
+  "Magma" -> "Magma/B" [dir="back"]
+  "Magma/A/a1" [label="a1"]
+  "Magma/A/a2" [label="a2"]
+  "Magma/A/a1 x a2" [label="a1 x a2"]
+  "Magma/A" -> "Magma/A/a1" [dir="back"]
+  "Magma/A" -> "Magma/A/a2" [dir="back"]
+  "Magma/A/a1" -> "Magma/A/a1 x a2"
+  "Magma/A/a2" -> "Magma/A/a1 x a2"
+  "Magma/A" -> "Magma/A/a1 x a2" [dir="back"]
+  "magma morphism" [shape="none"]
+  "Magma/A" -> "magma morphism" [arrowhead="none"]
+  "magma morphism" -> "Magma/B"
+  {
+    rank="same"
+    "Magma/A"
+    "Magma/B"
+    "magma morphism"
+  }
+
+  "Semigroup" [shape="rect"]
+  "Semigroup" -> "Semigroup1" [style="invis"]
+  "Semigroup1" [label="" style="invis" width="0"]
+  "Semigroup2" [label="" style="invis" width="0"]
+  "Semigroup3" [label="" style="invis" width="0"]
+  "Semigroup4" [label="" style="invis" width="0"]
+  "Semigroup5" [label="" style="invis" width="0"]
+  "Semigroup1" -> "Semigroup2" [style="invis"]
+  "Semigroup2" -> "Semigroup3" [style="invis"]
+  "Semigroup3" -> "Semigroup4" [style="invis"]
+  "Semigroup4" -> "Semigroup5" [style="invis"]
+  { rank="same" "Semigroup5" "Mon" }
+  "Semigroup" -> "Mon" [color="black:white:black", label="full subcategory"]
+  "Semigroup/A" [label="A"]
+  "Semigroup/B" [label="B"]
+  "Semigroup/C" [label="C"]
+  "Semigroup" -> "Semigroup/A" [dir="back"]
+  "Semigroup" -> "Semigroup/B" [dir="back"]
+  "semigroup morphism" [shape="none"]
+  "Semigroup/A" -> "semigroup morphism" [arrowhead="none"]
+  "semigroup morphism" -> "Semigroup/B"
+  {
+    rank="same"
+    "Semigroup/A"
+    "Semigroup/B"
+    "semigroup morphism"
+  }
+  "Semigroup/A/a1" [label="a1"]
+  "Semigroup/A/a2" [label="a2"]
+  "Semigroup/A/a3" [label="a3"]
+  "Semigroup/A/a1 x a2" [label="a1 x a2"]
+  "Semigroup/A/a2 x a3" [label="a2 x a3"]
+  "Semigroup/A/(a1 x a2) x a3" [label="(a1 x a2) x a3"]
+  "Semigroup/A/a1 x (a2 x a3)" [label="a1 x (a2 x a3)"]
+  "Semigroup/A" -> "Semigroup/A/a1" [dir="back"]
+  "Semigroup/A" -> "Semigroup/A/a2" [dir="back"]
+  "Semigroup/A" -> "Semigroup/A/a3" [dir="back"]
+  "Semigroup/A/a1" -> "Semigroup/A/a1 x a2"
+  "Semigroup/A/a2" -> "Semigroup/A/a1 x a2"
+  "Semigroup/A/a2" -> "Semigroup/A/a2 x a3"
+  "Semigroup/A/a3" -> "Semigroup/A/a2 x a3"
+  "Semigroup/A/a1 x a2" -> "Semigroup/A/(a1 x a2) x a3"
+  "Semigroup/A/a3" -> "Semigroup/A/(a1 x a2) x a3"
+  "Semigroup/A/a1" -> "Semigroup/A/a1 x (a2 x a3)"
+  "Semigroup/A/a2 x a3" -> "Semigroup/A/a1 x (a2 x a3)"
+  "Semigroup/A/(a1 x a2) x a3" -> "Semigroup/A/a1 x (a2 x a3)" [dir="none" label="="]
+  { rank="same" "Semigroup/A/(a1 x a2) x a3" "Semigroup/A/a1 x (a2 x a3)" }
+
+  "Quasigroup" [shape="rect"]
+
+  "Mon" [shape="rect"]
+  "Mon" -> "Mon1" [style="invis"]
+  "Mon1" [label="" style="invis" width="0"]
+  "Mon2" [label="" style="invis" width="0"]
+  "Mon3" [label="" style="invis" width="0"]
+  "Mon4" [label="" style="invis" width="0"]
+  "Mon1" -> "Mon2" [style="invis"]
+  "Mon2" -> "Mon3" [style="invis"]
+  "Mon3" -> "Mon4" [style="invis"]
+  { rank="same" "Mon4" "Grp" }
+  "Mon" -> "Grp" [color="black:white:black", label="full subcategory"]
+  "Mon/A" [label="A"]
+  "Mon/B" [label="B"]
+  "Mon" -> "Mon/A" [dir="back"]
+  "Mon" -> "Mon/B" [dir="back"]
+  "monoid morphism" [shape="none"]
+  "Mon/A" -> "monoid morphism" [arrowhead="none"]
+  "monoid morphism" -> "Mon/B"
+  {
+    rank="same"
+    "Mon/A"
+    "Mon/B"
+    "monoid morphism"
+  }
+  "Mon/A/a1" [xlabel="a1" shape="point"]
+  "Mon/A/id" [xlabel="id" shape="point"]
+  "Mon/A/a1 x id" [xlabel="a1 x id" shape="point"]
+  "Mon/A/id x a1" [xlabel="id x a1" shape="point"]
+  "Mon/A" -> "Mon/A/a1"
+  "Mon/A" -> "Mon/A/id"
+  "Mon/A/id" -> "Mon/A/a1 x id"
+  "Mon/A/a1" -> "Mon/A/a1 x id"
+  "Mon/A/id" -> "Mon/A/id x a1"
+  "Mon/A/a1" -> "Mon/A/id x a1"
+  "Mon/A/id x a1" -> "Mon/A/a1" [dir="none" label="="]
+  "Mon/A/a1 x id" -> "Mon/A/a1" [dir="none" label="="]
+
+  "Grp" [shape="rect"]
+  "Grp" -> "Grp1" [style="invis"]
+  "Grp1" [label="" style="invis" width="0"]
+  "Grp2" [label="" style="invis" width="0"]
+  "Grp3" [label="" style="invis" width="0"]
+  "Grp4" [label="" style="invis" width="0"]
+  "Grp5" [label="" style="invis" width="0"]
+  "Grp1" -> "Grp2" [style="invis"]
+  "Grp2" -> "Grp3" [style="invis"]
+  "Grp3" -> "Grp4" [style="invis"]
+  "Grp4" -> "Grp5" [style="invis"]
+  { rank="same" "Grp5" "Ab" }
+  "Grp" -> "Ab" [color="black:white:black", label="full subcategory"]
+  "Grp/A" [label="A"]
+  "Grp/B" [label="B"]
+  "Grp" -> "Grp/A" [dir="back"]
+  "Grp" -> "Grp/B" [dir="back"]
+  "Grp/A" -> "group homomorphism" [arrowhead="none"]
+  { rank="same" "Grp/A" "Grp/B" "group homomorphism" }
+  "group homomorphism" [shape="none"]
+  "group homomorphism" -> "Grp/B"
+  "Grp/A/a1" [xlabel="a1" shape="point"]
+  "Grp/A/a1^-1" [xlabel="a1^-1" shape="point"]
+  "Grp/A/id" [xlabel="id" shape="point"]
+  "Grp/A/a1^-1 x Grp/A/a1" [xlabel="a1^-1 x a1" shape="point"]
+  "Grp/A" -> "subgroup" [dir="back"]
+  "Grp/A" -> "coset" [dir="back"]
+  "Grp/A" -> "normal subgroup" [dir="back"]
+  "Grp/A" -> "Grp/A/a1" [dir="back"]
+  "Grp/A" -> "Grp/A/a1^-1" [dir="back"]
+  "Grp/A" -> "Grp/A/id" [dir="back"]
+  "Grp/A" -> "Grp/A/a1^-1 x Grp/A/a1"
+  "Grp/A/a1" -> "Grp/A/a1^-1 x Grp/A/a1"
+  "Grp/A/a1^-1" -> "Grp/A/a1^-1 x Grp/A/a1"
+  "Grp/A/a1^-1 x Grp/A/a1" -> "Grp/A/id" [dir="none" label="="]
+  { rank="same" "Grp/A/a1" "Grp/A/id" }
+
+  "Set" -> "coset" [style="dotted"]
+
+  "Ab" [shape="rect"]
+  "Ab" -> "Ab1" [style="invis"]
+  "Ab1" [label="" style="invis" width="0"]
+  "Ab2" [label="" style="invis" width="0"]
+  "Ab3" [label="" style="invis" width="0"]
+  "Ab4" [label="" style="invis" width="0"]
+  "Ab1" -> "Ab2" [style="invis"]
+  "Ab2" -> "Ab3" [style="invis"]
+  "Ab3" -> "Ab4" [style="invis"]
+  { rank="same" "Ab4" "R-Mod" "Rng" }
+  "Ab" -> "R-Mod" [color="black:white:black", label="full subcategory"]
+  "Ab" -> "Rng" [color="black:white:black", label="fully faithful"]
+  "Ab/A" [label="A"]
+  "Ab/B" [label="B"]
+  "abelian group homomorphism" [shape="none"]
+  "Ab" -> "Ab/A" [dir="back"]
+  "Ab" -> "Ab/B" [dir="back"]
+  "Ab/A" -> "abelian group homomorphism" [arrowhead="none"]
+  "abelian group homomorphism" -> "Ab/B"
+  { rank="same" "Ab/A" "Ab/B" "abelian group homomorphism" }
+  "Ab/A/a1" [label="a1"]
+  "Ab/A/a2" [label="a2"]
+  "Ab/A/a1 x a2" [label="a1 x a2"]
+  "Ab/A/a2 x a1" [label="a2 x a1"]
+  "Ab/A" -> "Ab/A/a1" [dir="back"]
+  "Ab/A" -> "Ab/A/a2" [dir="back"]
+  "Ab/A" -> "Ab/A/a1 x a2" [dir="back"]
+  "Ab/A" -> "Ab/A/a2 x a1" [dir="back"]
+  "Ab/A/a1" -> "Ab/A/a1 x a2"
+  "Ab/A/a2" -> "Ab/A/a1 x a2"
+  "Ab/A/a1" -> "Ab/A/a2 x a1"
+  "Ab/A/a2" -> "Ab/A/a2 x a1"
+  "Ab/A/a1 x a2" -> "Ab/A/a2 x a1" [dir="none" label="="]
+  { rank="same" "Ab/A/a1 x a2" "Ab/A/a2 x a1" }
+
+  "R-Mod" [shape="rect"]
+  "R-Mod" -> "R-Mod1" [style="invis"]
+  "R-Mod1" [label="" style="invis" width="0"]
+  "R-Mod2" [label="" style="invis" width="0"]
+  "R-Mod3" [label="" style="invis" width="0"]
+  "R-Mod1" -> "R-Mod2" [style="invis"]
+  "R-Mod2" -> "R-Mod3" [style="invis"]
+  { rank="same" "R-Mod2" "K-Vect" }
+  "R-Mod" -> "K-Vect" [color="black:white:black", label="full subcategory"]
+  "R-Mod" -> "module"
+  "R-Mod" -> "module homomorphism"
+
+  "Affine space" [shape="rect"]
+  "Affine space" -> "K-Vect" [color="black:white:black", label="subcategory"]
+
+  "K-Vect" [shape="rect"]
+  "K-Vect" -> "K-Vect1" [style="invis"]
+  "K-Vect1" [label="" style="invis" width="0"]
+  "K-Vect2" [label="" style="invis" width="0"]
+  "K-Vect3" [label="" style="invis" width="0"]
+  "K-Vect1" -> "K-Vect2" [style="invis"]
+  "K-Vect2" -> "K-Vect3" [style="invis"]
+  { rank="same" "K-Vect2" "Inner product space" }
+  "K-Vect" -> "Inner product space" [color="black:white:black" label="subcategory"]
+  "K-Vect" -> "vector space"
+  "K-Vect" -> "linear transformation"
+
+  "Inner product space" [shape="rect"]
+
+  "Ringoid" [shape="rect"]
+  "Ringoid" [href="https://mathworld.wolfram.com/Ringoid.html"]
+  "Ringoid" -> "Crooked semirng" [color="black:white:black" label="+ monoid\n* semigroup\n0*x = x*0 = 0", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+
+  "Crooked semirng" [shape="rect"]
+  "Crooked semirng" -> "Semirng" [color="black:white:black" label="+ commutative" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "Crooked semirng" -> "Crooked semiring" [color="black:white:black" label="* monoid" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  
+  "Crooked semiring" [shape="rect"]
+  "Crooked semiring" -> "Near-ring" [color="black:white:black" label="+ group" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+
+  "Near-ring" [shape="rect"]
+  "Near-ring" -> "Ring" [color="black:white:black" label="+ commutative" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+
+  "Rng" [shape="rect"]
+  "Rng" -> "Rng of square zero" [color="black:white:black" label="xy = 0 for all x and y", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Rng" -> "Ring" [color="black:white:black" label="* monoid" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "Rng" -> "Rng1" [style="invis"]
+  "Rng1" [label="" style="invis" width="0"]
+  "Rng2" [label="" style="invis" width="0"]
+  "Rng3" [label="" style="invis" width="0"]
+  "Rng1" -> "Rng2" [style="invis"]
+  "Rng2" -> "Rng3" [style="invis"]
+  { rank="same" "Rng2" "Ring" }
+  "Rng" -> "Ring" [color="black:white:black" label="nonfull subcategory"]
+  "Rng" -> "rng"
+  "Rng" -> "rng homomorphism"
+  "Rng" [href="https://en.wikipedia.org/wiki/Rng_(algebra)"]
+
+  "Rng of square zero" [shape="rect"]
+  "Rng of square zero" [href="https://en.wikipedia.org/wiki/Rng_(algebra)#Rng_of_square_zero"]
+
+  "Semirng" [shape="rect"]
+  "Semirng" -> "Rng" [color="black:white:black" label="+ abelian group" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "Semirng" -> "Semiring" [color="black:white:black" label="* monoid" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+
+  "Semiring" [shape="rect"]
+  "Semiring" -> "Ring" [lhead="cluster_ring", label="+ abelian group", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "Semiring" -> "Idempotent semiring" [label="subcategory"]
+  "Semiring" -> "Commutative semiring" [label="subcategory"]
+  "Semiring" -> "semiring"
+  "Semiring" -> "semiring homomorphism"
+
+  "Ring" [shape="rect"]
+  "Ring" -> "CRing" [color="black:white:black", label="full subcategory"]
+  "Ring" -> "Ring1" [style="invis"]
+  "Ring1" [label="" style="invis" width="0"]
+  "Ring2" [label="" style="invis" width="0"]
+  "Ring3" [label="" style="invis" width="0"]
+  "Ring1" -> "Ring2" [style="invis"]
+  "Ring2" -> "Ring3" [style="invis"]
+  { rank="same" "Ring3" "CRing" }
+  "Ring" -> "ring" [dir="back"]
+  "Ring" -> "ring homomorphism" [dir="back"]
+  "ring" -> "ideal" [dir="back"]
+  "ring" -> "subring" [dir="back"]
+  "ring" -> "ring/element" [dir="back"]
+
+  "R-Mod" -> "ideal" [style="dotted"]
+
+  "CRing" [shape="rect"]
+  "CRing" -> "CRing1" [style="invis"]
+  "CRing1" [label="" style="invis" width="0"]
+  "CRing2" [label="" style="invis" width="0"]
+  "CRing3" [label="" style="invis" width="0"]
+  "CRing1" -> "CRing2" [style="invis"]
+  "CRing2" -> "CRing3" [style="invis"]
+  { rank="same" "CRing2" "Integral domain" "Field" }
+  "CRing" -> "commutative ring"
+  "CRing" -> "commutative ring homomorphism"
+  "CRing" -> "Field" [color="black:white:black", label="full subcategory"]
+  "CRing" -> "Integral domain" [color="black:white:black"]
+
+  "Integral domain" [shape="rect"]
+  "Integral domain" -> "integral domain"
+  "Integral domain" -> "Integral domain/ring homomorphism"
+
+  "Dedekind domain" [shape="rect"]
+
+  "Field" [shape="rect"]
+  "Field" -> "field"
+  "Field" -> "field homomorphism"
+
+  "Algebraic set" [shape="rect"]
+  "Algebraic set" -> "Affine variety" [label="irreducible" href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
+  "Algebraic variety" [shape="rect"]
+  "Algebraic variety" -> "Affine variety"
+  "Algebraic variety" -> "Projective variety"
+
+  "Affine variety" [shape="rect"]
+
+  "Projective variety" [shape="rect"]
+
+  // geometries
+  // - algebraic structure
+  // - topological space 
+
+  "natural numbers" -> "integers" -> "rational numbers"
+  "rational numbers" -> "algebraic number field"
+  "rational numbers" -> "p-adic numbers"
+  "rational numbers" -> "real numbers"
+  "real numbers" -> "complex numbers"
+
+  "group of units" -> "ring of integers"
+  "algebraic number field" -> "ring of integers" [dir="back"]
+
+  "complex numbers" -> "complex numbers/element1"
+  "complex numbers" -> "complex numbers/element2"
+  "complex numbers/element1" [xlabel="element1" shape="point"]
+  "complex numbers/element2" [xlabel="element2" shape="point"]
+  "complex numbers/function" [label="function" shape="none"]
+  "complex numbers/element1" -> "complex numbers/function" [arrowhead="none"]
+  "complex numbers/function" -> "complex numbers/element2"
+  "complex numbers/holomorphic function" [label="holomorphic function" shape="none"]
+  "complex numbers/meromorphic function" [label="meromorphic function" shape="none"]
+  "complex numbers/function" -> "complex numbers/holomorphic function"
+  "complex numbers/function" -> "complex numbers/meromorphic function" 
+
+  {
+    rank="same"
+    "complex numbers/element1"
+    "complex numbers/element2"
+    "complex numbers/function"
+  }
+
+
+  // category.object -> geometry
+
+  "Grp" -> "dihedral group" [style="dotted"]
+  "Grp" -> "ray class group" [style="dotted"]
+
+  "Field" -> "rational numbers" [style="dotted"]
+  "Integral domain" -> "integers" [style="dotted"]
+  "Semiring" -> "natural numbers" [style="dotted"]
+  "Discrete space" -> "integers" [style="dotted"]
+
+  "Dedekind domain" -> "ring of integers" [style="dotted"]
+
+  "Grp" -> "group of units" [style="dotted"]
+
+  {
+    rank="max"
+    "natural numbers"
+    "integers"
+    "rational numbers"
+    "algebraic number field"
+    "p-adic numbers"
+    "real numbers"
+    "complex numbers"
+    "group of units"
+    "ring of integers"
+    "dihedral group"
+    "ray class group"
+  }
+}
