@@ -35,8 +35,56 @@ digraph G {
   "category" -> "co-complete category"
   "category" -> "complete category" [label="all small limits exist in it", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "category" -> "concrete category"
+  "category" -> "preadditive category"
   "category with finite products" -> "Lawvere theory" [label="every object\nis isomorphic\nto a finite\ncartesian\npower xn=x×x×⋯×x\nof a distinguished\nobject x"]
 
+  "allegory" [href="https://en.wikipedia.org/wiki/Allegory_(mathematics)"]
+
+  "small category" -> "monoid" [lhead="cluster_monoid", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "small category" -> "preordered set" [label="morphisms are arrows pointing from x to y when x ≤ y", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "groupoid" -> "group" [lhead="cluster_group", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "groupoid" -> "group action" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "groupoid" -> "equivalence relation" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "large category" -> "set" [label="class of all sets (as objects)\ntogether with all functions between them (as morphisms)", lhead="cluster_bicompletecategory",  href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "relation" -> "set" [lhead="cluster_bicompletecategory", href="https://en.wikipedia.org/wiki/Category_of_relations"]
+
+  "complete category" -> "bicomplete category" [lhead="cluster_bicompletecategory", href="https://en.wikipedia.org/wiki/Complete_category"]
+  "co-complete category" -> "bicomplete category" [lhead="cluster_bicompletecategory", href="https://en.wikipedia.org/wiki/Complete_category"]
+
+  "closed category" -> "dagger compact category" [lhead="cluster_daggercompactcategory", href="https://en.wikipedia.org/wiki/Dagger_compact_category"]
+  "dagger category" -> "dagger compact category" [lhead="cluster_daggercompactcategory"]
+  "dagger compact category" -> "Rel"
+
+  "bicomplete category" [href="https://en.wikipedia.org/wiki/Complete_category"]
+  "bicomplete category" -> "set" [href="https://en.wikipedia.org/wiki/Category_of_sets"]
+  "bicomplete category" -> "topological space" [lhead="cluster_topologicalSpace", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "group" [lhead="cluster_group", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "abelian group" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "ring" [lhead="cluster_ring", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "vector space" [lhead="cluster_vectorspace", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "R-Mod" [lhead="cluster_module", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "compact Hausdorff space" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "category" [lhead="cluster_category", href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "Whl" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+  "bicomplete category" -> "sSet" [href="https://en.wikipedia.org/wiki/Complete_category#Examples_and_nonexamples"]
+
+  "small category" -> "partially ordered set" [lhead="cluster_partiallyorderedset", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "small category" -> "equivalence relation" [href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "concrete category" -> "preordered set" [label="class of all preordered sets\nwith monotonic functions as morphisms", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+  "concrete category" -> "group" [lhead="cluster_group", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
+
+  "preadditive category" -> "ring" [lhead="cluster_ring", label="can be viewed as\na preadditive category\nwith a single object", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Generalizations"]
+  "preadditive category" -> "additive category"
+
+  "additive category" -> "preabelian category" [href="https://en.wikipedia.org/wiki/Abelian_category"]
+  "preabelian category" -> "abelian category" [href="https://en.wikipedia.org/wiki/Abelian_category"]
+  "abelian category" -> "abelian symmetric monoidal category"
+  "abelian category" -> "R-Mod"
+
+  "Lawvere theory" [href="https://ncatlab.org/nlab/show/Lawvere+theory"]
   "Lawvere theory" -> "theory of sets" [href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
   "Lawvere theory" -> "theory of groups" [href="https://ncatlab.org/nlab/show/Lawvere+theory#examples"]
 
@@ -58,7 +106,10 @@ digraph G {
   "Cat/category2" [label="category2"]
   "Cat/functor" [label="functor" shape="none"]
 
-  "functor" -> "adjoint functor"
+  "adjoint functors" -> "Galois connections"
+  "Galois connections" [href="https://en.wikipedia.org/wiki/Galois_connection#Definitions"]
+
+  "functor" -> "adjoint functors"
   "functor" -> "covariant functor"
   "functor" -> "contravariant functor"
   "functor" -> "endofunctor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
@@ -69,11 +120,19 @@ digraph G {
   "functor" -> "limit functor" [label="assigns to each functor its limit", href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "power set functor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "group action" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
-
   "functor" -> "forgetful functor" [label="\"forget\" some structure", href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "free functor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "representable functor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "bifunctor" [label="domain is a\nproduct category", href="https://en.wikipedia.org/wiki/Functor#Bifunctors_and_multifunctors"]
+  "functor" -> "product-preserving functor" [ltail="cluster_functor"]
+  "functor" -> "constant functor" [ltail="cluster_functor", href="https://en.wikipedia.org/wiki/Functor#Examples"]
+
+  "monoidal functor" [href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "monoidal functor" -> "lax monoidal functor" [href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "monoidal functor" -> "strong monoidal functor" [label="coherence maps\nare invertible", href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+  "monoidal functor" -> "strict monoidal functor" [label="coherence maps\nare identity maps", href="https://en.wikipedia.org/wiki/Monoidal_functor"]
+
+  "product-preserving functor" -> "model"
 
   "presheaf" [href="https://en.wikipedia.org/wiki/Presheaf_(category_theory)"]
   "covariant functor" -> "diagram" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
@@ -146,6 +205,8 @@ digraph G {
   "linear type system" [xlabel="internal language" href="https://en.wikipedia.org/wiki/Cartesian_closed_category"]
 
   "Rel" [shape="rect"]
+
+  "Setoid" [shape="rect" href="https://en.wikipedia.org/wiki/Setoid"]
 
   "compact monoidal category" [shape="rect"]
   "compact monoidal category" -> "compact braided monoidal category" [color="black:white:black" label="full subcategory"]
@@ -262,6 +323,38 @@ digraph G {
   "set1" -> "subset" [dir="back"]
   "set1" -> "set1/element" [dir="back"]
   "Set" -> "collection of subsets" [dir="back"]
+  "Set" -> "Set x preorder"
+  "Set" -> "Set x preorder"
+  "Set" -> "Set x equivalence relation"
+  "Set" -> "graph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
+  "Set" -> "Set x binary operation"
+  "Set" -> "concrete category" [label="prototype of a concrete category", href="https://en.wikipedia.org/wiki/Category_of_sets"]
+  "Set" -> "FinSet"
+  "Set" -> "collection of subsets"
+  "Set" -> "group x Set"
+  "Set" -> "Set x well-order"
+  "Set" -> "Set x partial order"
+  "Set" -> "Set x total order"
+  "Set" -> "Set x topology"
+  "Set x topology" -> "Top"
+  "Set x preorder" [shape="point"]
+  "Set x preorder" -> "preordered set"
+  "Set x equivalence relation" [shape="point"]
+  "Set x equivalence relation" -> "Setoid" [href="https://en.wikipedia.org/wiki/Setoid"]
+  "Set x well-order" [shape="point"]
+  "Set x well-order" -> "well-ordered set"
+  "Set x total order" [shape="point"]
+  "Set x total order" -> "totally ordered set"
+
+  "FinSet" [shape="rect"]
+  "FinOrd" [shape="rect"]
+  "FinSet" -> "FinOrd"
+
+  "Set x binary operation" -> "magma"
+  "Set x partial binary operation" [shape="point"]
+  "set" -> "Set x partial binary operation"
+  "Set x partial binary operation" -> "partial algebra"
+
   "collection of subsets" -> "topology" [dir="both"]
   "Zariski topology" [href="https://en.wikipedia.org/wiki/Zariski_topology"]
   "topology" -> "Zariski topology"
@@ -270,11 +363,75 @@ digraph G {
   "set1 x topology" [shape="point"]
   "set1 x topology" -> "Top" [label="of points,\nalong with a set of\nneighbourhoods for each point,\nsatisfying a set of axioms\nrelating points\nand neighbourhoods", href="https://en.wikipedia.org/wiki/Topological_space"]
 
+  "binary operation" -> "+"
+  "binary operation" -> "*"
+
+  "binary operation" -> "set x binary operation"
+
+  "graph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
+  "graph" -> "digraph"
+  "graph" -> "bipartite graph"
+  "graph" -> "Petersen graph" [dir="back"]
+
+  "digraph" -> "quiver" [href="https://en.wikipedia.org/wiki/Quiver_(mathematics)"]
+  "quiver" [href="https://en.wikipedia.org/wiki/Quiver_(mathematics)"]
+
+
+  "partial order" -> "set x partial order"
+  "set x partial order" [shape="point"]
+  "set x partial order" -> "partially ordered set"
+
+  "partial binary operation" [href="https://en.wikipedia.org/wiki/Binary_operation#Terminology"]
+  "partial binary operation" -> "binary operation"
+  "partial binary operation" -> "set x partial binary operation"
+
+
+  "+ x natural numbers x 0" [shape="point"]
+  "+" -> "+ x natural numbers x 0" 
+  "natural numbers" -> "+ x natural numbers x 0"
+  "+ x natural numbers x 0" -> "(N0,+)"
+
+  "function x cartesian product" [shape="point"]
+
+  "cartesian product" -> "function x cartesian product"
+
+
   "binary relation" -> "preorder" [label="reflexive\ntransitive", href="https://en.wikipedia.org/wiki/Preorder"]
   "binary relation" -> "dependency relation" [label="reflexive\nsymmetric\nfinite", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
   "binary relation" -> "tolerance relation" [label="reflexive\nsymmetric\ninfinite", href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
   "binary relation" -> "apartness relation" [label="symmetric\nirreflexive\nco-transitivity", href="https://en.wikipedia.org/wiki/Apartness_relation"]
   "binary relation" -> "partial equivalence relation" [href="https://en.wikipedia.org/wiki/Equivalence_relation#Connections_to_other_relations"]
+
+  "binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation"]
+  "binary relation" -> "injective binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
+  "binary relation" -> "functional binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
+  "binary relation" -> "homogeneous relation" [label="over a set Xnis a binary\nrelation over\nX and itself", href="https://en.wikipedia.org/wiki/Binary_relation#Homogeneous_relation"]
+  "binary relation" -> "equivalence relation" [label="reflexive\nsymmetric\ntransitive", href="https://en.wikipedia.org/wiki/Equivalence_relation"]
+  "binary relation" -> "serial binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
+  "binary relation" -> "many-to-many binary relation" [label="not injective\nnor functional", href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
+
+  "homogeneous relation" -> "empty relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Homogeneous_relation"]
+  "homogeneous relation" -> "universal relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Homogeneous_relation"]
+  "homogeneous relation" -> "identity relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Homogeneous_relation"]
+
+  "injective binary relation x functional binary relation" [shape="point"]
+  "injective binary relation" -> "injective binary relation x functional binary relation"
+  "injective binary relation x functional binary relation" -> "one-to-one binary relation"
+  "injective binary relation" -> "one-to-many binary relation" [label="functional and\nnot injective", href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
+
+  "functional binary relation x serial binary relation" [shape="point"]
+  "functional binary relation" -> "injective binary relation x functional binary relation"
+  "functional binary relation" -> "functional binary relation x serial binary relation"
+  "functional binary relation x serial binary relation" -> "function"
+  "functional binary relation" -> "many-to-one binary relation" [label="injective and\nnot functional", href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
+  "functional binary relation" -> "partial function" [href="https://en.wikipedia.org/wiki/Partial_function"]
+
+  "serial binary relation" -> "functional binary relation x serial binary relation"
+
+  "A x equivalence relation" [shape="point"]
+  "A" -> "A x equivalence relation"
+  "equivalence relation" -> "A x equivalence relation"
+  "A x equivalence relation" -> "equivalence class"
 
   "preorder" [href="https://en.wikipedia.org/wiki/Preorder"]
   "preorder" -> "equivalence relation" [label="symmetric", href="https://en.wikipedia.org/wiki/Equivalence_relation"]
@@ -328,24 +485,40 @@ digraph G {
   "well-ordered set" -> "integers"
   "well-ordered set" -> "real numbers"
 
-  "Rel" [shape="rect"]
+  "Rel" [shape="rect" href="https://en.wikipedia.org/wiki/Category_of_relations"]
   "Rel" -> "binary relation" [dir="back"]
+  "Rel/product" [label="product"]
+  "Rel/coproduct" [label="coproduct"]
+  "Rel/cartesian product" [label="cartesian product"]
+  "Rel/A x B" [label="A x B"]
+  "Rel" -> "Rel/product" [dir="back"]
+  "Rel" -> "Rel/coproduct" [dir="back"]
+  "Rel" -> "Rel/A" [dir="back"]
+  "Rel" -> "Rel/B" [dir="back"]
+  "Rel" -> "Rel/A x B" [dir="back"]
+  "Rel" -> "Rel/cartesian product" [dir="back"]
+  "Rel/product" -> "disjoint union" [href="https://en.wikipedia.org/wiki/Category_of_relations"]
+  "Rel/coproduct" -> "cartesian product" [href="https://en.wikipedia.org/wiki/Category_of_relations"]
+  "Rel/A" -> "Rel/A x B"
+  "Rel/B" -> "Rel/A x B"
+  "Rel/cartesian product" -> "Rel/A x B"
 
   "Top" [shape="rect"]
   "Top" -> "Discrete space" [color="black:white:black" label="subcategory"]
   "Top" -> "Compact space" [color="black:white:black"]
   "Top" -> "Locally compact space"
-  "Top" -> "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
   "Top" -> "Kolmogorov space" [label="for every pair of\ndistinct points of X,\nat least one of them\nhas a neighborhood\nnot containing the other", href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
   "Top" -> "Grassmannian"
   "Top" -> "Top x vector space"
   "Top" -> "manifold" [label="locally resembles\nEuclidean space\nnear each point", href="https://en.wikipedia.org/wiki/Manifold"]
   "Top" -> "Separable space" [label="contains a countable,\ndense subset", href="https://en.wikipedia.org/wiki/Separable_space"]
   // "Top" -> "compactly generated Hausdorff space" [href="https://en.wikipedia.org/wiki/Category_of_topological_spaces#Relationships_to_other_categories"]
+  // "cartesian closed category" -> "compactly generated Hausdorff space" [dir="back"]
   // coslice category https://en.wikipedia.org/wiki/Category_of_topological_spaces#Relationships_to_other_categories
   "Top" -> "pointed Top" [label="with a\ndistinguished\npoint, the\nbasepoint", href="https://en.wikipedia.org/wiki/Pointed_space"]
   // quotient category of Top https://en.wikipedia.org/wiki/Category_of_topological_spaces#Relationships_to_other_categories
   "Top" -> "hTop" // homotopy category
+  "hTop" [shape="rect"]
 
   "Compact space" [shape="rect"]
   "Discrete space" [shape="rect" href="https://en.wikipedia.org/wiki/Discrete_space"]
@@ -355,17 +528,17 @@ digraph G {
   "Separable space" -> "countably infinite topological space"
   "Separable space" -> "compact metric space"
 
-  "Kolmogorov space" [href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
-  "T1 space" [href="https://en.wikipedia.org/wiki/T1_space"]
+  "Kolmogorov space" [shape="rect" href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
+  "T1 space" [shape="rect" href="https://en.wikipedia.org/wiki/T1_space"]
 
-  "Hausdorff space" [href="https://en.wikipedia.org/wiki/Hausdorff_space"]
+  "Hausdorff space" [shape="rect" href="https://en.wikipedia.org/wiki/Hausdorff_space"]
   "Hausdorff space" -> "second countable Hausdorff space"
   "Hausdorff space" -> "compact Hausdorff space"
   "Hausdorff space" -> "Urysohn space" [label="any two distinct points\ncan be separated by\nclosed neighborhoods", href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
   "Hausdorff space" -> "Metric space" [lhead="cluster_metricSpace", href="https://proofwiki.org/wiki/Metric_Space_is_Hausdorff"]
   "Hausdorff space" -> "compactly generated Hausdorff space" [href="https://en.wikipedia.org/wiki/Category_of_topological_spaces#Relationships_to_other_categories"]
 
-  "Locally compact space" [href="https://en.wikipedia.org/wiki/Locally_compact_space"]
+  "Locally compact space" [shape="rect" href="https://en.wikipedia.org/wiki/Locally_compact_space"]
   "Locally compact space" -> "compact Hausdorff space" [href="https://en.wikipedia.org/wiki/Locally_compact_space#Examples_and_counterexamples"]
 
   "Compact space" [shape="rect" href="https://en.wikipedia.org/wiki/Compact_space"]
@@ -387,11 +560,13 @@ digraph G {
   "normed vector space" [href="https://en.wikipedia.org/wiki/Normed_vector_space"]
   "Top x vector space" [shape="point"]
 
+  "Metric space" [href="https://en.wikipedia.org/wiki/Metric_spaces"]
   "Metric space" -> "compact metric space" [ltail="cluster_metricSpace"]
   "Metric space" -> "topological manifold" [ltail="cluster_metricSpace" label="locally resembles\nreal n-dimensional space", href="https://en.wikipedia.org/wiki/Hausdorff_space#Examples_and_non-examples"]
   "Metric space" -> "topological group" [ltail="cluster_metricSpace"]
   "Metric space" -> "complete metric space" [ltail="cluster_metricSpace" label="every Cauchy\nsequence in M\nconverges in M", href="https://en.wikipedia.org/wiki/Complete_metric_space"]
   "Metric space" -> "normed vector space" [ltail="cluster_metricSpace"]
+  "Metric space" -> "isometry" [dir="back" href="https://en.wikipedia.org/wiki/Isometry"]
 
   "complete metric space" [href="https://en.wikipedia.org/wiki/Complete_metric_space"]
   "Sobolev space" [href="https://en.wikipedia.org/wiki/Sobolev_space"]
@@ -416,7 +591,7 @@ digraph G {
   "complete metric space" -> "Banach space" [label="complete in the metric\ninduced by the norm", href="https://en.wikipedia.org/wiki/Banach_algebra"]
   "Euclidean space" -> "Hilbert space" [ltail="cluster_Euclideanspace", href="https://en.wikipedia.org/wiki/Hilbert_space"]
 
-  "affine space" -> "Euclidean space" [lhead="cluster_Euclideanspace"]
+  "affine space" -> "Euclidean space" [href="https://en.wikipedia.org/wiki/Euclidean_space#Technical_definition"]
 
   "partial algebra" [href="https://en.wikipedia.org/wiki/Partial_algebra"]
   "partial algebra" -> "partial semigroup" [href="https://en.wikipedia.org/wiki/Partial_groupoid"]
@@ -448,21 +623,74 @@ digraph G {
   "Magma" -> "Magma/B" [dir="back"]
   "Magma/A/a1" [label="a1"]
   "Magma/A/a2" [label="a2"]
+  "Magma/A/x a1" [shape="none" label="x a1"]
+  "Magma/A/x a2" [shape="none" label="x a2"]
   "Magma/A/a1 x a2" [label="a1 x a2"]
+  "Magma/A/a2 x a1" [label="a2 x a1"]
+  "Magma/A/a2" -> "Magma/A/x a1" [arrowhead="none"]
+  "Magma/A/x a1" [label="x a1"]
+  "Magma/A/a1" -> "Magma/A/x a2" [arrowhead="none"]
+  "Magma/A/x a2" -> "Magma/A/a1 x a2"
+  "Magma/A/x a1" -> "Magma/A/a2 x a1"
+  {
+    rank="same"
+    "Magma/A/a1"
+    "Magma/A/a2"
+    "Magma/A/x a1"
+    "Magma/A/x a2"
+    "Magma/A/a1 x a2"
+    "Magma/A/a2 x a1"
+
+    "Magma/B/f(a1)"
+    "Magma/B/f(a2)"
+    "Magma/B/x f(a1)"
+    "Magma/B/x f(a2)"
+    "Magma/B/f(a1) x f(a2)"
+    "Magma/B/f(a2) x f(a1)"
+    "Magma/B/x f(a1)"
+    "Magma/B/f(a2) x f(a1)"
+    "Magma/B/x f(a2)"
+    "Magma/B/f(a1) x f(a2)"
+    "Magma/B/f(a1 x a2)"
+    "Magma/B/f(a2 x a1)"
+  }
   "Magma/A" -> "Magma/A/a1" [dir="back"]
   "Magma/A" -> "Magma/A/a2" [dir="back"]
-  "Magma/A/a1" -> "Magma/A/a1 x a2"
-  "Magma/A/a2" -> "Magma/A/a1 x a2"
   "Magma/A" -> "Magma/A/a1 x a2" [dir="back"]
-  "magma morphism" [shape="none"]
-  "Magma/A" -> "magma morphism" [arrowhead="none"]
-  "magma morphism" -> "Magma/B"
+  "Magma/A" -> "Magma/A/a2 x a1" [dir="back"]
+  "Magma/f" [shape="none" xlabel="magma morphism" label="f"]
+  "Magma/A" -> "Magma/f" [arrowhead="none"]
+  "Magma/f" -> "Magma/B"
   {
     rank="same"
     "Magma/A"
     "Magma/B"
-    "magma morphism"
+    "Magma/f"
   }
+  "Magma/B/f(a1)" [label="f(a1)"]
+  "Magma/B/f(a2)" [label="f(a2)"]
+  "Magma/B/f(a1 x a2)" [label="f(a1 x a2)"]
+  "Magma/B/f(a2 x a1)" [label="f(a2 x a1)"]
+  "Magma/B/f(a1) x f(a2)" [label="f(a1) x f(a2)"]
+  "Magma/B/f(a2) x f(a1)" [label="f(a2) x f(a1)"]
+  "Magma/B" -> "Magma/B/f(a1)" [dir="back"]
+  "Magma/B" -> "Magma/B/f(a2)" [dir="back"]
+  "Magma/B" -> "Magma/B/f(a1 x a2)" [dir="back"]
+  "Magma/B" -> "Magma/B/f(a2 x a1)" [dir="back"]
+  "Magma/B" -> "Magma/B/f(a1) x f(a2)" [dir="back"]
+  "Magma/B" -> "Magma/B/f(a2) x f(a1)" [dir="back"]
+  "Magma/B/x f(a1)" [shape="none" label="x f(a1)"]
+  "Magma/B/x f(a2)" [shape="none" label="x f(a2)"]
+  "Magma/B/f(a2)" -> "Magma/B/x f(a1)" [arrowhead="none"]
+  "Magma/B/f(a1)" -> "Magma/B/x f(a2)" [arrowhead="none"]
+  "Magma/B/x f(a1)" -> "Magma/B/f(a2) x f(a1)"
+  "Magma/B/x f(a2)" -> "Magma/B/f(a1) x f(a2)"
+  "Magma/B/f(a1) x f(a2)" -> "Magma/B/f(a1 x a2)" [dir="none" label="="]
+  "Magma/B/f(a2) x f(a1)" -> "Magma/B/f(a2 x a1)" [dir="none" label="="]
+  // "Magma/A/a1" -> "Magma/B/f(a1)"
+  // "Magma/A/a2" -> "Magma/B/f(a2)"
+  // "Magma/A/a1 x a2" -> "Magma/B/f(a1 x a2)"
+  // "Magma/A/a2 x a1" -> "Magma/B/f(a2 x a1)"
 
   "Free Magma" [shape="rect" href="https://en.wikipedia.org/wiki/Magma_(algebra)#Free_magma"]
 
@@ -520,6 +748,20 @@ digraph G {
   "Semigroup" -> "regular semigroup" [label="Every element\nx has at least\none inverse\ny satisfying\nxyx=x and yxy=y", href="https://en.wikipedia.org/wiki/Semigroup#Special_classes_of_semigroups"]
   "Semigroup" -> "affine semigroup" [label="isomorphic to\na finitely-generated\nsubsemigroup\nof Zd", href="https://en.wikipedia.org/wiki/Semigroup#Special_classes_of_semigroups"]
 
+  "semigroup x monoid" [shape="point"]
+  "semigroup" -> "semigroup x monoid" [label="+"]
+  "semigroup x monoid" -> "ringoid"
+
+  "commutative semiring x idempotent semiring" [shape="point"]
+  "commutative semiring" -> "commutative semiring x idempotent semiring"
+  "idempotent semiring" -> "commutative semiring x idempotent semiring"
+
+  "commutative semiring x idempotent semiring" -> "commutative idempotent semiring"
+
+  "abelian group x ring" [shape="point"]
+  "abelian group x ring" -> "R-Mod" [lhead="cluster_module", label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
+
+
   "semilattice" [shape="rect"]
   "inverse semigroup" [shape="rect"]
   "affine semigroup" [shape="rect"]
@@ -532,7 +774,7 @@ digraph G {
   "Quasigroup" -> "Loop" [color="black:white:black" xlabel="identity" label="subcategory"]
 
   "Loop" [shape="rect" href="https://en.wikipedia.org/wiki/Quasigroup#Loops"]
-  "Loop" -> "Grp" [label="associativity"]
+  "Loop" -> "Grp" [color="black:white:black" label="associativity"]
 
   "Mon" [shape="rect"]
   "Mon" -> "Mon1" [style="invis"]
@@ -545,6 +787,7 @@ digraph G {
   "Mon3" -> "Mon4" [style="invis"]
   { rank="same" "Mon4" "Grp" }
   "Mon" -> "Grp" [color="black:white:black" label="full subcategory"]
+  "Mon" -> "free monoid" [href="https://en.wikipedia.org/wiki/Free_monoid"]
   "Mon/A" [label="A" peripheries="2"]
   "Mon/B" [label="B" peripheries="2"]
   "Mon" -> "Mon/A" [dir="back"]
@@ -603,6 +846,8 @@ digraph G {
   "Grp/A/C x a1" [label="C x a1" peripheries="2"]
   "Grp/A/a1^-1 x Grp/A/a1" [label="a1^-1 x a1"]
   "Grp/A" -> "Grp/A/C" [dir="back" label="subgroup"]
+  "Set" -> "Grp/a1 x C" [style="dotted"]
+  "Set" -> "Grp/C x a1" [style="dotted"]
   "Grp/A" -> "Grp/a1 x C" [dir="back" label="left coset"]
   "Grp/A" -> "Grp/A/C x a1" [dir="back" label="right coset"]
   "Grp/A/C" -> "Grp/A/id" [dir="back"]
@@ -680,8 +925,8 @@ digraph G {
   { rank="same" "Ab4" "R-Mod" "Ringoid" }
   "Ab" -> "R-Mod" [color="black:white:black" label="full subcategory"]
   "Ab" -> "Ringoid" [color="black:white:black" label="fully faithful" href="https://math.stackexchange.com/questions/323534/algebraic-definition-of-ringoid"]
-  "Ab/A" [label="A"]
-  "Ab/B" [label="B"]
+  "Ab/A" [label="A" peripheries="2"]
+  "Ab/B" [label="B" peripheries="2"]
   "abelian group homomorphism" [shape="none"]
   "Ab" -> "Ab/A" [dir="back"]
   "Ab" -> "Ab/B" [dir="back"]
@@ -703,7 +948,7 @@ digraph G {
   "Ab/A/a1 x a2" -> "Ab/A/a2 x a1" [dir="none" label="="]
   { rank="same" "Ab/A/a1 x a2" "Ab/A/a2 x a1" }
 
-  "R-Mod" [shape="rect"]
+  "R-Mod" [shape="rect" href="https://en.m.wikipedia.org/wiki/Category_of_modules"]
   "R-Mod" -> "R-Mod1" [style="invis"]
   "R-Mod1" [label="" style="invis" width="0"]
   "R-Mod2" [label="" style="invis" width="0"]
@@ -712,9 +957,68 @@ digraph G {
   "R-Mod2" -> "R-Mod3" [style="invis"]
   { rank="same" "R-Mod2" "K-Vect" }
   "R-Mod" -> "K-Vect" [color="black:white:black" label="full subcategory"]
-  "R-Mod" -> "module"
-  "R-Mod" -> "module homomorphism"
   "R-Mod" -> "fractional ideal" [href="https://en.wikipedia.org/wiki/Fractional_ideal#Definition_and_basic_results"]
+
+  "R-Mod" -> "ring"
+  "R-Mod" -> "ideal" [style="dotted"]
+  "R-Mod" -> "finitely generated module" [href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "projective module" [label="direct summands\nof free modules\nand share many of\ntheir desirable properties", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "injective module" [label="defined dually\nto projective\nmodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "flat module" [label="if taking the\ntensor product of it\nwith any exact sequence\nof R-modules\npreserves exactness", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "torsion-free module" [label="rm = 0 implies\nr = 0 or m = 0", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "semisimple module" [label="direct sum\n(finite or not)\nof simple\nmodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "indecomposable module" [label="non-zero module that\ncannot be written as\na direct sum of\ntwo non-zero submodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "faithful module" [label="action of each\nr ≠ 0 in R on M\nis nontrivial\n<-> annihilator of M\nis the zero ideal", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "Noetherian module" [label="satisfies the ascending\nchain condition on submodules\n<-> every submodule is\nfinitely generated", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "Artinian module" [label="satisfies the\ndescending chain\ncondition on submodules", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "graded module" [label="with a decomposition\nas a direct sum\nM = ⨁x Mx over a\ngraded ring R = ⨁x Rx\nsuch that RxMy ⊂ Mx+y\nfor all x and y", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "uniform module" [label="all pairs of nonzero\nsubmodules have\nnonzero intersection", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"]
+  "R-Mod" -> "Z-module"
+
+  "uniform module" [href="https://en.wikipedia.org/wiki/Uniform_module"]
+  "uniform module" -> "uniserial module" [href="https://en.wikipedia.org/wiki/Uniform_module"]
+  "uniserial module" [href="https://en.wikipedia.org/wiki/Uniserial_module"]
+  "Artinian module" [href="https://en.wikipedia.org/wiki/Artinian_module"]
+  "graded module" [href="https://en.wikipedia.org/wiki/Graded_module"]
+  "indecomposable module" -> "uniform module" [href="https://en.wikipedia.org/wiki/Uniform_module"]
+
+  "finitely generated module" [href="https://en.wikipedia.org/wiki/Finitely_generated_module"]
+  "finitely generated module" -> "cyclic module" [href="https://en.wikipedia.org/wiki/Finitely_generated_module#Examples"]
+  "finitely generated module" -> "finitely generated module\nover the ring of integers"
+  "finitely generated module\nover the ring of integers" -> "finitely generated abelian group" [dir="both", href="https://en.wikipedia.org/wiki/Finitely_generated_module#Examples"]
+  "finitely generated module\nover a division ring" -> "finite dimensional vector space" [dir="both", href="https://en.wikipedia.org/wiki/Finitely_generated_module#Examples"]
+
+  "cyclic module" [href="https://en.wikipedia.org/wiki/Cyclic_module"]
+  "cyclic module" -> "cyclic Z-module"
+  "cyclic Z-module" -> "cyclic group" [href="https://en.wikipedia.org/wiki/Cyclic_module#Examples"]
+
+  "free module" [href="https://en.wikipedia.org/wiki/Free_module"]
+
+  "projective module" -> "free module" [href="https://en.wikipedia.org/wiki/Projective_module"]
+  "projective module" [href="https://en.wikipedia.org/wiki/Projective_module"]
+
+  "injective module" [href="https://en.wikipedia.org/wiki/Injective_module"]
+
+  "flat module" [href="https://en.wikipedia.org/wiki/Flat_module"]
+  "flat module" -> "torsion-free module" [href="https://en.wikipedia.org/wiki/Flat_module#Examples_and_relations_to_other_notions"]
+
+  "torsionless module" [href="https://en.wikipedia.org/wiki/Torsionless_module"]
+
+  "torsion-free module" [href="https://en.wikipedia.org/wiki/Torsion-free_module"]
+  "torsion-free module" -> "torsionless module" [label="it embeds into\nits algebraic dual", href="https://en.wikipedia.org/wiki/Torsion-free_module#Examples_of_torsion-free_modules"]
+ 
+  "simple module" [href="https://en.wikipedia.org/wiki/Simple_module"]
+ 
+  "indecomposable module" [href="https://en.wikipedia.org/wiki/Indecomposable_module"]
+  "indecomposable module" -> "simple module" [label="is not {0} and\nwhose only submodules\nare {0} and S", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Types_of_modules"] // https://en.wikipedia.org/wiki/Indecomposable_module#Facts
+ 
+  "semisimple module" [href="https://en.wikipedia.org/wiki/Semisimple_module"]
+  "faithful module" [href="https://en.wikipedia.org/wiki/Faithful_module"]
+ 
+  "Noetherian module" [href="https://en.wikipedia.org/wiki/Noetherian_module"]
+  "Noetherian module" -> "integers" [href="https://en.wikipedia.org/wiki/Noetherian_module#Examples"]
+  "Noetherian module" -> "Noetherian ring"
+ 
 
   "fractional ideal" [href="https://en.wikipedia.org/wiki/Fractional_ideal"]
 
@@ -746,12 +1050,14 @@ digraph G {
   "Crooked semiring" [shape="rect"]
   "Crooked semiring" -> "Near-ring" [color="black:white:black" label="+ group" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
+  "commutative idempotent semiring" -> "bounded distributive lattice" [href="https://en.wikipedia.org/wiki/Semiring#Examples"]
+
   "Near-ring" [shape="rect"]
   "Near-ring" -> "Ring" [color="black:white:black" label="+ commutative" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
 
   "Rng" [shape="rect"]
   "Rng" -> "Rng of square zero" [color="black:white:black" label="xy = 0 for all x and y", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  "Rng" -> "Ring" [color="black:white:black" label="* monoid" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "Rng" -> "Ring" [color="black:white:black" xlabel="* monoid" label="nonfull subcategory" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "Rng" -> "Rng1" [style="invis"]
   "Rng1" [label="" style="invis" width="0"]
   "Rng2" [label="" style="invis" width="0"]
@@ -759,7 +1065,6 @@ digraph G {
   "Rng1" -> "Rng2" [style="invis"]
   "Rng2" -> "Rng3" [style="invis"]
   { rank="same" "Rng2" "Ring" }
-  "Rng" -> "Ring" [color="black:white:black" label="nonfull subcategory"]
   "Rng" -> "rng"
   "Rng" -> "rng homomorphism"
   "Rng" [href="https://en.wikipedia.org/wiki/Rng_(algebra)"]
@@ -787,13 +1092,178 @@ digraph G {
   "Ring1" -> "Ring2" [style="invis"]
   "Ring2" -> "Ring3" [style="invis"]
   { rank="same" "Ring3" "CRing" "Domain" "Local ring" "Division ring" }
+  "Ring/A" [label="A" peripheries="2"]
+  "Ring/B" [label="B" peripheries="2"]
   "Ring" -> "R-Mod"
-  "Ring" -> "ring" [dir="back"]
+  "Ring" -> "Ring/A" [dir="back"]
+  "Ring" -> "Ring/B" [dir="back"]
+  "Ring/A" -> "ring homomorphism"
+  "ring homomorphism" -> "Ring/B"
+  { rank="same" "Ring/A" "Ring/B" "ring homomorphism" }
   "Ring" -> "ring homomorphism" [dir="back"]
   "ring" -> "ideal" [dir="back"]
   "ring" -> "subring" [dir="back"]
   "ring" -> "ring/element" [dir="back"]
   "ideal" -> "principal ideal"
+  "Ring" -> "endomorphism ring" [label="formed by the\nendomorphisms\nof an object with\nadditive structure", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "filtered ring" [color="black:white:black" label="with a filtration", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "finitely generated ring" [label="finitely generated\nas Z-algebra", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "free ring" [color="black:white:black" label="free algebra\nover the integers", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "Jacobson ring" [color="black:white:black" label=" each prime ideal\nis an intersection of\nprimitive ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "semi-local ring" [color="black:white:black" label="R/J(R) is a\nsemisimple ring,\nwhere J(R) is the\nJacobson radical of R", href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "Ring" -> "monoid ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "perfect ring" [label="satisfying the descending\nchain condition on\nright principal ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "Principal left ideal ring" [label="every ideal\nis principal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "self-injective ring" [label="if the module R\nis an injective module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "quotient ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "semiprimary ring" [label="for the\nJacobson radical J(R) of R,\n(1) R/J(R) is semisimple and\n(2) J(R) is a nilpotent ideal", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "semiprime ring" [label="the only\nnilpotent ideal\nis the trivial\nideal {0}", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"] 
+  "Ring" -> "semiprimitive ring" [color="black:white:black" label="whose Jacobson\nradical\nis zero", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "differential ring"
+  "Ring" -> "Ring x Galois group x finite field x local field"
+  "Ring" -> "ring with unity" [color="black:white:black" label="* identity"]
+  "Ring" -> "abelian group x ring"
+  "Ring" -> "Von Neumann regular ring" [label="each element a\ncan be expressed\nas a = axa for another\nelement x in the ring", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "serial ring" [color="black:white:black" label="right serial\nmodule over itself" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "Sylvester domain" [label="Sylvester's law\nof nullity holds" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "uniserial ring" [color="black:white:black" label="right uniserial\nmodule over itself" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "Coherent ring" [color="black:white:black" label="every finitely\ngenerated left\nideal of it is\na finitely\npresented module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "semi-hereditary ring" [color="black:white:black"]
+  "Ring" -> "ring of characteristic n"
+  "Ring" -> "Hecke ring"
+  "Ring" -> "generic matrix ring" [style="dotted" label="consisting of square\nmatrices with entries\nin formal variables", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "trivial ring" [dir="back" label="consisting of a\nsingle element 0 = 1" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Ring" -> "nonzero ring"
+
+  "semiprime ring" -> "semiprimitive ring" [color="black:white:black" label="has a faithful\nsimple left\nR-module" href="https://en.wikipedia.org/wiki/Semiprime_ring"]
+  "semiprime ring" -> "prime ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Semiprime_ring"]
+  "semiprime ring" -> "reduced ring" [color="black:white:black" xlabel="has no non-zero\nnilpotent elements" href="https://en.wikipedia.org/wiki/Semiprime_ring"]
+
+  "Regular local ring" [href="https://en.wikipedia.org/wiki/Regular_local_ring"]
+  "Local ring" -> "commutative local ring" [color="black:white:black"]
+  "CRing" -> "commutative local ring" [color="black:white:black"]
+  "commutative local ring" -> "commutative local ring / maximal ideal"
+  "commutative local ring / maximal ideal" -> "residue field" [dir="both", href="https://en.wikipedia.org/wiki/Residue_field#Definition"]
+  "quotient ring" -> "local ring / maximal ideal"
+
+  "matrix ring" -> "determinant" [arrowhead="none"]
+
+  "Sylvester domain" -> "semifir" [color="black:white:black" label=" every finitely\ngenerated right ideal\nis a free module\nof fixed rank" href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
+  "semifir" -> "free ideal ring" [color="black:white:black" label="every right ideal is\na free module of fixed rank" href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
+  "filtered ring" [href="https://en.wikipedia.org/wiki/Filtered_ring"]
+  "finitely generated ring" [href="https://en.wikipedia.org/wiki/Finitely_generated_ring"]
+  "free ideal ring" [href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
+  "semifir" -> "Bezout domain" [label="commutative" href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
+  "free ideal ring" -> "Principal ideal domain" [label="commutative" href="https://en.wikipedia.org/wiki/Free_ideal_ring"]
+  "free ring" [href="https://en.wikipedia.org/wiki/Free_ring"]
+  "free algebra" -> "free ring" [color="black:white:black"]
+  "Integral domain" -> "graded integral domain" [color="black:white:black"]
+  "filtered ring" -> "graded ring" [color="black:white:black" label="with a grading\nor a graduation" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "graded ring" [href="https://en.wikipedia.org/wiki/Graded_ring"]
+  "graded ring" -> "graded integral domain" [color="black:white:black" href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
+  "graded ring" -> "polynomial ring" [label="graded by degree", href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
+  "graded module" -> "graded ring" [color="black:white:black" label="graded module\nover itself", href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
+  "graded module" -> "graded vector space" [color="black:white:black" href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
+  "semi-hereditary ring" [href="https://en.wikipedia.org/wiki/Hereditary_ring"]
+  "semi-hereditary ring" -> "hereditary ring" [color="black:white:black" label="left ideals are\nall projective modules" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "hereditary ring" [href="https://en.wikipedia.org/wiki/Hereditary_ring"]
+  "hereditary ring" -> "semisimple ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Hereditary_ring#Examples"]
+  "Jacobson ring" [href="https://en.wikipedia.org/wiki/Jacobson_ring"]
+  "Jacobson ring" -> "Field" [color="black:white:black" href="https://en.wikipedia.org/wiki/Jacobson_ring#Examples"]
+  "Principal ideal domain" -> "principal ideal domain\n with Jacobson radical zero"
+  "Jacobson ring" -> "principal ideal domain\n with Jacobson radical zero" [href="https://en.wikipedia.org/wiki/Jacobson_ring#Examples"]
+  "Local ring" [href="https://en.wikipedia.org/wiki/Local_ring"]
+  "endomorphism ring" [href="https://en.wikipedia.org/wiki/Endomorphism_ring"]
+  "semiperfect ring" [href="https://en.wikipedia.org/wiki/Semiperfect_ring"]
+  "semiperfect ring" -> "Local ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Perfect_ring#Semiperfect_ring"]
+
+  "semi-local ring" [href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "semi-local ring" -> "Artinian ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "semi-local ring" -> "serial ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+  "semi-local ring" -> "semiperfect ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Semi-local_ring"]
+
+  "generic matrix ring" -> "matrix ring" [label="elements are square\nmatrices of fixed size\nwith the entries in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "generic matrix ring" [href="https://en.wikipedia.org/wiki/Ring_of_generic_matrices"]
+
+  "monoid ring" [href="https://en.wikipedia.org/wiki/Monoid_ring"]
+  "perfect ring" [href="https://en.wikipedia.org/wiki/Perfect_ring"]
+  "perfect ring" -> "Artinian ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+
+  "polynomial ring" -> "K[x1,...,xn]" [dir="back"]
+  "K[x1,...,xn]" -> "K[X]" [dir="back"]
+  "finitely generated algebra" -> "K[x1,...,xn]" [dir="back"]
+  "polynomial ring" -> "polynomial ring over commutative ring" [lhead="cluster_polynomialring"]
+  "free module" -> "polynomial ring over commutative ring" [href="https://en.wikipedia.org/wiki/Free_module#Examples"]
+  "prime ring" [href="https://en.wikipedia.org/wiki/Prime_ring"]
+  "nonzero ring" -> "prime ring" [label="any two elements\na and b of R with aRb = 0,\nwe have either a = 0 or b = 0", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "simple algebra" -> "simple ring" [label="simple algebra over its center", href="https://en.wikipedia.org/wiki/Simple_ring"]
+  "prime ring" -> "simple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "prime ring" -> "Domain" [color="black:white:black" xlabel="0 ≠ 1" label="subcategory" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "primitive ring" [href="https://en.wikipedia.org/wiki/Primitive_ring"]
+  "primitive ring" -> "simple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "quasi-Frobenius ring" [href="https://en.wikipedia.org/wiki/Quasi-Frobenius_ring"]
+  "Artinian ring" -> "quasi-Frobenius ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "self-injective ring" [href="https://en.wikipedia.org/wiki/Self-injective_ring"]
+  "self-injective ring" -> "quasi-Frobenius ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Aritinian ring" -> "quasi-Frobenius ring" [href="https://encyclopediaofmath.org/wiki/Quasi-Frobenius_ring"] 
+  "quasi-Frobenius ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "semiprimary ring" [href="https://en.wikipedia.org/wiki/Semiprimary_ring"]
+  "semiprimitive ring" [href="https://en.wikipedia.org/wiki/Semiprimitive_ring"]
+  "semiprimitive ring" -> "Von Neumann regular ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "semiprimitive ring" -> "primitive ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Noetherian ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Semisimple_module#Semisimple_rings"]
+  "self-injective ring" -> "semisimple ring" [href="https://encyclopediaofmath.org/wiki/Self-injective_ring"]
+  "simple ring" -> "simple Artinian ring"
+  "simple ring" -> "Weyl algebra" [label="differential operators\nwith polynomial\ncoefficients", href="https://en.wikipedia.org/wiki/Weyl_algebra"]
+  "simple ring" [href="https://en.wikipedia.org/wiki/Simple_ring"]
+  "Weyl algebra" [href="https://en.wikipedia.org/wiki/Weyl_algebra"]
+  "semiprimary ring" -> "Artinian ring" [href="https://en.wikipedia.org/wiki/Hopkins%E2%80%93Levitzki_theorem"]
+  "Artinian ring" -> "simple Artinian ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "semisimple module" -> "semisimple R-module"
+  "semisimple R-module" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "nonzero ring" -> "simple ring" [label="only has trivial\ntwo-sided ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Sylvester domain" [href="https://en.wikipedia.org/wiki/Sylvester_domain"]
+
+  "serial ring" [href="https://en.wikipedia.org/wiki/Serial_ring"]
+  "serial ring" -> "uniserial ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Serial_module#Examples"]
+  
+  "uniserial ring" [href="https://en.wikipedia.org/wiki/Uniserial_ring"]
+  "uniserial ring" -> "Valuation ring" [color="black:white:black" label="* commutative", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  
+  "Valuation ring" [href="https://en.wikipedia.org/wiki/Valuation_ring"]
+
+  "Discrete valuation ring" [href="https://en.wikipedia.org/wiki/Discrete_valuation_ring"]
+  "Discrete valuation ring" -> "p-adic integers" [style="dotted" href="https://en.wikipedia.org/wiki/Discrete_valuation_ring#Examples"]
+  "Discrete valuation ring" -> "formal power series ring" [style="dotted" href="https://en.wikipedia.org/wiki/Discrete_valuation_ring#Examples"]
+  "Discrete valuation ring" -> "formal power series ring over a field in one variable" [style="dotted" href="https://en.wikipedia.org/wiki/Discrete_valuation_ring#Examples"]
+
+  "Principal left ideal ring" -> "Principal ideal domain" [xlabel="commutative" href="https://en.wikipedia.org/wiki/Principal_ideal_ring"]
+
+  "ring with unity" -> "Integral domain" [color="black:white:black"]
+
+  "Dedekind domain" -> "integers" [href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
+
+  "Boolean ring" [href="https://en.wikipedia.org/wiki/Boolean_ring"]
+
+  "Galois group" -> "ring x Galois group x finite field x local field"
+  "ring x Galois group x finite field x local field" -> "deformation ring" [label="controls liftings of a\nrepresentation of a Galois group\nfrom a finite field\nto a local field", href="https://en.wikipedia.org/wiki/Deformation_ring"]
+
+
+  "differential ring" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
+  "Hecke ring" [href="https://en.wikipedia.org/wiki/Hecke_algebra"]
+  "deformation ring" [href="https://en.wikipedia.org/wiki/Deformation_ring"]
+
+  "ideal" -> "prime ideal"
+  "quotient ring" -> "ring / maximal ideal"
+  "maximal ideal" -> "ring / maximal ideal"
+  "ring / maximal ideal" -> "simple ring" [href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "prime ideal x principal ideal domain" [shape="point"]
+  "Principal ideal domain" -> "prime ideal x principal ideal domain"
+ 
+  "prime ideal" -> "prime ideal x principal ideal domain"
+  "prime ideal x principal ideal domain" -> "maximal ideal" [label="all nonzero prime\nideals are maximal\nin a principal ideal domain", href="https://en.wikipedia.org/wiki/Maximal_ideal"]
+  "ideal" -> "Jacobson radical" [label="consisting of those\nelements in R\nthat annihilate all\nsimple right R-modules", href="https://en.wikipedia.org/wiki/Jacobson_radical"]
+
 
   "Noetherian ring" [shape="rect" href="https://en.wikipedia.org/wiki/Noetherian_ring"]
   "Artinian ring" [href="https://en.wikipedia.org/wiki/Artinian_ring"]
@@ -825,20 +1295,20 @@ digraph G {
   "Dedekind domain" [shape="rect" href="https://en.wikipedia.org/wiki/Dedekind_domain"]
 
   "reduced ring" [href="https://en.wikipedia.org/wiki/Reduced_ring"]
-  "reduced ring" -> "Local ring" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "reduced ring" -> "Local ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 
   "Von Neumann regular ring" [href="https://en.wikipedia.org/wiki/Von_Neumann_regular_ring"]
-  "Von Neumann regular ring" -> "semisimple ring" [href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Von Neumann regular ring" -> "semisimple ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
 
-  "coherent ring" [href="https://en.wikipedia.org/wiki/Coherent_ring"]
-  "coherent ring" -> "Noetherian ring" [href="https://en.wikipedia.org/wiki/Coherent_ring"]
+  "Coherent ring" [href="https://en.wikipedia.org/wiki/Coherent_ring"]
+  "Coherent ring" -> "Noetherian ring" [color="black:white:black" xlabel="satisfies the\nascending chain\ncondition\non left and\nright ideals" href="https://en.wikipedia.org/wiki/Coherent_ring"]
 
-  "CRing" -> "boolean ring" [label="* idempotent"]
+  "CRing" -> "Boolean ring" [label="* idempotent"]
 
-  "CRing" -> "commutative ring with unity"
-  "Ring" -> "Local ring" [color="black:white:black" label="subcategory"]
+  "ring with unity" -> "commutative ring with unity" [color="black:white:black"]
+  "CRing" -> "commutative ring with unity" [color="black:white:black"]
   "Ring" -> "Division ring" [color="black:white:black" label="subcategory"]
-  "Division ring" -> "Field" [color="black:white:black" label="subcategory"]
+  "Division ring" -> "Field" [color="black:white:black" xlabel="* commutative" label="subcategory"  href="http://abstract.ups.edu/aata/section-rings-definitions.html"]
   "Local ring" -> "Local domain" [color="black:white:black" label="subcategory"]
   "Integral domain" -> "Local domain" [color="black:white:black" label="subcategory"]
   "Integral domain" -> "Prufer domain" [color="black:white:black" label="subcategory"]
@@ -850,38 +1320,34 @@ digraph G {
   "Bezout domain" -> "Principal ideal domain" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/B%C3%A9zout_domain#Examples"]
   "Local domain" -> "Unique factorization domain" [color="black:white:black" label="subcategory"]
   "Unique factorization domain" -> "Regular local ring" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
-  "Regular local ring" -> "Field" [color="black:white:black" label="subcategory"]
+  "Regular local ring" -> "Field" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Regular_local_ring#Examples"]
   "Valuation ring" -> "Discrete valuation ring" [color="black:white:black" label="subcategory"]
-  "Regular local ring" -> "Discrete valuation ring" [color="black:white:black" label="subcategory"]
-  "Ring" -> "Noetherian ring" [color="black:white:black" label="subcategory"]
-  "Ring" -> "Domain" [color="black:white:black" label="subcategory"]
-  "Domain" -> "Integral domain" [color="black:white:black" label="subcategory"]
+  "Regular local ring" -> "Discrete valuation ring" [color="black:white:black" label="subcategory"  href="https://en.wikipedia.org/wiki/Regular_local_ring#Examples"]
+  "Domain" -> "Integral domain" [color="black:white:black" label="* commutative" label="subcategory" href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
   "Noetherian ring" -> "Principal ideal ring" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Principal_ideal_ring#General_properties"]
-  "Noetherian ring" -> "Artinian ring" [label="ring satisfying the\ndescending chain condition\nfor left ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
-  "Noetherian ring" -> "Noetherian local ring"
-  "Local ring" -> "Noetherian local ring"
-  "CRing" -> "Catenary ring" [href="https://en.wikipedia.org/wiki/Catenary_ring"]
-  "Catenary ring" -> "Universally catenary ring" [href="https://en.wikipedia.org/wiki/Catenary_ring"]
+  "Noetherian ring" -> "Artinian ring" [color="black:white:black" label="ring satisfying the\ndescending chain condition\nfor left ideals", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
+  "Noetherian ring" -> "Noetherian local ring" [color="black:white:black"]
+  "Local ring" -> "Noetherian local ring" [color="black:white:black"]
+  "CRing" -> "Catenary ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Catenary_ring"]
+  "Catenary ring" -> "Universally catenary ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Catenary_ring"]
   // https://en.wikipedia.org/wiki/Gorenstein_ring
-  "Noetherian local ring" -> "Universally catenary ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
-  "Universally catenary ring" -> "Cohen–Macaulay ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
-  "Cohen–Macaulay ring" -> "Gorenstein ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
-  "Gorenstein ring" -> "complete intersection ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
-  "complete intersection ring" -> "Regular local ring" [href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
+  "Noetherian local ring" -> "Universally catenary ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
+  "Universally catenary ring" -> "Cohen–Macaulay ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
+  "Cohen–Macaulay ring" -> "Gorenstein ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
+  "Gorenstein ring" -> "complete intersection ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
+  "complete intersection ring" -> "Regular local ring" [color="black:white:black" href="https://en.wikipedia.org/wiki/Gorenstein_ring"]
   // end https://en.wikipedia.org/wiki/Gorenstein_ring
   "Noetherian ring" -> "Noetherian domain" [color="black:white:black" label="subcategory"]
   "Integral domain" -> "Noetherian domain" [color="black:white:black" label="subcategory"]
   "Noetherian domain" -> "Dedekind domain" [color="black:white:black" label="subcategory"]
-  "CRing" -> "Bezout ring" [color="black:white:black" label="subcategory"]
-  "Bezout ring" -> "Principal ideal ring" [color="black:white:black" label="subcategory"]
+  "Bezout ring" -> "Principal ideal ring" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Principal_ideal_ring#General_properties"]
   "Bezout ring" -> "Valuation ring" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/B%C3%A9zout_domain#Examples"]
-  "Noetherian ring" -> "Regular local ring" [color="black:white:black" label="subcategory"]
   "CRing" -> "Integral domain" [color="black:white:black" label="subcategory"]
   "Integrally closed domain" -> "Dedekind domain" [color="black:white:black" label="subcategory"]
   "Bezout ring" -> "Bezout domain" [color="black:white:black" label="subcategory"]
   "Bezout domain" -> "Valuation domain" [color="black:white:black" label="subcategory"]
   "Valuation ring" -> "Valuation domain" [color="black:white:black" label="subcategory"]
-  "Dedekind domain" -> "Principal ideal domain" [color="black:white:black" label="subcategory"]
+  "Dedekind domain" -> "Principal ideal domain" [color="black:white:black" xlabel="every ideal is principal,\ni.e., can be generated\nby a single\nelement" label="subcategory" href="https://en.wikipedia.org/wiki/Dedekind_domain"]
   "Integral domain" -> "Integrally closed domain" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Integrally_closed_domain"]
   "Integrally closed domain" -> "GCD domain" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Unique_factorization_domain"]
   "GCD domain" -> "Bezout domain" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/GCD_domain"]
@@ -894,7 +1360,10 @@ digraph G {
   "Euclidean domain" -> "Field" [color="black:white:black" label="subcategory"]
   "Field" -> "Finite field" [color="black:white:black" label="subcategory"]
 
-  "R-Mod" -> "ideal" [style="dotted"]
+  "Finite field" -> "ring x Galois group x Finite field x local field"
+  "Finite field" -> "integers modulo prime" [href="https://en.wikipedia.org/wiki/Modular_arithmetic#Integers_modulo_n"]
+
+  "local field" -> "ring x Galois group x Finite field x local field" [ltail="cluster_localfield"]
 
   "CRing" [shape="rect"]
   "CRing" -> "CRing1" [style="invis"]
@@ -908,13 +1377,11 @@ digraph G {
   "CRing" -> "commutative ring homomorphism"
 
   "Integral domain" [shape="rect"]
-  "Integral domain" -> "integral domain"
   "Integral domain" -> "Integral domain/ring homomorphism"
 
   "Dedekind domain" [shape="rect"]
 
   "Field" [shape="rect"]
-  "Field" -> "field"
   "Field" -> "field homomorphism"
   "Field" -> "K-Vect"
 
@@ -929,27 +1396,28 @@ digraph G {
 
   "Projective variety" [shape="rect"]
 
+  "Banach space" -> "Banach algebra" [href="https://en.wikipedia.org/wiki/Banach_algebra"]
   "Banach algebra" [href="https://en.wikipedia.org/wiki/Banach_algebra"]
   "Banach algebra" -> "C*-algebra" [label="with an involution\nsatisfying the\nproperties of\nthe adjoint", href="https://en.wikipedia.org/wiki/C*-algebra"]
 
   "algebra over a ring" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
   "algebra over a ring" -> "algebra over a field" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
   "algebra over a field" [href="https://en.wikipedia.org/wiki/Algebra_over_a_field"]
-  "algebra over a field" -> "associative algebra"
+  "algebra over a field" -> "R-Alg"
   "algebra over a field" -> "free algebra"
 
-  "Ab" -> "associative algebra"
-  "associative algebra" -> "ring" [lhead="cluster_ring" label="over the integers", href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
-  "associative algebra" [href="https://en.wikipedia.org/wiki/Associative_algebra"]
-  "associative algebra" -> "algebra over a field"
-  "associative algebra" -> "commutative algebra" [label="* commutative", href="https://en.wikipedia.org/wiki/Associative_algebra"]
-  "associative algebra" -> "unital associative algebras" [label="have a multiplicative identity", href="https://en.wikipedia.org/wiki/Associative_algebra"]
-  "associative algebra" -> "Z-algebra"
-  "associative algebra" -> "commutative associative algebra"
-  "associative algebra" -> "(Z/nZ)-algebra"
-  "associative algebra" -> "Banach algebra" [label="over the real\nor complex\nnumbers (or over\na non-Archimedean\ncomplete normed\nfield) that\nat the same time\nis also a\nBanach space", href="https://en.wikipedia.org/wiki/Banach_algebra"]
-  "associative algebra" -> "differential algebra"
-  "associative algebra" -> "simple algebra" [label="contains no non-trivial\ntwo-sided ideals\nand the multiplication\noperation is not zero", href="https://en.wikipedia.org/wiki/Simple_ring#Simple_algebra"]
+  "R-Mod" -> "R-Alg"
+  "R-Alg" -> "Ring" [label="over the integers", href="https://en.wikipedia.org/wiki/Algebra_over_a_field#Generalization:_algebra_over_a_ring"]
+  "R-Alg" [href="https://en.wikipedia.org/wiki/Associative_algebra"]
+  "R-Alg" -> "algebra over a field"
+  "R-Alg" -> "commutative algebra" [label="* commutative", href="https://en.wikipedia.org/wiki/Associative_algebra"]
+  "R-Alg" -> "unital associative algebras" [label="have a multiplicative identity", href="https://en.wikipedia.org/wiki/Associative_algebra"]
+  "R-Alg" -> "Z-algebra"
+  "R-Alg" -> "commutative associative algebra"
+  "R-Alg" -> "(Z/nZ)-algebra"
+  "R-Alg" -> "Banach algebra" [label="over the real\nor complex\nnumbers (or over\na non-Archimedean\ncomplete normed\nfield) that\nat the same time\nis also a\nBanach space", href="https://en.wikipedia.org/wiki/Banach_algebra"]
+  "R-Alg" -> "differential algebra"
+  "R-Alg" -> "simple algebra" [label="contains no non-trivial\ntwo-sided ideals\nand the multiplication\noperation is not zero", href="https://en.wikipedia.org/wiki/Simple_ring#Simple_algebra"]
 
   "differential algebra" [href="https://en.wikipedia.org/wiki/Differential_algebra"]
   "simple algebra" [href="https://en.wikipedia.org/wiki/Simple_ring#Simple_algebra"]
@@ -969,7 +1437,11 @@ digraph G {
   "(Z/nZ)-algebra" -> "ring of characteristic n" [href="https://en.wikipedia.org/wiki/Associative_algebra#Algebra"]
   "C*-algebra" [href="https://en.wikipedia.org/wiki/C*-algebra"]
   
+  "operator" [href="https://en.wikipedia.org/wiki/Operator_(mathematics)"]
+  "operator" -> "linear map"
+  "operator" -> "differential operator"
 
+  "differential operator" [href="https://en.wikipedia.org/wiki/Differential_operator"]
 
   // geometries
   // - algebraic structure
@@ -979,10 +1451,11 @@ digraph G {
   "prime numbers" -> "natural numbers"
   "natural numbers" -> "integers" -> "rational numbers"
   "rational numbers" -> "algebraic number field"
+  "p-adic integers" -> "p-adic numbers"
   "rational numbers" -> "p-adic numbers"
   "rational numbers" -> "real numbers"
   "real numbers" -> "complex numbers"
-  "affine space"
+  "affine space" [href="https://en.wikipedia.org/wiki/Affine_space"]
 
   "symmetry group" [href="https://en.wikipedia.org/wiki/Symmetry_group"]
   "symmetry group" -> "dihedral group"
@@ -1000,8 +1473,21 @@ digraph G {
 
   "matrix group" [href="https://en.wikipedia.org/wiki/Matrix_group"]
  
+  "Grp" -> "automorphism group" [style="dotted"]
+  
   "automorphism group" [href="https://en.wikipedia.org/wiki/Automorphism_group"]
   "automorphism group" -> "general linear group" [lhead="cluster_generallineargroup", label="all invertible\nn-by-n matrices\nwith real entries", href="https://en.wikipedia.org/wiki/Group_(mathematics)#Examples_and_applications"]
+  "automorphism group" -> "Galois group"
+
+  "cohomology group" [href="https://en.wikipedia.org/wiki/Cohomology"]
+
+  "homotopy group" [href="https://en.wikipedia.org/wiki/Homotopy_group"]
+  "homotopy group" -> "fundamental group"
+
+  "fundamental group" [href="https://en.wikipedia.org/wiki/Fundamental_group"]
+  "Étale fundamental group" [href="https://en.wikipedia.org/wiki/%C3%89tale_fundamental_group"]
+  "Étale fundamental group" -> "Galois group" [href="https://en.wikipedia.org/wiki/%C3%89tale_fundamental_group#Examples_and_theorems"]
+  "Étale fundamental group" -> "Scheme" [lhead="cluster_scheme", dir="none"]
 
   "symmetry group" -> "Euclidean group" [lhead="cluster_Euclideangroup"]
   "Euclidean group" -> "orthogonal group" [ltail="cluster_Euclideangroup", label="/ translational group", href="https://en.wikipedia.org/wiki/Euclidean_group#Subgroup_structure,_matrix_and_vector_representation"]
@@ -1079,9 +1565,33 @@ digraph G {
     "List"
     "general linear group GLn(F)"
     "matrix ring Mn(F)"
-    "polynomial ring"
+    "topological ring"
+    "topological manifold"
+    "topological vector space"
+    "L-function"
+    "ringed space"
+    "generic matrix ring"
+    "differential ring"
   }
+
+  "topological space x vector space" -> "topological vector space"
+  "topological vector space" [href="https://en.wikipedia.org/wiki/Topological_vector_space"]
+  "topological vector space" -> "normed vector space" [href="https://en.wikipedia.org/wiki/Topological_vector_space"]
+
   
+  "L-function" [href="https://en.wikipedia.org/wiki/L-function"]
+  "L-function" -> "Hasse–Weil zeta function" [href="https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function"]
+  "L-function" -> "Riemann Zeta function" [href="https://en.wikipedia.org/wiki/Riemann_zeta_function"]
+  "L-function" -> "Dirichlet L-function"
+  "L-function" -> "Artin L-function" [href="https://en.wikipedia.org/wiki/Artin_L-function"]
+
+  "Dedekind zeta function" -> "Riemann Zeta function" [href="https://en.wikipedia.org/wiki/Dedekind_zeta_function"]
+  "Dirichlet series" -> "Dedekind zeta function" [href="https://en.wikipedia.org/wiki/Dedekind_zeta_function"]
+  "Dirichlet series" -> "Dirichlet L-function"
+  "generalized Dirichlet series" -> "Dirichlet series" [href="https://en.wikipedia.org/wiki/Dirichlet_series"]
+
+  "Hasse–Weil zeta function" [href="https://en.wikipedia.org/wiki/Hasse%E2%80%93Weil_zeta_function"]
+
   "Ab" -> "homology group" [style="dotted"]
   "Ab" -> "cohomology group" [style="dotted"]
 
@@ -1090,6 +1600,7 @@ digraph G {
 
   "ray class group" -> "narrow ray class group" [label="When S consists\nof all real places,\n so that a is restricted\nto be totally positive", href="https://en.wikipedia.org/wiki/Ray_class_field"]
   "polynomial ring" -> "K[X]"
+  "R-Alg" -> "polynomial ring" [style="dotted"]
 
   "Euclidean domain" -> "K[X]" [style="dotted" href="https://en.wikipedia.org/wiki/Polynomial_ring#Properties_of_K[X]"]
   "Euclidean domain" -> "formal power series ring over a field" [style="dotted" lhead="cluster_formalPowerSeriesRingOverAField", href="https://en.wikipedia.org/wiki/Euclidean_domain#Examples"]
@@ -1106,6 +1617,40 @@ digraph G {
   "Grp" -> "symmetry group" [style="dotted"]
   "Grp" -> "homotopy group" [style="dotted"]
   "Grp" -> "group of fractional ideals" [style="dotted"]
+
+  "Galois group" [href="https://en.wikipedia.org/wiki/Galois_group"]
+
+  "morphism x algebraic group" [shape="point"]
+  "morphism" -> "morphism x algebraic group"
+  "morphism" -> "module homomorphism"
+  "morphism" -> "algebraic group morphism"
+  "module homomorphism" -> "linear map" [href="https://en.wikipedia.org/wiki/Linear_map"]
+  "algebraic group morphism" -> "isogeny" [label="surjective and\nhas a finite kernel", href="https://en.wikipedia.org/wiki/Isogeny"]
+  "isogeny" [href="https://en.wikipedia.org/wiki/Isogeny"]
+  "isogeny" -> "group x abelian variety x isogeny"
+
+  "group x abelian variety x isogeny" [shape="point"]
+  "group x abelian variety x isogeny" -> "Selmer group" [href="https://en.wikipedia.org/wiki/Selmer_group"]
+  "finite group" [href="https://en.wikipedia.org/wiki/Finite_group"]
+
+  "linear algebraic group" [href="https://en.wikipedia.org/wiki/Linear_algebraic_group"]
+  "algebraic group" -> "finite group" [ltail="cluster_algebraicGroup"]
+  "algebraic group" -> "linear algebraic group" [lhead="cluster_linearalgebraicgroup"]
+  "algebraic group" -> "general linear group" [ltail="cluster_algebraicGroup", lhead="cluster_generallineargroup"]
+
+  "linear algebraic group" -> "orthogonal group"
+  "orthogonal group" -> "special orthogonal group"
+
+  "quotient group" -> "homology group"
+
+  "Lie group" [href="https://en.wikipedia.org/wiki/Lie_group"]
+  "Lie group" -> "general linear group" [lhead="cluster_generallineargroup", href="https://en.wikipedia.org/wiki/General_linear_group"]
+  "Lie group" -> "Lie group with dimension 1"
+  "Lie group with dimension 1" -> "real numbers" [href="https://en.wikipedia.org/wiki/Lie_group#More_examples_of_Lie_groups"]
+  "Lie group with dimension 1" -> "circle group" [href="https://en.wikipedia.org/wiki/Lie_group#More_examples_of_Lie_groups"]
+  "Lie group with dimension 2" -> "special unitary group"
+
+  "circle group" [href="https://en.wikipedia.org/wiki/Circle_group"]
 
   "FinGrp" -> "ideal class group" [style="dotted" href="https://en.wikipedia.org/wiki/Algebraic_number_field#Algebraicity_and_ring_of_integers"]
   "CRing" -> "polynomial ring" [style="dotted" lhead="cluster_polynomialring", label="consisting of all\nthe polynomials in the\nspecified variables\nwith coefficients in R", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
@@ -1132,20 +1677,32 @@ digraph G {
   "finitely generated module" -> "ring of integers" [lhead="cluster_ringOfIntegers"]
   "free Z-module" -> "ring of integers" [lhead="cluster_ringOfIntegers", href="https://en.wikipedia.org/wiki/Commutative_ring#First_examples"]
 
+  "Field" -> "topological field" [style="dotted"]
+
   "K-Vect" -> "affine space" [style="dotted"]
+  "K-Vect" -> "graded vector space"
+  "K-Vect" -> "finite dimensional vector space"
+  "K-Vect" -> "real vector space" [style="dotted"]
+
+  "real vector space" -> "real vector space\nof dimension n^2"
+  "real vector space\nof dimension n^2" -> "Mn(R)"
+
   "Inner product space" -> "Euclidean space" [style="dotted"]
-  "affine space" -> "Euclidean space"
   "projective space" -> "affine space" [dir="back"]
   "projective space" -> "projective variety" [dir="back"]
   "projective variety" -> "affine variety" [dir="back"]
   "projective variety" -> "abelian variety"
   "abelian variety" -> "semistable abelian variety"
-  "abelian variety" -> "elliptic curve"
   "elliptic curve" -> "elliptic curve over rationals"
   "elliptic curve" -> "elliptic curve over local field"
   "elliptic curve" -> "elliptic curve over global field"
   "elliptic curve" -> "semistable elliptic curve" [label="with bad reduction"]
-  "elliptic curve over rationals" -> "modular form" [dir="both" label="modular parametrization of level N"]
+  "elliptic curve" -> "modular elliptic curve" [label="admits a parametrisation\nX0(N) → E by a\nmodular curve" href="https://en.wikipedia.org/wiki/Modular_elliptic_curve"]
+  "elliptic curve over rationals" -> "modular form" [dir="both" xlabel="L-function" label="modular parametrization of level N"]
+
+  "modular elliptic curve" [href="https://en.wikipedia.org/wiki/Modular_elliptic_curve"]
+
+  "algebraic curve" -> "modular curve" [href="https://en.wikipedia.org/wiki/Modular_curve"]
 
   { rank="same" "elliptic curve over rationals" "modular form" }
   "elliptic curve over rationals" -> "Galois representation on the p-division points"
@@ -1160,8 +1717,9 @@ digraph G {
   "eigenform" [href="https://en.wikipedia.org/wiki/Eigenform"]
 
   "complex numbers/meromorphic function" -> "elliptic function"
-  "complex numbers/meromorphic function" -> "modular function"
-  
+
+  "Weierstrass' elliptic function" [href="https://en.wikipedia.org/wiki/Weierstrass%27s_elliptic_functions"]
+
   "elliptic function" -> "Jacobi's elliptic function"
   "elliptic function" -> "Weierstrass' elliptic function"
   "elliptic function" -> "Abel's elliptic function"
@@ -1180,7 +1738,7 @@ digraph G {
 
   "global field" -> "local field" [label="completions of global fields", href="https://en.m.wikipedia.org/wiki/Local_field"]
 
-  "algebraic curve" -> "algebraic curve over a finite field" [lhead="cluster_algebraiccurveoffinitefield"]
+  "algebraic curve" -> "algebraic curve over a finite field"
 
   "global field" -> "algebraic number field" [href="https://en.wikipedia.org/wiki/Global_field"]
   "global field" -> "global function field" [href="https://en.wikipedia.org/wiki/Global_field"]
@@ -1203,9 +1761,23 @@ digraph G {
 
   "Inner product space" -> "real numbers" [style="dotted" href="https://en.wikipedia.org/wiki/Inner_product_space#Some_examples"]
 
+  "ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
+  "locally ringed space" [href="https://en.wikipedia.org/wiki/Ringed_space"]
+
+  "presheaf" [href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)#Presheaves"]
+  "presheaf" -> "sheaf"
+  // tool for systematically tracking locally defined data attached to the open sets of a topological space 
+  "sheaf" -> "sheaf of rings"
+  "sheaf" -> "quasi-coherent sheaf"
+  "quasi-coherent sheaf" -> "coherent sheaf" [label="finitely generated as OX-module", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "coherent sheaf" -> "reflexive sheaf" [label="canonical map to\nthe second dual\nis an isomorphism", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "reflexive sheaf" [href="https://en.wikipedia.org/wiki/Reflexive_sheaf"]
+
+
   "algebraic group" -> "abelian variety"
   "real numbers" -> "real line" [label="geometric representation"]
   "real line" -> "complex plane"
+  "upper half plane" -> "complex plane"
   "complex numbers" -> "complex plane" [label="geometric representation"]
 
   "affine space" -> "affine variety" [dir="back" href="https://en.wikipedia.org/wiki/Affine_space#Affine_algebraic_geometry"]
@@ -1219,6 +1791,11 @@ digraph G {
   "Field" -> "function field" [label="finitely generated\nfield extension K/k\nwhich has transcendence\ndegree n over k", href="https://en.wikipedia.org/wiki/Algebraic_function_field"]
   "Field" -> "algebraically closed field"
 
+  "surface" -> "sphere" [href="https://en.wikipedia.org/wiki/Manifold#Motivating_examples"]
+  
+  "topological manifold" [href="https://en.wikipedia.org/wiki/Topological_manifold"]
+  "topological manifold" -> "manifold"
+
   "manifold" [href="https://en.wikipedia.org/wiki/Manifold"]
   "manifold" -> "compact manifold"
   "manifold" -> "0-manifold"
@@ -1230,6 +1807,13 @@ digraph G {
   "manifold" -> "Euclidean space" [style="dotted" href="https://en.wikipedia.org/wiki/Manifold"]
   "manifold" -> "general linear group" [style="dotted" href="https://en.wikipedia.org/wiki/General_linear_group"]
   "manifold" -> "algebraic manifold"
+
+  "algebraic space" -> "Scheme" [lhead="cluster_scheme"]
+  "algebraic space" [href="https://en.wikipedia.org/wiki/Algebraic_space"]
+  "closed manifold" [href="https://en.wikipedia.org/wiki/Closed_manifold"]
+  "compact manifold" -> "compact manifold without boundary"
+  "compact manifold without boundary" [label="compact\nmanifold\nwithout\nboundary"]
+  "compact manifold without boundary" -> "closed manifold" [href="https://en.wikipedia.org/wiki/Closed_manifold"]
 
   "smooth manifold" [href="https://en.wikipedia.org/wiki/Differentiable_manifold#Definition"]
   "smooth manifold" -> "Lie group" [href="https://en.wikipedia.org/wiki/Representation_theory"]
@@ -1262,6 +1846,148 @@ digraph G {
   "2-manifold" -> "compact 2-manifold"
   
   "line" -> "real line"
+
+  "Noetherian scheme" [href="https://en.wikipedia.org/wiki/Noetherian_scheme"]
+  "Noetherian scheme" -> "locally Noetherian scheme" [lhead="cluster_locallyNoetherianscheme"]
+
+
+  "finite étale morphism" [href="https://en.wikipedia.org/wiki/%C3%89tale_morphism"]
+  "noetherianScheme/morphism" -> "finite étale morphism"
+
+  
+  "integral scheme" [href="https://ncatlab.org/nlab/show/integral+scheme"]
+  "integral scheme" -> "normal scheme"
+
+  "Scheme" [shape="rect"]
+  "Scheme" -> "Noetherian scheme" [ltail="cluster_scheme"]
+  "Scheme" -> "abelian scheme" [ltail="cluster_scheme"]
+  "Scheme" -> "separated scheme" [ltail="cluster_scheme"]
+  "Scheme" -> "quotient scheme" [ltail="cluster_scheme"]
+  "Scheme" -> "smooth scheme" [ltail="cluster_scheme"]
+  "Scheme" -> "regular scheme" [ltail="cluster_scheme", label="local rings\nare regular\nlocal rings", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Scheme" -> "group scheme" [ltail="cluster_scheme", label="whose sets of\npoints have\nthe structures\nof a group", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Scheme" -> "integral scheme" [ltail="cluster_scheme", label="local rings are\nintegrally closed domain", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Scheme" -> "projective scheme" [ltail="cluster_scheme", label="over a scheme S\nis an S-scheme that factors\nthrough some projective space\nP^N_S -> S as a closed subscheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Scheme" -> "quot scheme" [ltail="cluster_scheme", label="parametrizes quotients\nof locally free sheaves\non a projective scheme", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
+  "regular scheme" [href="https://en.wikipedia.org/wiki/Regular_scheme"]
+
+  "abelian scheme" -> "abelian variety" [label="(flat) family\nof abelian\nvarieties", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "separated scheme" [href="https://planetmath.org/SeparatedScheme"]
+  "separated scheme" -> "separated scheme of finite type"
+  "separated scheme of finite type" -> "algebraic scheme" [label="over a field", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic scheme" -> "reduced irreducible algebraic scheme"
+  "reduced irreducible algebraic scheme" -> "Algebraic variety" [lhead="cluster_variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "separated scheme of finite type" -> "reduced separated scheme of finite type"
+  "reduced separated scheme of finite type" -> "Algebraic set" [label="over Spec(k)", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "group scheme" -> " finite flat group scheme"
+  "group scheme" -> "group variety"
+  "quotient scheme" -> "scheme / étale equivalence relation"
+  "scheme / étale equivalence relation" -> "algebraic space"
+  "separated scheme of finite type" -> "integral separated scheme of finite type"
+  "integral separated scheme of finite type" -> "Algebraic variety" [lhead="cluster_variety", label="over Spec(k)", href="https://en.wikipedia.org/wiki/%C3%89tale_equivalence_relation"]
+  "smooth scheme" [href="https://en.wikipedia.org/wiki/Smooth_scheme"]
+  "smooth scheme" -> "smooth scheme over a field k" [label="X that is\ngeometrically smooth\n: X xk k^overline\nis smooth"]
+  "smooth scheme" -> "smooth scheme over a perfect field k" [label="X that is of\nlocally of finite\ntype and regular\nover k", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
+  "prime spectrum" -> "affine scheme" [dir="both", label="prime spectrum\nof some\ncommutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
+
+  "ring x Galois group x finite field x local field" [shape="point"]
+  "maximal ideal" -> "local ring / maximal ideal"
+
+  "projective scheme" [href="https://en.wikipedia.org/wiki/Projective_scheme"]
+ 
+
+  "Algebraic variety" -> "Jacobian variety" [ltail="cluster_variety", label="of a projective curve X\nis the degree zero part\nof the Picard variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "projective variety" [ltail="cluster_variety", lhead="cluster_projectivevariety", label="closed subvariety\nof a projective\nspace", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "quasi-projective variety" [ltail="cluster_variety", label="locally\nclosed subvariety\nof a projective\nspace", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "rational variety" [ltail="cluster_variety", label="birational to a\nprojective space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "abelian variety" [ltail="cluster_variety", label="complete group variety", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "affine variety" [ltail="cluster_variety", label="in affine space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "flag variety" [ltail="cluster_variety", label="parametrizes a flag\nof vector spaces", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]  
+  "Algebraic variety" -> "symmetric variety" [ltail="cluster_variety", label="analog of a\nsymmetric space", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "surface" [ltail="cluster_variety", label="variety\nof dimension two", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "normal G-variety" [ltail="cluster_variety"]
+  "Algebraic variety" -> "secant variety" [ltail="cluster_variety", label="to a projective variety V\nsubvariety of P^r is\nthe closure of the union of\nall secant lines to V in P^r", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "algebraic group" [ltail="cluster_variety", lhead="cluster_algebraicGroup", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "Algebraic variety" -> "algebraic curve" [ltail="cluster_variety", label="dimension one", href="https://en.wikipedia.org/wiki/Algebraic_curve"]
+  "Algebraic variety" -> "algebraic manifold" [ltail="cluster_variety"]
+
+  "affine variety" [href="https://en.wikipedia.org/wiki/Affine_variety"]
+  "affine variety" -> "coordinate ring"
+  "affine variety" -> "affine space" [href="https://en.m.wikipedia.org/wiki/Affine_space%23Affine_subspaces_and_parallelism"]
+  "affine variety" -> "circle" [href="https://en.wikipedia.org/wiki/Affine_variety#Examples"]
+
+  "abelian variety" -> "C^n/Z^2n" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "abelian variety" -> "elliptic curve" [href="https://en.wikipedia.org/wiki/Elliptic_curve"]
+  "abelian variety" -> "group x abelian variety x isogeny"
+
+  "secant variety" [href="https://en.wikipedia.org/wiki/Secant_variety"]
+  "projective variety" -> "smooth projective variety" [ltail="cluster_projectivevariety"]
+  "projective variety" -> "projective curve" [ltail="cluster_projectivevariety"]
+  "smooth projective variety" -> "Fano variety" [label="X whose anticanonical\nsheaf omega _{X}^{-1}\nis ample", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "toric variety" [href="https://en.wikipedia.org/wiki/Toric_variety"]
+  "normal variety" -> "toric variety" [label="with the action of a torus\nsuch that the torus\nhas an open dense orbit", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "symmetric variety" [href="https://en.wikipedia.org/wiki/Symmetric_space"]
+  "normal G-variety" -> "normal variety"
+  "normal variety" -> "spherical variety" [label="(G connected reductive)\nwith an open dense orbit\nby a Borel subgroup of G", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
+  "projective variety" -> "rational normal curve" [ltail="cluster_projectivevariety", href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
+  "group variety" -> "algebraic group" [lhead="cluster_algebraicGroup"]
+
+  "algebraic curve" [href="https://en.wikipedia.org/wiki/Algebraic_curve"]
+  "algebraic curve" -> "projective curve"
+  "algebraic curve" -> "plane curve"
+  "algebraic curve" -> "rational curve"
+
+  "plane curve" [href="https://en.wikipedia.org/wiki/Algebraic_curve#Examples_of_curves"]
+  "plane curve" -> "cubic plane curve"
+  "plane curve" -> "rational plane curve"
+
+  "rational curve" [href="https://en.wikipedia.org/wiki/Algebraic_curve#Rational_curves"]
+  "rational curve" -> "rational plane curve"
+  "rational curve" -> "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
+  "rational normal curve" [href="https://en.wikipedia.org/wiki/Rational_normal_curve"]
+  "rational plane curve" [href="https://en.wikipedia.org/wiki/Algebraic_curve#Rational_curves"]
+
+  "cubic plane curve" -> "non-singular plane cubic curve"
+  "non-singular plane cubic curve" -> "elliptic curve" [href="https://en.wikipedia.org/wiki/Cubic_plane_curve"]
+  "elliptic curve" -> "hyperelliptic curve" [label="there is a\nlinear system of\ndimension 1\nand degree 2", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "normal scheme" [href="https://en.wikipedia.org/wiki/Normal_scheme"]
+  "group scheme" [href="https://en.wikipedia.org/wiki/Group_scheme"]
+  "algebraic group" -> "group variety" [ltail="cluster_algebraicGroup", label="smooth", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+  "algebraic group" -> "abelian algebraic group"
+
+  "projective curve" [href="https://en.wikipedia.org/wiki/Algebraic_curve#Projective_curves"]
+  "projective curve" -> "smooth projective curve"
+  "smooth projective curve" -> "elliptic curve" [label="genus one", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
+  "elliptic curve"  [href="https://en.wikipedia.org/wiki/Elliptic_curve"]
+  "elliptic curve" -> "elliptic curve E over a finite field Fq"
+  "elliptic curve E over a finite field Fq" [href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
+
+  "Noetherian ring" -> "coordinate ring" [label="Hilbert basis theorem", href="https://en.wikipedia.org/wiki/Noetherian_ring#Examples"]
+
+  "Field" -> "local field"
+  "local field" -> "archimedean local field"
+  "local field" -> "nonarchimedean local field"
+
+  "Field" -> "perfect field"
+  "Field" -> "Finite field" [label="finite", href="https://math.stackexchange.com/questions/2361889/graphically-organizing-the-interrelationships-of-basic-algebraic-structures"]
+  "Field" -> "algebraic number field" [lhead="cluster_algebraicNumberField"]
+  "Field" -> "differential field"
+  "Field" -> "rational function field"
+
+  "algebraically closed field" [href="https://en.wikipedia.org/wiki/Algebraically_closed_field"]
+
+  "perfect field" [href="https://en.wikipedia.org/wiki/Perfect_field"]
+  "perfect field" -> "Finite field" [href="https://en.wikipedia.org/wiki/Perfect_field"]
+  "perfect field" -> "field of characteristic zero" [href="https://en.wikipedia.org/wiki/Perfect_field"]
+
+  "Lie algebra" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
+
+  "Top" -> "ringed space" [style="dotted" href="https://en.wikipedia.org/wiki/Ringed_space"]
 
   "semitopological group" -> "adelic algebraic group" [style="dotted" href="https://en.wikipedia.org/wiki/Adelic_algebraic_group"]
 
@@ -1296,8 +2022,26 @@ digraph G {
   "orthogonal group" -> "translational group x orthogonal group"
   "translational group x orthogonal group" -> "Euclidean group" [lhead="cluster_Euclideangroup", href="https://en.wikipedia.org/wiki/Euclidean_group"]
 
+  "Lie bracket" [href="https://en.wikipedia.org/wiki/Lie_algebra"]
+  
+  "Ring" -> "topological ring" [style="dotted"]
+
+  "adele ring" -> "global field"
+  "topological ring" -> "adele ring"
+
   "Mon" -> "List" [style="dotted"]
 
+  "complex numbers/holomorphic function" -> "modular form" [href="https://en.wikipedia.org/wiki/Modular_form"]
+  "complex numbers/meromorphic function" -> "modular function" [href="https://en.wikipedia.org/wiki/Modular_form#Modular_functions"]
+  "modular function" [href="https://en.wikipedia.org/wiki/Modular_form#Modular_functions"]
+  "complex analytic function" -> "modular function" [href="https://en.wikipedia.org/wiki/Modular_form#Modular_functions"]
+  "analytic function" -> "complex analytic function"
+  "modular function" -> "modular form" [label="on the upper half-plane\nsatisfying a certain kind of functional equation\nwith respect to the group action\nof the modular group,\nand also satisfying a growth condition", href="https://en.wikipedia.org/wiki/Modular_form"]
+
+  "j-invariant" [href="https://en.wikipedia.org/wiki/J-invariant"]
+
+  "modular form" [href="https://en.wikipedia.org/wiki/Modular_function"]
+  "modular form" -> "j-invariant" [label="modular function of\nweight zero for SL(2, Z)\ndefined on the upper half-plane\nof complex numbers", href="https://en.wikipedia.org/wiki/J-invariant"]
 
   // problems
 
