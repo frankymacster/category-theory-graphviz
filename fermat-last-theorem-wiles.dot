@@ -1,0 +1,293 @@
+digraph G {
+  { rank="same" "nonsingular algebraic curve of genus one defined over rationals" "Frey curve" }
+//  { rank="same" "elliptic curve over rationals" "modular form" }
+
+  // "algebraic variety" -> "algebraic group"
+  // "algebraic variety" -> "projective algebraic variety"
+
+  "group" -> "algebraic group"
+  "group" -> "pro-p-group"
+  "group" -> "decomposition group"
+  "group" -> "inertia group"
+  "group" -> "p-divisible group"
+  "group" -> "derived subgroup"
+  "group" -> "Selmer group" [label="constructed from an isogeny of abelian varieties"]
+  "group" -> "local cohomology group"
+  "group" -> "Sylow 2-subgroup"
+  "group" -> "m-divisible group"
+  "group" -> "m(q)-divisible group"
+  "group" -> "Lubin-Tate group"
+  "group" -> "group of projective limits of elliptic units in L(ν)"
+  "group" -> "cohomology groups of Bloch-Kato"
+
+  // "algebraic group" -> "linear algebraic group"
+  // "linear algebraic group" -> "reductive group"
+  // "reductive group" -> "general linear group"
+  // "reductive group" -> "special orthogonal group"
+  // "reductive group" -> "symplectic group"
+
+  // "projective algebraic variety" -> "abelian variety"
+  // "algebraic group" -> "abelian variety"
+
+  // "abelian variety" -> "semistable abelian variety"
+  // "abelian variety" -> "abelian variety of dimension 1"
+  // "abelian variety of dimension 1" -> "elliptic curve"
+
+  // "abelian variety of dimension 1" -> "semistable abelian variety of dimension 1"
+  // "semistable abelian variety" -> "semistable abelian variety of dimension 1"
+  // "semistable abelian variety of dimension 1" -> "semistable elliptic curve"
+
+  // "semistable elliptic curve" -> "Frey curve"
+  "algebraic curve" -> "nonsingular algebraic curve of genus one defined over rationals"
+  "nonsingular algebraic curve of genus one defined over rationals" -> "Frey curve"
+  "nonsingular algebraic curve of genus one defined over rationals" -> "elliptic curve over rationals" [label="projective curve"]
+  // "elliptic curve" -> "elliptic curve over local field"
+  // "elliptic curve" -> "elliptic curve over global field"
+  // "elliptic curve" -> "semistable elliptic curve" [label="with bad reduction"]
+  // "elliptic curve over rationals" -> "modular form" [label="modular parametrization of level N"]
+  // "elliptic curve over local field"
+  // "elliptic curve over global field"
+  // "elliptic curve over rationals" -> "Galois representation on the p-division points"
+
+  "algebraic curve" -> "modular curve over Q"
+
+  "complex valued function" -> "meromorphic function"
+  "complex valued function" -> "complex analytic function"
+
+  "rational map" -> "modular parametrization of level N"
+
+  "holomorphic function" -> "complex analytic function"
+
+  "complex analytic function" -> "holomorphic function"
+  "complex analytic function" -> "complex analytic function on the upper half-plane"
+  "complex analytic function on the upper half-plane" -> "modular form"
+
+  // "meromorphic function" -> "elliptic function"
+  // "meromorphic function" -> "modular function"
+
+  // "automorphic form" -> "modular form"
+
+  // "modular form" -> "Eisenstein series"
+  // "modular form" -> "cusp form"
+
+  // "modular function" -> "j-invariant"
+
+  // "elliptic function" -> "Jacobi's elliptic function"
+  // "elliptic function" -> "Weierstrass' elliptic function"
+  // "elliptic function" -> "Abel's elliptic function"
+
+  // "elliptic integral" -> "elliptic function" [label="inverse"]
+  // "ellipse arc length" -> "elliptic integral"
+
+  // "module" -> "Galois module"
+  // "module" -> "R-module" -> "G-module"
+  // "module" -> "G-module" -> "Galois module"
+  // "module" -> "cohomology module"
+  // "module" -> "finite module"
+  // "module" -> "Gal(K1(ζp)/Q)-module"
+  // "module" -> "T-module"
+  // "module" -> "Tate-module" -> "m-adic Tate module"
+  // "module" -> "finitely generated free Z-module"
+
+  // "manifold" -> "smooth manifold"
+  // "manifold" -> "complex manifold"
+  "smooth manifold" -> "point"
+  { rank="same" "point" "cotangent space" "Selmer group"}
+  "point" -> "cotangent space"
+  "Selmer group" -> "cotangent space" [dir="none"]
+  
+  // "ideal" -> "principal ideal"
+  "ideal" -> "characteristic ideal"
+  "ideal" -> "Fitting ideal"
+
+  "cohomology" -> "Galois cohomology"
+
+  // "group scheme" -> "finite flat group scheme over Zp"
+  // "group scheme" -> "connected group scheme"
+  // "group scheme" -> "maximal multiplicative-type subgroup scheme"
+  // "group scheme" -> "Neron model"
+
+  "composition series" -> "Jordan-Hölder series"
+
+  "deformation" -> "Selmer deformation"
+  "deformation" -> "ordinary deformation"
+  "deformation" -> "strict deformation"
+  "deformation" -> "flat (at p) deformation"
+  "deformation" -> "universal deformation"
+
+  "ring" -> "universal ring"
+  // "ring" -> "ring of integers"
+  "ring" -> "complete local Noetherian ring"
+  "ring" -> "Artinian local ring" -> "Artinian local ring with residue field k"
+  // "ring" -> "complete semi-local ring"
+  // "ring" -> "Gorenstein ring"
+  "ring" -> "2-dimensional Noetherian local Hecke ring"
+  "ring" -> "ring of endomorphisms"
+  // "Hecke operator"
+  "ring" -> "deformation ring" -> "universal deformation ring" -> "universal local flat deformation ring"
+  "ring" -> "Hecke ring"
+  "deformation ring" -> "Hecke ring" [dir="both"]
+
+  "p-power root of unity"
+
+  "vector space" -> "representation space"
+  "vector space" -> "tangent space"
+  "tangent space" -> "Zariski tangent space"
+  "vector space" ->  "irreducible Galois stable subspace"
+  "vector space" ->  "vector space of weight 2 cusp forms on Γ1(N)"
+  "vector space" -> "cotangent space"
+  "vector space" -> "space of cusp forms of weight 2"
+
+  // "Galois action"
+
+  "natural projection"
+  "natural injection"
+  "natural inclusion"
+
+  "continuous cochain"
+
+  "representation space" -> "finite-dimensional continuous p-adic representation space"
+
+  "lattice" -> "Galois stable lattice"
+
+  "Cartier twist"
+
+  "orthogonal complement"
+
+  "Tate local duality"
+
+  "uniformizer"
+
+  "localization map"
+
+  "Gorenstein property"
+
+  "q-expansion principle"
+
+  "invariant" -> "η-invariant"
+  "invariant" -> "p/p2-invariant"
+
+  "Jacobian"
+
+  "algebra" ->   "local O-algebra"
+  "algebra" -> "Gorenstein Zp-algebra"
+  "algebra" -> "finite flat local Zp-algebra"
+  "algebra" -> "Gorenstein O-algebra"
+
+  "Frobenius"
+
+  "filtration"
+
+  "Pontrjagin duals of rank 1"
+
+  "involution of X1(N)/Q(ζ)"
+
+  "Eichler-Shimura relation"
+
+  "complex conjugation"
+
+  "reduction" -> "multiplicative reduction at p"
+  "reduction" -> "semistable reduction over Qp"
+  "reduction" -> "good reduction"
+
+  "primitive pth root of unity"
+
+  "logarithm of formal group"
+
+  "P-component"
+
+  "inverse system"
+
+  "division point"
+
+  "Teichmüller lift"
+
+  "standard Neron differential"
+
+  "unit" -> "local unit"
+  "unit" -> "p-adic unit"
+  "local unit" -> "special local unit"
+  "local unit" -> "principal local unit"
+
+  "pairing" -> "perfect pairing" -> "perfect pairing of T-modules"
+  "pairing" -> "cup product pairing"
+  "pairing" -> "Hecke-module pairing"
+  "pairing" -> "Weil pairing"
+
+  "Petersson inner product"
+
+  "standard Hecke correspondence"
+
+  "Poincaré duality"
+
+  "p-power isogeny"
+
+  "Neron differential of E/OF +,(p)"
+
+  "L-series"
+
+  "Cebotarev density theorem"
+  "Nakayama’s lemma"
+  "epsilon conjecture"
+
+  "lifting" -> "Teichmüller lifting"
+  "lifting" -> "modular lifting ρf,λ of ρ0 of type D"
+
+  "Euler factor"
+
+  "Galois conjugacy class"
+
+  "L-function" -> "special values"
+
+  "special values" -> "η-invariant" [dir="both"]
+
+  "class number"
+
+  "character" -> "grossencharacter"
+  "character" -> "p-adic character"
+  "character" -> "quadratic character"
+  "character" -> "k×-valued character"
+  "character" -> "Teichmüller character"
+  "character" -> "cyclotomic character"
+
+  "field" -> "splitting field"
+  "field" -> "ray class field"
+  "field" -> "imaginary quadratic field"
+  "field" -> "residue field"
+  "field" -> "local field"
+  "field" -> "finite field" -> "finite field of characteristic p"
+  "splitting field" -> "abelian splitting field"
+
+  "field extension" -> "quadratic extension"
+  "field extension" -> "totally ramified extension"
+  "field extension" -> "Zp-extension"
+  "field extension" -> "unramified extension of Of,λ"
+  "field extension" -> "finite extension"
+  "field extension" -> "maximal abelian p-extension of L(ν) unramified outside p"
+
+  "modular form" -> "eigenform"
+  "cusp form" -> "newform" -> "normalized newform"
+
+  "Mellin transform"
+
+  "Deligne-Serre lemma"
+
+  "group representation" -> "crystalline representation"
+  "group representation" -> "Galois representation"
+  "irreducible representation" -> "odd irreducible representation" -> "odd modular irreducible representation"
+  "group representation" -> "λ-adic representation"
+  "group representation" -> "2-dimensional representation"
+  "group representation" -> "universal representation"
+  "group representation" -> "projective representation"
+  "group representation" -> "irreducible representation"
+  "irreducible representation" -> "absolutely irreducible representation"
+  "group representation" -> "continuous representation"
+  "group representation" -> "residual representation"
+  "Galois representation" -> "p-adic Galois representation"
+  "Galois representation" -> "Galois representation on the p-division points" -> "ρ3" -> "ρ3 irreducible" -> "ρ3 modular" [label="Langlands-Tunnell"]
+  "Galois representation" -> "continuous odd semisimple Galois representation"
+
+  "conductor" -> "conductor of ρ0"
+
+  "plane curve" -> "Weierstrass model"
+}

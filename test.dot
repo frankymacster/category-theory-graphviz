@@ -1,0 +1,33 @@
+digraph G {
+  subgraph cluster_monoid {
+    label="monoid"
+    href="https://en.wikipedia.org/wiki/Monoid"
+    "monoid" [label="", shape="none"]
+    rankdir="LR"
+
+    rank="same"
+    dummy [shape=point, width=0]
+    "M1" -> dummy [arrowhead=none]
+    dummy -> "monoid homomorphism" [dir=back]
+    dummy -> "M2"
+
+    subgraph cluster_monoidM1 {
+      label="M1"
+      shape="rounded"
+      href=""
+      "M1" [label="", shape="none"]
+
+      "monoidM1/identity" [label="identity"]
+    }
+
+    subgraph cluster_monoidM2 {
+      label="M2"
+      shape="rounded"
+      href=""
+      node [shape="point"]
+      "M2" [label="", shape="none"]
+
+      "monoidM2/identity" [xlabel="identity"]
+    }
+  }
+}

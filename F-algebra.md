@@ -162,6 +162,35 @@ F-coalgebra is (A, a)
 
 <!-- TODO add coalgebra examples (transition systems, lambda calculus?) -->
 
+finite state machine
+
+```graphviz
+digraph G {
+  "{0}" -> "State" [label="initial"]
+  "State" -> "{0, 1}" [label="final"]
+  "State" -> "State^Action" [label="transition"]
+}
+```
+
+embedded in a F-algebra, F-coalgebra
+https://www.cs.mcgill.ca/~prakash/Pubs/BrzMin.pdf
+
+```graphviz
+digraph G {
+  "{0}" -> "State" [label="initial"]
+  "{0}" -> "words(Action)" [label="empty-word"]
+  "words(Action)" -> "State" [label="reach", style="dashed"]
+  "words(Action)" -> "word(Action)^Action" [label="a -> w -> wa"]
+  "State" -> "{0, 1}^(words(Action)" [label="observe", style="dashed"]
+  "State" -> "{0, 1}" [label="final"]
+  "State" -> "State^Action" [label="transition"]
+
+  "{0, 1}^(words(Action)" -> "({0, 1}^word(Action))^Action" [label="aw -> w"]
+  "word(Action)^Action" -> "State^Action" [label="reach^Action"]
+  "State^Action" -> "({0, 1}^word(Action))^Action" [label="observe^Action"]
+}
+```
+
 <!-- TODO add terminal coalgebra -->
 
 <!-- TODO add https://en.wikipedia.org/wiki/Anamorphism -->

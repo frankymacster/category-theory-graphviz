@@ -27,3 +27,27 @@ digraph G {
   "Y" -> "coker'(f)" [label="q'"]
 }
 ```
+
+kernel as right adjoint functor
+
+```graphviz
+digraph G {
+  subgraph cluster_Ab {
+    label="Ab"
+
+    subgraph cluster_AbAb {
+      label="Ab -> Ab"
+
+      "A -> 0"
+      "f"
+    }
+    
+    "A"
+    "0"
+    "ker f"
+  }
+
+  "f" -> "ker f" [label="Right"]
+  "A" -> "A -> 0" [label="Left"]
+}
+```

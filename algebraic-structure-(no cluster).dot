@@ -409,9 +409,19 @@ digraph G {
   {
     rank="same"
     "rank1"
-    "functor"
+    "language"
+  }
+
+  {
+    rank="same"
+    "rank2"
     "category"
-    "formal language"
+  }
+
+  {
+    rank="same"
+    "rank3"
+    "lax functor"
   }
 
   {
@@ -506,7 +516,19 @@ digraph G {
     "Scheme"
   }
 
-
+  "2-category" [href="https://en.wikipedia.org/wiki/Strict_2-category"]
+  "2-category" -> "doctrine" [label="system of theories" href="https://en.wikipedia.org/wiki/Strict_2-category"]
+  "doctrine" -> "category" [href="https://en.wikipedia.org/wiki/Strict_2-category"]
+  "doctrine" -> "operad" [href="https://en.wikipedia.org/wiki/Strict_2-category"]
+  "doctrine" -> "topos" [href="https://en.wikipedia.org/wiki/Strict_2-category"]
+  "doctrine" -> "doctrine/theory1" [dir="back"]
+  "doctrine" -> "doctrine/theory2" [dir="back"]
+  "doctrine/theory1" -> "model"
+  "model" -> "doctrine/theory2"
+  { rank="same" "doctrine/theory1" "doctrine/theory2" "model" }
+  
+  "enriched category" [href="https://en.wikipedia.org/wiki/Enriched_category"]
+  "enriched category" -> "2-category" [href="https://en.wikipedia.org/wiki/Enriched_category"]
   "category" [shape="rect" href="https://en.wikipedia.org/wiki/Category_(mathematics)"]
   "category" -> "category1" [style="invis"]
   "category1" [label="" style="invis" width="0"]
@@ -516,16 +538,44 @@ digraph G {
   "category1" -> "category2" [style="invis"]
   "category2" -> "category3" [style="invis"]
   "category3" -> "category4" [style="invis"]
-  "category" -> "monoidal category" [color="black:white:black" label="full subcategory"]
+  "category" -> "binoidal category" [color="black:white:black" label="full subcategory"]
+  "binoidal category" -> "premonoidal category" [color="black:white:black" label="full subcategory"]
+  "binoidal category" -> "central binoidal category" [color="black:white:black" label="full subcategory"]
+  "premonoidal category" -> "monoidal category" [color="black:white:black" label="full subcategory"]
+  "premonoidal category" -> "strict premonoidal category" [color="black:white:black" label="full subcategory"]
+  "premonoidal category" -> "symmetric premonoidal category" [color="black:white:black" label="full subcategory"]
   "category" -> "locally cartesian closed category"
+  "comma category" [href="https://ncatlab.org/nlab/show/comma+category"]
+  "category" -> "comma category" [color="black:white:black" label="construction"]
   "category/object1" [label="object1" peripheries="2"]
   "category/object2" [label="object2" peripheries="2"]
   "category/arrow" [label="arrow" shape="none"]
   "category" -> "category/object1" [dir="back"]
   "category" -> "category/object2" [dir="back"]
   "category" -> "diagram" [dir="back"]
-  "category" -> "subobject" [dir="back"]
-  "category" -> "quotient object" [dir="back"]
+  "diagram/F" [label="F"]
+  "category" -> "index category"
+  "index category" -> "Cat/J" [dir="back"]
+  "Cat/J" -> "diagram/F"
+  "Cat/C" [label="C" peripheries="2"]
+  "Cat" -> "Cat/C" [dir="back"]
+  "diagram/F" -> "Cat/C"
+  "Cat/C/N" [label="N"]
+  "diagram/F(X)" [label="F(X)"]
+  "Cat/J/X" [label="X"]
+  "Cat/J" -> "Cat/J/X" [dir="back"]
+  "cone" -> "cone/phiX" [dir="back"]
+  "cone/phiX" [label="phiX"]
+  "Cat/C/N" -> "cone/phiX"
+  "cone/phiX" -> "diagram/F(X)"
+  { rank="same""Cat/C/N" "cone/phiX" "diagram/F(X)" }
+  "Cat/C" -> "Cat/C/N" [label="object"]
+  { rank="same" "Cat/J" "diagram/F" "Cat/C" }
+  "diagram" -> "diagram/F" [dir="back"]
+  "category/object1" -> "subobject" [dir="back" peripheries="2"]
+  "category/object1" -> "quotient object" [dir="back" peripheries="2"]
+  "category" -> "initial object" [dir="back" peripheries="2"]
+  "category" -> "terminal object" [dir="back" peripheries="2"]
   "subobject" [href="https://en.wikipedia.org/wiki/Subobject"]
   "subobject" -> "quotient object" [label="dual", href="https://en.wikipedia.org/wiki/Subobject#quotient_object"]
   "quotient object" [href="https://en.wikipedia.org/wiki/Subobject#quotient_object"]
@@ -551,6 +601,31 @@ digraph G {
   "diagram" [shape="rect" href="https://en.wikipedia.org/wiki/Diagram_(category_theory)"]
   "diagram" -> "span"
   "diagram" -> "cospan"
+  "category" -> "free category" [label="construction"]
+  "category" -> "functor category" [label="construction"]
+  "category" -> "Kleisli category" [label="construction"]
+  "category" -> "opposite category" [label="construction"]
+  "category" -> "quotient category" [label="construction"]
+  "category" -> "product category" [label="construction"]
+  "category" -> "subcategory" [label="construction"]
+  "category" -> "simplex category"
+  "category" -> "model category"
+  "model category" [href="https://en.wikipedia.org/wiki/Model_category"]
+  "model category" -> "weak equivalence" [dir="back" label="morphism" href="https://en.wikipedia.org/wiki/Model_category"]
+  "model category" -> "fibration" [dir="back" label="morphism" href="https://en.wikipedia.org/wiki/Model_category"]
+  "model category" -> "cofibration" [dir="back" label="morphism" href="https://en.wikipedia.org/wiki/Model_category"]
+  "simplex category" -> "simplicial set" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "simplicial set" -> "Set" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "presheaf" -> "simplicial set" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "simplex category" -> "cosimplicial set" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "cosimplicial set" -> "Set" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "covariant functor" -> "cosimplicial set" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "simplicial set" -> "directed multigraph" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "directed multigraph" -> "directed graph"
+  "simplicial set" -> "partially ordered set" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "simplicial set" -> "quasi-category" [href="https://en.wikipedia.org/wiki/Simplicial_set"]
+  "quasi-category" -> "category"
+  { rank="same" "simplex category" "simplicial set" "Set" }
   "dagger category" [shape="rect"]
   "discrete category" [shape="rect"]
   "category with finite products" [shape="rect"]
@@ -580,6 +655,7 @@ digraph G {
   "category" -> "finitely co-complete category" [color="black:white:black"]
   "category" -> "finitely complete category" [color="black:white:black"]
   "category" -> "concrete category" [color="black:white:black"]
+  "category" -> "preorder" [color="black:white:black"]
   "category" -> "preadditive category" [color="black:white:black"]
   "finitely co-complete category" [shape="rect" href="https://en.wikipedia.org/wiki/Complete_category"]
   "finitely co-complete category" -> "co-complete category" [color="black:white:black"]
@@ -587,7 +663,8 @@ digraph G {
   "finitely complete category" -> "complete category" [color="black:white:black" label="all small limits exist in it", href="https://en.wikipedia.org/wiki/Category_(mathematics)#Examples"]
   "finitely complete category" -> "regular category" [color="black:white:black" href="https://en.wikipedia.org/wiki/Regular_category"]
   "category with finite products" -> "Lawvere theory" [color="black:white:black" label="every object\nis isomorphic\nto a finite\ncartesian\npower xn=x×x×⋯×x\nof a distinguished\nobject x"]
-  
+  "category with finite products" -> "cartesian closed category" [color="black:white:black" href="https://ncatlab.org/nlab/show/cartesian+closed+category"]
+
   "Lawvere theory" [shape="rect" href="https://ncatlab.org/nlab/show/Lawvere+theory"]
   "category of Lawvere theories" -> "Lawvere theory" [dir="back"]
   "theory of sets" [shape="rect"]
@@ -629,12 +706,12 @@ digraph G {
   "infinitary coherent category" -> "geometric logic" [color="black:white:black" label="Lang" href="https://ncatlab.org/nlab/show/internal+logic#kinds_of_internal_logics_in_different_categories"]
   "first-order logic" [shape="rect" href="https://www.google.com/url?q=https://ncatlab.org/nlab/show/first-order%2Blogic&sa=D&source=calendar&usd=2&usg=AOvVaw08BuLSjgc327KUAvSVLJ4b"]
   "first-order logic" -> "extensional dependent type theory" [color="black:white:black"]
+  "first-order logic" -> "Heyting category" [color="black:white:black" label="Cont" href="https://ncatlab.org/nlab/show/internal+logic#kinds_of_internal_logics_in_different_categories"]
+  "Heyting category" [shape="rect" href="https://ncatlab.org/nlab/show/Heyting+category"]
+  "Heyting category" -> "first-order logic" [color="black:white:black" label="Lang" href="https://ncatlab.org/nlab/show/internal+logic#kinds_of_internal_logics_in_different_categories"]
   "well-powered infinitary coherent category" [shape="rect"]
   "infinitary coherent category" -> "well-powered infinitary coherent category" [color="black:white:black"]
   "well-powered infinitary coherent category" -> "Heyting category" [color="black:white:black" href="https://ncatlab.org/nlab/show/Heyting+category"]
-  "Heyting category" [shape="rect" href="https://ncatlab.org/nlab/show/Heyting+category"]
-  "first-order logic" -> "Heyting category" [color="black:white:black" label="Cont" href="https://ncatlab.org/nlab/show/internal+logic#kinds_of_internal_logics_in_different_categories"]
-  "Heyting category" -> "first-order logic" [color="black:white:black" label="Lang" href="https://ncatlab.org/nlab/show/internal+logic#kinds_of_internal_logics_in_different_categories"]
   "locally cartesian closed category" -> "Heyting category" [color="black:white:black" label="has finite colimits" href="https://clive.news/academic/northwestern/talks/20170301.pdf#page=8"]
   "extensional dependent type theory" [shape="rect" href="https://www.google.com/url?q=https://ncatlab.org/nlab/show/dependent%2Btypes&sa=D&source=calendar&usd=2&usg=AOvVaw0YOorCxjycPjMG7jpRwczX"]
   "extensional dependent type theory" -> "higher order logic" [color="black:white:black"]
@@ -643,6 +720,9 @@ digraph G {
   "higher order logic" [shape="rect" href="https://www.google.com/url?q=https://ncatlab.org/nlab/show/higher%2Border%2Blogic&sa=D&source=calendar&usd=2&usg=AOvVaw3ETKrKrywjeIjHGgJZ_dhs"]
   "higher order logic" -> "linear logic" [color="black:white:black"]
   "higher order logic" -> "elementary topos" [color="black:white:black" label="Cont" href="https://ncatlab.org/nlab/show/internal+logic#kinds_of_internal_logics_in_different_categories"]
+  "type theory" [href="https://plato.stanford.edu/entries/type-theory"]
+  "type theory" -> "type system" [label="studies" href="https://en.wikipedia.org/wiki/Type_theory"]
+  "higher order logic" -> "type theory" [dir="both" href="https://plato.stanford.edu/entries/type-theory-church/"]
   "elementary topos" -> "higher order logic" [color="black:white:black" label="Lang" href="https://ncatlab.org/nlab/show/internal+logic#kinds_of_internal_logics_in_different_categories"]
   "linear logic" [shape="rect" href="https://www.google.com/url?q=https://ncatlab.org/nlab/show/linear%2Blogic&sa=D&source=calendar&usd=2&usg=AOvVaw0EWpUwnx96ca0-0e1xizmf"]
   "linear logic" -> "cohesive modal logic" [color="black:white:black"]
@@ -665,6 +745,7 @@ digraph G {
   "local topos" [shape="rect"]
   "cohesive topos" [shape="rect"]
   "local topos" [shape="rect"]
+  "topos" -> "boolean topos"
   "topos" -> "locally connected topos" [color="black:white:black"]
   "topos" -> "local topos" [color="black:white:black"]
   "locally connected topos" -> "strongly connected topos" [color="black:white:black" href="https://ncatlab.org/nlab/show/strongly+connected+topos"]
@@ -695,6 +776,8 @@ digraph G {
 
   "closed category" [shape="rect"]
   "category" -> "closed category" [color="black:white:black"]
+  "filtered category" [href="https://ncatlab.org/nlab/show/filtered+category"]
+  "category" -> "filtered category" [color="black:white:black"]
   "dagger compact category" [shape="rect"]
   "closed category" -> "dagger compact category" [color="black:white:black" href="https://en.wikipedia.org/wiki/Dagger_compact_category"]
   "dagger category" -> "dagger compact category" [color="black:white:black"]
@@ -736,9 +819,12 @@ digraph G {
   "additive category" -> "preabelian category" [color="black:white:black" href="https://en.wikipedia.org/wiki/Abelian_category"]
   "preabelian category" [shape="rect"]
   "preabelian category" -> "abelian category" [color="black:white:black" href="https://en.wikipedia.org/wiki/Abelian_category"]
-  "abelian category" [shape="rect"]
+  "abelian category" [shape="rect" xlabel="all equalizers are kernels" href="https://www.maths.ed.ac.uk/~v1ranick/papers/maclanecat.pdf#198"]
   "abelian category" -> "abelian symmetric monoidal category" [color="black:white:black"]
   "abelian category" -> "R-Mod" [color="black:white:black"]
+  "abelian category" -> "Mod-R" [color="black:white:black"]
+  "abelian category" -> "R-Mod-S" [color="black:white:black"]
+  "abelian category" -> "Ab" [color="black:white:black"]
 
   "model" [shape="rect"]
   "model" -> "model/A"
@@ -756,8 +842,8 @@ digraph G {
 
   "Cat" [shape="rect"] // "category of small categories"
   "Cat"
-  "Cat/A" [label="A"]
-  "Cat/B" [label="B"]
+  "Cat/A" [label="A" peripheries="2"]
+  "Cat/B" [label="B" peripheries="2"]
   "Cat/monoidal category" [label="monoidal category"]
   "Cat" -> "Cat/A" [dir="back"]
   "Cat" -> "Cat/B" [dir="back"]
@@ -814,9 +900,13 @@ digraph G {
   "F-coalgebra" -> "finalF" [label="final" dir="back"]
   { rank="same" "Cat/A/initialF(A)" "finalF" "Cat/A/A" }
 
-  "adjoint functors" -> "Galois connections"
-  "Galois connections" [href="https://en.wikipedia.org/wiki/Galois_connection#Definitions"]
+  "adjoint functors" -> "Galois connection"
+  "Galois connection" [href="https://en.wikipedia.org/wiki/Galois_connection#Definitions"]
 
+  "pseudofunctor" [href="https://en.wikipedia.org/wiki/Pseudo-functor"]
+  "lax functor" [href="https://en.wikipedia.org/wiki/Lax_functor"]
+  "lax functor" -> "pseudofunctor"
+  "pseudofunctor" -> "functor"
   "functor" -> "adjoint functors"
   "functor" -> "covariant functor"
   "functor" -> "contravariant functor"
@@ -830,6 +920,7 @@ digraph G {
   "functor" -> "group action" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "forgetful functor" [label="\"forget\" some structure", href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "free functor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
+  "functor" -> "flat functor" [href="https://ncatlab.org/nlab/show/flat+functor"]
   "functor" -> "representable functor" [href="https://en.wikipedia.org/wiki/Functor#Examples"]
   "functor" -> "bifunctor" [label="domain is a\nproduct category", href="https://en.wikipedia.org/wiki/Functor#Bifunctors_and_multifunctors"]
   "functor" -> "product-preserving functor"
@@ -944,6 +1035,8 @@ digraph G {
   "monoidal category" -> "I" [dir="back" label="unit object"]
   "monoidal category" -> "Cat/monoidal category" [style="dotted"]
   "monoidal category" -> "cocartesian monoidal category" [color="black:white:black"]
+  "monoidal category" -> "monoidal category/x" [dir="back"]
+  "bifunctor" -> "monoidal category/x" [dir="back"]
 
   "braided monoidal category" [shape="rect"]
   "braided monoidal category" -> "symmetric monoidal category" [color="black:white:black" label="full subcategory"]
@@ -953,6 +1046,22 @@ digraph G {
   "closed monoidal category" -> "closed braided monoidal category" [color="black:white:black" label="full subcategory"]
   "closed monoidal category" -> "compact monoidal category" [color="black:white:black" label="full subcategory"]
   "closed monoidal category" -> "Rel" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Category_of_relations"]
+  "closed monoidal category" -> "R-Mod" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "symmetric monoidal category" -> "R-Mod" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "non-cartesian monoidal category" -> "R-Mod" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "closed monoidal category" -> "K-Vect" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "symmetric monoidal category" -> "K-Vect" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "non-cartesian monoidal category" -> "K-Vect" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "closed monoidal category" -> "Ab" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "symmetric monoidal category" -> "Ab" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "non-cartesian monoidal category" -> "Ab" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "monoidal category" -> "Ring" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "symmetric monoidal category" -> "Ring" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "non-cartesian monoidal category" -> "Ring" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "monoidal category" -> "R-Alg" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "symmetric monoidal category" -> "R-Alg" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "non-cartesian monoidal category" -> "R-Alg" [dir="back" href="https://en.wikipedia.org/wiki/Closed_monoidal_category"]
+  "monoidal category" -> "non-cartesian monoidal category"
   // { rank="same" "closed monoidal category" "linear type system" }
   "linear type system" [xlabel="internal language" href="https://en.wikipedia.org/wiki/Cartesian_closed_category"]
   "ordered type system" -> "linear type system" [href="https://en.wikipedia.org/wiki/Substructural_type_system"]
@@ -1001,10 +1110,10 @@ digraph G {
   "cartesian closed category" -> "symmetric closed monoidal category" [color="black:white:black"]
 
   "F-coalgebra" -> "labelled state transition system"
-  "graph" -> "labelled graph"
+  "Grph" -> "labelled graph"
   "directed graph" -> "directed graph/A" [dir="back" label="A"]
   "directed graph" -> "directed labelled graph"
-  "graph" -> "acyclic graph"
+  "Grph" -> "acyclic graph"
   "acyclic graph" [
     shape="rect"
     label=<<table>
@@ -1063,11 +1172,38 @@ digraph G {
   "abstract rewriting system" -> "term rewriting system" [href="https://en.wikipedia.org/wiki/Rewriting#Abstract_rewriting_systems"]
   "abstract rewriting system" -> "graph rewriting system" [href="https://en.wikipedia.org/wiki/Rewriting#Abstract_rewriting_systems"]
   "abstract rewriting system" -> "trace rewriting system" [href="https://en.wikipedia.org/wiki/Rewriting#Abstract_rewriting_systems"]
+  "abstract rewriting system" -> "rewriting rule" [dir="back"]
+  "abstract rewriting system" -> "confluent abstract rewriting system" [label="confluence" href="https://en.wikipedia.org/wiki/Confluence_(abstract_rewriting)"]
+  "confluent abstract rewriting system" [href="https://en.wikipedia.org/wiki/Confluence_(abstract_rewriting)"]
+  "confluent abstract rewriting system" -> "beta-reduction"
+  "rewriting rule" -> "strongly normalizing rewriting rule"
+  "rewriting rule" -> "weakly normalizing rewriting rule"
   "term rewriting system" -> "set of term rewriting rules" [dir="back" href="https://en.wikipedia.org/wiki/Rewriting#Term_rewriting_systems"]
   "Set" -> "set of term rewriting rules" [dir="back"]
   "term rewriting system" -> "untyped lambda calculus"
-  "polymorphic lambda calculus" [href="https://en.wikipedia.org/wiki/System_F"]
-  "simply typed lambda calculus" -> "polymorphic lambda calculus"
+  "untyped lambda calculus" -> "beta-reduction" [dir="back"]
+  "untyped lambda calculus" -> "eta-reduction" [dir="back"]
+  "untyped lambda calculus" -> "alpha-conversion" [dir="back"]
+  "System F" [label="parametric polymorphism" href="https://en.wikipedia.org/wiki/System_F"]
+  "System F" -> "Hindley–Milner type system" [href="https://en.wikipedia.org/wiki/System_F"]
+  "Hindley–Milner type system" -> "ML"
+  "ML" -> "Haskell"
+  "typed lambda calculus" -> "pure type system"
+  "pure type system" -> "simply typed lambda calculus" [href="https://en.wikipedia.org/wiki/Pure_type_system"]
+  "pure type system" -> "inconsistent pure type system" [href="https://en.wikipedia.org/wiki/Pure_type_system"]
+  "inconsistent pure type system" -> "System U" [href="https://en.wikipedia.org/wiki/Pure_type_system"]
+  "simply typed lambda calculus" -> "System F" [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "simply typed lambda calculus" -> "System Fω_" [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "simply typed lambda calculus" -> "λP" [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "System F" -> "System Fω"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "System Fω_" -> "System Fω"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "System Fω" -> "calculus of constructions"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "System F" -> "λP2"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "λP" -> "λP2"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "λP2" -> "calculus of constructions"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "λP" -> "λPω"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "System Fω" -> "λPω"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
+  "λPω" -> "calculus of constructions"  [href="https://en.wikipedia.org/wiki/Lambda_cube"]
 
   "multiplicative intuitionistic linear logic" [shape="rect"]
   "multiplicative intuitionistic linear logic" -> "linear logic" [color="black:white:black"]
@@ -1097,7 +1233,20 @@ digraph G {
   "cocartesian monoidal category" -> "bicartesian category" [color="black:white:black"]
   "cocartesian monoidal category" -> "cocartesian closed category" [color="black:white:black"]
 
-  "partially ordered set" -> "Heyting Algebra" [color="black:white:black"]
+  "complete lattice" -> "complete Heyting Algebra"
+  "Heyting Algebra" -> "complete Heyting Algebra"
+  "bounded lattice" -> "Heyting Algebra" [color="black:white:black" label="has all exponential objects" href="https://en.m.wikipedia.org/wiki/Heyting_algebra#Category-theoretic_definition"]
+  "lattice" -> "bounded lattice" [color="black:white:black"]
+  "lattice" -> "complete lattice" [color="black:white:black"]
+  "lattice" -> "modular lattice" [color="black:white:black"]
+  "lattice" -> "semimodular lattice" [color="black:white:black"]
+  "lattice" -> "continuous lattice" [color="black:white:black"]
+  "lattice" -> "algebraic lattice" [color="black:white:black"]
+  "lattice" -> "graded lattice" [color="black:white:black"]
+  "lattice" -> "free lattice" [color="black:white:black"]
+  "semilattice" -> "free semilattice" [color="black:white:black"]
+  "semimodular lattice" -> "modular lattice" [color="black:white:black" label="both upper and lower semimodular" href="https://en.wikipedia.org/wiki/Lattice_(order)#Examples"]
+  "lattice" -> "conditionally complete lattice" [color="black:white:black"]
 
   "bicartesian category" -> "bicartesian closed category" [color="black:white:black"]
   "bicartesian closed category" -> "Heyting Algebra" [color="black:white:black"]
@@ -1143,17 +1292,33 @@ digraph G {
   "topos1" [label="" style="invis" width="0"]
   "topos2" [label="" style="invis" width="0"]
   "topos1" -> "topos2" [style="invis"]
-  "topos" -> "Set" [color="black:white:black" label="full subcategory"]
+  "topos" -> "Set" [dir="back"]
+  "topos" -> "Grph" [dir="back" href="https://en.wikipedia.org/wiki/Topos"]
   "topos" -> "topos/object"
   "topos" -> "topos/arrow"
   { rank="same" "topos/object" "topos/arrow" }
 
   "elementary topos" [shape="rect"]
   "Grothendieck topos" [shape="rect"]
+  "quasitopos" [href="https://en.wikipedia.org/wiki/Quasitopos"]
+  "quasitopos" -> "topos"
   "topos" -> "elementary topos"
+  "topos" -> "Set^C" [dir="back" href="https://en.wikipedia.org/wiki/Topos"]
+  "elementary topos" -> "Mitchell–Bénabou language" [color="black:white:black" label="Lang" href="https://ncatlab.org/nlab/show/Mitchell-B%C3%A9nabou+language"]
+  "Mitchell–Bénabou language" -> "elementary topos" [color="black:white:black" label="Cont" href="https://ncatlab.org/nlab/show/Mitchell-B%C3%A9nabou+language"]
+  "elementary topos" -> "elementary topos/A" [dir="back" label="object"]
+  "elementary topos/A" [label="A"]
+  "elementary topos/Ω" [label="Ω"]
+  "elementary topos/A" -> "elementary topos/A" [label="variable"]
+  "elementary topos" -> "elementary topos/Ω" [dir="back" label="subobject classifier"]
+  "Heyting Algebra" -> "elementary topos/Ω" [dir="back"]
+  "Mitchell–Bénabou language/A" [label="A"]
+  "Mitchell–Bénabou language" -> "Mitchell–Bénabou language/A" [dir="back" label="type"]
+  "elementary topos/A" -> "Mitchell–Bénabou language/A" [dir="both"]
+  { rank="same" "topos" "Mitchell–Bénabou language" }
   "elementary topos" -> "Grothendieck topos"
   "Grothendieck topos" -> "sheaf" [dir="back"]
-  "sheaf" [shape="rect" href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)"]
+  "sheaf" [dir="back" shape="rect" href="https://en.wikipedia.org/wiki/Sheaf_(mathematics)"]
 
   "Set" [shape="rect"]
   "Set1" [label="" style="invis" width="0"]
@@ -1173,6 +1338,15 @@ digraph G {
   "cartesian product" [href="https://en.wikipedia.org/wiki/Cartesian_product"]
   "partial function" [href="https://en.wikipedia.org/wiki/Partial_function"]
   "partial function" -> "function"
+  "general recursive function" -> "Turing machine" [label="computed by" href="https://en.wikipedia.org/wiki/General_recursive_function"]
+  "general recursive function" [href="https://en.wikipedia.org/wiki/General_recursive_function"]
+  "natural numbers" -> "general recursive function" [href="https://en.wikipedia.org/wiki/General_recursive_function"]
+  "general recursive function" -> "natural numbers"
+  "partial function" -> "general recursive function"
+  "general recursive function" -> "primitive recursive function"
+  "general recursive function" -> "Ackermann function" [dir="back"]
+  "Ackermann function" [href="https://en.wikipedia.org/wiki/Ackermann_function"]
+  "primitive recursive function" [href="https://en.wikipedia.org/wiki/Primitive_recursive_function"]
   "Set" -> "cartesian product" [dir="back"]
   "Set" -> "partial function" [dir="back"]
 
@@ -1198,7 +1372,7 @@ digraph G {
   "Set" -> "collection of subsets" [dir="back"]
   "Set" -> "Set x preorder"
   "Set" -> "Set x equivalence relation"
-  "Set" -> "graph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
+  "Set" -> "Grph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
   "Set" -> "Set x binary operation"
   "Set" -> "concrete category" [label="prototype of a concrete category", href="https://en.wikipedia.org/wiki/Category_of_sets"]
   "Set" -> "FinSet"
@@ -1252,10 +1426,10 @@ digraph G {
 
   "binary operation" -> "set x binary operation"
 
-  "graph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
-  "graph" -> "directed graph"
-  "graph" -> "bipartite graph"
-  "graph" -> "Petersen graph" [dir="back"]
+  "Grph" [href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)"]
+  "Grph" -> "directed graph"
+  "Grph" -> "bipartite graph"
+  "Grph" -> "Petersen graph" [dir="back"]
 
   "directed graph" -> "quiver" [href="https://en.wikipedia.org/wiki/Quiver_(mathematics)"]
   "quiver" [href="https://en.wikipedia.org/wiki/Quiver_(mathematics)"]
@@ -1289,6 +1463,7 @@ digraph G {
   "binary relation" -> "injective binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
   "binary relation" -> "functional binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
   "binary relation" -> "homogeneous relation" [label="over a set Xnis a binary\nrelation over\nX and itself", href="https://en.wikipedia.org/wiki/Binary_relation#Homogeneous_relation"]
+  "binary relation" -> "heterogeneous relation" [href="https://en.wikipedia.org/wiki/Heterogeneous_relation"]
   "binary relation" -> "equivalence relation" [label="reflexive\nsymmetric\ntransitive", href="https://en.wikipedia.org/wiki/Equivalence_relation"]
   "binary relation" -> "serial binary relation" [href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
   "binary relation" -> "many-to-many binary relation" [label="not injective\nnor functional", href="https://en.wikipedia.org/wiki/Binary_relation#Special_types_of_binary_relations"]
@@ -1321,6 +1496,17 @@ digraph G {
   "preorder" -> "equivalence relation" [label="symmetric", href="https://en.wikipedia.org/wiki/Equivalence_relation"]
   "preorder" -> "partial order" [label="antisymmetric", href="https://en.wikipedia.org/wiki/Partially_ordered_set#Formal_definition"]
   "preorder" -> "Set x preorder"
+  "preorder" -> "monoidal preorder"
+  "preorder" -> "preorder/A"
+  "preorder" -> "preorder/B"
+  "preorder/A" [label="A"]
+  "preorder/B" [label="B"]
+  "Galois connection/F" [label="F"]
+  "Galois connection" -> "Galois connection/F"
+  "preorder/A" -> "Galois connection/F"
+  "Galois connection/F" -> "preorder/B"
+  { rank="same" "preorder/A" "Galois connection/F" "preorder/B" }
+  "monoidal preorder" -> "symmetric monoidal preorder"
 
   "partial order" -> "equivalence relation x partial order"
   "partial order" [href="https://en.wikipedia.org/wiki/Partial_order"]
@@ -1402,6 +1588,7 @@ digraph G {
   "Top" -> "Compact space" [color="black:white:black"]
   "Top" -> "Locally compact space"
   "Top" -> "Kolmogorov space" [label="for every pair of\ndistinct points of X,\nat least one of them\nhas a neighborhood\nnot containing the other", href="https://en.wikipedia.org/wiki/Kolmogorov_space"]
+  "Kolmogorov space" -> "prime spectrum" [href="https://en.wikipedia.org/wiki/Spectrum_of_a_ring"]
   "Top" -> "Grassmannian"
   "Top" -> "Top x vector space"
   "Top" -> "manifold" [label="locally resembles\nEuclidean space\nnear each point", href="https://en.wikipedia.org/wiki/Manifold"]
@@ -1435,6 +1622,7 @@ digraph G {
   "Hausdorff space" -> "Urysohn space" [label="any two distinct points\ncan be separated by\nclosed neighborhoods", href="https://en.wikipedia.org/wiki/Urysohn_and_completely_Hausdorff_spaces"]
   "Hausdorff space" -> "Metric space" [href="https://proofwiki.org/wiki/Metric_Space_is_Hausdorff"]
   "Hausdorff space" -> "compactly generated Hausdorff space" [href="https://en.wikipedia.org/wiki/Category_of_topological_spaces#Relationships_to_other_categories"]
+  "Hausdorff space" -> "discrete space" [href="https://en.wikipedia.org/wiki/Discrete_space#:~:text=Every%20discrete%20topological%20space%20satisfies,or%20metric%20space%20is%20complete."]
 
   "Locally compact space" [shape="rect" href="https://en.wikipedia.org/wiki/Locally_compact_space"]
   "Locally compact space" -> "compact Hausdorff space" [href="https://en.wikipedia.org/wiki/Locally_compact_space#Examples_and_counterexamples"]
@@ -1505,8 +1693,6 @@ digraph G {
   "untyped lambda calculus" -> "deductive lambda calculus"
   "untyped lambda calculus" -> "simply typed lambda calculus"
   "deductive lambda calculus" [href="https://en.wikipedia.org/wiki/Deductive_lambda_calculus"]
-  "formal system" -> "untyped lambda calculus" [href="https://en.wikipedia.org/wiki/Lambda_calculus"]
-  "deductive system" -> "deductive lambda calculus" [href="https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition"]
 
   "partial semigroup" -> "Semigroup"
   "partial semigroup" -> "groupoid"
@@ -1667,8 +1853,8 @@ digraph G {
 
   "Commutative semiring x Idempotent semiring" -> "commutative Idempotent semiring"
 
-  "abelian group x ring" [shape="point"]
-  "abelian group x ring" -> "R-Mod" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
+  "Ab x Ring" [shape="point"]
+  "Ab x Ring" -> "R-Mod" [label="⋅ : R × M → M", href="https://en.wikipedia.org/wiki/Module_(mathematics)#Formal_definition"]
 
 
   "semilattice" [shape="rect"]
@@ -1802,6 +1988,7 @@ digraph G {
   "Grp/A/a1" -> "Grp/A/N/a1 x n"
   "Grp/A/N/a1 x n" -> "Grp/A/N/a1 x n x a1^-1"
   "Grp/A/a1^-1" -> "Grp/A/N/a1 x n x a1^-1"
+  "Grp" -> "free product with amalgamation" [dir="back" label="pushout" href="https://en.wikipedia.org/wiki/Pushout_(category_theory)#Examples_of_pushouts"]
 
   "FinGrp" [shape="rect"]
 
@@ -2004,6 +2191,10 @@ digraph G {
   "K-Vect" -> "FinVect" [color="black:white:black" label="subcategory"]
   "K-Vect" -> "vector space"
   "K-Vect" -> "linear transformation"
+  "linear fractional transformation" [href="https://en.wikipedia.org/wiki/Linear_fractional_transformation"]
+  "möbius transformation" [href="https://en.wikipedia.org/wiki/M%C3%B6bius_transformation"]
+  "linear transformation" -> "linear fractional transformation" [href="https://en.wikipedia.org/wiki/Linear_fractional_transformation"]
+  "linear fractional transformation" -> "möbius transformation"
 
   "FinVect" [shape="rect"]
 
@@ -2155,7 +2346,7 @@ digraph G {
   "Ring" -> "semiprime ring" [color="black:white:black" label="the only\nnilpotent ideal\nis the trivial\nideal {0}", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"] 
   "Ring" -> "Ring x Galois group x finite field x local field"
   "Ring" -> "ring with unity" [color="black:white:black" label="* identity"]
-  "Ring" -> "abelian group x ring"
+  "Ring" -> "Ab x Ring"
   "Ring" -> "Sylvester domain" [color="black:white:black" label="Sylvester's law\nof nullity holds" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "Ring" -> "Coherent ring" [color="black:white:black" label="every finitely\ngenerated left\nideal of it is\na finitely\npresented module", href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
   "Ring" -> "semi-hereditary ring" [color="black:white:black"]
@@ -2464,6 +2655,8 @@ digraph G {
   "CRing1" -> "CRing2" [style="invis"]
   "CRing2" -> "CRing3" [style="invis"]
   { rank="same" "CRing2" "Integral domain" }
+  "CRing" -> "fibered product" [dir="back" label="pullback" href="https://en.wikipedia.org/wiki/Pullback_(category_theory)#Examples"]
+  "CRing" -> "tensor product" [dir="back" label="pushout" href="https://en.wikipedia.org/wiki/Pushout_(category_theory)#Examples_of_pushouts"]
   "CRing" -> "commutative ring"
   "CRing" -> "commutative ring homomorphism"
 
@@ -2588,6 +2781,11 @@ digraph G {
  
   "Grp" -> "automorphism group" [style="dotted"]
   
+  "automorphism group" -> "inner automorphism group" [dir="back" label="normal subgroup" href="https://en.wikipedia.org/wiki/Inner_automorphism#Inner_and_outer_automorphism_groups"]
+  "inner automorphism group" [href="https://en.wikipedia.org/wiki/Inner_automorphism"]
+  "outer automorphism group" [href="https://en.wikipedia.org/wiki/Outer_automorphism_group"]
+  "automorphism group" -> "outer automorphism group"
+  "outer automorphism group" -> "automorphism group / inner automorphism group"
   "automorphism group" [href="https://en.wikipedia.org/wiki/Automorphism_group"]
   "automorphism group" -> "general linear group" [label="all invertible\nn-by-n matrices\nwith real entries", href="https://en.wikipedia.org/wiki/Group_(mathematics)#Examples_and_applications"]
   "automorphism group" -> "Galois group"
@@ -2783,11 +2981,12 @@ digraph G {
   "Ab" -> "cohomology group" [style="dotted"]
   "Ab" -> "finitely generated abelian group"
   "Ab" -> "free abelian group"
-  "Ab" -> "ring" [href="https://en.wikipedia.org/wiki/Abelian_group#Examples"]
+  "Ab" -> "Ring" [href="https://en.wikipedia.org/wiki/Abelian_group#Examples"]
   "Ab" -> "Z-module" [href="https://en.wikipedia.org/wiki/Abelian_group#Examples"]
-  "Ab" -> "abelian group x ring"
+  "Ab" -> "Ab x Ring"
   "Ab" -> "chain complex" [label="sequence\nof abelian\ngroups\nconnected by\nhomomorphisms\ncalled boundary\noperators", href="https://en.wikipedia.org/wiki/Homology_(mathematics)#Construction_of_homology_groups"]
   "Ab" -> "finite abelian group"
+  "Ab" -> "direct sum with gluing" [dir="back" label="pushout" href="https://en.wikipedia.org/wiki/Pushout_(category_theory)#Examples_of_pushouts"]
 
   "invertible element"
   "unit" [href="https://en.wikipedia.org/wiki/Unit_(ring_theory)"]
@@ -2953,7 +3152,16 @@ digraph G {
 
   "automorphic form" -> "modular form"
   "meromorphic modular form of weight 0" -> "modular function" [href="https://www.jmilne.org/math/CourseNotes/MFc.pdf"]
-  "modular form" -> "Eisenstein series"
+  "cusp form" -> "Poincaré series" [href="https://mast.queensu.ca/~kani/lectures/m817w05/modforms.pdf#page=11"]
+  "Poincaré series" -> "Eisenstein series" [href="https://mast.queensu.ca/~kani/lectures/m817w05/modforms.pdf#page=11"]
+  "modular form" -> "Theta series"
+  "vector space" -> "vector space over complex numbers"
+  "vector space over complex numbers" -> "space of modular functions" [href="https://mast.queensu.ca/~kani/lectures/m817w05/modforms.pdf#page=11"]
+  "space of modular functions of weight k on Γ" -> "modular function" [dir="back"]
+  "space of modular functions of weight k on Γ" -> "space of modular forms of weight k on Γ" [label="subpace" href="https://mast.queensu.ca/~kani/lectures/m817w05/modforms.pdf#page=11"]
+  "space of modular forms of weight k on Γ" -> "space of cusp forms of weight k on Γ" [label="subpace" href="https://mast.queensu.ca/~kani/lectures/m817w05/modforms.pdf#page=11"]
+  "space of modular forms of weight k on Γ" -> "modular form" [dir="back"]
+  "space of cusp forms of weight k on Γ" -> "cusp form" [dir="back"]
   "modular form" -> "cusp form" [label="zero at the cusps" href="https://www.jmilne.org/math/CourseNotes/MFc.pdf"]
   "modular form" -> "Maass form"
   "modular form" -> "Bianchi modular form"
@@ -3036,8 +3244,6 @@ digraph G {
 
   "function field" [href="https://en.wikipedia.org/wiki/Algebraic_function_field"]
   "function field" -> "global function field"
-
-  "modular function" -> "j-invariant"
 
   "Euclidean space" -> "Euclidean space of dimension 1"
   "Euclidean space of dimension 1" -> "real line" [dir="both" href="https://en.wikipedia.org/wiki/Real_line"]
@@ -3137,11 +3343,17 @@ digraph G {
   
   "algebraic manifold" [href="https://en.wikipedia.org/wiki/Algebraic_manifold"]
 
-  "1-manifold" -> "line" [href="https://en.wikipedia.org/wiki/Manifold#Motivating_examples"]
+  "line" -> "1-manifold" [href="https://en.wikipedia.org/wiki/Manifold#Motivating_examples"]
+  "variety" -> "figure 8"
   "1-manifold" -> "complex 1-manifold"
   "1-manifold" -> "compact 1-manifold"
  
-  "2-manifold" -> "surface"
+  "surface" -> "2-manifold" [href="https://en.wikipedia.org/wiki/Topology#Manifolds"]
+  "surface" -> "klein bottle" [href="https://en.wikipedia.org/wiki/Topology#Manifolds"]
+  "surface" -> "projective real plane" [href="https://en.wikipedia.org/wiki/Topology#Manifolds"]
+  "2-manifold" -> "torus"
+  "2-manifold" -> "sphere"
+  "2-manifold" -> "plane"
   "2-manifold" -> "compact 2-manifold"
   
   "manifold" -> "circle"
@@ -3194,6 +3406,7 @@ digraph G {
   "smooth scheme" -> "smooth scheme over a field k" [label="X that is\ngeometrically smooth\n: X xk k^overline\nis smooth"]
   "smooth scheme" -> "smooth scheme over a perfect field k" [label="X that is of\nlocally of finite\ntype and regular\nover k", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 
+  "functor" -> "prime spectrum" [href="https://en.wikipedia.org/wiki/Spectrum_of_a_ring#Functorial_perspective"]
   "prime spectrum" -> "affine scheme" [dir="both", label="prime spectrum\nof some\ncommutative ring", href="https://en.wikipedia.org/wiki/Glossary_of_algebraic_geometry"]
 
 
@@ -3372,6 +3585,14 @@ digraph G {
 
   "modular form" [href="https://en.wikipedia.org/wiki/Modular_function"]
   "modular form" -> "j-invariant" [label="modular function of\nweight zero for SL(2, Z)\ndefined on the upper half-plane\nof complex numbers", href="https://en.wikipedia.org/wiki/J-invariant"]
+  "elliptic curve" -> "elliptic curve/A" [dir="back"]
+  "elliptic curve" -> "elliptic curve/B" [dir="back"]
+  "j-invariant" -> "j-invariant/jA" [dir="back"]
+  "j-invariant" -> "j-invariant/jB" [dir="back"]
+  "elliptic curve/A" -> "j-invariant/jA"
+  "j-invariant/jA" -> "j-invariant/jB" [dir="both" label="=" href="https://mast.queensu.ca/~kani/lectures/m817w05/modforms.pdf#page=40"]
+  "elliptic curve/A" -> "elliptic curve/B" [dir="both" label="=" href="https://mast.queensu.ca/~kani/lectures/m817w05/modforms.pdf#page=40"]
+  "elliptic curve/B" -> "j-invariant/jB"
 
   "Hecke operator"
 
@@ -3380,16 +3601,10 @@ digraph G {
   "semiprime ring" -> "nilpotent ideals"
   "nilpotent ideals" -> "{0}" [dir="both"]
 
-  "formal language/B" [label="B"]
-  "deductive system/A" [label="A"]
-  "deductive system" -> "deductive system/A"
-  "formal language" -> "formal language/B"
-  "formal system" -> "deductive system/A" [dir="back" href="https://en.wikipedia.org/wiki/Formal_system#Logical_system"]
-  "formal system" -> "formal language/B" [dir="back"]
+  "formal language" -> "formal system" [href="https://en.wikipedia.org/wiki/Formal_system#Background"]
   "formal system" -> "Domain relational calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
   "formal system" -> "Functional calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
   "formal system" -> "Join calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
-  "formal system" -> "untyped lambda calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
   "formal system" -> "Matrix calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
   "formal system" -> "Modal μ-calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
   "formal system" -> "Pi-calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
@@ -3402,30 +3617,45 @@ digraph G {
   "formal system" -> "Vector calculus" [href="https://en.wikipedia.org/wiki/List_of_formal_systems"]
   "formal system" -> "Axiomatic system" [href="https://en.wikipedia.org/wiki/Formal_system#Examples"]
   "formal system" -> "Formal ethics" [href="https://en.wikipedia.org/wiki/Formal_system#Examples"]
-  "formal system" -> "Lambda calculus" [href="https://en.wikipedia.org/wiki/Formal_system#Examples"]
   "formal system" -> "Proof calculus" [href="https://en.wikipedia.org/wiki/Formal_system#Examples"]
+  "formal system" -> "untyped lambda calculus" [href="https://en.wikipedia.org/wiki/Lambda_calculus"]
+  "formal system" -> "combinatory logic" [href="https://en.wikipedia.org/wiki/Lambda_calculus#Variations_and_extensions"]
+  "formal system" -> "SKI combinator calculus" [href="https://en.wikipedia.org/wiki/Lambda_calculus#Variations_and_extensions"]
+  "formal system" -> "Hoare logic" [label="with a set of logical rules for reasoning rigorously about the correctness of computer programs" href="https://en.wikipedia.org/wiki/Hoare_logic"]
+
+  "Hoare logic" [href="https://en.wikipedia.org/wiki/Hoare_logic"]
 
   "formal language" -> "formal theory" [label="set of sentences" href="https://en.wikipedia.org/wiki/Formal_language#Formal_theories,_systems,_and_proofs"]
   "formal theory" -> "strings of symbols" [dir="both"]
   { rank="same" "formal theory" "strings of symbols" }
   "first-order logic" [href="https://en.wikipedia.org/wiki/First-order_logic"]
-  "deductive system" -> "first-order logic" [href="https://en.wikipedia.org/wiki/Formal_system"]
-  "deductive system" -> "natural deduction" [href="https://ncatlab.org/nlab/show/deductive+system#examples_and_special_cases"]
-  "deductive system" -> "type theory" [href="https://ncatlab.org/nlab/show/deductive+system#examples_and_special_cases"]
-  "deductive system" -> "sequent calculus" [href="https://ncatlab.org/nlab/show/deductive+system#examples_and_special_cases"]
-  "deductive system" -> "Hilbert system" [href="https://ncatlab.org/nlab/show/deductive+system#examples_and_special_cases"]
-  "type theory" -> "logic" [href="https://math.stackexchange.com/questions/898062/whats-the-difference-between-a-logic-an-internal-logic-language-of-a-categor#:~:text=An%20internal%20logic%20is%20a,is%20the%20derived%20type%20theory."]
+  "intuitionistic type theory" -> "Per Martin Löf type theory" [dir="both"]
+  "Mitchell–Bénabou language" [href="https://ncatlab.org/nlab/show/Mitchell-B%C3%A9nabou+language"]
+  "type theory" -> "Mitchell–Bénabou language" [href="https://ncatlab.org/nlab/show/Mitchell-B%C3%A9nabou+language"]
+  "type theory" -> "simply typed lambda calculus"
+  "type theory" -> "dependent type theory" [label="dependent types"]
+  "dependent type theory" -> "extensional dependent type theory"
+  "dependent type theory" -> "intuitionistic type theory" [label="proposition ≠ types, impredicative" href="https://plato.stanford.edu/entries/type-theory/#ExteTypeSystPolyPara"]
+  "dependent type theory" -> "calculus of constructions" [label="universes, predicative" href="https://plato.stanford.edu/entries/type-theory/#ExteTypeSystPolyPara"]
+  "dependent type theory" -> "homotopy type theory" [label="axiom of univalence, equivalence between types" href="https://plato.stanford.edu/entries/type-theory"]
+  "type theory/type" [label="type"]
+  "type theory/term1" [label="type1"]
+  "type theory/term2" [label="type2"]
+  "type theory" -> "type theory/type" [dir="back"]
+  "type theory" -> "type theory/term1" [dir="back"]
+  "type theory" -> "type theory/term2" [dir="back"]
+  "type theory/term1" -> "type theory/term2" [label="entailment"]
+  "homotopy type theory" -> "cubical type theory" [label="univalence is not just an axiom but a theorem" href="https://ncatlab.org/nlab/show/cubical+type+theory"]
   "logic" -> "finite limit logic"
-
+  "intuitionistic type theory" [href="https://en.wikipedia.org/wiki/Intuitionistic_type_theory"]
   "formal system" -> "strings of symbols" [dir="back"]
   "strings of symbols" -> "symbols" [dir="back" href="https://en.wikipedia.org/wiki/Formal_language#Formal_theories,_systems,_and_proofs"]
   "strings of symbols" -> "well-formed formulas" [href="https://en.wikipedia.org/wiki/Formal_language#Formal_theories,_systems,_and_proofs"]
   "well-formed formulas" -> "theorems" [href="https://en.wikipedia.org/wiki/Formal_language#Formal_theories,_systems,_and_proofs"]
   "formal system" -> "inference rules" [dir="back"]
   "formal system" -> "axioms" [dir="back"]
-  "formal system" -> "formal grammar" [dir="back"]
+  "formal language" -> "formal grammar" [dir="back"]
   "formal system" -> "recursive formal system" [href="https://en.wikipedia.org/wiki/Formal_system"]
-  "formal language" -> "formal system" [dir="back" label="defines" href="https://en.wikipedia.org/wiki/Formal_system#Background"]
   "syntactic monoid" [peripheries="2" href="https://en.wikipedia.org/wiki/Syntactic_monoid"]
   "transition monoid" [peripheries="2"]
   "syntactic monoid" -> "transition monoid" [dir="both" label="isomorphic" href="https://en.wikipedia.org/wiki/Semiautomaton"]
@@ -3489,6 +3719,28 @@ digraph G {
   "probabilistic semantics" -> "truth-value semantics" [href="https://en.wikipedia.org/wiki/Semantics_of_logic"]
 
   "deductive system" -> "logical system" [label="with additional\n(non-logical)\naxioms and\na semantics", href="https://en.wikipedia.org/wiki/Formal_system#Logical_system"]
+  "deductive system" -> "judgment" [dir="back" href="https://ncatlab.org/nlab/show/deductive+system"]
+  "deductive system" -> "step" [dir="back" href="https://ncatlab.org/nlab/show/deductive+system"]
+  "deductive system" -> "first-order logic" [href="https://en.wikipedia.org/wiki/Formal_system"]
+  "deductive system" -> "natural deduction" [href="https://ncatlab.org/nlab/show/deductive+system#examples_and_special_cases"]
+  "deductive system" -> "sequent calculus" [href="https://ncatlab.org/nlab/show/deductive+system#examples_and_special_cases"]
+  "deductive system" -> "Hilbert system" [href="https://ncatlab.org/nlab/show/deductive+system#examples_and_special_cases"]
+  "deductive system" -> "logic" [dir="both" href="https://en.wikipedia.org/wiki/Formal_system#Deductive_system"]
+  "deductive system" -> "formal system" [href="https://en.wikipedia.org/wiki/Formal_system#Background"]
+  "deductive system" -> "deductive lambda calculus" [href="https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition"]
+  "language" -> "meta-language"
+  "language" -> "object language"
+  "language" -> "formal language"
+  "meta-language" -> "meta-proposition" [dir="back" href="https://ncatlab.org/nlab/show/judgment"]
+  "meta-proposition" -> "judgment" [href="https://ncatlab.org/nlab/show/judgment"]
+  "formal language" -> "formal meta-language"
+  "judgment" -> "hypothetical judgment" [href="https://ncatlab.org/nlab/show/logical+framework"]
+  "judgment" -> "generic judgment" [href="https://ncatlab.org/nlab/show/logical+framework"]
+  "formal language" -> "theory" [label="used to precisely axiomatize a certain class of models" href="https://ncatlab.org/nlab/show/theory"]
+  "meta-language" -> "deductive system" [href="https://ncatlab.org/nlab/show/judgment"]
+  "meta-language" -> "formal meta-language"
+  "formal meta-language" -> "logical framework" [href="https://ncatlab.org/nlab/show/judgment"]
+  "formal system" -> "logical framework" [href="https://ncatlab.org/nlab/show/logical+framework"]
   "logical system" -> "type system" [href="https://en.wikipedia.org/wiki/Type_system"]
   "logical system" -> "complete logical system"
   "logical system" -> "sound logical system"
@@ -3497,6 +3749,8 @@ digraph G {
   "complete logical system" -> "Presburger arithmetic"
 
   "type system" -> "substructural type system"
+  "type system" -> "Hindley–Milner type system"
+  "Hindley–Milner type system" [href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system"]
 
   "linear type system" [href="https://en.wikipedia.org/wiki/Linear_type_system"]
   "substructural type system" -> "ordered type system" [href="https://en.wikipedia.org/wiki/Substructural_type_system"]
@@ -3523,6 +3777,11 @@ digraph G {
   { rank="same" "relevant type system" "relevant logic" }
 
   "nonsymmetric monoidal category" [shape="rect"]
+  "premonoidal category" [shape="rect" href="https://ncatlab.org/nlab/show/premonoidal+category"]
+  "central binoidal category"  [shape="rect" href="https://ncatlab.org/nlab/show/premonoidal+category"]
+  "strict premonoidal category"  [shape="rect" href="https://ncatlab.org/nlab/show/premonoidal+category"]
+  "symmetric premonoidal category"  [shape="rect" href="https://ncatlab.org/nlab/show/premonoidal+category"]
+  "binoidal category" [shape="rect" href="https://ncatlab.org/nlab/show/premonoidal+category"]
   "monoidal category" -> "nonsymmetric monoidal category" [color="black:white:black"]
   "noncommutative logic" -> "nonsymmetric monoidal category" [color="black:white:black" label="Cont" href="http://www.csi.uottawa.ca/~phil/papers/catsurv.web.pdf"]
   "nonsymmetric monoidal category" -> "noncommutative logic" [color="black:white:black" label="Lang" href="http://www.csi.uottawa.ca/~phil/papers/catsurv.web.pdf"]
@@ -3549,9 +3808,45 @@ digraph G {
     "rational function3"
     "Fermat's last theorem"
     "solution to degree 5 polynomial"
+    "squaring the circle"
+    "Squaring the square"
+    "Doubling the cube"
+    "Monty Hall problem"
+    "Minimum-cost flow problem"
+    "Class number problem"
+    "trisecting an angle"
+    "halting problem"
+    "four-color theorem"
+    "Poincaré conjecture"
+    "Eight queens puzzle"
+    "Knight's tour"
+    "Zero-sum problem"
     "ellipse arc length"
+    "arrays.partition.into-disjoint-intervals"
+    "arrays.sets.sum.maximum"
+    "arrays.sort"
+    "graph.shortest-path"
+    "knapsack" [href="https://docs.google.com/spreadsheets/d/1TH5WbHCgBdveZQjFxtDc-HwDrf6dY7YNSN5xH_x9z34/edit#gid=1004621827"]
+    "making change" [href="https://docs.google.com/spreadsheets/d/1TH5WbHCgBdveZQjFxtDc-HwDrf6dY7YNSN5xH_x9z34/edit#gid=703642499"]
+    "travelling salesperson" [href="https://docs.google.com/spreadsheets/d/1TH5WbHCgBdveZQjFxtDc-HwDrf6dY7YNSN5xH_x9z34/edit#gid=1476608782"]
   }
 
   "elliptic integral" -> "ellipse arc length" [style="dotted"]
   "rational numbers" -> "Fermat's last theorem" [style="dotted"]
+  "arrays.partition.into-disjoint-intervals" [href="https://docs.google.com/spreadsheets/d/1P4W8unYRqIlG8nkRQFqZ1b1nYNOCmKHigWdtENwaIGc/edit#gid=521802328"]
+  "arrays.sets.sum.maximum" [href="https://docs.google.com/spreadsheets/d/1P4W8unYRqIlG8nkRQFqZ1b1nYNOCmKHigWdtENwaIGc/edit#gid=792153289"]
+  "arrays.sort" -> "arrays.sort.by-parity" [href="https://docs.google.com/spreadsheets/d/1P4W8unYRqIlG8nkRQFqZ1b1nYNOCmKHigWdtENwaIGc/edit#gid=369885365"]
+  "arrays.sort" -> "arrays.sort.by-frequency" [href="https://docs.google.com/spreadsheets/d/1P4W8unYRqIlG8nkRQFqZ1b1nYNOCmKHigWdtENwaIGc/edit#gid=1033248537"]
+  "graph.shortest-path" -> "Dijkstra's algorithm"
+  "knapsack" -> "knapsack.dynamic programming"
+
+  // solutions
+
+  {
+    rank="same"
+    "Dijkstra's algorithm"
+    "knapsack.dynamic programming"
+  }
+
+  "knapsack.dynamic programming" [href="https://docs.google.com/spreadsheets/d/1dD6QTqKiu2gRngBIJ40EVjX6o4RRj4jBlPWHg91hstU/edit#gid=1585152150"]
 }

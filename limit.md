@@ -1,6 +1,6 @@
 # [Definition](https://en.wikipedia.org/wiki/Limit_(category_theory)#Limits)
 
-[./cone.md](cone.md)
+[cone](cone.md)
 
 ### Category level
 

@@ -159,6 +159,33 @@ https://en.wikipedia.org/wiki/Adjoint_functors#Symmetry_of_optimization_problems
 
 The notion that F is the most efficient solution to the problem posed by G is, in a certain rigorous sense, equivalent to the notion that G poses the most difficult problem that F solves.
 
+
+# Instances
+
+## Exponential object
+
+https://en.wikipedia.org/wiki/Adjoint_functors#Category_theory
+
+Exponential object.
+ In a cartesian closed category the endofunctor C → C
+  given by –×A has a right adjoint –A.
+   This pair is often referred to as currying and uncurrying
+
+https://bartoszmilewski.com/2014/06/17/exponentials-currying-and-universal-constructions/
+
+Exponentiation can thus be defined as the right adjoint of taking a product.
+
+### Instances
+
+//
+(State x Action) -> State => State -> State^Action
+
+(algebra => coalgebra)
+
+https://www.cs.mcgill.ca/~prakash/Pubs/BrzMin.pdf#page=3
+
+
+
 # Code
 
 ## [Haskell](https://hackage.haskell.org/package/adjunction-0.0.0.0/docs/src/Data.Functor.Adjoint.html#Adjoint)

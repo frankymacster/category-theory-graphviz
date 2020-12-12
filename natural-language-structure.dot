@@ -1,0 +1,8 @@
+digraph G {
+  "language" -> "verb" [dir="back"]
+  "language" -> "adjective" [dir="back"]
+  "language" -> "with" [dir="back"]
+  "language" -> "without" [dir="back"]
+  "language" -> "or" [dir="back"]
+  "language" -> "and" [dir="back"]
+}
