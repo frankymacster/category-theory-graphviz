@@ -203,15 +203,20 @@ digraph G {
   "rank99" -> "rank100"  [style="invis"]
 
 
+  "Mon" [peripheries="2"]
+  "Ab" [peripheries="2"]
+  "Ring" [peripheries="2"]
+  "CRing" [peripheries="2"]
+
   {
     rank="same"
-    "internal language"
     "rank1"
+    "internal language"
   }
   {
     rank="same"
-    "false"
     "rank2"
+    "false"
   }
   {
     rank="same"
@@ -221,20 +226,34 @@ digraph G {
   }
   {
     rank="same"
+    "rank6"
     "Mon"
+  }
+  {
+    rank="same"
     "rank10"
+    "{}"
   }
 
   // http://math.mit.edu/~dspivak/teaching/sp18/C7-Logic_of_behavior.pdf#page=8
   // subobject classifier is the internal language of the topos
 
-  "{0, 1, 2}" [peripheries="2"]
-  "{0, 1}" [peripheries="2"]
+  "Mon" -> "{}" [dir="back" color="black:white:black"]
+  "Mon" -> "{0}" [dir="back" color="black:white:black"]
+  "Mon" -> "{1}" [dir="back" color="black:white:black"]
+  "Mon" -> "{2}" [dir="back" color="black:white:black"]
+  "Mon" -> "{0, 1}" [dir="back" color="black:white:black"]
+  "Mon" -> "{0, 2}" [dir="back" color="black:white:black"]
+  "Mon" -> "{1, 2}" [dir="back" color="black:white:black"]
+  "Mon" -> "{0, 1, 2}" [dir="back" color="black:white:black"]
+
+  "{0, 1, 2}" [style="dashed"]
+  "{0, 1}" [style="dashed"]
   "{0, 2}"
   "{1, 2}"
   "{0}"
   "{1}"
-  "{2}" [peripheries="2"]
+  "{2}" [style="dashed"]
   "{0, 1, 2}" -> "{0, 1}"
   "{0, 1, 2}" -> "{0, 2}"
   "{0, 1, 2}" -> "{1, 2}"
@@ -263,11 +282,10 @@ digraph G {
     "{2}"
   }
 
-  "Mon" -> "{}" [dir="back"]
-
   "Mon" -> "Ab" [color="black:white:black"]
   "Ab" -> "Ring" [color="black:white:black"]
   "Ring" -> "CRing" [color="black:white:black"]
+
 
   // presheaf
   "{2}" -> "F({2})" [color="black:white:black" label="F"]
