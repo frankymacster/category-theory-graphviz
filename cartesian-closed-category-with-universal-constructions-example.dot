@@ -1,0 +1,525 @@
+digraph G {
+  "rank1" [label="" style="invis" width="0"]
+  "rank2" [label="" style="invis" width="0"]
+  "rank3" [label="" style="invis" width="0"]
+  "rank4" [label="" style="invis" width="0"]
+  "rank5" [label="" style="invis" width="0"]
+  "rank6" [label="" style="invis" width="0"]
+  "rank7" [label="" style="invis" width="0"]
+  "rank8" [label="" style="invis" width="0"]
+  "rank9" [label="" style="invis" width="0"]
+  "rank10" [label="" style="invis" width="0"]
+  "rank11" [label="" style="invis" width="0"]
+  "rank12" [label="" style="invis" width="0"]
+  "rank13" [label="" style="invis" width="0"]
+  "rank14" [label="" style="invis" width="0"]
+  "rank15" [label="" style="invis" width="0"]
+  "rank16" [label="" style="invis" width="0"]
+  "rank17" [label="" style="invis" width="0"]
+  "rank18" [label="" style="invis" width="0"]
+  "rank19" [label="" style="invis" width="0"]
+  "rank20" [label="" style="invis" width="0"]
+  // "rank21" [label="" style="invis" width="0"]
+  // "rank22" [label="" style="invis" width="0"]
+  // "rank23" [label="" style="invis" width="0"]
+  // "rank24" [label="" style="invis" width="0"]
+  // "rank25" [label="" style="invis" width="0"]
+  // "rank26" [label="" style="invis" width="0"]
+  // "rank27" [label="" style="invis" width="0"]
+  // "rank28" [label="" style="invis" width="0"]
+  // "rank29" [label="" style="invis" width="0"]
+  // "rank30" [label="" style="invis" width="0"]
+  // "rank30" [label="" style="invis" width="0"]
+  // "rank31" [label="" style="invis" width="0"]
+  // "rank32" [label="" style="invis" width="0"]
+  // "rank33" [label="" style="invis" width="0"]
+  // "rank34" [label="" style="invis" width="0"]
+  // "rank35" [label="" style="invis" width="0"]
+  // "rank36" [label="" style="invis" width="0"]
+  // "rank37" [label="" style="invis" width="0"]
+  // "rank38" [label="" style="invis" width="0"]
+  // "rank39" [label="" style="invis" width="0"]
+  // "rank40" [label="" style="invis" width="0"]
+  // "rank41" [label="" style="invis" width="0"]
+  // "rank42" [label="" style="invis" width="0"]
+  // "rank43" [label="" style="invis" width="0"]
+  // "rank44" [label="" style="invis" width="0"]
+  // "rank45" [label="" style="invis" width="0"]
+  // "rank46" [label="" style="invis" width="0"]
+  // "rank47" [label="" style="invis" width="0"]
+  // "rank48" [label="" style="invis" width="0"]
+  // "rank49" [label="" style="invis" width="0"]
+  // "rank50" [label="" style="invis" width="0"]
+  // "rank51" [label="" style="invis" width="0"]
+  // "rank52" [label="" style="invis" width="0"]
+  // "rank53" [label="" style="invis" width="0"]
+  // "rank54" [label="" style="invis" width="0"]
+  // "rank55" [label="" style="invis" width="0"]
+  // "rank56" [label="" style="invis" width="0"]
+  // "rank57" [label="" style="invis" width="0"]
+  // "rank58" [label="" style="invis" width="0"]
+  // "rank59" [label="" style="invis" width="0"]
+  // "rank60" [label="" style="invis" width="0"]
+  // "rank61" [label="" style="invis" width="0"]
+  // "rank62" [label="" style="invis" width="0"]
+  // "rank63" [label="" style="invis" width="0"]
+  // "rank64" [label="" style="invis" width="0"]
+  // "rank65" [label="" style="invis" width="0"]
+  // "rank66" [label="" style="invis" width="0"]
+  // "rank67" [label="" style="invis" width="0"]
+  // "rank68" [label="" style="invis" width="0"]
+  // "rank69" [label="" style="invis" width="0"]
+  // "rank70" [label="" style="invis" width="0"]
+  // "rank71" [label="" style="invis" width="0"]
+  // "rank72" [label="" style="invis" width="0"]
+  // "rank73" [label="" style="invis" width="0"]
+  // "rank74" [label="" style="invis" width="0"]
+  // "rank75" [label="" style="invis" width="0"]
+  // "rank76" [label="" style="invis" width="0"]
+  // "rank77" [label="" style="invis" width="0"]
+  // "rank78" [label="" style="invis" width="0"]
+  // "rank79" [label="" style="invis" width="0"]
+  // "rank80" [label="" style="invis" width="0"]
+  // "rank81" [label="" style="invis" width="0"]
+  // "rank82" [label="" style="invis" width="0"]
+  // "rank83" [label="" style="invis" width="0"]
+  // "rank84" [label="" style="invis" width="0"]
+  // "rank85" [label="" style="invis" width="0"]
+  // "rank86" [label="" style="invis" width="0"]
+  // "rank87" [label="" style="invis" width="0"]
+  // "rank88" [label="" style="invis" width="0"]
+  // "rank89" [label="" style="invis" width="0"]
+  // "rank90" [label="" style="invis" width="0"]
+  // "rank91" [label="" style="invis" width="0"]
+  // "rank92" [label="" style="invis" width="0"]
+  // "rank93" [label="" style="invis" width="0"]
+  // "rank94" [label="" style="invis" width="0"]
+  // "rank95" [label="" style="invis" width="0"]
+  // "rank96" [label="" style="invis" width="0"]
+  // "rank97" [label="" style="invis" width="0"]
+  // "rank98" [label="" style="invis" width="0"]
+  // "rank99" [label="" style="invis" width="0"]
+  // "rank100" [label="" style="invis" width="0"]
+
+  "rank1" -> "rank2"  [style="invis"]
+  "rank2" -> "rank3"  [style="invis"]
+  "rank3" -> "rank4"  [style="invis"]
+  "rank4" -> "rank5"  [style="invis"]
+  "rank5" -> "rank6"  [style="invis"]
+  "rank6" -> "rank7"  [style="invis"]
+  "rank7" -> "rank8"  [style="invis"]
+  "rank8" -> "rank9"  [style="invis"]
+  "rank9" -> "rank10"  [style="invis"]
+  "rank10" -> "rank11"  [style="invis"]
+  "rank11" -> "rank12"  [style="invis"]
+  "rank12" -> "rank13"  [style="invis"]
+  "rank13" -> "rank14"  [style="invis"]
+  "rank14" -> "rank15"  [style="invis"]
+  "rank15" -> "rank16"  [style="invis"]
+  "rank16" -> "rank17"  [style="invis"]
+  "rank17" -> "rank18"  [style="invis"]
+  "rank18" -> "rank19"  [style="invis"]
+  "rank19" -> "rank20"  [style="invis"]
+  "rank20" -> "rank21"  [style="invis"]
+  // "rank21" -> "rank22"  [style="invis"]
+  // "rank22" -> "rank23"  [style="invis"]
+  // "rank23" -> "rank24"  [style="invis"]
+  // "rank24" -> "rank25"  [style="invis"]
+  // "rank25" -> "rank26"  [style="invis"]
+  // "rank26" -> "rank27"  [style="invis"]
+  // "rank27" -> "rank28"  [style="invis"]
+  // "rank28" -> "rank29"  [style="invis"]
+  // "rank29" -> "rank30"  [style="invis"]
+  // "rank30" -> "rank30"  [style="invis"]
+  // "rank30" -> "rank31"  [style="invis"]
+  // "rank31" -> "rank32"  [style="invis"]
+  // "rank32" -> "rank33"  [style="invis"]
+  // "rank33" -> "rank34"  [style="invis"]
+  // "rank34" -> "rank35"  [style="invis"]
+  // "rank35" -> "rank36"  [style="invis"]
+  // "rank36" -> "rank37"  [style="invis"]
+  // "rank37" -> "rank38"  [style="invis"]
+  // "rank38" -> "rank39"  [style="invis"]
+  // "rank39" -> "rank40"  [style="invis"]
+  // "rank40" -> "rank41"  [style="invis"]
+  // "rank41" -> "rank42"  [style="invis"]
+  // "rank42" -> "rank43"  [style="invis"]
+  // "rank43" -> "rank44"  [style="invis"]
+  // "rank44" -> "rank45"  [style="invis"]
+  // "rank45" -> "rank46"  [style="invis"]
+  // "rank46" -> "rank47"  [style="invis"]
+  // "rank47" -> "rank48"  [style="invis"]
+  // "rank48" -> "rank49"  [style="invis"]
+  // "rank49" -> "rank50"  [style="invis"]
+  // "rank50" -> "rank51"  [style="invis"]
+  // "rank51" -> "rank52"  [style="invis"]
+  // "rank52" -> "rank53"  [style="invis"]
+  // "rank53" -> "rank54"  [style="invis"]
+  // "rank54" -> "rank55"  [style="invis"]
+  // "rank55" -> "rank56"  [style="invis"]
+  // "rank56" -> "rank57"  [style="invis"]
+  // "rank57" -> "rank58"  [style="invis"]
+  // "rank58" -> "rank59"  [style="invis"]
+  // "rank59" -> "rank60"  [style="invis"]
+  // "rank60" -> "rank61"  [style="invis"]
+  // "rank61" -> "rank62"  [style="invis"]
+  // "rank62" -> "rank63"  [style="invis"]
+  // "rank63" -> "rank64"  [style="invis"]
+  // "rank64" -> "rank65"  [style="invis"]
+  // "rank65" -> "rank66"  [style="invis"]
+  // "rank66" -> "rank67"  [style="invis"]
+  // "rank67" -> "rank68"  [style="invis"]
+  // "rank68" -> "rank69"  [style="invis"]
+  // "rank69" -> "rank70"  [style="invis"]
+  // "rank70" -> "rank71"  [style="invis"]
+  // "rank71" -> "rank72"  [style="invis"]
+  // "rank72" -> "rank73"  [style="invis"]
+  // "rank73" -> "rank74"  [style="invis"]
+  // "rank74" -> "rank75"  [style="invis"]
+  // "rank75" -> "rank76"  [style="invis"]
+  // "rank76" -> "rank77"  [style="invis"]
+  // "rank77" -> "rank78"  [style="invis"]
+  // "rank78" -> "rank79"  [style="invis"]
+  // "rank79" -> "rank80"  [style="invis"]
+  // "rank80" -> "rank81"  [style="invis"]
+  // "rank81" -> "rank82"  [style="invis"]
+  // "rank82" -> "rank83"  [style="invis"]
+  // "rank83" -> "rank84"  [style="invis"]
+  // "rank84" -> "rank85"  [style="invis"]
+  // "rank85" -> "rank86"  [style="invis"]
+  // "rank86" -> "rank87"  [style="invis"]
+  // "rank87" -> "rank88"  [style="invis"]
+  // "rank88" -> "rank89"  [style="invis"]
+  // "rank89" -> "rank90"  [style="invis"]
+  // "rank90" -> "rank91"  [style="invis"]
+  // "rank91" -> "rank92"  [style="invis"]
+  // "rank92" -> "rank93"  [style="invis"]
+  // "rank93" -> "rank94"  [style="invis"]
+  // "rank94" -> "rank95"  [style="invis"]
+  // "rank95" -> "rank96"  [style="invis"]
+  // "rank96" -> "rank97"  [style="invis"]
+  // "rank97" -> "rank98"  [style="invis"]
+  // "rank98" -> "rank99"  [style="invis"]
+  // "rank99" -> "rank100"  [style="invis"]
+
+
+  subgraph clusterC {
+    label="C"
+
+    // objects
+      "{}"
+      "{1}"
+      "{2}"
+      "{3}"
+      "{1, 2}"
+      "{1, 3}"
+      "{2, 3}"
+      "{1, 2, 3}"
+    // END objects
+
+    { rank="same" "rank1" "{1, 2, 3}" }
+    { rank="same" "rank2" "{1, 2}" "{1, 3}" "{2, 3}" }
+    { rank="same" "rank3" "{1}" "{2}" "{3}" }
+
+    // subobject classifier
+      "{1}" -> "{}" [color="green" dir="back"]
+      "{2}" -> "{}" [color="green" dir="back"]
+      "{3}" -> "{}" [color="green" dir="back"]
+      "{1, 2}" -> "{1}" [color="green" dir="back"]
+      "{1, 3}" -> "{1}" [color="green" dir="back"]
+      "{1, 2}" -> "{2}" [color="green" dir="back"]
+      "{2, 3}" -> "{2}" [color="green" dir="back"]
+      "{1, 3}" -> "{3}" [color="green" dir="back"]
+      "{2, 3}" -> "{3}" [color="green" dir="back"]
+      "{1, 2, 3}" -> "{1, 2}" [color="green" dir="back"]
+      "{1, 2, 3}" -> "{1, 3}" [color="green" dir="back"]
+      "{1, 2, 3}" -> "{2, 3}" [color="green" dir="back"]
+    // END subobject classifier
+
+    // initial object
+      "{}" [color="blue"]
+
+      "{}" -> "{1}" [color="blue"]
+      "{}" -> "{2}" [color="blue"]
+      "{}" -> "{3}" [color="blue"]
+      "{}" -> "{1, 2}" [color="blue"]
+      "{}" -> "{1, 3}" [color="blue"]
+      "{}" -> "{2, 3}" [color="blue"]
+      "{}" -> "{1, 2, 3}" [color="blue"]
+    // END initial object
+
+    // terminal object
+      "{1}" [color="red"]
+      "{2}" [color="red"]
+      "{3}" [color="red"]
+
+      "{1, 2}" -> "{1}" [color="red"]
+      "{1, 2, 3}" -> "{1}" [color="red"]
+      "{1, 2, 3}" -> "{2}" [color="red"]
+      "{1, 2, 3}" -> "{3}" [color="red"]
+      "{1, 2}" -> "{2}" [color="red"]
+      "{1, 3}" -> "{1}" [color="red"]
+      "{1, 3}" -> "{3}" [color="red"]
+    // END terminal object
+
+    // adjunction
+      "{1}" -> "{1} -> {2}" [color="black:white:black" label="->"]
+      "{1}" -> "{1} x {2}" [color="black:white:black" label="x"]
+
+      // left x (tensor product (functor))
+      "{1}" -> "{1} x {2} -> *" [label="unitr"]
+      "{1} x {2}" -> "{1} x {2} -> *"
+      "{1} x {2} -> *" -> "{1} -> {2}" [label="->(x)", style="dashed"]
+
+      // right -> (internal hom functor)
+      "{1}" -> "{1} -> {2}" [arrowhead="none"]
+      "{1} -> {2}" -> "{2}"
+      "{1} -> {2}" -> "{1} -> {2} -> *"
+
+      "{1} x {2} -> *" -> "{1} -> {2} -> *" [dir="both"]
+    // END adjunction
+
+    { rank="same" "rank10" "{1} x {2} -> *" "{1} -> {2} -> *" }
+
+    // product
+      "{1} x {2}"
+      "limit"
+
+      "limit" -> "{1}" [color="red" label="f1"]
+      "limit" -> "{2}" [color="red" label="f2"]
+      "limit" -> "{1} x {2}" [color="red" label="f", style="dashed"]
+
+      "{1} x {2}" -> "{1}" [color="red" label="projection1"]
+      "{1} x {2}" -> "{2}" [color="red" label="projection2"]
+    // END product
+
+    // sum
+      "{1} ⨆ {2}"
+      "colimit"
+
+      "{1}" -> "colimit" [color="blue" label="f1"]
+      "{2}" -> "colimit" [color="blue" label="f2"]
+      "{1} ⨆ {2}" -> "colimit" [color="blue" label="f", style="dashed"]
+
+      "{1}" -> "{1} ⨆ {2}" [color="blue" label="injection1"]
+      "{2}" -> "{1} ⨆ {2}" [color="blue" label="injection2"]
+    // END sum
+
+    // pullback
+      "{1} xC {2}"
+
+      "{1} xC {2}" -> "{1}" [color="red" label="f1"]
+      "{1} xC {2}" -> "{2}" [color="red" label="f2"]
+
+      "{1}" -> "C" [color="red"]
+      "{2}" -> "C" [color="red"]
+    // END pullback
+
+    // pushout
+      "{1} ⨆ {2} / ∼"
+
+      "{1}" -> "{1} ⨆ {2} / ∼" [color="blue" label="f1"]
+      "{2}" -> "{1} ⨆ {2} / ∼" [color="blue" label="f2"]
+
+      "C" -> "{1}" [color="blue"]
+      "C" -> "{2}" [color="blue"]
+    // END pushout  
+
+    { rank="same" "rank6" "{1} x {2}" "{1} ⨆ {2}" }
+    { rank="same" "rank8" "limit" "colimit" }
+    { rank="same" "rank2" "{1} xC {2}" "{1} ⨆ {2} / ∼" }
+  }
+
+  // yoneda lemma
+  subgraph clusterC {
+    label="C"
+    "A"
+    "X"
+    "Y"
+    "X" -> "Y" [label="f"]
+  }
+
+  subgraph clusterSet {
+    label="Set"
+    "F(A)"
+    "F(X)"
+    "F(Y)"
+    "Hom(A,X)"
+    "Hom(A,Y)"
+    "F(X)" -> "F(Y)" [label="F(f)"]
+    "Hom(A,X)" -> "F(X)" [label="Nat(Hom(A,-), F)"]
+    "Hom(A,Y)" -> "F(Y)" [label="Nat(Hom(A,-), F)"]
+    "Hom(A,X)" -> "Hom(A,Y)" [label="Hom(A,f)"]
+  }
+
+  "A" -> "F(A)" [label="F"]
+  "X" -> "F(X)" [label="F"]
+  "Y" -> "F(Y)" [label="F"]
+  "X" -> "Hom(A,X)" [label="Hom(A,-)"]
+  "Y" -> "Hom(A,Y)" [label="Hom(A,-)"]
+  // END yoneda lemma
+
+  // kan extension
+  // right
+  subgraph clusterA {
+    label="A"
+
+    "a1"
+    "a2"
+  }
+
+  subgraph clusterB {
+    label="B"
+
+    "F(a1)"
+    "F(a2)"
+  }
+
+  subgraph clusterC {
+    label="C"
+
+    "R(F(a1))"
+    "R(F(a2))"
+
+    "X(a1)"
+    "X(a2)"
+
+    "M(F(a1))"
+    "M(F(a2))"
+  }
+
+  "a1" -> "a1" [label="1"]
+  "a2" -> "a2" [label="1"]
+  "F(a1)" -> "F(a1)" [label="1"]
+  "F(a2)" -> "F(a2)" [label="1"]
+  "R(F(a1))" -> "R(F(a1))" [label="1"]
+  "R(F(a2))" -> "R(F(a2))" [label="1"]
+  "X(a1)" -> "X(a1)" [label="1"]
+  "X(a2)" -> "X(a2)" [label="1"]
+  "M(F(a1))" -> "M(F(a1))" [label="1"]
+  "M(F(a2))" -> "M(F(a2))" [label="1"]
+
+  "a1" -> "a2" [label="f"]
+  "F(a1)" -> "F(a2)" [label="F(f)"]
+  "R(F(a1))" -> "R(F(a2))" [label="R(F(f))"]
+
+  "a1" -> "F(a1)" [label="F"]
+  "a2" -> "F(a2)" [label="F"]
+
+  "a1" -> "X(a1)" [label="X"]
+  "a2" -> "X(a2)" [label="X"]
+
+  "X(a1)" -> "X(a2)" [label="X(f)"]
+
+  "F(a1)" -> "R(F(a1))" [label="R", style="dashed"]
+  "F(a2)" -> "R(F(a2))" [label="R", style="dashed"]
+
+  "R(F(a1))" -> "X(a1)" [label="Nat(RF, X)"]
+  "R(F(a2))" -> "X(a2)" [label="Nat(RF, X)"]
+
+  "M(F(a1))" -> "X(a1)" [label="Nat(MF, X)"]
+  "M(F(a2))" -> "X(a2)" [label="Nat(MF, X)"]
+
+  "M(F(a1))" -> "M(F(a2))" [label="M(F(f))"]
+
+  "M(F(a1))" -> "R(F(a1))" [label="Nat(MF, RF)", style="dashed"]
+  "M(F(a2))" -> "R(F(a2))" [label="Nat(MF, RF)", style="dashed"]
+
+  // left
+  subgraph clusterA {
+    label="A"
+
+    "a1"
+    "a2"
+  }
+
+  subgraph clusterB {
+    label="B"
+
+    "F(a1)"
+    "F(a2)"
+  }
+
+  subgraph clusterC {
+    label="C"
+
+    "L(F(a1))"
+    "L(F(a2))"
+
+    "X(a1)"
+    "X(a2)"
+
+    "M(F(a1))"
+    "M(F(a2))"
+  }
+
+  "a1" -> "a1" [label="1"]
+  "a2" -> "a2" [label="1"]
+  "F(a1)" -> "F(a1)" [label="1"]
+  "F(a2)" -> "F(a2)" [label="1"]
+  "L(F(a1))" -> "L(F(a1))" [label="1"]
+  "L(F(a2))" -> "L(F(a2))" [label="1"]
+  "X(a1)" -> "X(a1)" [label="1"]
+  "X(a2)" -> "X(a2)" [label="1"]
+  "M(F(a1))" -> "M(F(a1))" [label="1"]
+  "M(F(a2))" -> "M(F(a2))" [label="1"]
+
+  "a1" -> "a2" [label="f"]
+  "F(a1)" -> "F(a2)" [label="F(f)"]
+  "L(F(a1))" -> "L(F(a2))" [label="L(F(f))"]
+
+  "a1" -> "F(a1)" [label="F"]
+  "a2" -> "F(a2)" [label="F"]
+
+  "a1" -> "X(a1)" [label="X"]
+  "a2" -> "X(a2)" [label="X"]
+
+  "X(a1)" -> "X(a2)" [label="X(f)"]
+
+  "F(a1)" -> "L(F(a1))" [label="L", style="dashed"]
+  "F(a2)" -> "L(F(a2))" [label="L", style="dashed"]
+
+
+  "X(a1)" -> "L(F(a1))" [label="Nat(X, LF)"]
+  "X(a2)" -> "L(F(a2))" [label="Nat(X, LF)"]
+
+  "X(a1)" -> "M(F(a1))" [label="Nat(X, MF)"]
+  "X(a2)" -> "M(F(a2))" [label="Nat(X, MF)"]
+
+  "M(F(a1))" -> "M(F(a2))" [label="M(F(f))"]
+
+  "L(F(a1))" -> "M(F(a1))" [label="Nat(LF, MF)", style="dashed"]
+  "L(F(a2))" -> "M(F(a2))" [label="Nat(LF, MF)", style="dashed"]
+  // END kan extension
+
+  // end
+  subgraph clusterCopxC {
+    label="Cop x C"
+    "a1"
+    "a2"
+    "a1" -> "a2" [label="f"]
+  }
+
+  subgraph clusterX {
+    label="X"
+    "S(a1)"
+    "S(a2)"
+    "S(a1)" -> "S(a2)" [label="S(f)"]
+    "end(S)"
+    "x"
+  }
+
+  "a1" -> "S(a1)" [label="S"]
+  "a2" -> "S(a2)" [label="S"]
+
+  "end(S)" -> "S(a1)" [label="ExtraNat(end(S), S)"]
+  "end(S)" -> "S(a2)" [label="ExtraNat(end(S), S)"]
+
+  "x" -> "S(a1)" [label="ExtraNat(x, S) = ExtraNat(end(S), S) ∘ unique"]
+  "x" -> "S(a2)" [label="ExtraNat(x, S) = ExtraNat(end(S), S) ∘ unique"]
+
+  "x" -> "end(S)" [label="unique", style="dashed"]
+  // END end
+
+  // coend
+}
