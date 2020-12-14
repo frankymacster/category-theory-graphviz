@@ -337,6 +337,7 @@ digraph G {
     "X"
     "Y"
     "X" -> "Y" [label="f"]
+    { rank="same" "X" "Y" }
   }
 
   subgraph clusterSet {
@@ -350,13 +351,15 @@ digraph G {
     "Hom(A,X)" -> "F(X)" [label="Nat(Hom(A,-), F)"]
     "Hom(A,Y)" -> "F(Y)" [label="Nat(Hom(A,-), F)"]
     "Hom(A,X)" -> "Hom(A,Y)" [label="Hom(A,f)"]
+    { rank="same" "Hom(A,X)" "Hom(A,Y)" }
+    { rank="same" "F(X)" "F(A)" "F(Y)" }
   }
 
-  "A" -> "F(A)" [label="F"]
-  "X" -> "F(X)" [label="F"]
-  "Y" -> "F(Y)" [label="F"]
-  "X" -> "Hom(A,X)" [label="Hom(A,-)"]
-  "Y" -> "Hom(A,Y)" [label="Hom(A,-)"]
+  "A" -> "F(A)" [color="black:white:black" label="F"]
+  "X" -> "F(X)" [color="black:white:black" label="F"]
+  "Y" -> "F(Y)" [color="black:white:black" label="F"]
+  "X" -> "Hom(A,X)" [color="black:white:black" label="Hom(A,-)"]
+  "Y" -> "Hom(A,Y)" [color="black:white:black" label="Hom(A,-)"]
   // END yoneda lemma
 
   // kan extension
@@ -366,6 +369,8 @@ digraph G {
 
     "a1"
     "a2"
+
+    { rank="same" "a1" "a2" }
   }
 
   subgraph clusterB {
@@ -373,6 +378,8 @@ digraph G {
 
     "F(a1)"
     "F(a2)"
+
+    { rank="same" "F(a1)" "F(a2)" }
   }
 
   subgraph clusterC {
@@ -386,33 +393,19 @@ digraph G {
 
     "M(F(a1))"
     "M(F(a2))"
+
+    { rank="same" "R(F(a1))" "R(F(a2))" }
+    { rank="same" "X(a1)" "X(a2)" }
+    { rank="same" "M(F(a1))" "M(F(a2))" }
   }
 
-  "a1" -> "a1" [label="1"]
-  "a2" -> "a2" [label="1"]
-  "F(a1)" -> "F(a1)" [label="1"]
-  "F(a2)" -> "F(a2)" [label="1"]
-  "R(F(a1))" -> "R(F(a1))" [label="1"]
-  "R(F(a2))" -> "R(F(a2))" [label="1"]
-  "X(a1)" -> "X(a1)" [label="1"]
-  "X(a2)" -> "X(a2)" [label="1"]
-  "M(F(a1))" -> "M(F(a1))" [label="1"]
-  "M(F(a2))" -> "M(F(a2))" [label="1"]
+  "R(F(a1))" -> "R(F(a1))" [color="black:white:black" label="1"]
+  "R(F(a2))" -> "R(F(a2))" [color="black:white:black" label="1"]
 
-  "a1" -> "a2" [label="f"]
-  "F(a1)" -> "F(a2)" [label="F(f)"]
   "R(F(a1))" -> "R(F(a2))" [label="R(F(f))"]
 
-  "a1" -> "F(a1)" [label="F"]
-  "a2" -> "F(a2)" [label="F"]
-
-  "a1" -> "X(a1)" [label="X"]
-  "a2" -> "X(a2)" [label="X"]
-
-  "X(a1)" -> "X(a2)" [label="X(f)"]
-
-  "F(a1)" -> "R(F(a1))" [label="R", style="dashed"]
-  "F(a2)" -> "R(F(a2))" [label="R", style="dashed"]
+  "F(a1)" -> "R(F(a1))" [color="black:white:black" label="R", style="dashed"]
+  "F(a2)" -> "R(F(a2))" [color="black:white:black" label="R", style="dashed"]
 
   "R(F(a1))" -> "X(a1)" [label="Nat(RF, X)"]
   "R(F(a2))" -> "X(a2)" [label="Nat(RF, X)"]
@@ -420,26 +413,10 @@ digraph G {
   "M(F(a1))" -> "X(a1)" [label="Nat(MF, X)"]
   "M(F(a2))" -> "X(a2)" [label="Nat(MF, X)"]
 
-  "M(F(a1))" -> "M(F(a2))" [label="M(F(f))"]
-
   "M(F(a1))" -> "R(F(a1))" [label="Nat(MF, RF)", style="dashed"]
   "M(F(a2))" -> "R(F(a2))" [label="Nat(MF, RF)", style="dashed"]
 
   // left
-  subgraph clusterA {
-    label="A"
-
-    "a1"
-    "a2"
-  }
-
-  subgraph clusterB {
-    label="B"
-
-    "F(a1)"
-    "F(a2)"
-  }
-
   subgraph clusterC {
     label="C"
 
@@ -451,33 +428,35 @@ digraph G {
 
     "M(F(a1))"
     "M(F(a2))"
+
+    { rank="same" "L(F(a1))" "L(F(a2))" }
   }
 
-  "a1" -> "a1" [label="1"]
-  "a2" -> "a2" [label="1"]
-  "F(a1)" -> "F(a1)" [label="1"]
-  "F(a2)" -> "F(a2)" [label="1"]
-  "L(F(a1))" -> "L(F(a1))" [label="1"]
-  "L(F(a2))" -> "L(F(a2))" [label="1"]
-  "X(a1)" -> "X(a1)" [label="1"]
-  "X(a2)" -> "X(a2)" [label="1"]
-  "M(F(a1))" -> "M(F(a1))" [label="1"]
-  "M(F(a2))" -> "M(F(a2))" [label="1"]
+  "a1" -> "a1" [color="black:white:black" label="1"]
+  "a2" -> "a2" [color="black:white:black" label="1"]
+  "F(a1)" -> "F(a1)" [color="black:white:black" label="1"]
+  "F(a2)" -> "F(a2)" [color="black:white:black" label="1"]
+  "L(F(a1))" -> "L(F(a1))" [color="black:white:black" label="1"]
+  "L(F(a2))" -> "L(F(a2))" [color="black:white:black" label="1"]
+  "X(a1)" -> "X(a1)" [color="black:white:black" label="1"]
+  "X(a2)" -> "X(a2)" [color="black:white:black" label="1"]
+  "M(F(a1))" -> "M(F(a1))" [color="black:white:black" label="1"]
+  "M(F(a2))" -> "M(F(a2))" [color="black:white:black" label="1"]
 
   "a1" -> "a2" [label="f"]
   "F(a1)" -> "F(a2)" [label="F(f)"]
   "L(F(a1))" -> "L(F(a2))" [label="L(F(f))"]
 
-  "a1" -> "F(a1)" [label="F"]
-  "a2" -> "F(a2)" [label="F"]
+  "a1" -> "F(a1)" [color="black:white:black" label="F"]
+  "a2" -> "F(a2)" [color="black:white:black" label="F"]
 
-  "a1" -> "X(a1)" [label="X"]
-  "a2" -> "X(a2)" [label="X"]
+  "a1" -> "X(a1)" [color="black:white:black" label="X"]
+  "a2" -> "X(a2)" [color="black:white:black" label="X"]
 
   "X(a1)" -> "X(a2)" [label="X(f)"]
 
-  "F(a1)" -> "L(F(a1))" [label="L", style="dashed"]
-  "F(a2)" -> "L(F(a2))" [label="L", style="dashed"]
+  "F(a1)" -> "L(F(a1))" [color="black:white:black" label="L", style="dashed"]
+  "F(a2)" -> "L(F(a2))" [color="black:white:black" label="L", style="dashed"]
 
 
   "X(a1)" -> "L(F(a1))" [label="Nat(X, LF)"]
@@ -495,22 +474,26 @@ digraph G {
   // end
   subgraph clusterCopxC {
     label="Cop x C"
-    "a1"
-    "a2"
-    "a1" -> "a2" [label="f"]
+    "Cop x C/a1" [label="a1"]
+    "Cop x C/a2" [label="a2"]
+    "Cop x C/a1" -> "Cop x C/a2" [label="f"]
+
+    { rank="same" "Cop x C/a1" "Cop x C/a2" }
   }
 
-  subgraph clusterX {
-    label="X"
+  subgraph clusterC {
+    label="C"
     "S(a1)"
     "S(a2)"
     "S(a1)" -> "S(a2)" [label="S(f)"]
     "end(S)"
     "x"
+
+    { rank="same" "S(a1)" "S(a2)" }
   }
 
-  "a1" -> "S(a1)" [label="S"]
-  "a2" -> "S(a2)" [label="S"]
+  "Cop x C/a1" -> "S(a1)" [color="black:white:black" label="S"]
+  "Cop x C/a2" -> "S(a2)" [color="black:white:black" label="S"]
 
   "end(S)" -> "S(a1)" [label="ExtraNat(end(S), S)"]
   "end(S)" -> "S(a2)" [label="ExtraNat(end(S), S)"]
@@ -522,4 +505,8 @@ digraph G {
   // END end
 
   // coend
+  // internal language
+  // F-algebra
+  // F-coalgebra
+  // quotient object
 }
