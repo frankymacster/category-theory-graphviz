@@ -2371,6 +2371,7 @@ digraph G {
   "field of fractions" -> "set of meromorphic functions" [style="dotted"]
   "set of meromorphic functions" [xlabel="if the function's\ndomain is connected", href="https://en.wikipedia.org/wiki/Meromorphic_function#Heuristic_description"]
   "Integral domain" -> "set of holomorphic functions" [style="dotted"]
+  "Integral domain" -> "prime element -> irreducible element" [href="https://youtu.be/ezyhgZzw2q8?list=PLAvgI3H-gclZ-DYOVyyTkJBUXZ_R1JEZP&t=554"]
   "set of holomorphic functions" [xlabel="if the function's\ndomain is connected", href="https://en.wikipedia.org/wiki/Meromorphic_function#Heuristic_description"]
 
   "polynomial ring"
@@ -2418,6 +2419,9 @@ digraph G {
   "graded ring" -> "graded integral domain" [color="black:white:black" href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
   "graded ring" -> "polynomial ring" [label="graded by degree", href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
   "graded module" -> "graded ring" [color="black:white:black" label="graded module\nover itself", href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
+  "graded module" -> "graded module over k[x0, ..., xr]"
+  "graded module over k[x0, ..., xr]" -> "quasicoherent sheaf on P^r" [dir="both" color="black:white:black" href="https://youtu.be/7aCTawAjB40?list=PL8yHsr3EFj50Un2NpfPySgXctRQK7CLG-&t=98"]
+  { rank="same" "graded module over k[x0, ..., xr]" "quasi-coherent sheaf on P^r" }
   "graded module" -> "graded vector space" [color="black:white:black" href="https://en.wikipedia.org/wiki/Graded_ring#Basic_examples"]
   "semi-hereditary ring" [href="https://en.wikipedia.org/wiki/Hereditary_ring"]
   "semi-hereditary ring" -> "hereditary ring" [color="black:white:black" label="left ideals are\nall projective modules" href="https://en.wikipedia.org/wiki/Glossary_of_ring_theory"]
@@ -2426,6 +2430,7 @@ digraph G {
   "Jacobson ring" [href="https://en.wikipedia.org/wiki/Jacobson_ring"]
   "Jacobson ring" -> "Field" [color="black:white:black" href="https://en.wikipedia.org/wiki/Jacobson_ring#Examples"]
   "Principal ideal domain" -> "principal ideal domain\n with Jacobson radical zero"
+  "Principal ideal domain" -> "irreducible element -> prime element" [href="https://youtu.be/ezyhgZzw2q8?list=PLAvgI3H-gclZ-DYOVyyTkJBUXZ_R1JEZP&t=554"]
   "Jacobson ring" -> "principal ideal domain\n with Jacobson radical zero" [href="https://en.wikipedia.org/wiki/Jacobson_ring#Examples"]
   "Local ring" [href="https://en.wikipedia.org/wiki/Local_ring"]
   "endomorphism ring" [href="https://en.wikipedia.org/wiki/Endomorphism_ring"]
@@ -2602,6 +2607,7 @@ digraph G {
   "Bezout domain" -> "Principal ideal domain" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/B%C3%A9zout_domain#Examples"]
   "Local domain" -> "Unique factorization domain" [color="black:white:black" label="subcategory"]
   "Unique factorization domain" -> "Regular local ring" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Unique_factorization_domain#Examples"]
+  "Unique factorization domain" -> "prime element <-> irreducible element" [href="https://youtu.be/XyIItaW9TNE?list=PLAvgI3H-gclZ-DYOVyyTkJBUXZ_R1JEZP&t=1311"]
   "Regular local ring" -> "Field" [color="black:white:black" label="subcategory" href="https://en.wikipedia.org/wiki/Regular_local_ring#Examples"]
   "Valuation ring" -> "Discrete valuation ring" [color="black:white:black" label="subcategory"]
   "Regular local ring" -> "Discrete valuation ring" [color="black:white:black" label="subcategory"  href="https://en.wikipedia.org/wiki/Regular_local_ring#Examples"]
@@ -3266,6 +3272,7 @@ digraph G {
   // tool for systematically tracking locally defined data attached to the open sets of a topological space 
   "sheaf" -> "sheaf of rings"
   "sheaf" -> "quasi-coherent sheaf"
+  "quasi-coherent sheaf" -> "quasicoherent sheaf on P^r"
   "quasi-coherent sheaf" [shape="rect"]
   "coherent sheaf" [shape="rect"]
   "reflexive sheaf" [shape="rect"]
@@ -3309,6 +3316,9 @@ digraph G {
   "manifold" -> "algebraic manifold"
   "manifold" -> "smooth manifold"
 
+  "Deligne-Mumford stack" -> "algebraic space" [href="https://en.wikipedia.org/wiki/Stack_(mathematics)"]
+  "algebraic stack" -> "Deligne-Mumford stack" [href="https://en.wikipedia.org/wiki/Stack_(mathematics)"]
+  "stack" -> "algebraic stack" [href="https://en.wikipedia.org/wiki/Stack_(mathematics)"]
   "algebraic space" -> "Scheme"
   "algebraic space" [href="https://en.wikipedia.org/wiki/Algebraic_space"]
   "closed manifold" [href="https://en.wikipedia.org/wiki/Closed_manifold"]
